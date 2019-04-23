@@ -1,0 +1,387 @@
+<UserControl
+  x:Class="Files.Views.RecentFiles.RecentFilesView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  
+  xmlns:cmd="clr-namespace:Edi.Core;assembly=Edi.Core"
+  
+  xmlns:cmdLabel="clr-namespace:Edi.Util.Local;assembly=Edi.Util"
+  
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  mc:Ignorable="d" 
+  d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid Background="{DynamicResource ToolViewBackground}">
+
+        <Grid xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+              xmlns:dat="clr-namespace:System.Windows.Data;assembly=PresentationFramework"
+              xmlns:ctrl="clr-namespace:MRULib.Controls;assembly=MRULib"
+              xmlns:hyperl="clr-namespace:MRULib.Controls;assembly=MRULib"
+              xmlns:conv="clr-namespace:MRULib.Converters;assembly=MRULib"
+              Margin="3,0,3,0"
+          >
+            <Grid.Resources>
+                <CollectionViewSource Source="{Binding MruList.Entries}" x:Key="collViewEntries"
+                                      IsLiveGroupingRequested="True"
+                                      IsLiveSortingRequested="True"
+                                      >
+                    <CollectionViewSource.SortDescriptions>
+                        <!--This will sort groups-->
+                        <scm:SortDescription PropertyName="Value.GroupItem.Group" Direction="Ascending" />
+
+                        <!--This will sort items-->
+                        <scm:SortDescription PropertyName="Value.IsPinned" Direction="Ascending"/>
+                        <scm:SortDescription PropertyName="Value.LastUpdate" Direction="Descending"/>
+                    </CollectionViewSource.SortDescriptions>
+                    <CollectionViewSource.GroupDescriptions>
+                        <dat:PropertyGroupDescription PropertyName="Value.GroupItem.Group" />
+                    </CollectionViewSource.GroupDescriptions>
+                </CollectionViewSource>
+                <!-- Use a proxy to bind items to root properties of this collection -->
+                <ctrl:BindingProxy  x:Key="DataContextProxy"  Data="{Binding MruList}" />
+
+                <ctrl:BindingProxy  x:Key="AppDataContextProxy"  Data="{Binding}" />
+
+                <conv:IntToBoolConverter x:Key="IntToBoolConverter" />
+
+                <!-- Make sure that an entry can either be pinned or unpinned via visibility in contextmenu -->
+                <conv:IntIsPinnedToVisibilityConverter ConvertZeroToVisible="True" x:Key="TrueIntIsPinnedToVisibilityConverter" />
+                <conv:IntIsPinnedToVisibilityConverter ConvertZeroToVisible="False" x:Key="FalseIntIsPinnedToVisibilityConverter" />
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+            </Grid>
+
+            <ListView Grid.Row="0"
+                      ItemsSource="{Binding Source={StaticResource collViewEntries}}"
+                      SelectionMode="Single"
+                      Name="list"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      >
+                <!-- Use this for simplified testing with dark theme
+                  Background="Black"
+                  Foreground="White"
+            -->
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Focusable" Value="False"/>
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <!-- ColumnDefinition Width="Auto"/ -->
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Grid.Column="0" Name="TextBlockGridWidth" Margin="3,0"
+                                          >
+                                            <!--
+                                            NavigateUri="{Binding Value.PathfileNameUri}"
+                                            -->
+                                            <ctrl:PathTrimmingFileHyperlink
+                                                DataContext="{Binding Value}"
+                                                Text ="{Binding PathFileName}"
+                                                NavigateUri="{Binding Path=PathFileName}"
+                                                
+                                                NavigateUriCommand="cmd:AppCommand.LoadFile"
+                                                NavigateUriCommandParameter="{Binding Path=PathFileName}"
+                                                TextDecorations="{x:Null}"
+                                                >
+                                                <ctrl:PathTrimmingFileHyperlink.ContextMenu>
+                                                    <ContextMenu>
+                                                        <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_MovePinnedMruItemUPCommand}"
+                                                                  Command="cmd:AppCommand.MovePinnedMruItemUPCommand"
+                                                                  CommandParameter="{Binding}"/>
+                                                        <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_MovePinnedMruItemDownCommand}"
+                                                                  Command="cmd:AppCommand.MovePinnedMruItemDownCommand"
+                                                                  CommandParameter="{Binding}"/>
+
+                                                        <Separator/>
+                                                        <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_PinItemCommand}"
+                                                                  Command="cmd:AppCommand.PinItemCommand"
+                                                                  CommandParameter="{Binding}"
+                                                                  Visibility="{Binding Path=IsPinned, Converter={StaticResource TrueIntIsPinnedToVisibilityConverter}}"
+                                                                  />
+                                                        <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_UnPinItemCommand}"
+                                                                  Command="cmd:AppCommand.UnPinItemCommand"
+                                                                  CommandParameter="{Binding}"
+                                                                  Visibility="{Binding Path=IsPinned, Converter={StaticResource FalseIntIsPinnedToVisibilityConverter}}"
+                                                                  />
+
+                                                        <Separator/>
+                                                        <MenuItem Header="{x:Static cmdLabel:Strings.STR_MRU_MENUITEM_COPYURL}"
+                                                                  Command="{x:Static ctrl:PathTrimmingFileHyperlink.CopyUri}"
+                                                                  CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                  Margin="3" />
+
+                                                        <MenuItem DataContext="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                  Command="cmd:AppCommand.LoadFile"                            
+                                                                  CommandParameter="{Binding NavigateUri,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                                                                  Margin="3" />
+
+                                                        <MenuItem Header="{x:Static cmdLabel:Strings.STR_MRU_MENUITEM_OpenWithWindowsApp}"
+                                                                  Command="{x:Static ctrl:PathTrimmingFileHyperlink.NavigateToUri}"
+                                                                  CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                  Margin="3" />
+
+                                                        <MenuItem Header="{x:Static cmdLabel:Strings.STR_MRU_MENUITEM_OpenInContainingFolder}"
+                                                                  Command="{x:Static ctrl:PathTrimmingFileHyperlink.OpenContainingFolder}"
+                                                                  CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                  Margin="3" />
+                                                        <Separator />
+
+                                                        <MenuItem Header="{x:Static cmdLabel:Strings.STR_MRU_MENUITEM_Remove}"
+                                                                  Command="cmd:AppCommand.RemoveMruEntry"
+                                                                  CommandParameter="{Binding}"
+                                                                  CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                  Margin="3" />
+
+                                                        <MenuItem Header="{x:Static cmdLabel:Strings.Caption_MRU_RemoveEntries_Sub_Menu}"
+                                                                  xmlns:enum="clr-namespace:MRULib.MRU.Enums;assembly=MRULib">
+
+                                                            <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_OlderThan2Weeks}"
+                                                                      Command="cmd:AppCommand.RemoveItemsOlderThanThisCommand"
+                                                                      CommandParameter="{x:Static enum:GroupType.LastWeek}"
+                                                                      CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                      ToolTip="{x:Static cmdLabel:Strings.CMD_MRU_Desc_OlderThan2Weeks}"
+                                                                      Margin="3" />
+
+                                                            <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_OlderThan1Week}"
+                                                                        Command="cmd:AppCommand.RemoveItemsOlderThanThisCommand"
+                                                                        CommandParameter="{x:Static enum:GroupType.ThisWeek}"
+                                                                        CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                        ToolTip="{x:Static cmdLabel:Strings.CMD_MRU_Desc_OlderThan1Week}"
+                                                                        Margin="3" />
+
+                                                            <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_OlderThanYesterday}"
+                                                                        Command="cmd:AppCommand.RemoveItemsOlderThanThisCommand"
+                                                                        CommandParameter="{x:Static enum:GroupType.Yesterday}"
+                                                                        CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                        ToolTip="{x:Static cmdLabel:Strings.CMD_MRU_Desc_OlderThanYesterday}"
+                                                                        Margin="3" />
+
+                                                            <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_OlderThanToday}"
+                                                                        Command="cmd:AppCommand.RemoveItemsOlderThanThisCommand"
+                                                                        CommandParameter="{x:Static enum:GroupType.Today}"
+                                                                        CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                        ToolTip="{x:Static cmdLabel:Strings.CMD_MRU_Desc_OlderThanToday}"
+                                                                        Margin="3" />
+
+                                                            <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_NotPinned}"
+                                                                        Command="cmd:AppCommand.RemoveItemsOlderThanThisCommand"
+                                                                        CommandParameter="{x:Static enum:GroupType.IsPinned}"
+                                                                        CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                        ToolTip="{x:Static cmdLabel:Strings.CMD_MRU_Desc_NotPinned}"
+                                                                        Margin="3" />
+
+                                                            <MenuItem Header="{x:Static cmdLabel:Strings.CMD_MRU_Remove_All}"
+                                                                        Command="cmd:AppCommand.ClearAllMruItemsCommand"
+                                                                        CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                                                                        ToolTip="{x:Static cmdLabel:Strings.CMD_MRU_Desc_Remove_All}"
+                                                                        Margin="3" />
+                                                        </MenuItem>
+                                                    </ContextMenu>
+                                                </ctrl:PathTrimmingFileHyperlink.ContextMenu>
+                                                <ctrl:PathTrimmingFileHyperlink.ToolTip>
+                                                    <TextBlock>
+                                                    <TextBlock Text="{Binding PathFileName}"/><LineBreak/>
+                                                    <TextBlock Text="{Binding LastUpdate}"/>
+                                                </TextBlock>
+                                                </ctrl:PathTrimmingFileHyperlink.ToolTip>
+                                            </ctrl:PathTrimmingFileHyperlink>
+                                        </Grid>
+
+                                        <ctrl:CheckPin Grid.Column="1"
+                                                       HorizontalAlignment="Right"
+                                                       Name="checkPin"
+                                                       IsChecked="{Binding Value.IsPinned, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                                                       Command="{Binding Path=Data.ItemIsPinnedChanged, Source={StaticResource DataContextProxy}}"
+                                                       CommandParameter="{Binding Key}"
+                                                      />
+
+                                        <!-- Visual Debugging for IsMouseOverListViewItem Dp -->
+                                        <!-- CheckBox Grid.Column="2" IsEnabled="False"
+                                              IsChecked="{Binding ElementName=checkPin, Path=IsMouseOverListViewItem, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                                              / -->
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True" >
+                                            <Setter TargetName="checkPin"  Property="IsMouseOverListViewItem" Value="True" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <!--
+                                https://social.msdn.microsoft.com/Forums/en-US/d2eafb97-a655-4742-a1ab-deeb05fbe6bd/listview-specify-group-name?forum=wpf
+                                https://msdn.microsoft.com/en-us/library/system.windows.data.collectionviewgroup_properties.aspx
+                                -->
+                                <TextBlock FontWeight="Bold" FontSize="14"
+                                       Text="{Binding Items[0].Value.GroupItem.GroupName}"/>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </ListView.GroupStyle>
+            </ListView>
+        </Grid>
+
+        <!--Grid>
+      <Grid.Resources>
+        <Style TargetType="{x:Type hyperl:FileHyperlink}">
+          <Setter Property="SnapsToDevicePixels" Value="True"/>
+          <Setter Property="ContextMenu">
+            <Setter.Value>
+              <ContextMenu>
+                <MenuItem Header="{x:Static cmdLabel:Strings.STR_MRU_MENUITEM_COPYURL}"
+                          Command="{x:Static hyperl:FileHyperlink.CopyUri}"
+                          CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                          Margin="3" />
+
+                <MenuItem DataContext="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                          Command="cmd:AppCommand.LoadFile"                            
+                          CommandParameter="{Binding NavigateUri}"
+                          Margin="3" />
+
+                <MenuItem Header="{x:Static cmdLabel:Strings.STR_MRU_MENUITEM_OpenWithWindowsApp}"
+                          Command="{x:Static hyperl:FileHyperlink.NavigateToUri}"
+                          CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                          Margin="3" />
+
+                <MenuItem Header="{x:Static cmdLabel:Strings.STR_MRU_MENUITEM_OpenInContainingFolder}"
+                          Command="{x:Static hyperl:FileHyperlink.OpenContainingFolder}"
+                          CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                          Margin="3" />
+                <Separator />
+
+                <MenuItem Header="{x:Static cmdLabel:Strings.STR_MRU_MENUITEM_Remove}"
+                          Command="cmd:AppCommand.RemoveMruEntry"
+                          CommandParameter="{Binding}"
+                          CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"
+                          Margin="3" />
+
+              </ContextMenu>
+            </Setter.Value>
+          </Setter>
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type hyperl:FileHyperlink}">
+                <TextBlock ToolTip="{Binding ElementName=PART_Hyperlink, Path=NavigateUri}" HorizontalAlignment="Stretch">
+                            <TextBlock.InputBindings>
+                              <KeyBinding Key="C" Modifiers="Ctrl" Command="{x:Static hyperl:FileHyperlink.CopyUri}"
+                                                                   CommandParameter="{Binding ElementName=PART_Hyperlink, Path=NavigateUri}"/>
+                            </TextBlock.InputBindings>
+                            <Hyperlink Name="PART_Hyperlink"
+                                       NavigateUri="{Binding Path=NavigateUri, RelativeSource={RelativeSource FindAncestor, AncestorType=hyperl:FileHyperlink, AncestorLevel=1}}"
+                                       Command="cmd:AppCommand.LoadFile"
+                                       CommandParameter="{Binding Path=NavigateUri, RelativeSource={RelativeSource FindAncestor, AncestorType=hyperl:FileHyperlink, AncestorLevel=1}}"
+                                       >
+                              <Hyperlink.Style>
+                                - Change resource to show underline on mouseover only -
+                                <Style TargetType="{x:Type Hyperlink}">
+                                  <Style.Triggers>
+                                    <Trigger Property="IsMouseOver"      Value="true">
+                                      <Setter Property="TextDecorations" Value="Underline" />
+                                      <Setter Property="Foreground"      Value="{DynamicResource HyperlinkForeground}" />
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled"   Value="false">
+                                      <Setter Property="Foreground" Value="{DynamicResource HyperlinkForegroundDisabled}" />
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled" Value="true">
+                                      <Setter Property="Cursor"   Value="Hand" />
+                                    </Trigger>
+                                  </Style.Triggers>
+                                  <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+                                  <Setter Property="Foreground"                Value="{DynamicResource HyperlinkForeground}" />
+                                </Style>
+                              </Hyperlink.Style>
+                              - Moved link to event handler RequestNavigate="Hyperlink_RequestNavigate" to code behind -
+                              - TextBlock Text="{Binding Path=Text, RelativeSource={RelativeSource FindAncestor, AncestorType=hyperl:FileHyperlink, AncestorLevel=1}}" / -
+                              <ellipsiedTxtBlock:PathTrimmingTextBlock Path="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=hyperl:FileHyperlink, AncestorLevel=1}}" />
+                          </Hyperlink>
+                        </TextBlock>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Grid.Resources>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <pinlvw:PinableListView Margin="0"
+                              AllowDrop="False"
+                              SelectionMode="Single"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              SnapsToDevicePixels="True"
+                              HorizontalContentAlignment="Stretch"
+                              BorderThickness="0"
+                              ItemsSource="{Binding MruList.ListOfMRUEntries}"
+                              pinlvw:ListViewColumns.Stretch="true"
+                              Background="Transparent"
+                              ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                              Grid.Row="1">
+        <pinlvw:PinableListView.View>
+          <GridView>
+            <GridView.ColumnHeaderContainerStyle>
+              - To hide the header of a ListView you can modify the Visibility property of the ColumnHeaderContainer by overriding the style. -
+              <Style>
+                <Setter Property="FrameworkElement.Visibility" Value="Collapsed"/>
+              </Style>
+            </GridView.ColumnHeaderContainerStyle>
+            <GridViewColumn Width="32">
+              <GridViewColumn.CellTemplate>
+                <DataTemplate>
+                  <Grid>- Pin/Unpin column -
+                    <pinlvw:PinnableCheckbox Command="cmd:AppCommand.PinUnpin"
+                                             CommandParameter="{Binding}"
+                                             IsChecked="{Binding IsPinned, Mode=OneWay}">
+                      <CheckBox.Visibility>
+                        <MultiBinding Converter="{pinlvw:BoolOrToVisibilityConverter}">
+                          <Binding Path="IsMouseOverListViewItem" RelativeSource="{RelativeSource AncestorType={x:Type pinlvw:PinableListViewItem}}" />
+                          <Binding Path="IsChecked" RelativeSource="{RelativeSource Self}" />
+                        </MultiBinding>
+                      </CheckBox.Visibility>
+                    </pinlvw:PinnableCheckbox>
+                  </Grid>
+                </DataTemplate>
+              </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            <GridViewColumn >
+              <GridViewColumn.CellTemplate>
+                <DataTemplate>
+                  <Grid>
+                    <hyperl:FileHyperlink Text="{Binding PathFileName, Mode=OneWay}"
+                                          Margin="3,3,16,3"
+                                          NavigateUri="{Binding PathFileName, Mode=OneWay}"
+                                          HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                  </Grid>
+                </DataTemplate>
+              </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+          </GridView>
+        </pinlvw:PinableListView.View>
+      </pinlvw:PinableListView>
+    </ -->
+    </Grid>
+</UserControl>

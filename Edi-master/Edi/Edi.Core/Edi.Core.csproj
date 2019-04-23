@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F17E5E06-F28C-4E91-964F-CDB9F8589BB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edi.Core</RootNamespace>
+    <AssemblyName>Edi.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.2.0.1\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="FileSystemModels">
+      <HintPath>..\..\02_Libs\00_bin\MsgBox\FileSystemModels.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MsgBox, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dirkster.MsgBox.1.4.2\lib\net451\MsgBox.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Prism, Version=7.0.0.269, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Core.7.0.0.269-pre\lib\net45\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Mef.Wpf, Version=7.0.0.269, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Mef.7.0.0.269-pre\lib\net45\Prism.Mef.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=7.0.0.269, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Wpf.7.0.0.269-pre\lib\net45\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Wpf.7.0.0.269-pre\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UserNotification, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dirkster.UserNotifications.1.4.0\lib\net451\UserNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>..\..\02_Libs\00_bin\AvalonDock\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCommand.cs" />
+    <Compile Include="Behaviour\DialogCloser.cs" />
+    <Compile Include="Behaviour\DoubleClickImageToCommand.cs" />
+    <Compile Include="Behaviour\FocusExtension.cs" />
+    <Compile Include="Behaviour\HideToolbarOverflowButton.cs" />
+    <Compile Include="Behaviour\KeyboardFocus.cs" />
+    <Compile Include="Behaviour\MergeStyleBehaviour.cs" />
+    <Compile Include="Behaviour\OffLineIndicator.cs" />
+    <Compile Include="Behaviour\RemoveIcon.cs" />
+    <Compile Include="Behaviour\TextBoxHelper.cs" />
+    <Compile Include="Behaviour\WindowMaximized.cs" />
+    <Compile Include="Converters\BooleanToTypeModeStringConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumToBooleanConverter.cs" />
+    <Compile Include="Converters\MessageType\CountToVisibilityHiddenConverter.cs" />
+    <Compile Include="Converters\MessageType\MsgTypeToResourceConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
+    <Compile Include="Interfaces\Documents\IDocumentModel.cs" />
+    <Compile Include="Interfaces\DocumentTypes\IDocumentTypeManager.cs" />
+    <Compile Include="Interfaces\DocumentTypes\IDocumentType.cs" />
+    <Compile Include="Interfaces\DocumentTypes\IDocumentTypeItem.cs" />
+    <Compile Include="Interfaces\DocumentTypes\IFileFilterEntries.cs" />
+    <Compile Include="Interfaces\DocumentTypes\IFileFilterEntry.cs" />
+    <Compile Include="Interfaces\Enums\DocumentState.cs" />
+    <Compile Include="Interfaces\Enums\PaneLocation.cs" />
+    <Compile Include="Interfaces\IAppCoreModel.cs" />
+    <Compile Include="Interfaces\IAvalonDockLayoutViewModel.cs" />
+    <Compile Include="Interfaces\IDocumentFileWatcher.cs" />
+    <Compile Include="Interfaces\IDocumentViewModel.cs" />
+    <Compile Include="Interfaces\IDocumentParent.cs" />
+    <Compile Include="Interfaces\IExplorer.cs" />
+    <Compile Include="Interfaces\IFileOpenService.cs" />
+    <Compile Include="Interfaces\ILayoutableWindow.cs" />
+    <Compile Include="Interfaces\ILayoutItem.cs" />
+    <Compile Include="Interfaces\MessageManager\IMessageManager.cs" />
+    <Compile Include="Interfaces\MessageManager\IOutput.cs" />
+    <Compile Include="Interfaces\IRegisterableToolWindow.cs" />
+    <Compile Include="Interfaces\IToolWindowRegistry.cs" />
+    <Compile Include="Interfaces\IViewModelResolver.cs" />
+    <Compile Include="Models\AppCoreModel.cs" />
+    <Compile Include="Utillities\FileSystem\DirectoryName.cs" />
+    <Compile Include="Utillities\FileSystem\DirectoryNameConverter.cs" />
+    <Compile Include="Utillities\FileSystem\FileChangeWatcher.cs" />
+    <Compile Include="Utillities\FileSystem\FileName.cs" />
+    <Compile Include="Utillities\FileSystem\FileNameConverter.cs" />
+    <Compile Include="Utillities\FileSystem\PathName.cs" />
+    <Compile Include="Models\DocumentTypes\DocumentTypeItem.cs" />
+    <Compile Include="Models\DocumentTypes\FileFilterEntries.cs" />
+    <Compile Include="Models\DocumentTypes\FileFilterEntry.cs" />
+    <Compile Include="Models\Documents\DocumentModel.cs" />
+    <Compile Include="Models\Enums\LayoutLoaded.cs" />
+    <Compile Include="Models\Events\RegisterToolWindowEvent.cs" />
+    <Compile Include="Models\Events\RegisterToolWindowEventArgs.cs" />
+    <Compile Include="Models\DocumentTypes\DocumentTypeManager.cs" />
+    <Compile Include="Models\DocumentTypes\DocumentType.cs" />
+    <Compile Include="Models\MessageManager.cs" />
+    <Compile Include="Models\StaticsHelpers.cs" />
+    <Compile Include="Models\ToolWindowRegistry.cs" />
+    <Compile Include="Msg.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ResourceLocator.cs" />
+    <Compile Include="Utillities\SortableObservableCollection.cs" />
+    <Compile Include="Utillities\VisualTreeHelperExtension.cs" />
+    <Compile Include="ViewModels\AvalonDockProperties.cs" />
+    <Compile Include="ViewModels\Base\DialogViewModelBase.cs" />
+    <Compile Include="ViewModels\Base\ViewModelBase.cs" />
+    <Compile Include="ViewModels\Command\RelayCommand.cs" />
+    <Compile Include="ViewModels\DocumentChangedEventArgs.cs" />
+    <Compile Include="ViewModels\Events\FileBaseEvent.cs" />
+    <Compile Include="Interfaces\IToolWindow.cs" />
+    <Compile Include="ViewModels\Events\ProcessResultEvent.cs" />
+    <Compile Include="ViewModels\Events\ResultEvent.cs" />
+    <Compile Include="ViewModels\FileBaseViewModel.cs" />
+    <Compile Include="ViewModels\PaneViewModel.cs" />
+    <Compile Include="ViewModels\ToolViewModel.cs" />
+    <Compile Include="View\Pane\LayoutInitializer.cs" />
+    <Compile Include="View\Pane\PanesStyleSelector.cs" />
+    <Compile Include="View\Pane\PanesTemplateSelector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edi.Util\Edi.Util.csproj">
+      <Project>{8dea0927-9bd3-442f-ad3b-5f0c9e3186f6}</Project>
+      <Name>Edi.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
