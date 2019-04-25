@@ -28,22 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "1",
-            "3123",
-            "11"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("2");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("3");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Stoch-Strategy");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Rsi-Strategy");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("震荡策略实例", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("均线跟踪");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("MACD跟踪");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("趋势策略实例", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("搬砖");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("强弱-Strategy ");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("套利策略实例", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Volatity");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Volatity-Break");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("波动性策略", new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("搬砖");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("抢单");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("高频策略", new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14});
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("跟踪止盈止损");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("设置自动止盈止损", new System.Windows.Forms.TreeNode[] {
+            treeNode16});
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.treeView_Strategy = new System.Windows.Forms.TreeView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +75,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.listView1);
+            this.tabPage1.Controls.Add(this.treeView_Strategy);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -69,39 +84,60 @@
             this.tabPage1.Text = "指标/自动策略";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // treeView_Strategy
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "listViewGroup1";
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "listViewGroup2";
-            listViewGroup3.Header = "ListViewGroup";
-            listViewGroup3.Name = "listViewGroup3";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3});
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(255, 190);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.treeView_Strategy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView_Strategy.Location = new System.Drawing.Point(3, 3);
+            this.treeView_Strategy.Name = "treeView_Strategy";
+            treeNode1.Name = "节点5";
+            treeNode1.Text = "Stoch-Strategy";
+            treeNode2.Name = "节点6";
+            treeNode2.Text = "Rsi-Strategy";
+            treeNode3.Name = "节点0";
+            treeNode3.Text = "震荡策略实例";
+            treeNode4.Name = "节点8";
+            treeNode4.Text = "均线跟踪";
+            treeNode5.Name = "节点9";
+            treeNode5.Text = "MACD跟踪";
+            treeNode6.Name = "节点1";
+            treeNode6.Text = "趋势策略实例";
+            treeNode7.Name = "节点10";
+            treeNode7.Text = "搬砖";
+            treeNode8.Name = "节点11";
+            treeNode8.Text = "强弱-Strategy ";
+            treeNode9.Name = "节点2";
+            treeNode9.Text = "套利策略实例";
+            treeNode10.Name = "节点12";
+            treeNode10.Text = "Volatity";
+            treeNode11.Name = "节点13";
+            treeNode11.Text = "Volatity-Break";
+            treeNode12.Name = "节点3";
+            treeNode12.Text = "波动性策略";
+            treeNode13.Name = "节点14";
+            treeNode13.Text = "搬砖";
+            treeNode14.Name = "节点15";
+            treeNode14.Text = "抢单";
+            treeNode15.Name = "节点4";
+            treeNode15.Text = "高频策略";
+            treeNode16.Name = "节点18";
+            treeNode16.Text = "跟踪止盈止损";
+            treeNode17.Name = "节点17";
+            treeNode17.Text = "设置自动止盈止损";
+            this.treeView_Strategy.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode6,
+            treeNode9,
+            treeNode12,
+            treeNode15,
+            treeNode17});
+            this.treeView_Strategy.Size = new System.Drawing.Size(255, 190);
+            this.treeView_Strategy.TabIndex = 0;
             // 
             // AccountStrategyUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.tabControl1);
             this.Name = "AccountStrategyUserControl";
             this.Size = new System.Drawing.Size(269, 222);
@@ -115,9 +151,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.TreeView treeView_Strategy;
     }
 }

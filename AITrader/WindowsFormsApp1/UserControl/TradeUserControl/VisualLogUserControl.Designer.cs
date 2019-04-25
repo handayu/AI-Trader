@@ -47,6 +47,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "VisualLogUserControl";
             this.Size = new System.Drawing.Size(831, 273);
+            this.Load += new System.EventHandler(this.UserControl_Load);
             this.ResumeLayout(false);
 
         }

@@ -16,3 +16,12 @@ C:\Users\Administrator\Source\Repos\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.Ass
 C:\Users\Administrator\Source\Repos\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.AssemblyInfo.cs
 C:\Users\Administrator\Source\Repos\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.dll
 C:\Users\Administrator\Source\Repos\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.pdb
+C:\Users\Administrator\Desktop\AI-Trader\OKExSDK\bin\Debug\netstandard2.0\OKExSDK.deps.json
+C:\Users\Administrator\Desktop\AI-Trader\OKExSDK\bin\Debug\netstandard2.0\OKExSDK.dll
+C:\Users\Administrator\Desktop\AI-Trader\OKExSDK\bin\Debug\netstandard2.0\OKExSDK.pdb
+C:\Users\Administrator\Desktop\AI-Trader\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\AI-Trader\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.dll
+C:\Users\Administrator\Desktop\AI-Trader\OKExSDK\obj\Debug\netstandard2.0\OKExSDK.pdb

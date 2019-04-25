@@ -15,26 +15,30 @@ namespace WindowsFormsApp1
         public VisualLogUserControl()
         {
             InitializeComponent();
+        }
 
-            ConnectManagerSinlethon.CreateInstance().AnsyLoginEvent += AnsyLoginSubHandle;
-            ConnectManagerSinlethon.CreateInstance().AnsyServerTimeEvent += AnsyServerSubHandle;
-            ConnectManagerSinlethon.CreateInstance().AnsyGetInsEvent += AnsyGetInsSubHandle;
+        public void SubScribe()
+        {
 
+            //ConnectManager.CreateInstance().CONNECTION.AnsyLoginEvent += AnsyLoginSubHandle;
+            //ConnectManager.CreateInstance().CONNECTION.AnsyServerTimeEvent += AnsyServerSubHandle;
+            //ConnectManager.CreateInstance().CONNECTION.AnsyGetInsEvent += AnsyGetInsSubHandle;
+            //ConnectManager.CreateInstance().CONNECTION.AnsyTickerEvent += AnsyTickerSubEvent;
         }
 
         private void AnsyGetInsSubHandle(AIEventArgs args)
         {
-            AppendLog(args.info + args.EventData);
+            AppendLog(args.EventData.ToString());
         }
 
         private void AnsyServerSubHandle(AIEventArgs args)
         {
-            AppendLog(args.info);
+            AppendLog(args.EventData.ToString());
         }
 
         private void AnsyLoginSubHandle(AIEventArgs args)
         {
-            AppendLog(args.info);
+            AppendLog(args.EventData.ToString());
         }
 
         private void AppendLog(string text)
@@ -45,6 +49,17 @@ namespace WindowsFormsApp1
             }
 
             this.richTextBox1.AppendText("\n" + DateTime.Now.ToString() + ":" + "\n" + text);
+        }
+
+        private void UserControl_Load(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void AnsyTickerSubEvent(AIEventArgs args)
+        {
+            AppendLog(args.EventData.ToString());
         }
     }
 }

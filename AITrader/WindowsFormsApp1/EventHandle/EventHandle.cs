@@ -14,11 +14,27 @@ namespace WindowsFormsApp1
             set;
         }
 
-        public string info
+        public RESONSEMESSAGE ReponseMessage
         {
             get;
             set;
         }
     }
+
+    public enum RESONSEMESSAGE
+    {
+        LOGIN_SUCCESS = 0,
+        SERVERTIME_SUCCESS,
+        HOLDINSTRUMENTS_SUCCESS,
+        HOLDMARKETDATA_SUCCESS,
+        HOLDKLINE_SUCCESS,
+
+        LOGIN_FAILED,
+        SERVERTIME_FAILED,
+        HOLDINSTRUMENTS_FAILED,
+        HOLDMARKETDATA_FAILED,
+        HOLDKLINE_FAILED
+
+    };
 
 }
