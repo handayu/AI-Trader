@@ -44,6 +44,9 @@ namespace WindowsFormsApp1
             m_formName = t.instrument_id;
 
             this.Text = string.Format("{0}永续合约 -K线图1.0 Bar -AutoTrader", t.instrument_id);
+
+            AppendText("图表启动成功...");
+            AppendText("交易合约为:" + m_InitInsTicker);
         }
 
         public String FORMNAME
@@ -145,6 +148,9 @@ namespace WindowsFormsApp1
 
                     double kLast = this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].XValue;
                     this.chart1.Series[0].Points.AddXY(kLast + 1, k.o,k.h,k.l,k.c);
+
+
+                    AppendText(k.ToString());
                 }
             }
         }
@@ -391,6 +397,35 @@ namespace WindowsFormsApp1
             {
                 DeleteKLineFormEvent(m_InitInsTicker);
             }
+        }
+
+        private bool m_isLog = false;
+        private void ToolStripMenuItem_LogClick(object sender, EventArgs e)
+        {
+            if(!m_isLog)
+            {
+                this.panel2.Visible = false;
+                m_isLog = true;
+            }
+            else
+            {
+                this.panel2.Visible = true;
+                m_isLog = false;
+            }
+        }
+
+        /// <summary>
+        /// 策略日志
+        /// </summary>
+        /// <param name="str"></param>
+        private void AppendText(string str)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<string>(AppendText), str);
+            }
+
+            this.richTextBox_StrategyLog.AppendText("\n" + DateTime.Now.ToString() + ":" + "\n" + str);
         }
     }
 }

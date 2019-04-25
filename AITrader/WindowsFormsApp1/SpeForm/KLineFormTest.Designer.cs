@@ -70,11 +70,18 @@
             this.黑色背景ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.白色背景ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dateTimePicker_Begin = new System.Windows.Forms.DateTimePicker();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
+            this.ToolStripMenuItem_Log = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -95,7 +102,8 @@
             this.toolStripDropDownButton2,
             this.toolStripDropDownButton3,
             this.toolStripSeparator3,
-            this.toolStripLabel1});
+            this.ToolStripMenuItem_Log,
+            this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -118,14 +126,14 @@
             // 
             this.自动交易执行ToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources._6b41346d30a6d19b7fdfc283add2871;
             this.自动交易执行ToolStripMenuItem.Name = "自动交易执行ToolStripMenuItem";
-            this.自动交易执行ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.自动交易执行ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.自动交易执行ToolStripMenuItem.Text = "自动交易执行";
             // 
             // 策略属性设置ToolStripMenuItem
             // 
             this.策略属性设置ToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a;
             this.策略属性设置ToolStripMenuItem.Name = "策略属性设置ToolStripMenuItem";
-            this.策略属性设置ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.策略属性设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.策略属性设置ToolStripMenuItem.Text = "策略属性设置";
             // 
             // toolStripDropDownButton1
@@ -281,7 +289,8 @@
             // 
             this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.黑色背景ToolStripMenuItem,
-            this.白色背景ToolStripMenuItem});
+            this.白色背景ToolStripMenuItem,
+            this.toolStripSeparator4});
             this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
@@ -291,13 +300,13 @@
             // 黑色背景ToolStripMenuItem
             // 
             this.黑色背景ToolStripMenuItem.Name = "黑色背景ToolStripMenuItem";
-            this.黑色背景ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.黑色背景ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.黑色背景ToolStripMenuItem.Text = "黑色背景";
             // 
             // 白色背景ToolStripMenuItem
             // 
             this.白色背景ToolStripMenuItem.Name = "白色背景ToolStripMenuItem";
-            this.白色背景ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.白色背景ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.白色背景ToolStripMenuItem.Text = "白色背景";
             // 
             // toolStripSeparator3
@@ -305,11 +314,27 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripLabel1
+            // dateTimePicker_Begin
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
-            this.toolStripLabel1.Text = "开始日期:";
+            this.dateTimePicker_Begin.Location = new System.Drawing.Point(608, 1);
+            this.dateTimePicker_Begin.Name = "dateTimePicker_Begin";
+            this.dateTimePicker_Begin.Size = new System.Drawing.Size(115, 21);
+            this.dateTimePicker_Begin.TabIndex = 5;
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chart1);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 425);
+            this.panel1.TabIndex = 6;
             // 
             // chart1
             // 
@@ -447,7 +472,7 @@
             this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.ChartAreas.Add(chartArea4);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart1.Location = new System.Drawing.Point(0, 25);
+            this.chart1.Location = new System.Drawing.Point(176, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -470,16 +495,41 @@
             series1.YValuesPerPoint = 4;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(800, 425);
+            this.chart1.Size = new System.Drawing.Size(624, 425);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
             // 
-            // dateTimePicker_Begin
+            // panel2
             // 
-            this.dateTimePicker_Begin.Location = new System.Drawing.Point(558, 2);
-            this.dateTimePicker_Begin.Name = "dateTimePicker_Begin";
-            this.dateTimePicker_Begin.Size = new System.Drawing.Size(115, 21);
-            this.dateTimePicker_Begin.TabIndex = 5;
+            this.panel2.Controls.Add(this.richTextBox_StrategyLog);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(176, 425);
+            this.panel2.TabIndex = 5;
+            // 
+            // richTextBox_StrategyLog
+            // 
+            this.richTextBox_StrategyLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox_StrategyLog.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox_StrategyLog.Name = "richTextBox_StrategyLog";
+            this.richTextBox_StrategyLog.Size = new System.Drawing.Size(176, 425);
+            this.richTextBox_StrategyLog.TabIndex = 0;
+            this.richTextBox_StrategyLog.Text = "";
+            // 
+            // ToolStripMenuItem_Log
+            // 
+            this.ToolStripMenuItem_Log.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItem_Log.Image")));
+            this.ToolStripMenuItem_Log.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripMenuItem_Log.Name = "ToolStripMenuItem_Log";
+            this.ToolStripMenuItem_Log.Size = new System.Drawing.Size(100, 22);
+            this.ToolStripMenuItem_Log.Text = "策略实时日志";
+            this.ToolStripMenuItem_Log.Click += new System.EventHandler(this.ToolStripMenuItem_LogClick);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // KLineFormTest
             // 
@@ -487,8 +537,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePicker_Begin);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "KLineFormTest";
@@ -499,7 +549,9 @@
             this.Load += new System.EventHandler(this.Form_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,9 +584,14 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem 黑色背景ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 白色背景ToolStripMenuItem;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DateTimePicker dateTimePicker_Begin;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RichTextBox richTextBox_StrategyLog;
+        private System.Windows.Forms.ToolStripButton ToolStripMenuItem_Log;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }
