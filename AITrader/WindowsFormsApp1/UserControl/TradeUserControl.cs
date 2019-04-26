@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            //this.visualLogUserControl1.SubScribe();
+            this.visualLogUserControl1.SubScribe();
 
         }
 

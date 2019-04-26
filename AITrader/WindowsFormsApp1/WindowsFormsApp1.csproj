@@ -58,8 +58,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OKExSDKLibrary">
-      <HintPath>..\..\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\OKExSDKLibrary.dll</HintPath>
+    <Reference Include="OKExSDKLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\OKExSDKLibrary.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="QuickStart, Version=2017.2.502.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
@@ -70,6 +71,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />

@@ -20,10 +20,10 @@ namespace WindowsFormsApp1
         public void SubScribe()
         {
 
-            //ConnectManager.CreateInstance().CONNECTION.AnsyLoginEvent += AnsyLoginSubHandle;
-            //ConnectManager.CreateInstance().CONNECTION.AnsyServerTimeEvent += AnsyServerSubHandle;
-            //ConnectManager.CreateInstance().CONNECTION.AnsyGetInsEvent += AnsyGetInsSubHandle;
-            //ConnectManager.CreateInstance().CONNECTION.AnsyTickerEvent += AnsyTickerSubEvent;
+            ConnectManager.CreateInstance().CONNECTION.AnsyLoginEvent += AnsyLoginSubHandle;
+            ConnectManager.CreateInstance().CONNECTION.AnsyServerTimeEvent += AnsyServerSubHandle;
+            ConnectManager.CreateInstance().CONNECTION.AnsyGetInsEvent += AnsyGetInsSubHandle;
+            ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
         }
 
         private void AnsyGetInsSubHandle(AIEventArgs args)

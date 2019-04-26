@@ -87,3 +87,5 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\Win
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TradeUserForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AccountStrategyUserForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.StrategyLogForm.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\OKExSDKLibrary.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\OKExSDKLibrary.dll.config
