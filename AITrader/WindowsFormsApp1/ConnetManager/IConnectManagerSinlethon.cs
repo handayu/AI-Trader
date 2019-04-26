@@ -122,26 +122,6 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// Event-GetTiker
-        /// </summary>
-        /// <param name="args"></param>
-        public delegate void AnsyTickerHandle(AIEventArgs args);
-        public AnsyTickerHandle AnsyTickerEvent;
-        public void SafeRiseAnsyTickerEvent(AIEventArgs args)
-        {
-            if (AnsyTickerEvent == null)
-            {
-                return;
-            }
-            else
-            {
-                AnsyTickerEvent(args);
-            }
-        }
-
-
-
-        /// <summary>
         /// Init-Login
         /// </summary>
         /// <param name="apikey"></param>

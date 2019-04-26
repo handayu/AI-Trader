@@ -134,7 +134,7 @@ namespace WindowsFormsApp1
                     ReponseMessage = RESONSEMESSAGE.HOLDMARKETDATA_SUCCESS
                 };
 
-                SafeRiseAnsyTickerEvent(args);
+                AnsyRealDataEvent(args);
 
             }
             catch (Exception ex)
@@ -145,7 +145,7 @@ namespace WindowsFormsApp1
                     ReponseMessage = RESONSEMESSAGE.HOLDMARKETDATA_FAILED
                 };
 
-                SafeRiseAnsyTickerEvent(args);
+                AnsyRealDataEvent(args);
             }
         }
 

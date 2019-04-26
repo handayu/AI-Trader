@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
                 m_marketDataList.Add(d);
             }
 
-            ConnectManager.CreateInstance().CONNECTION.AnsyTickerEvent += AnsyTickerSubEvent;
+            ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
         }
 
         public void StartClock()

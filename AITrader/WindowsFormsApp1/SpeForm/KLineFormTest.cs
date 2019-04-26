@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
             //订阅实时行情RealMarketData
             ConnectManager.CreateInstance().CONNECTION.AnsyKLineEvent += AnsyKLineSubEvent;
-            ConnectManager.CreateInstance().CONNECTION.AnsyTickerEvent += AnsyTickerSubEvent;
+            ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
 
             //按照指定的时间订阅拉取历史K线数据，展示
 

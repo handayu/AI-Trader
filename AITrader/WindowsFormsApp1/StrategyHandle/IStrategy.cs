@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
         {
             //订阅行情-成家委托-bar等
 
-            ConnectManager.CreateInstance().CONNECTION.AnsyTickerEvent += AnsyTickerSubEvent;
+            ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
 
         }
 
