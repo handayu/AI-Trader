@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OKExSDK.Models.Swap;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +12,12 @@ namespace WindowsFormsApp1
     {
         private static ConnectManager m_SingletonManager = null;
         private IConnectManagerSinlethon m_singlethon = null;
-        private List<swap.Instrument> m_insList = new List<swap.Instrument>();
 
         static ConnectManager()
         {
 
             m_SingletonManager = new ConnectManager();
         }
-
-
 
         public static ConnectManager CreateInstance()
         {
@@ -44,6 +42,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        private List<swap.Instrument> m_insList = new List<swap.Instrument>();
         public List<swap.Instrument> InstrumentList
         {
             get
@@ -56,5 +55,47 @@ namespace WindowsFormsApp1
         {
             m_insList.Add(ins);
         }
+
+
+        private swap.PositionResult<Position> m_positionList = new swap.PositionResult<Position>();
+        public swap.PositionResult<Position> PositionList
+        {
+            set
+            {
+                m_positionList = value;
+            }
+            get
+            {
+                return m_positionList;
+            }
+        }
+
+        private List<swap.Trade> m_tradeList = new List<swap.Trade>();
+        public List<swap.Trade> TradeList
+        {
+            set
+            {
+                m_tradeList = value;
+            }
+            get
+            {
+                return m_tradeList;
+            }
+        }
+
+
+        private swap.OrderListResult m_orderList = new swap.OrderListResult();
+        public swap.OrderListResult OrderList
+        {
+            set
+            {
+                m_orderList = value;
+            }
+            get
+            {
+                return m_orderList;
+            }
+        }
+
     }
 }

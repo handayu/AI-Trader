@@ -121,6 +121,81 @@ namespace WindowsFormsApp1
             }
         }
 
+        #region 持仓-成交-委托
+        /// <summary>
+        /// Event-position
+        /// </summary>
+        /// <param name="args"></param>
+        public delegate void AnsyPositionHandle(AIEventArgs args);
+        public AnsyPositionHandle AnsyPositionEvent;
+        public void SafeRiseAnsyPositionEvent(AIEventArgs args)
+        {
+            if (AnsyPositionEvent == null)
+            {
+                return;
+            }
+            else
+            {
+                AnsyPositionEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// Event-trade
+        /// </summary>
+        /// <param name="args"></param>
+        public delegate void AnsyTradeHandle(AIEventArgs args);
+        public AnsyTradeHandle AnsyTradeEvent;
+        public void SafeRiseAnsyTradeEvent(AIEventArgs args)
+        {
+            if (AnsyTradeEvent == null)
+            {
+                return;
+            }
+            else
+            {
+                AnsyTradeEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// Event-order
+        /// </summary>
+        /// <param name="args"></param>
+        public delegate void AnsyOrderHandle(AIEventArgs args);
+        public AnsyOrderHandle AnsyOrderEvent;
+        public void SafeRiseAnsyOrderEvent(AIEventArgs args)
+        {
+            if (AnsyOrderEvent == null)
+            {
+                return;
+            }
+            else
+            {
+                AnsyOrderEvent(args);
+            }
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Event-AccountData
+        /// </summary>
+        /// <param name="args"></param>
+        public delegate void AnsyAccountDataHandle(AIEventArgs args);
+        public AnsyAccountDataHandle AnsyAccountDataEvent;
+        public void SafeRiseAnsyAccountDataEvent(AIEventArgs args)
+        {
+            if (AnsyAccountDataEvent == null)
+            {
+                return;
+            }
+            else
+            {
+                AnsyAccountDataEvent(args);
+            }
+        }
+
         /// <summary>
         /// Init-Login
         /// </summary>
@@ -167,6 +242,43 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         public virtual async Task AnsyGetKLineSwap(string ins, DateTime startTime, DateTime endTime, int frame)
         {
+        }
+
+        /// <summary>
+        /// 获取所有永续合约账户信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public virtual async Task AnsyAccountsSwap()
+        {
+
+        }
+
+        /// <summary>
+        /// 获取永续合约持仓信息
+        /// </summary>
+        /// <param name="insID"></param>
+        public virtual async void AnsyPositionByInstrumentSwap(string insID)
+        {
+
+        }
+
+        /// <summary>
+        /// 获取永续合约Order信息
+        /// </summary>
+        /// <param name="insID"></param>
+        public virtual async void AnsyOrdersByInstrumentSwap(string instrument_id, string status, int? from, int? to, int? limit)
+        {
+
+        }
+
+        /// <summary>
+        /// 获取永续合约Trade信息
+        /// </summary>
+        /// <param name="insID"></param>
+        public virtual async void AnsyTradeByInstrumentSwap(string instrument_id, int? from, int? to, int? limit)
+        {
+
         }
     }
 }

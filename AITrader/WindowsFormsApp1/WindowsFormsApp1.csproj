@@ -308,11 +308,11 @@
     <Compile Include="UserControl\TradeUserControl\VisualLogUserControl.Designer.cs">
       <DependentUpon>VisualLogUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\TradeUserControl\VisualTradingUserControl.cs">
+    <Compile Include="UserControl\TradeUserControl\VisualAccountControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\TradeUserControl\VisualTradingUserControl.Designer.cs">
-      <DependentUpon>VisualTradingUserControl.cs</DependentUpon>
+    <Compile Include="UserControl\TradeUserControl\VisualAccountControl.Designer.cs">
+      <DependentUpon>VisualAccountControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\RealMarketDepthData.cs" />
     <EmbeddedResource Include="AboutForm.resx">
@@ -377,8 +377,8 @@
     <EmbeddedResource Include="UserControl\TradeUserControl\VisualLogUserControl.resx">
       <DependentUpon>VisualLogUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\TradeUserControl\VisualTradingUserControl.resx">
-      <DependentUpon>VisualTradingUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\TradeUserControl\VisualAccountControl.resx">
+      <DependentUpon>VisualAccountControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

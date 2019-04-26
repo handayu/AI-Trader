@@ -35,16 +35,22 @@
             this.tabPage_wechat = new System.Windows.Forms.TabPage();
             this.tabPage_auto = new System.Windows.Forms.TabPage();
             this.tabPage_ins = new System.Windows.Forms.TabPage();
-            this.instrumentsInfoUserControl1 = new WindowsFormsApp1.InstrumentsInfoUserControl();
+            this.tabPage_Trade = new System.Windows.Forms.TabPage();
+            this.quickOrderUserControl1 = new WindowsFormsApp1.QuickOrderUserControl();
+            this.visualTradingUserControl1 = new WindowsFormsApp1.VisualTradingUserControl();
             this.visualLogUserControl1 = new WindowsFormsApp1.VisualLogUserControl();
+            this.instrumentsInfoUserControl1 = new WindowsFormsApp1.InstrumentsInfoUserControl();
             this.tabControl1.SuspendLayout();
+            this.tabPage_Money.SuspendLayout();
             this.tabPage_log.SuspendLayout();
             this.tabPage_ins.SuspendLayout();
+            this.tabPage_Trade.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControl1.Controls.Add(this.tabPage_Trade);
             this.tabControl1.Controls.Add(this.tabPage_Money);
             this.tabControl1.Controls.Add(this.tabPage_log);
             this.tabControl1.Controls.Add(this.tabPage_notify);
@@ -61,6 +67,7 @@
             // 
             // tabPage_Money
             // 
+            this.tabPage_Money.Controls.Add(this.visualTradingUserControl1);
             this.tabPage_Money.Location = new System.Drawing.Point(4, 4);
             this.tabPage_Money.Name = "tabPage_Money";
             this.tabPage_Money.Padding = new System.Windows.Forms.Padding(3);
@@ -117,14 +124,33 @@
             this.tabPage_ins.Text = "永续合约基础信息";
             this.tabPage_ins.UseVisualStyleBackColor = true;
             // 
-            // instrumentsInfoUserControl1
+            // tabPage_Trade
             // 
-            this.instrumentsInfoUserControl1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.instrumentsInfoUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.instrumentsInfoUserControl1.Location = new System.Drawing.Point(3, 3);
-            this.instrumentsInfoUserControl1.Name = "instrumentsInfoUserControl1";
-            this.instrumentsInfoUserControl1.Size = new System.Drawing.Size(1040, 428);
-            this.instrumentsInfoUserControl1.TabIndex = 0;
+            this.tabPage_Trade.Controls.Add(this.quickOrderUserControl1);
+            this.tabPage_Trade.Location = new System.Drawing.Point(4, 4);
+            this.tabPage_Trade.Name = "tabPage_Trade";
+            this.tabPage_Trade.Size = new System.Drawing.Size(1046, 434);
+            this.tabPage_Trade.TabIndex = 9;
+            this.tabPage_Trade.Text = "下单板";
+            this.tabPage_Trade.UseVisualStyleBackColor = true;
+            // 
+            // quickOrderUserControl1
+            // 
+            this.quickOrderUserControl1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.quickOrderUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quickOrderUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.quickOrderUserControl1.Name = "quickOrderUserControl1";
+            this.quickOrderUserControl1.Size = new System.Drawing.Size(1046, 434);
+            this.quickOrderUserControl1.TabIndex = 0;
+            this.quickOrderUserControl1.Load += new System.EventHandler(this.TradeUserControl_Load);
+            // 
+            // visualTradingUserControl1
+            // 
+            this.visualTradingUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visualTradingUserControl1.Location = new System.Drawing.Point(3, 3);
+            this.visualTradingUserControl1.Name = "visualTradingUserControl1";
+            this.visualTradingUserControl1.Size = new System.Drawing.Size(1040, 428);
+            this.visualTradingUserControl1.TabIndex = 0;
             // 
             // visualLogUserControl1
             // 
@@ -134,6 +160,15 @@
             this.visualLogUserControl1.Size = new System.Drawing.Size(1046, 434);
             this.visualLogUserControl1.TabIndex = 0;
             // 
+            // instrumentsInfoUserControl1
+            // 
+            this.instrumentsInfoUserControl1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.instrumentsInfoUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.instrumentsInfoUserControl1.Location = new System.Drawing.Point(3, 3);
+            this.instrumentsInfoUserControl1.Name = "instrumentsInfoUserControl1";
+            this.instrumentsInfoUserControl1.Size = new System.Drawing.Size(1040, 428);
+            this.instrumentsInfoUserControl1.TabIndex = 0;
+            // 
             // TradeUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -142,8 +177,10 @@
             this.Name = "TradeUserControl";
             this.Size = new System.Drawing.Size(1054, 460);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage_Money.ResumeLayout(false);
             this.tabPage_log.ResumeLayout(false);
             this.tabPage_ins.ResumeLayout(false);
+            this.tabPage_Trade.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -159,5 +196,8 @@
         private System.Windows.Forms.TabPage tabPage_ins;
         private InstrumentsInfoUserControl instrumentsInfoUserControl1;
         private VisualLogUserControl visualLogUserControl1;
+        private VisualTradingUserControl visualTradingUserControl1;
+        private System.Windows.Forms.TabPage tabPage_Trade;
+        private QuickOrderUserControl quickOrderUserControl1;
     }
 }

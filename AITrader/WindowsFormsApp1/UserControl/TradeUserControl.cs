@@ -16,12 +16,18 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            this.visualLogUserControl1.SubScribe();
-
         }
 
         private void Tabpage_SelectingClick(object sender, TabControlCancelEventArgs e)
         {
+        }
+
+        private void TradeUserControl_Load(object sender, EventArgs e)
+        {
+
+            this.visualLogUserControl1.SubScribe();
+            this.visualTradingUserControl1.SubScribe();
+            this.quickOrderUserControl1.SubScribe();
         }
     }
 }

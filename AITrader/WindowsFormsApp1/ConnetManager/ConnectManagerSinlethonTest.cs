@@ -186,5 +186,141 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// 获取所有永续合约账户信息
+        /// </summary>
+        /// <returns></returns>
+        public override async Task AnsyAccountsSwap()
+        {
+            try
+            {
+
+                var accountsInfo = TestData.GetAccountResult();
+
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = accountsInfo,
+                    ReponseMessage = RESONSEMESSAGE.HOLDACCOUNTS_SUCCESS
+                };
+
+                SafeRiseAnsyAccountDataEvent(args);
+
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.HOLDKLINE_FAILED
+                };
+
+                SafeRiseAnsyAccountDataEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// 获取各永续合约Position信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public override async void AnsyPositionByInstrumentSwap(string insID)
+        {
+            try
+            {
+                var obj = TestData.GetPositionResult();
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = obj,
+                    ReponseMessage = RESONSEMESSAGE.HOLDPOSITION_SUCCESS
+                };
+
+                SafeRiseAnsyPositionEvent(args);
+
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.HOLDPOSITION_FAILED
+                };
+
+                SafeRiseAnsyPositionEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// 获取永续合约Order信息
+        /// </summary>
+        /// <param name="instrument_id">合约名称，如BTC-USD-SWAP</param>
+        /// <param name="status">订单状态(-2:失败 -1:撤单成功 0:等待成交 1:部分成交 2:完全成交)</param>
+        /// <param name="from">分页游标开始</param>
+        /// <param name="to">分页游标截至</param>
+        /// <param name="limit">分页数据数量，默认100</param>
+        /// <returns></returns>
+        public override async void AnsyOrdersByInstrumentSwap(string instrument_id, string status, int? from, int? to, int? limit)
+        {
+            try
+            {
+
+                var ledgers = TestData.GetOrderResult();
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ledgers,
+                    ReponseMessage = RESONSEMESSAGE.HOLDORDER_SUCCESS
+                };
+
+                SafeRiseAnsyPositionEvent(args);
+
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.HOLDORDER_FAILED
+                };
+
+                SafeRiseAnsyPositionEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// 获取永续合约Trade信息
+        /// </summary>
+        /// <summary>
+        /// 获取成交数据
+        /// </summary>
+        /// <param name="instrument_id">合约ID，如BTC-USD-180213</param>
+        /// <param name="from">分页游标开始</param>
+        /// <param name="to">分页游标截至</param>
+        /// <param name="limit">分页数据数量，默认100</param>
+        /// <param name="insID"></param>
+        public override async void AnsyTradeByInstrumentSwap(string instrument_id, int? from, int? to, int? limit)
+        {
+            try
+            {
+                var trades = TestData.GetTradeResult();
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = trades,
+                    ReponseMessage = RESONSEMESSAGE.HOLDTRADE_SUCCESS
+                };
+
+                SafeRiseAnsyTradeEvent(args);
+
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.HOLDTRADE_FAILED
+                };
+
+                SafeRiseAnsyTradeEvent(args);
+            }
+        }
+
     }
 }

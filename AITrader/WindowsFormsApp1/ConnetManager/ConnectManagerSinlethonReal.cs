@@ -250,5 +250,207 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// 获取所有永续合约账户信息
+        /// </summary>
+        /// <returns></returns>
+        public override async Task AnsyAccountsSwap()
+        {
+            try
+            {
+                var resResult = await this.m_swapApi.getAccountsAsync();
+                JToken codeJToken;
+                if (resResult.TryGetValue("code", out codeJToken))
+                {
+                    var errorInfo = resResult.ToObject<ErrorResult>();
+
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = errorInfo,
+                        ReponseMessage = RESONSEMESSAGE.HOLDKLINE_FAILED
+                    };
+
+                    SafeRiseAnsyAccountDataEvent(args);
+                }
+                else
+                {
+                    var accountsInfo = resResult.ToObject<swap.AccountsResult>();
+
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = accountsInfo,
+                        ReponseMessage = RESONSEMESSAGE.HOLDACCOUNTS_SUCCESS
+                    };
+
+                    SafeRiseAnsyAccountDataEvent(args);
+                }
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.HOLDKLINE_FAILED
+                };
+
+                SafeRiseAnsyAccountDataEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// 获取各永续合约Position信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public override async void AnsyPositionByInstrumentSwap(string insID)
+        {
+            try
+            {
+                var resResult = await this.m_swapApi.getPositionByInstrumentAsync(insID);
+                JToken codeJToken;
+                if (resResult.TryGetValue("code", out codeJToken))
+                {
+                    var errorInfo = resResult.ToObject<ErrorResult>();
+
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = errorInfo,
+                        ReponseMessage = RESONSEMESSAGE.HOLDPOSITION_FAILED
+                    };
+
+                    SafeRiseAnsyPositionEvent (args);
+                 }
+                else
+                {
+                    var obj = resResult.ToObject<swap.PositionResult<Position>>();
+
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = obj,
+                        ReponseMessage = RESONSEMESSAGE.HOLDPOSITION_SUCCESS
+                    };
+
+                    SafeRiseAnsyPositionEvent(args);
+                }
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.HOLDPOSITION_FAILED
+                };
+
+                SafeRiseAnsyPositionEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// 获取永续合约Order信息
+        /// </summary>
+        /// <param name="instrument_id">合约名称，如BTC-USD-SWAP</param>
+        /// <param name="status">订单状态(-2:失败 -1:撤单成功 0:等待成交 1:部分成交 2:完全成交)</param>
+        /// <param name="from">分页游标开始</param>
+        /// <param name="to">分页游标截至</param>
+        /// <param name="limit">分页数据数量，默认100</param>
+        /// <returns></returns>
+        public override async void AnsyOrdersByInstrumentSwap(string instrument_id, string status, int? from, int? to, int? limit)
+        {
+            try
+            {
+                var resResult = await this.m_swapApi.getOrdersAsync(instrument_id, status, from, to, limit);
+
+                JToken codeJToken;
+                if (((JObject)resResult).TryGetValue("code", out codeJToken))
+                {
+                    var errorInfo = resResult.ToObject<ErrorResult>();
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = errorInfo,
+                        ReponseMessage = RESONSEMESSAGE.HOLDORDER_FAILED
+                    };
+
+                    SafeRiseAnsyPositionEvent(args);
+                }
+                else
+                {
+                    var ledgers = resResult.ToObject<swap.OrderListResult>();
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = ledgers,
+                        ReponseMessage = RESONSEMESSAGE.HOLDORDER_SUCCESS
+                    };
+
+                    SafeRiseAnsyPositionEvent(args);
+                }
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.HOLDORDER_FAILED
+                };
+
+                SafeRiseAnsyPositionEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// 获取永续合约Trade信息
+        /// </summary>
+        /// <summary>
+        /// 获取成交数据
+        /// </summary>
+        /// <param name="instrument_id">合约ID，如BTC-USD-180213</param>
+        /// <param name="from">分页游标开始</param>
+        /// <param name="to">分页游标截至</param>
+        /// <param name="limit">分页数据数量，默认100</param>
+        /// <param name="insID"></param>
+        public override async void AnsyTradeByInstrumentSwap(string instrument_id, int? from, int? to, int? limit)
+        {
+            try
+            {
+                var resResult = await this.m_swapApi.getTradesAsync(instrument_id, from, to, limit);
+                if (resResult.Type == JTokenType.Object)
+                {
+                    JToken codeJToken;
+                    if (((JObject)resResult).TryGetValue("code", out codeJToken))
+                    {
+                        var errorInfo = resResult.ToObject<ErrorResult>();
+                        AIEventArgs args = new AIEventArgs()
+                        {
+                            EventData = errorInfo,
+                            ReponseMessage = RESONSEMESSAGE.HOLDTRADE_FAILED
+                        };
+
+                        SafeRiseAnsyTradeEvent(args);
+                    }
+                }
+                else
+                {
+                    var trades = resResult.ToObject<List<swap.Trade>>();
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = trades,
+                        ReponseMessage = RESONSEMESSAGE.HOLDTRADE_SUCCESS
+                    };
+
+                    SafeRiseAnsyTradeEvent(args);
+                }
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.HOLDTRADE_FAILED
+                };
+
+                SafeRiseAnsyTradeEvent(args);
+            }
+        }
+
+
     }
 }

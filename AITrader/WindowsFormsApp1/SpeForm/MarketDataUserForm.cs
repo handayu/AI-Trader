@@ -16,6 +16,8 @@ namespace WindowsFormsApp1
         public MarketDataUserForm()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         public MarketDataUserControl MarketDataUserControlSelf

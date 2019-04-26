@@ -43,8 +43,8 @@ namespace WindowsFormsApp1
             m_accountStrategyForm = new AccountStrategyUserForm();
             m_tradeUserForm = new TradeUserForm();
             m_marketDataForm.Show(dockPanel1, DockState.DockLeft);
-            m_accountStrategyForm.Show(dockPanel1, DockState.DockRight);
-            m_tradeUserForm.Show(dockPanel1, DockState.DockBottom);
+            m_accountStrategyForm.Show(dockPanel1, DockState.DockRightAutoHide);
+            m_tradeUserForm.Show(dockPanel1, DockState.DockBottomAutoHide);
 
             //行情点击事件订阅-生成窗口展示
             m_marketDataForm.MarketDataUserControlSelf.RealMarketDataClikEvent += RealMarketDataClikSubEvent;

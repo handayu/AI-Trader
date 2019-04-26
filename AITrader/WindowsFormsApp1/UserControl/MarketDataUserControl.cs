@@ -30,11 +30,6 @@ namespace WindowsFormsApp1
         {
             this.dataGridView1.DataSource = m_marketDataList;
 
-            foreach (swap.Ticker d in TestData.GetTicker())
-            {
-                m_marketDataList.Add(d);
-            }
-
             ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
         }
 

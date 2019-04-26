@@ -197,6 +197,271 @@ namespace WindowsFormsApp1
             return tic1ist;
         }
 
+        public static swap.AccountsResult GetAccountResult()
+        {
+            swap.AccountsResult reList = new AccountsResult();
+            List<swap.Account> aList = new List<swap.Account>();
+
+            swap.Account a1 = new Account()
+            {
+                equity = "111",
+                total_avail_balance = "1",
+                margin = 112,
+                realized_pnl = 112,
+                unrealized_pnl = 112,
+                margin_ratio = 112,
+                instrument_id = "BTC",
+                margin_frozen = "123123",
+                margin_mode = "CSS",
+                timestamp = DateTime.Now
+            };
+
+            swap.Account a2 = new Account()
+            {
+                equity = "111",
+                total_avail_balance = "1",
+                margin = 112,
+                realized_pnl = 112,
+                unrealized_pnl = 112,
+                margin_ratio = 112,
+                instrument_id = "LTC",
+                margin_frozen = "123123",
+                margin_mode = "CSS",
+                timestamp = DateTime.Now
+            };
+
+            swap.Account a3 = new Account()
+            {
+                equity = "111",
+                total_avail_balance = "1",
+                margin = 112,
+                realized_pnl = 112,
+                unrealized_pnl = 112,
+                margin_ratio = 112,
+                instrument_id = "EOS",
+                margin_frozen = "123123",
+                margin_mode = "CSS",
+                timestamp = DateTime.Now
+            };
+
+            swap.Account a4 = new Account()
+            {
+                equity = "111",
+                total_avail_balance = "1",
+                margin = 112,
+                realized_pnl = 112,
+                unrealized_pnl = 112,
+                margin_ratio = 112,
+                instrument_id = "CCE",
+                margin_frozen = "123123",
+                margin_mode = "CSS",
+                timestamp = DateTime.Now
+            };
+
+            aList.Add(a1);
+            aList.Add(a2);
+            aList.Add(a3);
+            aList.Add(a4);
+
+            reList.info = aList;
+            return reList;
+        }
+
+
+        public static swap.PositionResult<Position> GetPositionResult()
+        {
+            swap.PositionResult<Position> reList = new swap.PositionResult<Position>();
+            List<swap.Position> aList = new List<swap.Position>();
+
+            swap.Position a1 = new swap.Position()
+            {
+                liquidation_price = 2111.980m,
+                position = "",
+                avail_position = "",
+                margin = "0.5",
+                avg_cost = "",
+                settlement_price = "5432",
+                instrument_id = "CCS",
+                leverage = 50,
+                realized_pnl = 123210m,
+                side = "",
+                timestamp = DateTime.Now,
+            };
+
+            swap.Position a2 = new swap.Position()
+            {
+                liquidation_price = 2111.980m,
+                position = "",
+                avail_position = "",
+                margin = "0.5",
+                avg_cost = "",
+                settlement_price = "5432",
+                instrument_id = "EOS",
+                leverage = 50,
+                realized_pnl = 123210m,
+                side = "",
+                timestamp = DateTime.Now,
+            };
+
+            swap.Position a3 = new swap.Position()
+            {
+                liquidation_price = 2111.980m,
+                position = "",
+                avail_position = "",
+                margin = "0.5",
+                avg_cost = "",
+                settlement_price = "5432",
+                instrument_id = "BTC",
+                leverage = 50,
+                realized_pnl = 123210m,
+                side = "",
+                timestamp = DateTime.Now,
+            };
+
+            swap.Position a4 = new swap.Position()
+            {
+                liquidation_price = 2111.980m,
+                position = "",
+                avail_position = "",
+                margin = "0.5",
+                avg_cost = "",
+                settlement_price = "5432",
+                instrument_id = "LTC",
+                leverage = 50,
+                realized_pnl = 123210m,
+                side = "",
+                timestamp = DateTime.Now,
+            };
+
+            aList.Add(a1);
+            aList.Add(a2);
+            aList.Add(a3);
+            aList.Add(a4);
+
+            reList.holding = aList;
+            reList.margin_mode = "全仓模式";
+            return reList;
+        }
+        public static swap.OrderListResult GetOrderResult()
+        {
+            swap.OrderListResult reList = new swap.OrderListResult();
+            List<swap.Order> aList = new List<swap.Order>();
+
+            swap.Order a1 = new swap.Order()
+            {
+                instrument_id = "LTC",
+                size = "1",
+                timestamp = DateTime.Now,
+                filled_qty = "BTC",
+                fee = 0.992210m,
+                order_id = "192837",
+                price = 5182.320m,
+                price_avg = 5182.320m,
+                status = "部分成交",
+                type = "买入",
+                contract_val = "1",
+            };
+
+            swap.Order a2 = new swap.Order()
+            {
+                instrument_id = "BTC",
+                size = "1",
+                timestamp = DateTime.Now,
+                filled_qty = "BTC",
+                fee = 0.992210m,
+                order_id = "192837",
+                price = 5182.320m,
+                price_avg = 5182.320m,
+                status = "已撤单",
+                type = "买入",
+                contract_val = "1",
+            };
+
+            swap.Order a3 = new swap.Order()
+            {
+                instrument_id = "BTC",
+                size = "1",
+                timestamp = DateTime.Now,
+                filled_qty = "BTC",
+                fee = 0.992210m,
+                order_id = "192837",
+                price = 5182.320m,
+                price_avg = 5182.320m,
+                status = "部分成交",
+                type = "买入",
+                contract_val = "1",
+            };
+
+            swap.Order a4 = new swap.Order()
+            {
+                instrument_id = "EOS",
+                size = "1",
+                timestamp = DateTime.Now,
+                filled_qty = "BTC",
+                fee = 0.992210m,
+                order_id = "192837",
+                price = 5182.320m,
+                price_avg = 5182.320m,
+                status = "全部成交",
+                type = "买入",
+                contract_val = "1",
+            };
+
+            aList.Add(a1);
+            aList.Add(a2);
+            aList.Add(a3);
+            aList.Add(a4);
+
+            reList.result = true;
+            reList.order_info = aList;
+            return reList;
+        }
+        public static List<swap.Trade> GetTradeResult()
+        {
+            List<swap.Trade> reList = new List<swap.Trade>();
+
+            swap.Trade a1 = new swap.Trade()
+            {
+                trade_id = "221311",
+                price = 12120m,
+                size = 5,
+                timestamp = DateTime.Now,
+                side = "买入"
+            };
+            swap.Trade a2 = new swap.Trade()
+            {
+                trade_id = "112121",
+                price = 12120m,
+                size = 5,
+                timestamp = DateTime.Now,
+                side = "买入"
+            };
+            swap.Trade a3 = new swap.Trade()
+            {
+                trade_id = "1213434",
+                price = 12120m,
+                size = 5,
+                timestamp = DateTime.Now,
+                side = "卖空"
+            };
+            swap.Trade a4 = new swap.Trade()
+            {
+                trade_id = "222456",
+                price = 12120m,
+                size = 2,
+                timestamp = DateTime.Now,
+                side = "买入"
+            };
+
+            reList.Add(a1);
+            reList.Add(a2);
+            reList.Add(a3);
+            reList.Add(a4);
+
+            return reList;
+        }
+
+
         public static List<Kline> GetKLine()
         {
             List<Kline> klineList = new List<Kline>();
