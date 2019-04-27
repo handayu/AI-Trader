@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
             //订阅实时行情RealMarketData
             ConnectManager.CreateInstance().CONNECTION.AnsyKLineEvent += AnsyKLineSubEvent;
-            ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
+            //ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
 
             //按照指定的时间订阅拉取历史K线数据，展示
 
@@ -65,9 +65,22 @@ namespace WindowsFormsApp1
         {
             try
             {
-                List<TestData.Kline> klineLiet = (List<TestData.Kline>)args.EventData;
+                List<TestData.KlineOkex> klineLiet = (List<TestData.KlineOkex>)args.EventData;
                 if (klineLiet == null) return;
                 if (klineLiet.Count <= 0) return;
+                if (klineLiet[0].insment != m_InitInsTicker.instrument_id) return;
+
+                //清空
+                this.chart1.Series[0].Points.Clear();
+                m_d.Clear();
+                m_o.Clear();
+                m_h.Clear();
+                m_l.Clear();
+                m_c.Clear();
+                            
+                //在这里list倒序处理，因为最新的价格在最前面在图表的最右边
+                //klineLiet.Sort();
+                klineLiet.Reverse(); //关键是这句
 
                 if (args.ReponseMessage == RESONSEMESSAGE.HOLDKLINE_SUCCESS)
                 {
@@ -352,42 +365,42 @@ namespace WindowsFormsApp1
         {
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Today, 60 * 60 * 24);
+                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 60 * 24);
         }
 
         private void toolStripButton_60MinClick(object sender, EventArgs e)
         {
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Today, 60 * 60);
+                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 60);
         }
 
         private void toolStripButton_30MinClick(object sender, EventArgs e)
         {
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Today, 60 * 30);
+                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 30);
         }
 
         private void toolStripButton_15MinClick(object sender, EventArgs e)
         {
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Today, 60 * 15);
+                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 15);
         }
 
         private void toolStripButton_5MinClick(object sender, EventArgs e)
         {
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Today, 60 * 5);
+                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 5);
         }
 
         private void toolStripLabel_1Min_Click(object sender, EventArgs e)
         {
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Today, 60);
+                DateTime.Now.AddDays(-10), DateTime.Now, 60);
         }
         #endregion
 

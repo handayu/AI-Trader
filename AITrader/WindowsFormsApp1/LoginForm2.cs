@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
 
             //在这里可以切换实盘和模拟盘
             ConnectManager.Start();
-            IConnectManagerSinlethon manager = new ConnectManagerSinlethonTest();
+            IConnectManagerSinlethon manager = new ConnectManagerSinlethonReal();
             ConnectManager.CreateInstance().AddIConnect(manager);
 
             ConnectManager.CreateInstance().CONNECTION.AnsyLoginEvent += AnsyLoginSubEvent;

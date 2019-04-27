@@ -208,6 +208,70 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         public override async Task AnsyGetKLineSwap(string ins, DateTime startTime, DateTime endTime, int frame)
         {
+            //之前的这里的K线解析有问题，所以改用下面的根据字符串暴力解析
+            //try
+            //{
+            //    var resResult = await m_swapApi.getCandlesDataAsync(ins, startTime, endTime, frame);
+            //    if (resResult.Type == JTokenType.Object)
+            //    {
+            //        JToken codeJToken;
+            //        if (((JObject)resResult).TryGetValue("code", out codeJToken))
+            //        {
+            //            var errorInfo = resResult.ToObject<ErrorResult>();
+            //            AIEventArgs args = new AIEventArgs()
+            //            {
+            //                EventData = errorInfo,
+            //                ReponseMessage = RESONSEMESSAGE.HOLDKLINE_FAILED
+            //            };
+
+            //            SafeRiseAnsyKLineEvent(args);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        var candles = resResult.ToObject<TestData.klineRoot>();
+            //        AIEventArgs args = new AIEventArgs()
+            //        {
+            //            EventData = candles,
+            //            ReponseMessage = RESONSEMESSAGE.HOLDKLINE_SUCCESS
+            //        };
+
+            //        SafeRiseAnsyKLineEvent(args);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    AIEventArgs args = new AIEventArgs()
+            //    {
+            //        EventData = ex,
+            //        ReponseMessage = RESONSEMESSAGE.HOLDKLINE_FAILED
+            //    };
+
+            //    SafeRiseAnsyKLineEvent(args);
+            //}
+
+            //之前的这里的K线解析有问题，所以改用下面的暴力解析
+            //  {[
+            //  [
+            //    "2019-04-27T10:27:00Z",
+            //    "5152.4",
+            //    "5152.4",
+            //    "5152.4",
+            //    "5152.4",
+            //    "0",
+            //    "0"
+            //  ],
+            //  [
+            //    "2019-04-27T10:26:00Z",
+            //    "5154.4",
+            //    "5154.4",
+            //    "5152.4",
+            //    "5152.4",
+            //    "197",
+            //    "3.8225"
+            //  ]
+            //  ]}
+
             try
             {
                 var resResult = await m_swapApi.getCandlesDataAsync(ins, startTime, endTime, frame);
@@ -228,10 +292,32 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    var candles = resResult.ToObject<List<List<decimal>>>();
+                    List<JToken> jList = resResult.Root.ToList();
+                    if (jList == null || jList.Count <= 0) return;
+
+                    List<TestData.KlineOkex> klineList = new List<TestData.KlineOkex>();
+
+                    foreach (JToken j in jList)
+                    {
+                        TestData.KlineOkex okLine = new TestData.KlineOkex()
+                        {
+                            insment = ins,
+                            d = (DateTime)j[0],
+                            o = (decimal)j[1],
+                            h = (decimal)j[2],
+                            l = (decimal)j[3],
+                            c = (decimal)j[4],
+                            unkonwn1 = (decimal)j[5],
+                            unkonwn2 = (decimal)j[6],
+
+                        };
+
+                        klineList.Add(okLine);
+                    }
+
                     AIEventArgs args = new AIEventArgs()
                     {
-                        EventData = candles,
+                        EventData = klineList,
                         ReponseMessage = RESONSEMESSAGE.HOLDKLINE_SUCCESS
                     };
 
@@ -248,6 +334,7 @@ namespace WindowsFormsApp1
 
                 SafeRiseAnsyKLineEvent(args);
             }
+
         }
 
         /// <summary>
@@ -318,8 +405,8 @@ namespace WindowsFormsApp1
                         ReponseMessage = RESONSEMESSAGE.HOLDPOSITION_FAILED
                     };
 
-                    SafeRiseAnsyPositionEvent (args);
-                 }
+                    SafeRiseAnsyPositionEvent(args);
+                }
                 else
                 {
                     var obj = resResult.ToObject<swap.PositionResult<Position>>();

@@ -38,6 +38,16 @@ namespace WindowsFormsApp1
 
         private void Form_load(object sender, EventArgs e)
         {
+
+            foreach (Control c in this.Controls)
+            {
+                if (c is MdiClient)
+                {
+                    c.BackColor = Color.White; //颜色 
+                }
+            }
+
+
             //生成所有的有业务对象-然后再在这里管理所有的事件通知
             m_marketDataForm = new MarketDataUserForm();
             m_accountStrategyForm = new AccountStrategyUserForm();
@@ -56,10 +66,10 @@ namespace WindowsFormsApp1
         {
             if (t == null || t.instrument_id == "") return;
 
-            foreach(Form f in m_OpenKLineFormList)
+            foreach (Form f in m_OpenKLineFormList)
             {
                 KLineFormTest fT = f as KLineFormTest;
-                if(fT != null && fT.FORMNAME ==  t.instrument_id)
+                if (fT != null && fT.FORMNAME == t.instrument_id)
                 {
                     MessageBox.Show("不能重复添加相同的品种图表...");
                     return;
@@ -85,13 +95,18 @@ namespace WindowsFormsApp1
         {
             if (t == null || t.instrument_id == "") return;
 
-            foreach(Form f in m_OpenKLineFormList)
+            Form reForm = null;
+            foreach (Form f in m_OpenKLineFormList)
             {
-                if((f as KLineFormTest) != null && (f as KLineFormTest).FORMNAME.CompareTo(t.instrument_id) == 0)
+                if ((f as KLineFormTest) != null && (f as KLineFormTest).FORMNAME.CompareTo(t.instrument_id) == 0)
                 {
-                    m_OpenKLineFormList.Remove(f);
+                    reForm = f;
+                    break;
                 }
             }
+
+            if (reForm == null) return;
+            m_OpenKLineFormList.Remove(reForm);
         }
 
         private void AutoTrading_Click(object sender, EventArgs e)

@@ -315,6 +315,12 @@
       <DependentUpon>VisualAccountControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\RealMarketDepthData.cs" />
+    <Compile Include="WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +386,9 @@
     <EmbeddedResource Include="UserControl\TradeUserControl\VisualAccountControl.resx">
       <DependentUpon>VisualAccountControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -395,6 +404,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EditStrategy\" />
+    <Folder Include="SelfControl\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="bin\Debug\lua51.dll" />
@@ -436,6 +446,72 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\6b41346d30a6d19b7fdfc283add2871.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-ok-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-cancel-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-customer-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-edit-file-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-purchase-order-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-expand-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-collapse-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-css-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-google-forms-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-automatic-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-heart-monitor-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-radar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-1-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-5-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-15-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-30-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-calendar-30-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-plus-1-day-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-60-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-merge-cells-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-select-column-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-layout-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,25 @@ namespace WindowsFormsApp1
 {
     public static class TestData
     {
+
+        public class klineRoot
+        {
+            public List<KlineOkex> okexKlineList;
+        }
+
+        public class KlineOkex
+        {
+            public string insment { get; set; }
+            public DateTime d { get; set; }
+            public decimal o { get; set; }
+            public decimal h { get; set; }
+            public decimal l { get; set; }
+            public decimal c { get; set; }
+
+            public decimal unkonwn1 { get; set; }
+            public decimal unkonwn2 { get; set; }
+        }
+
         public class Kline
         {
             public DateTime d { get; set; }
