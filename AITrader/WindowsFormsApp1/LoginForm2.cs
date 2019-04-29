@@ -129,5 +129,24 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
+
+        private void Form_Load(object sender, EventArgs e)
+        {
+            //加载账户配置文件
+            string path = System.Windows.Forms.Application.StartupPath + "\\config.ini";
+            IniOperationClass c = new IniOperationClass(path);
+            this.textBox_apikey.Text = c.IniReadValue("account", "apikey");
+            this.textBox_serkets.Text = c.IniReadValue("account", "secrets");
+            this.textBox_passphear.Text = c.IniReadValue("account", "passphera");
+        }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            string path = System.Windows.Forms.Application.StartupPath + "\\config.ini";
+            IniOperationClass c = new IniOperationClass(path);
+            c.IniWriteValue("account", "apikey", this.textBox_apikey.Text);
+            c.IniWriteValue("account", "secrets", this.textBox_serkets.Text);
+            c.IniWriteValue("account", "passphera", this.textBox_passphear.Text);
+        }
     }
 }
