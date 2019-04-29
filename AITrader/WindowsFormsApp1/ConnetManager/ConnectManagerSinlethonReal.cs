@@ -41,23 +41,28 @@ namespace WindowsFormsApp1
         /// <param name="passPhrea"></param>
         public override void InitApiLogin(string apikey, string secret, string passPhrea)
         {
-            m_apiKey = apikey;
-            m_secret = secret;
-            m_passPhrase = passPhrea;
+            SwapLoginAccountInfo loginInfo = new SwapLoginAccountInfo()
+            {
+                SwapApiKey = apikey,
+                SwapSecret = secret,
+                SwapPassPhrase = passPhrea
+            };
 
-            m_generalApi = new GeneralApi(m_apiKey, m_secret, m_passPhrase);
-            m_futureApi = new FuturesApi(m_apiKey, m_secret, m_passPhrase);
-            m_accountApi = new AccountApi(m_apiKey, m_secret, m_passPhrase);
-            m_spotApi = new SpotApi(m_apiKey, m_secret, m_passPhrase);
-            m_marginApi = new MarginApi(m_apiKey, m_secret, m_passPhrase);
-            m_ettApi = new EttApi(m_apiKey, m_secret, m_passPhrase);
-            m_swapApi = new SwapApi(m_apiKey, m_secret, m_passPhrase);
+            m_generalApi = new GeneralApi(loginInfo.SwapApiKey, loginInfo.SwapSecret, loginInfo.SwapPassPhrase);
+            m_futureApi = new FuturesApi(loginInfo.SwapApiKey, loginInfo.SwapSecret, loginInfo.SwapPassPhrase);
+            m_accountApi = new AccountApi(loginInfo.SwapApiKey, loginInfo.SwapSecret, loginInfo.SwapPassPhrase);
+            m_spotApi = new SpotApi(loginInfo.SwapApiKey, loginInfo.SwapSecret, loginInfo.SwapPassPhrase);
+            m_marginApi = new MarginApi(loginInfo.SwapApiKey, loginInfo.SwapSecret, loginInfo.SwapPassPhrase);
+            m_ettApi = new EttApi(loginInfo.SwapApiKey, loginInfo.SwapSecret, loginInfo.SwapPassPhrase);
+            m_swapApi = new SwapApi(loginInfo.SwapApiKey, loginInfo.SwapSecret, loginInfo.SwapPassPhrase);
 
             AIEventArgs args = new AIEventArgs()
             {
-                EventData = m_apiKey,
+                EventData = loginInfo,
                 ReponseMessage = RESONSEMESSAGE.LOGIN_SUCCESS
             };
+
+            m_swapLoginAccountInfo = loginInfo;
 
             SafeRiseAnsyLoginEvent(args);
         }

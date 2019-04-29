@@ -42,9 +42,18 @@ namespace WindowsFormsApp1
         /// <param name="passPhrea"></param>
         public override void InitApiLogin(string apikey, string secret, string passPhrea)
         {
+            SwapLoginAccountInfo a = new SwapLoginAccountInfo()
+            {
+                SwapApiKey = apikey,
+                SwapSecret = secret,
+                SwapPassPhrase = passPhrea
+            };
+
+            m_swapLoginAccountInfo = a;
+
             AIEventArgs args = new AIEventArgs()
             {
-                EventData = m_apiKey,
+                EventData = a,
                 ReponseMessage = RESONSEMESSAGE.LOGIN_SUCCESS
             };
 

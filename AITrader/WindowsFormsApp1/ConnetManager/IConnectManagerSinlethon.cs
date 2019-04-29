@@ -17,6 +17,30 @@ using Newtonsoft.Json.Linq;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// 登陆信息
+    /// </summary>
+    public class SwapLoginAccountInfo
+    {
+        public string SwapApiKey
+        {
+            set;
+            get;
+        }
+
+        public string SwapSecret
+        {
+            set;
+            get;
+        }
+        public string SwapPassPhrase
+        {
+            set;
+            get;
+        }
+    }
+
+
     public class IConnectManagerSinlethon
     {
         protected GeneralApi m_generalApi = null;
@@ -26,9 +50,15 @@ namespace WindowsFormsApp1
         protected MarginApi m_marginApi = null;
         protected EttApi m_ettApi = null;
         protected SwapApi m_swapApi = null;
-        protected string m_apiKey = "";
-        protected string m_secret = "";
-        protected string m_passPhrase = "";
+        protected SwapLoginAccountInfo m_swapLoginAccountInfo = new SwapLoginAccountInfo();
+
+        public SwapLoginAccountInfo SwapLoginAccountInfo
+        {
+            get
+            {
+                return m_swapLoginAccountInfo;
+            }
+        }
 
         /// <summary>
         /// Event-Make Order
@@ -221,7 +251,7 @@ namespace WindowsFormsApp1
         /// <param name="passPhrea"></param>
         public virtual void InitApiLogin(string apikey, string secret, string passPhrea)
         {
-            
+
         }
 
         /// <summary>
@@ -247,7 +277,7 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public  virtual async Task AnsyGetMarketDepthDataSwap()
+        public virtual async Task AnsyGetMarketDepthDataSwap()
         {
         }
 
@@ -302,7 +332,7 @@ namespace WindowsFormsApp1
         /// 下单动作
         /// </summary>
         /// <param name="order"></param>
-        public  virtual async void AnsyOrderSwap(OKExSDK.Models.Swap.OrderSingle order)
+        public virtual async void AnsyOrderSwap(OKExSDK.Models.Swap.OrderSingle order)
         {
 
         }
