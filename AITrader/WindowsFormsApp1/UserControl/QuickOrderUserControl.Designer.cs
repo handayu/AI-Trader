@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             this.label14 = new System.Windows.Forms.Label();
-            this.button_SellShort = new System.Windows.Forms.Button();
-            this.button_Buy = new System.Windows.Forms.Button();
+            this.button_Action = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label_CanUseMargion = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox_OrderNum = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button_OppositePrice = new System.Windows.Forms.Button();
             this.textBox_Price = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox_OrderStyle = new System.Windows.Forms.ComboBox();
@@ -52,7 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_log = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label_CanOrderOpenShres = new System.Windows.Forms.Label();
@@ -65,6 +63,10 @@
             this.dataGridView_NoTradedOrder = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView_hasTraded = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.radioButton_Buy = new System.Windows.Forms.RadioButton();
+            this.radioButton_Sellshort = new System.Windows.Forms.RadioButton();
+            this.radioButton_oppPrice = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,37 +89,26 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 86);
+            this.label14.Location = new System.Drawing.Point(54, 109);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 18);
+            this.label14.Size = new System.Drawing.Size(53, 18);
             this.label14.TabIndex = 47;
-            this.label14.Text = "开仓方向:";
+            this.label14.Text = "类型:";
             // 
-            // button_SellShort
+            // button_Action
             // 
-            this.button_SellShort.BackColor = System.Drawing.Color.LightGreen;
-            this.button_SellShort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_SellShort.Location = new System.Drawing.Point(377, 166);
-            this.button_SellShort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_SellShort.Name = "button_SellShort";
-            this.button_SellShort.Size = new System.Drawing.Size(164, 34);
-            this.button_SellShort.TabIndex = 46;
-            this.button_SellShort.Text = "卖空";
-            this.button_SellShort.UseVisualStyleBackColor = false;
-            // 
-            // button_Buy
-            // 
-            this.button_Buy.BackColor = System.Drawing.Color.LightCoral;
-            this.button_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Buy.Location = new System.Drawing.Point(377, 120);
-            this.button_Buy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_Buy.Name = "button_Buy";
-            this.button_Buy.Size = new System.Drawing.Size(164, 34);
-            this.button_Buy.TabIndex = 45;
-            this.button_Buy.Text = "买入";
-            this.button_Buy.UseVisualStyleBackColor = false;
-            this.button_Buy.Click += new System.EventHandler(this.button_Buy_Click_1);
+            this.button_Action.BackColor = System.Drawing.Color.LightCoral;
+            this.button_Action.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button_Action.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Action.Location = new System.Drawing.Point(4, 322);
+            this.button_Action.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Action.Name = "button_Action";
+            this.button_Action.Size = new System.Drawing.Size(572, 36);
+            this.button_Action.TabIndex = 45;
+            this.button_Action.Text = "下单";
+            this.button_Action.UseVisualStyleBackColor = false;
+            this.button_Action.Click += new System.EventHandler(this.button_Buy_Click_1);
             // 
             // label13
             // 
@@ -177,17 +168,6 @@
             this.label8.TabIndex = 38;
             this.label8.Text = "  数量:";
             // 
-            // button_OppositePrice
-            // 
-            this.button_OppositePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_OppositePrice.Location = new System.Drawing.Point(272, 172);
-            this.button_OppositePrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_OppositePrice.Name = "button_OppositePrice";
-            this.button_OppositePrice.Size = new System.Drawing.Size(82, 34);
-            this.button_OppositePrice.TabIndex = 37;
-            this.button_OppositePrice.Text = "对手价";
-            this.button_OppositePrice.UseVisualStyleBackColor = true;
-            // 
             // textBox_Price
             // 
             this.textBox_Price.Location = new System.Drawing.Point(128, 176);
@@ -209,7 +189,7 @@
             // comboBox_OrderStyle
             // 
             this.comboBox_OrderStyle.FormattingEnabled = true;
-            this.comboBox_OrderStyle.Location = new System.Drawing.Point(128, 128);
+            this.comboBox_OrderStyle.Location = new System.Drawing.Point(128, 139);
             this.comboBox_OrderStyle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox_OrderStyle.Name = "comboBox_OrderStyle";
             this.comboBox_OrderStyle.Size = new System.Drawing.Size(132, 26);
@@ -218,7 +198,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 140);
+            this.label6.Location = new System.Drawing.Point(28, 142);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 18);
@@ -228,7 +208,7 @@
             // radioButton_Cover
             // 
             this.radioButton_Cover.AutoSize = true;
-            this.radioButton_Cover.Location = new System.Drawing.Point(196, 86);
+            this.radioButton_Cover.Location = new System.Drawing.Point(200, 109);
             this.radioButton_Cover.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton_Cover.Name = "radioButton_Cover";
             this.radioButton_Cover.Size = new System.Drawing.Size(69, 22);
@@ -240,7 +220,7 @@
             // radioButton_Open
             // 
             this.radioButton_Open.AutoSize = true;
-            this.radioButton_Open.Location = new System.Drawing.Point(124, 86);
+            this.radioButton_Open.Location = new System.Drawing.Point(128, 109);
             this.radioButton_Open.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton_Open.Name = "radioButton_Open";
             this.radioButton_Open.Size = new System.Drawing.Size(69, 22);
@@ -293,7 +273,7 @@
             // comboBox_Ins
             // 
             this.comboBox_Ins.FormattingEnabled = true;
-            this.comboBox_Ins.Location = new System.Drawing.Point(128, 28);
+            this.comboBox_Ins.Location = new System.Drawing.Point(119, 33);
             this.comboBox_Ins.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox_Ins.Name = "comboBox_Ins";
             this.comboBox_Ins.Size = new System.Drawing.Size(132, 26);
@@ -302,7 +282,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 33);
+            this.label1.Location = new System.Drawing.Point(54, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 18);
@@ -330,14 +310,17 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton_oppPrice);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.radioButton_Buy);
+            this.groupBox1.Controls.Add(this.radioButton_Sellshort);
+            this.groupBox1.Controls.Add(this.label_log);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.button_SellShort);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBox_Ins);
-            this.groupBox1.Controls.Add(this.button_Buy);
+            this.groupBox1.Controls.Add(this.button_Action);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label_CanOrderOpenShres);
             this.groupBox1.Controls.Add(this.label_newMarketData);
@@ -353,7 +336,6 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.comboBox_OrderStyle);
-            this.groupBox1.Controls.Add(this.button_OppositePrice);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBox_Price);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -366,15 +348,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "下单板";
             // 
-            // label4
+            // label_log
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(144, 300);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 18);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "-------------";
+            this.label_log.AutoSize = true;
+            this.label_log.Location = new System.Drawing.Point(144, 300);
+            this.label_log.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_log.Name = "label_log";
+            this.label_log.Size = new System.Drawing.Size(125, 18);
+            this.label_log.TabIndex = 50;
+            this.label_log.Text = "-------------";
             // 
             // label3
             // 
@@ -521,6 +503,52 @@
             this.dataGridView_hasTraded.Size = new System.Drawing.Size(716, 209);
             this.dataGridView_hasTraded.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 75);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 18);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "开仓方向:";
+            // 
+            // radioButton_Buy
+            // 
+            this.radioButton_Buy.AutoSize = true;
+            this.radioButton_Buy.Location = new System.Drawing.Point(128, 75);
+            this.radioButton_Buy.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton_Buy.Name = "radioButton_Buy";
+            this.radioButton_Buy.Size = new System.Drawing.Size(69, 22);
+            this.radioButton_Buy.TabIndex = 51;
+            this.radioButton_Buy.TabStop = true;
+            this.radioButton_Buy.Text = "买入";
+            this.radioButton_Buy.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_Sellshort
+            // 
+            this.radioButton_Sellshort.AutoSize = true;
+            this.radioButton_Sellshort.Location = new System.Drawing.Point(200, 75);
+            this.radioButton_Sellshort.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton_Sellshort.Name = "radioButton_Sellshort";
+            this.radioButton_Sellshort.Size = new System.Drawing.Size(69, 22);
+            this.radioButton_Sellshort.TabIndex = 52;
+            this.radioButton_Sellshort.TabStop = true;
+            this.radioButton_Sellshort.Text = "卖空";
+            this.radioButton_Sellshort.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_oppPrice
+            // 
+            this.radioButton_oppPrice.AutoSize = true;
+            this.radioButton_oppPrice.Location = new System.Drawing.Point(271, 178);
+            this.radioButton_oppPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton_oppPrice.Name = "radioButton_oppPrice";
+            this.radioButton_oppPrice.Size = new System.Drawing.Size(87, 22);
+            this.radioButton_oppPrice.TabIndex = 54;
+            this.radioButton_oppPrice.TabStop = true;
+            this.radioButton_oppPrice.Text = "对手价";
+            this.radioButton_oppPrice.UseVisualStyleBackColor = true;
+            // 
             // QuickOrderUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -555,15 +583,13 @@
 
         #endregion
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button_SellShort;
-        private System.Windows.Forms.Button button_Buy;
+        private System.Windows.Forms.Button button_Action;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label_CanUseMargion;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox_OrderNum;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button_OppositePrice;
         private System.Windows.Forms.TextBox textBox_Price;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox_OrderStyle;
@@ -589,7 +615,11 @@
         private System.Windows.Forms.DataGridView dataGridView_Hold;
         private System.Windows.Forms.DataGridView dataGridView_NoTradedOrder;
         private System.Windows.Forms.DataGridView dataGridView_hasTraded;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_log;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton radioButton_Buy;
+        private System.Windows.Forms.RadioButton radioButton_Sellshort;
+        private System.Windows.Forms.RadioButton radioButton_oppPrice;
     }
 }

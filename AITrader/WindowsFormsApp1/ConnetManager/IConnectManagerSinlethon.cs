@@ -30,6 +30,23 @@ namespace WindowsFormsApp1
         protected string m_secret = "";
         protected string m_passPhrase = "";
 
+        /// <summary>
+        /// Event-Make Order
+        /// </summary>
+        /// <param name="args"></param>
+        public delegate void AnsyMakeOrderHandle(AIEventArgs args);
+        public AnsyMakeOrderHandle AnsyMakeOrderEvent;
+        public void SafeRiseAnsyMakeOrderEvent(AIEventArgs args)
+        {
+            if (AnsyMakeOrderEvent == null)
+            {
+                return;
+            }
+            else
+            {
+                AnsyMakeOrderEvent(args);
+            }
+        }
 
         /// <summary>
         /// Event-GetKLine
@@ -280,5 +297,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        /// <summary>
+        /// 下单动作
+        /// </summary>
+        /// <param name="order"></param>
+        public  virtual async void AnsyOrderSwap(OKExSDK.Models.Swap.OrderSingle order)
+        {
+
+        }
+
     }
 }

@@ -302,7 +302,7 @@ namespace WindowsFormsApp1
                         TestData.KlineOkex okLine = new TestData.KlineOkex()
                         {
                             insment = ins,
-                            d = (DateTime)j[0],
+                            d = ((DateTime)j[0]).AddHours(8),//将返回来的utc时区时间转换为北京时间
                             o = (decimal)j[1],
                             h = (decimal)j[2],
                             l = (decimal)j[3],
@@ -538,6 +538,65 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// 下单动作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 下单
+        /// </summary>
+        /// <param name="instrument_id">合约名称，如BTC-USD-SWAP</param>
+        /// <param name="type">1:开多2:开空3:平多4:平空</param>
+        /// <param name="price">委托价格</param>
+        /// <param name="size">下单数量</param>
+        /// <param name="client_oid">由您设置的订单ID来识别您的订单</param>
+        /// <param name="match_price">是否以对手价下单(0:不是 1:是)</param>
+        /// <returns></returns>
+        public override async void AnsyOrderSwap(OKExSDK.Models.Swap.OrderSingle order)
+        {
+            try
+            {
+                var resResult = await this.m_swapApi.makeOrderAsync(order.instrument_id,
+                    order.type,
+                    order.price,
+                    order.size,
+                    order.client_oid,
+                    order.match_price == "True" ? "1" : "0");
+                JToken codeJToken;
+                if (resResult.TryGetValue("code", out codeJToken))
+                {
+                    var errorInfo = resResult.ToObject<ErrorResult>();
 
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = errorInfo,
+                        ReponseMessage = RESONSEMESSAGE.HOLDMAKEORDERACTION_FAILED
+                    };
+
+                    SafeRiseAnsyMakeOrderEvent(args);
+                }
+                else
+                {
+                    var orderResult = resResult.ToObject<swap.OrderResultSingle>();
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = orderResult,
+                        ReponseMessage = RESONSEMESSAGE.HOLDMAKEORDERACTION_SUCCESS
+                    };
+
+                    SafeRiseAnsyMakeOrderEvent(args);
+                }
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.HOLDMAKEORDERACTION_EXCEPTION
+                };
+
+                SafeRiseAnsyMakeOrderEvent(args);
+            }
+        }
     }
 }

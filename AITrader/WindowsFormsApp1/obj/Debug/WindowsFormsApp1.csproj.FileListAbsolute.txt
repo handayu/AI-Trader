@@ -129,3 +129,5 @@ C:\Users\Administrator\Desktop\AITrader\AI-Trader\AITrader\WindowsFormsApp1\obj\
 C:\Users\Administrator\Desktop\AITrader\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Administrator\Desktop\AITrader\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Administrator\Desktop\AITrader\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.WelcomeForm.resources
+C:\Users\Administrator\Desktop\AITrader\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\OKExSDKLibrary.pdb
+C:\Users\Administrator\Desktop\AITrader\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\OKExSDKLibrary.dll.config

@@ -480,6 +480,20 @@ namespace WindowsFormsApp1
             return reList;
         }
 
+        public static swap.OrderResultSingle GetResultMarkeOrderSingle()
+        {
+            swap.OrderResultSingle s = new OrderResultSingle()
+            {
+                order_id = "1121212",
+                client_oid = "23552342",
+                error_code = "4432",
+                error_message = "测试成功返回",
+                result = "TRUE"
+            };
+
+            return s;
+
+        }
 
         public static List<Kline> GetKLine()
         {

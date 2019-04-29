@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using swap = OKExSDK.Models.Swap;
-
+using OKExSDK.Models;
 namespace WindowsFormsApp1
 {
     public partial class QuickOrderUserControl : UserControl
@@ -76,7 +76,32 @@ namespace WindowsFormsApp1
             ConnectManager.CreateInstance().CONNECTION.AnsyOrderEvent += AnsyOrderSubEvent;
             ConnectManager.CreateInstance().CONNECTION.AnsyPositionEvent += AnsyPositionSubEvent;
             ConnectManager.CreateInstance().CONNECTION.AnsyTradeEvent += AnsyTradeSubEvent;
+            ConnectManager.CreateInstance().CONNECTION.AnsyMakeOrderEvent += AnsyMakeOrderSubEvent;
 
+        }
+
+        /// <summary>
+        /// 下单回报
+        /// </summary>
+        /// <param name="args"></param>
+        private void AnsyMakeOrderSubEvent(AIEventArgs args)
+        {
+            if(args.ReponseMessage == RESONSEMESSAGE.HOLDMAKEORDERACTION_FAILED)
+            {
+                OKExSDK.Models.ErrorResult result = (OKExSDK.Models.ErrorResult)args.EventData;
+                this.label_log.Text = result.code + ":" + result.message;
+            }
+
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMAKEORDERACTION_SUCCESS)
+            {
+                swap.OrderResultSingle result = (swap.OrderResultSingle)args.EventData;
+                this.label_log.Text = result.order_id + ":" + result.result;
+            }
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMAKEORDERACTION_EXCEPTION)
+            {
+                System.Exception result = (System.Exception)args.EventData;
+                this.label_log.Text = result.Message;
+            }
         }
 
         /// <summary>
@@ -110,27 +135,78 @@ namespace WindowsFormsApp1
                 this.BeginInvoke(new Action<string>(AppendText), str);
             }
 
-            this.label4.Text = DateTime.Now.ToString() + ":" + str;
+            this.label_log.Text = DateTime.Now.ToString() + ":" + str;
         }
 
-        private void button_Buy_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_SellShort_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_OppositePrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// 下单
+        /// </summary>
+        /// <param name="instrument_id">合约名称，如BTC-USD-SWAP</param>
+        /// <param name="type">1:开多2:开空3:平多4:平空</param>
+        /// <param name="price">委托价格</param>
+        /// <param name="size">下单数量</param>
+        /// <param name="client_oid">由您设置的订单ID来识别您的订单</param>
+        /// <param name="match_price">是否以对手价下单(0:不是 1:是)</param>
+        /// <returns></returns>
         private void button_Buy_Click_1(object sender, EventArgs e)
         {
+            //OrderSingle-下单
+            MakeOrderAction();
+        }
 
+        private void MakeOrderAction()
+        {
+            string order_strIns = this.comboBox_Ins.SelectedText;
+            string order_type = string.Empty;
+
+            if(radioButton_Buy.Checked && radioButton_Open.Checked)
+            {
+                order_type = "1";
+            }
+            if (radioButton_Sellshort.Checked && radioButton_Open.Checked)
+            {
+                order_type = "2";
+            }
+            if (radioButton_Buy.Checked && radioButton_Cover.Checked)
+            {
+                order_type = "3";
+            }
+            if (radioButton_Sellshort.Checked && radioButton_Cover.Checked)
+            {
+                order_type = "4";
+            }
+
+            string price = this.textBox_Price.Text;
+            decimal order_Price = 0.0m;
+            decimal.TryParse(price, out order_Price);
+
+            string num = this.textBox_OrderNum.Text;
+            int order_Num = 0;
+            int.TryParse(num, out order_Num);
+
+            string order_clientId = "1111";
+
+            string order_Mathprice = string.Empty;
+            if(radioButton_oppPrice.Checked)
+            {
+                order_Mathprice = "1";
+            }
+            else
+            {
+                order_Mathprice = "0";
+            }
+
+            swap.OrderSingle order = new swap.OrderSingle()
+            {
+                instrument_id = order_strIns,
+                type = order_type,
+                price = order_Price,
+                size = order_Num,
+                client_oid = order_clientId,
+                match_price = order_Mathprice
+            };
+
+            ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(order);
         }
     }
 }

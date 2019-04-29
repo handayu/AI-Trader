@@ -25,9 +25,16 @@ namespace WindowsFormsApp1
             ConnectManager.CreateInstance().CONNECTION.AnsyGetInsEvent += AnsyGetInsSubHandle;
             ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
             ConnectManager.CreateInstance().CONNECTION.AnsyAccountDataEvent += AnsyAccountDataSubEvent;
+            ConnectManager.CreateInstance().CONNECTION.AnsyMakeOrderEvent += AnsyMakeOrderSubEvent;
+
         }
 
         private void AnsyAccountDataSubEvent(AIEventArgs args)
+        {
+            AppendLog(args.EventData.ToString());
+        }
+
+        private void AnsyMakeOrderSubEvent(AIEventArgs args)
         {
             AppendLog(args.EventData.ToString());
         }

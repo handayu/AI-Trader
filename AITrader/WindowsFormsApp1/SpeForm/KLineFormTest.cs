@@ -25,9 +25,9 @@ namespace WindowsFormsApp1
         private List<decimal> m_c = new List<decimal>();
         private List<DateTime> m_d = new List<DateTime>();
 
-        public delegate void  DeleteKLineFormHandle(swap.Ticker t);
+        public delegate void DeleteKLineFormHandle(swap.Ticker t);
         public event DeleteKLineFormHandle DeleteKLineFormEvent;
-
+        private bool m_isRealKline = false;
         public KLineFormTest(swap.Ticker t)
         {
             InitializeComponent();
@@ -37,8 +37,8 @@ namespace WindowsFormsApp1
             //ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
 
             //按照指定的时间订阅拉取历史K线数据，展示
-
-            //加载策略到ComBox
+            //默认设置为前一个月
+            this.dateTimePicker_Begin.Value = DateTime.Now.AddDays(-30);
 
             m_InitInsTicker = t;
             m_formName = t.instrument_id;
@@ -63,27 +63,34 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyKLineSubEvent(AIEventArgs args)
         {
-            try
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDKLINE_FAILED) return;
+            List<TestData.KlineOkex> klineLiet = (List<TestData.KlineOkex>)args.EventData;
+            if (klineLiet == null) return;
+            if (klineLiet.Count <= 0) return;
+            if (klineLiet[0].insment != m_InitInsTicker.instrument_id) return;
+
+            //清空
+            this.chart1.Series[0].Points.Clear();
+            m_d.Clear();
+            m_o.Clear();
+            m_h.Clear();
+            m_l.Clear();
+            m_c.Clear();
+
+            //在这里list倒序处理，因为最新的价格在最前面在图表的最右边
+            klineLiet.Reverse(); //关键是这句
+
+
+            if (m_isRealKline)
             {
-                List<TestData.KlineOkex> klineLiet = (List<TestData.KlineOkex>)args.EventData;
-                if (klineLiet == null) return;
-                if (klineLiet.Count <= 0) return;
-                if (klineLiet[0].insment != m_InitInsTicker.instrument_id) return;
+                //在这里加载实时K线，否则只加载历史
 
-                //清空
-                this.chart1.Series[0].Points.Clear();
-                m_d.Clear();
-                m_o.Clear();
-                m_h.Clear();
-                m_l.Clear();
-                m_c.Clear();
-                            
-                //在这里list倒序处理，因为最新的价格在最前面在图表的最右边
-                //klineLiet.Sort();
-                klineLiet.Reverse(); //关键是这句
-
-                if (args.ReponseMessage == RESONSEMESSAGE.HOLDKLINE_SUCCESS)
+            }
+            else
+            {
+                try
                 {
+
                     int kCout = klineLiet.Count;
 
                     for (int j = 0; j < kCout; ++j)
@@ -95,22 +102,6 @@ namespace WindowsFormsApp1
                         m_c.Add(klineLiet[j].c);
                     }
 
-                    //for (int j = 0; j < kCout; j++)
-                    //{
-                    //    if (j == 0 || (j < kCout - 1 && klineLiet[j].d != klineLiet[j + 1].d))
-                    //        this.chart1.Series[0].Points[j].AxisLabel = d[j].ToString("MM/dd");
-                    //    else
-                    //        this.chart1.Series[0].Points[j].AxisLabel = d[j].ToString("HH:mm");
-                    //}
-
-                    //Y轴显示的小数位数
-                    //var fmt = "F" + (_stra.InstrumentInfo.PriceTick >= 1 ? 0 : _stra.InstrumentInfo.PriceTick.ToString().Split('.')[1].Length - 1);
-                    //var interval = 10 * _stra.InstrumentInfo.PriceTick; //最小跳动
-                    //SetLoadParams(this.chart1, this.chart1.ChartAreas[0], fmt, interval, cnt + 1);
-                    //foreach (ChartArea area in this.chart1.ChartAreas)
-                    //area.AxisY.LabelStyle.Format = "F" + (_stra.InstrumentInfo.PriceTick >= 1 ? 0 : _stra.InstrumentInfo.PriceTick.ToString().Split('.')[1].Length - 1);
-                    //this.chart1.ChartAreas[0].AxisY.Interval = 100 * _stra.InstrumentInfo.PriceTick; //最小跳动
-
                     //调整显示K线
                     this.chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset();
                     Zoom(this.chart1);
@@ -119,18 +110,19 @@ namespace WindowsFormsApp1
                     this.chart1.Series[0].Points.Clear();
                     this.chart1.Annotations.Clear();
 
-                    for(int i = 0;i<kCout;i++)
+                    for (int i = 0; i < kCout; i++)
                     {
                         this.chart1.Series[0].Points.AddXY(m_d[i], m_h[i], m_l[i], m_o[i], m_c[i]);
                     }
 
-                    //装载查询回来的历史K线
+                    this.timer_GetRealKLineEvent.Enabled = true;
+
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("查询K线返回异常:" + ex.Message);
-                return;
+                catch (Exception ex)
+                {
+                    MessageBox.Show("查询K线返回异常:" + ex.Message);
+                    return;
+                }
             }
         }
 
@@ -146,13 +138,13 @@ namespace WindowsFormsApp1
                 List<swap.Ticker> ticLiet = (List<swap.Ticker>)args.EventData;
                 if (ticLiet == null) return;
                 if (ticLiet.Count <= 0 || ticLiet[0].instrument_id == "") return;
-                foreach(swap.Ticker t in ticLiet)
+                foreach (swap.Ticker t in ticLiet)
                 {
                     if (t.instrument_id != m_InitInsTicker.instrument_id) continue;
 
                     TestData.Kline k = new TestData.Kline()
                     {
-                        d= t.timestamp,
+                        d = t.timestamp,
                         o = t.last,
                         h = t.last,
                         l = t.last,
@@ -160,7 +152,7 @@ namespace WindowsFormsApp1
                     };
 
                     double kLast = this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].XValue;
-                    this.chart1.Series[0].Points.AddXY(kLast + 1, k.o,k.h,k.l,k.c);
+                    this.chart1.Series[0].Points.AddXY(kLast + 1, k.o, k.h, k.l, k.c);
 
 
                     AppendText(k.ToString());
@@ -363,44 +355,71 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void toolStripButton_DayClick(object sender, EventArgs e)
         {
+            //120根
+            DateTime startTime = DateTime.UtcNow.AddDays(-120);
+            DateTime endTime = DateTime.UtcNow;
+
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 60 * 24);
+                startTime, endTime, 60 * 60 * 24);
         }
 
         private void toolStripButton_60MinClick(object sender, EventArgs e)
         {
+            //120根
+            DateTime startTime = DateTime.UtcNow.AddHours(-120);
+            DateTime endTime = DateTime.UtcNow;
+
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 60);
+                startTime, endTime, 60 * 60);
         }
 
         private void toolStripButton_30MinClick(object sender, EventArgs e)
         {
+            //120根
+            DateTime startTime = DateTime.UtcNow.AddHours(-60);
+            DateTime endTime = DateTime.UtcNow;
+
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 30);
+                startTime, endTime, 60 * 30);
         }
 
         private void toolStripButton_15MinClick(object sender, EventArgs e)
         {
+            //120根
+            DateTime startTime = DateTime.UtcNow.AddHours(-30);
+            DateTime endTime = DateTime.UtcNow;
+
+
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 15);
+                startTime, endTime, 60 * 15);
         }
 
         private void toolStripButton_5MinClick(object sender, EventArgs e)
         {
+            //120根
+            DateTime startTime = DateTime.UtcNow.AddHours(-10);
+            DateTime endTime = DateTime.UtcNow;
+
+
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                this.dateTimePicker_Begin.Value, DateTime.Now, 60 * 5);
+                startTime, endTime, 60 * 5);
         }
 
         private void toolStripLabel_1Min_Click(object sender, EventArgs e)
         {
+            //120根
+            DateTime startTime = DateTime.UtcNow.AddHours(-2);
+            DateTime endTime = DateTime.UtcNow;
+
+
             //填写合约，时间区间获取行情
             ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                DateTime.Now.AddDays(-10), DateTime.Now, 60);
+                startTime, endTime, 60);
         }
         #endregion
 
@@ -415,7 +434,7 @@ namespace WindowsFormsApp1
         private bool m_isLog = false;
         private void ToolStripMenuItem_LogClick(object sender, EventArgs e)
         {
-            if(!m_isLog)
+            if (!m_isLog)
             {
                 this.panel2.Visible = false;
                 m_isLog = true;
@@ -439,6 +458,25 @@ namespace WindowsFormsApp1
             }
 
             this.richTextBox_StrategyLog.AppendText("\n" + DateTime.Now.ToString() + ":" + "\n" + str);
+        }
+
+        /// <summary>
+        /// 查询距离当前最近的一根的K线
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer_GetRealKLineEventHandle(object sender, EventArgs e)
+        {
+            m_isRealKline = true;
+
+            //1根
+            DateTime startTime = DateTime.UtcNow.AddMinutes(-5);
+            DateTime endTime = DateTime.UtcNow;
+
+
+            //填写合约，时间区间获取行情
+            ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
+                startTime, endTime, 60 * 5);
         }
     }
 }
