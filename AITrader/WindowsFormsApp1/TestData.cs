@@ -33,11 +33,16 @@ namespace WindowsFormsApp1
 
         public class Kline
         {
+            public string insment { get; set; }
+
             public DateTime d { get; set; }
             public decimal o { get; set; }
             public decimal h { get; set; }
             public decimal l { get; set; }
             public decimal c { get; set; }
+
+            public decimal unkonwn1 { get; set; }
+            public decimal unkonwn2 { get; set; }
         }
 
         public static List<RealMarketDepthData> GetBtc()
@@ -495,9 +500,9 @@ namespace WindowsFormsApp1
 
         }
 
-        public static List<Kline> GetKLine()
+        public static List<TestData.KlineOkex> GetKLine(string ins)
         {
-            List<Kline> klineList = new List<Kline>();
+            List<TestData.KlineOkex> klineList = new List<TestData.KlineOkex>();
 
 
             char[] separator = { '\r', '\n' };
@@ -514,8 +519,9 @@ namespace WindowsFormsApp1
                         continue;
 
                     string[] data = l.Split(',');
-                    Kline dataItem = new Kline()
+                    TestData.KlineOkex dataItem = new TestData.KlineOkex()
                     {
+                        insment = ins,
                         d = DateTime.Parse(data[0], CultureInfo.InvariantCulture),
                         o = decimal.Parse(data[1], CultureInfo.InvariantCulture),
                         h = decimal.Parse(data[2], CultureInfo.InvariantCulture),

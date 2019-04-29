@@ -192,6 +192,7 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="common\IniOperationClass.cs" />
     <Compile Include="ConnetManager\ConnectManager.cs" />
     <Compile Include="ConnetManager\ConnectManagerSinlethonReal.cs" />
     <Compile Include="ConnetManager\ConnectManagerSinlethonTest.cs" />
@@ -236,6 +237,12 @@
     </Compile>
     <Compile Include="SpeForm\MarketDataUserForm.Designer.cs">
       <DependentUpon>MarketDataUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpeForm\RenkoSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpeForm\RenkoSettingsForm.Designer.cs">
+      <DependentUpon>RenkoSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SpeForm\TradeUserForm.cs">
       <SubType>Form</SubType>
@@ -352,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpeForm\MarketDataUserForm.resx">
       <DependentUpon>MarketDataUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpeForm\RenkoSettingsForm.resx">
+      <DependentUpon>RenkoSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpeForm\TradeUserForm.resx">
       <DependentUpon>TradeUserForm.cs</DependentUpon>

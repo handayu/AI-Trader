@@ -173,7 +173,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                var candles = TestData.GetKLine();
+                var candles = TestData.GetKLine(ins);
                 AIEventArgs args = new AIEventArgs()
                 {
                     EventData = candles,

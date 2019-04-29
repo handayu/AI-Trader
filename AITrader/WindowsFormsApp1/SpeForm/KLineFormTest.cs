@@ -27,14 +27,13 @@ namespace WindowsFormsApp1
 
         public delegate void DeleteKLineFormHandle(swap.Ticker t);
         public event DeleteKLineFormHandle DeleteKLineFormEvent;
-        private bool m_isRealKline = false;
         public KLineFormTest(swap.Ticker t)
         {
             InitializeComponent();
 
             //订阅实时行情RealMarketData
             ConnectManager.CreateInstance().CONNECTION.AnsyKLineEvent += AnsyKLineSubEvent;
-            //ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
+            ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
 
             //按照指定的时间订阅拉取历史K线数据，展示
             //默认设置为前一个月
@@ -69,61 +68,50 @@ namespace WindowsFormsApp1
             if (klineLiet.Count <= 0) return;
             if (klineLiet[0].insment != m_InitInsTicker.instrument_id) return;
 
-            //清空
-            this.chart1.Series[0].Points.Clear();
-            m_d.Clear();
-            m_o.Clear();
-            m_h.Clear();
-            m_l.Clear();
-            m_c.Clear();
-
-            //在这里list倒序处理，因为最新的价格在最前面在图表的最右边
-            klineLiet.Reverse(); //关键是这句
-
-
-            if (m_isRealKline)
+            try
             {
-                //在这里加载实时K线，否则只加载历史
+                //清空
+                this.chart1.Series[0].Points.Clear();
+                m_d.Clear();
+                m_o.Clear();
+                m_h.Clear();
+                m_l.Clear();
+                m_c.Clear();
+
+                //在这里list倒序处理，因为最新的价格在最前面在图表的最右边
+                klineLiet.Reverse(); //关键是这句
+
+                int kCout = klineLiet.Count;
+
+                for (int j = 0; j < kCout; ++j)
+                {
+                    m_d.Add(klineLiet[j].d);
+                    m_o.Add(klineLiet[j].o);
+                    m_h.Add(klineLiet[j].h);
+                    m_l.Add(klineLiet[j].l);
+                    m_c.Add(klineLiet[j].c);
+                }
+
+                //调整显示K线
+                this.chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset();
+                Zoom(this.chart1);
+
+                //图表K线和Anotion-Clear()--数据回来的根据接口猜测，应该是d,o,h,l,c四个量足以
+                this.chart1.Series[0].Points.Clear();
+                this.chart1.Annotations.Clear();
+
+                for (int i = 0; i < kCout; i++)
+                {
+                    this.chart1.Series[0].Points.AddXY(m_d[i], m_h[i], m_l[i], m_o[i], m_c[i]);
+                }
 
             }
-            else
+            catch (Exception ex)
             {
-                try
-                {
-
-                    int kCout = klineLiet.Count;
-
-                    for (int j = 0; j < kCout; ++j)
-                    {
-                        m_d.Add(klineLiet[j].d);
-                        m_o.Add(klineLiet[j].o);
-                        m_h.Add(klineLiet[j].h);
-                        m_l.Add(klineLiet[j].l);
-                        m_c.Add(klineLiet[j].c);
-                    }
-
-                    //调整显示K线
-                    this.chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset();
-                    Zoom(this.chart1);
-
-                    //图表K线和Anotion-Clear()--数据回来的根据接口猜测，应该是d,o,h,l,c四个量足以
-                    this.chart1.Series[0].Points.Clear();
-                    this.chart1.Annotations.Clear();
-
-                    for (int i = 0; i < kCout; i++)
-                    {
-                        this.chart1.Series[0].Points.AddXY(m_d[i], m_h[i], m_l[i], m_o[i], m_c[i]);
-                    }
-
-                    this.timer_GetRealKLineEvent.Enabled = true;
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("查询K线返回异常:" + ex.Message);
-                    return;
-                }
+                MessageBox.Show("查询K线返回异常:" + ex.Message);
+                return;
             }
+
         }
 
         /// <summary>
@@ -132,31 +120,37 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyTickerSubEvent(AIEventArgs args)
         {
-            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_SUCCESS)
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_FAILED) return;
+            //合成目前图表上的周期K线，或者每隔一段时间查一次直接装载K线
+            List<swap.Ticker> ticLiet = (List<swap.Ticker>)args.EventData;
+            if (ticLiet == null) return;
+            if (ticLiet.Count <= 0 || ticLiet[0].instrument_id == "") return;
+
+            foreach (swap.Ticker t in ticLiet)
             {
-                //合成目前图表上的周期K线，或者每隔一段时间查一次直接装载K线
-                List<swap.Ticker> ticLiet = (List<swap.Ticker>)args.EventData;
-                if (ticLiet == null) return;
-                if (ticLiet.Count <= 0 || ticLiet[0].instrument_id == "") return;
-                foreach (swap.Ticker t in ticLiet)
+                if (t.instrument_id != m_InitInsTicker.instrument_id) continue;
+
+                TestData.Kline k = new TestData.Kline()
                 {
-                    if (t.instrument_id != m_InitInsTicker.instrument_id) continue;
+                    d = t.timestamp,
+                    o = t.last,
+                    h = t.last,
+                    l = t.last,
+                    c = t.last
+                };
 
-                    TestData.Kline k = new TestData.Kline()
-                    {
-                        d = t.timestamp,
-                        o = t.last,
-                        h = t.last,
-                        l = t.last,
-                        c = t.last
-                    };
+                double kLast = this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].XValue;
 
-                    double kLast = this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].XValue;
+                //
+                if (this.chart1.Series[0].ChartType == SeriesChartType.Renko)
+                {
                     this.chart1.Series[0].Points.AddXY(kLast + 1, k.o, k.h, k.l, k.c);
-
-
-                    AppendText(k.ToString());
+                    return;
                 }
+
+                this.chart1.Series[0].Points.AddXY(kLast + 1, k.o, k.h, k.l, k.c);
+
+                AppendText(k.ToString());
             }
         }
 
@@ -461,22 +455,49 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// 查询距离当前最近的一根的K线
+        /// 切换Renko转型图
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timer_GetRealKLineEventHandle(object sender, EventArgs e)
+        private void ToolStripMenuItem_RenkoClick(object sender, EventArgs e)
         {
-            m_isRealKline = true;
+            RenkoSettingsForm renkoForm = new RenkoSettingsForm();
+            renkoForm.ShowDialog();
+            if(renkoForm.RenkoDialogResult == false)
+            {
+                return;
+            }
+            {
+                double boxsize = renkoForm.BoxSize;
+                this.chart1.Series[0].ChartType = SeriesChartType.Renko;
+                this.chart1.Series[0]["BoxSize"] = boxsize.ToString();
+            }
+        }
 
-            //1根
-            DateTime startTime = DateTime.UtcNow.AddMinutes(-5);
-            DateTime endTime = DateTime.UtcNow;
+        private void Button_GiveData_Click(object sender, EventArgs e)
+        {
+            decimal price = 00m;
+            decimal.TryParse(this.textBox_marketdata.Text, out price);
 
+            List<swap.Ticker> tList = new List<swap.Ticker>();
+            swap.Ticker t = new swap.Ticker()
+            {
+                instrument_id = "BTC-USD-SWAP",
+                last = price,
+                high_24h = 10,
+                low_24h = 10,
+                volume_24h = 10,
+                timestamp = DateTime.Now
+            };
+            tList.Add(t);
 
-            //填写合约，时间区间获取行情
-            ConnectManager.CreateInstance().CONNECTION.AnsyGetKLineSwap(m_InitInsTicker.instrument_id,
-                startTime, endTime, 60 * 5);
+            AIEventArgs args = new AIEventArgs()
+            {
+                EventData = tList,
+                ReponseMessage = RESONSEMESSAGE.HOLDMARKETDATA_SUCCESS
+            };
+
+            AnsyTickerSubEvent(args);
         }
     }
 }

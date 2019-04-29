@@ -30,15 +30,15 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_Trade = new System.Windows.Forms.TabPage();
+            this.quickOrderUserControl1 = new WindowsFormsApp1.QuickOrderUserControl();
             this.tabPage_Money = new System.Windows.Forms.TabPage();
+            this.visualTradingUserControl1 = new WindowsFormsApp1.VisualTradingUserControl();
             this.tabPage_log = new System.Windows.Forms.TabPage();
+            this.visualLogUserControl1 = new WindowsFormsApp1.VisualLogUserControl();
             this.tabPage_notify = new System.Windows.Forms.TabPage();
             this.tabPage_wechat = new System.Windows.Forms.TabPage();
             this.tabPage_auto = new System.Windows.Forms.TabPage();
             this.tabPage_ins = new System.Windows.Forms.TabPage();
-            this.quickOrderUserControl1 = new WindowsFormsApp1.QuickOrderUserControl();
-            this.visualTradingUserControl1 = new WindowsFormsApp1.VisualTradingUserControl();
-            this.visualLogUserControl1 = new WindowsFormsApp1.VisualLogUserControl();
             this.instrumentsInfoUserControl1 = new WindowsFormsApp1.InstrumentsInfoUserControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
@@ -61,10 +61,9 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1264, 443);
+            this.tabControl1.Size = new System.Drawing.Size(843, 295);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tabpage_SelectingClick);
             // 
@@ -72,42 +71,69 @@
             // 
             this.tabPage_Trade.Controls.Add(this.quickOrderUserControl1);
             this.tabPage_Trade.Location = new System.Drawing.Point(4, 4);
-            this.tabPage_Trade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage_Trade.Name = "tabPage_Trade";
-            this.tabPage_Trade.Size = new System.Drawing.Size(2686, 1013);
+            this.tabPage_Trade.Size = new System.Drawing.Size(835, 269);
             this.tabPage_Trade.TabIndex = 9;
             this.tabPage_Trade.Text = "下单板";
             this.tabPage_Trade.UseVisualStyleBackColor = true;
+            // 
+            // quickOrderUserControl1
+            // 
+            this.quickOrderUserControl1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.quickOrderUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quickOrderUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.quickOrderUserControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quickOrderUserControl1.MinimumSize = new System.Drawing.Size(1182, 362);
+            this.quickOrderUserControl1.Name = "quickOrderUserControl1";
+            this.quickOrderUserControl1.Size = new System.Drawing.Size(1182, 362);
+            this.quickOrderUserControl1.TabIndex = 0;
+            this.quickOrderUserControl1.Load += new System.EventHandler(this.TradeUserControl_Load);
             // 
             // tabPage_Money
             // 
             this.tabPage_Money.Controls.Add(this.visualTradingUserControl1);
             this.tabPage_Money.Location = new System.Drawing.Point(4, 4);
-            this.tabPage_Money.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage_Money.Name = "tabPage_Money";
-            this.tabPage_Money.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage_Money.Size = new System.Drawing.Size(2686, 1013);
+            this.tabPage_Money.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage_Money.Size = new System.Drawing.Size(835, 269);
             this.tabPage_Money.TabIndex = 1;
             this.tabPage_Money.Text = "数字货币钱包";
             this.tabPage_Money.UseVisualStyleBackColor = true;
+            // 
+            // visualTradingUserControl1
+            // 
+            this.visualTradingUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visualTradingUserControl1.Location = new System.Drawing.Point(3, 3);
+            this.visualTradingUserControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.visualTradingUserControl1.Name = "visualTradingUserControl1";
+            this.visualTradingUserControl1.Size = new System.Drawing.Size(829, 263);
+            this.visualTradingUserControl1.TabIndex = 0;
+            this.visualTradingUserControl1.Load += new System.EventHandler(this.VisualTradingUserControl1_Load);
             // 
             // tabPage_log
             // 
             this.tabPage_log.Controls.Add(this.visualLogUserControl1);
             this.tabPage_log.Location = new System.Drawing.Point(4, 4);
-            this.tabPage_log.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage_log.Name = "tabPage_log";
-            this.tabPage_log.Size = new System.Drawing.Size(2686, 1013);
+            this.tabPage_log.Size = new System.Drawing.Size(835, 269);
             this.tabPage_log.TabIndex = 4;
             this.tabPage_log.Text = "日志";
             this.tabPage_log.UseVisualStyleBackColor = true;
             // 
+            // visualLogUserControl1
+            // 
+            this.visualLogUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visualLogUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.visualLogUserControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.visualLogUserControl1.Name = "visualLogUserControl1";
+            this.visualLogUserControl1.Size = new System.Drawing.Size(835, 269);
+            this.visualLogUserControl1.TabIndex = 0;
+            // 
             // tabPage_notify
             // 
             this.tabPage_notify.Location = new System.Drawing.Point(4, 4);
-            this.tabPage_notify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage_notify.Name = "tabPage_notify";
-            this.tabPage_notify.Size = new System.Drawing.Size(2686, 1013);
+            this.tabPage_notify.Size = new System.Drawing.Size(835, 269);
             this.tabPage_notify.TabIndex = 5;
             this.tabPage_notify.Text = "警报";
             this.tabPage_notify.UseVisualStyleBackColor = true;
@@ -115,9 +141,8 @@
             // tabPage_wechat
             // 
             this.tabPage_wechat.Location = new System.Drawing.Point(4, 4);
-            this.tabPage_wechat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage_wechat.Name = "tabPage_wechat";
-            this.tabPage_wechat.Size = new System.Drawing.Size(2686, 1013);
+            this.tabPage_wechat.Size = new System.Drawing.Size(835, 269);
             this.tabPage_wechat.TabIndex = 6;
             this.tabPage_wechat.Text = "交易微信实时提示功能";
             this.tabPage_wechat.UseVisualStyleBackColor = true;
@@ -125,9 +150,8 @@
             // tabPage_auto
             // 
             this.tabPage_auto.Location = new System.Drawing.Point(4, 4);
-            this.tabPage_auto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage_auto.Name = "tabPage_auto";
-            this.tabPage_auto.Size = new System.Drawing.Size(2686, 1013);
+            this.tabPage_auto.Size = new System.Drawing.Size(835, 269);
             this.tabPage_auto.TabIndex = 7;
             this.tabPage_auto.Text = "自动交易设置";
             this.tabPage_auto.UseVisualStyleBackColor = true;
@@ -136,72 +160,41 @@
             // 
             this.tabPage_ins.Controls.Add(this.instrumentsInfoUserControl1);
             this.tabPage_ins.Location = new System.Drawing.Point(4, 4);
-            this.tabPage_ins.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage_ins.Name = "tabPage_ins";
-            this.tabPage_ins.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage_ins.Size = new System.Drawing.Size(1256, 411);
+            this.tabPage_ins.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage_ins.Size = new System.Drawing.Size(835, 269);
             this.tabPage_ins.TabIndex = 8;
             this.tabPage_ins.Text = "永续合约基础信息";
             this.tabPage_ins.UseVisualStyleBackColor = true;
-            // 
-            // quickOrderUserControl1
-            // 
-            this.quickOrderUserControl1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.quickOrderUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quickOrderUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.quickOrderUserControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.quickOrderUserControl1.MinimumSize = new System.Drawing.Size(1773, 543);
-            this.quickOrderUserControl1.Name = "quickOrderUserControl1";
-            this.quickOrderUserControl1.Size = new System.Drawing.Size(2686, 1013);
-            this.quickOrderUserControl1.TabIndex = 0;
-            this.quickOrderUserControl1.Load += new System.EventHandler(this.TradeUserControl_Load);
-            // 
-            // visualTradingUserControl1
-            // 
-            this.visualTradingUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.visualTradingUserControl1.Location = new System.Drawing.Point(4, 4);
-            this.visualTradingUserControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.visualTradingUserControl1.Name = "visualTradingUserControl1";
-            this.visualTradingUserControl1.Size = new System.Drawing.Size(2678, 1005);
-            this.visualTradingUserControl1.TabIndex = 0;
-            // 
-            // visualLogUserControl1
-            // 
-            this.visualLogUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.visualLogUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.visualLogUserControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.visualLogUserControl1.Name = "visualLogUserControl1";
-            this.visualLogUserControl1.Size = new System.Drawing.Size(2686, 1013);
-            this.visualLogUserControl1.TabIndex = 0;
             // 
             // instrumentsInfoUserControl1
             // 
             this.instrumentsInfoUserControl1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.instrumentsInfoUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.instrumentsInfoUserControl1.Location = new System.Drawing.Point(4, 4);
-            this.instrumentsInfoUserControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.instrumentsInfoUserControl1.Location = new System.Drawing.Point(3, 3);
+            this.instrumentsInfoUserControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.instrumentsInfoUserControl1.Name = "instrumentsInfoUserControl1";
-            this.instrumentsInfoUserControl1.Size = new System.Drawing.Size(1248, 403);
+            this.instrumentsInfoUserControl1.Size = new System.Drawing.Size(829, 263);
             this.instrumentsInfoUserControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1256, 411);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(835, 269);
             this.tabPage1.TabIndex = 10;
             this.tabPage1.Text = "实时快讯";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // TradeUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TradeUserControl";
-            this.Size = new System.Drawing.Size(1264, 443);
+            this.Size = new System.Drawing.Size(843, 295);
             this.tabControl1.ResumeLayout(false);
             this.tabPage_Trade.ResumeLayout(false);
             this.tabPage_Money.ResumeLayout(false);

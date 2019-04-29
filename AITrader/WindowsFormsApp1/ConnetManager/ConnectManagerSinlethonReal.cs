@@ -414,7 +414,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    var obj = resResult.ToObject<swap.PositionResult<Position>>();
+                    var obj = resResult.ToObject<swap.PositionResult<swap.Position>>();
 
                     AIEventArgs args = new AIEventArgs()
                     {

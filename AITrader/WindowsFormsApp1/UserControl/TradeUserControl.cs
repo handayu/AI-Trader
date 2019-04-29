@@ -29,5 +29,10 @@ namespace WindowsFormsApp1
             this.visualTradingUserControl1.SubScribe();
             this.quickOrderUserControl1.SubScribe();
         }
+
+        private void VisualTradingUserControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
