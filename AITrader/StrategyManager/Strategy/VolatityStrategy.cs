@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using swap = OKExSDK.Models.Swap;
 
-namespace WindowsFormsApp1
+namespace Strategy
 {
     public class VolatityStrategy: IStrategy
     {

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using swap = OKExSDK.Models.Swap;
 using OKExSDK.Models;
+using Common;
+using APIConnect;
+
 namespace WindowsFormsApp1
 {
     public partial class QuickOrderUserControl : UserControl

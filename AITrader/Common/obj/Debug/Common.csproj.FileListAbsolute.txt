@@ -6,3 +6,4 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\Common\obj\Debug\Common.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\Common\obj\Debug\Common.pdb
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\Common.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\Common.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Common\obj\Debug\Common.csproj.CopyComplete

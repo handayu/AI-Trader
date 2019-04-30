@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{272F6A1E-2325-4BB4-8132-0F9FC425B227}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AITrader", "WindowsFormsApp1\AITrader.csproj", "{272F6A1E-2325-4BB4-8132-0F9FC425B227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyManager", "StrategyManager\StrategyManager.csproj", "{DEEDED71-E553-4651-AF65-8F0843518B16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "StrategyManager\Strategy.csproj", "{DEEDED71-E553-4651-AF65-8F0843518B16}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKExSDK", "OKExSDK\OKExSDK.csproj", "{3F628ECF-6B6A-444F-A8D3-AED50411D008}"
 EndProject

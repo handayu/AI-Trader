@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using swap = OKExSDK.Models.Swap;
-
+using APIConnect;
 
 namespace WindowsFormsApp1
 {

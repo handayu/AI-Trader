@@ -1,2 +1,7 @@
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\StrategyManager.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\StrategyManager.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\StrategyManager.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\StrategyManager.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\StrategyManager.csproj.CopyComplete
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\StrategyManager.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\StrategyManager.pdb
