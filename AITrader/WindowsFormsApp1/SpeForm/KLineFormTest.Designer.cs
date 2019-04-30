@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KLineFormTest));
             System.Windows.Forms.DataVisualization.Charting.ArrowAnnotation arrowAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.ArrowAnnotation();
             System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
@@ -47,8 +46,8 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.375D, "80,70,60,65");
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.自动交易执行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.策略属性设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_StrategyAutoAction = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_StrategySettings = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.趋势指标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.震荡指标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,12 +63,12 @@
             this.toolStripButton_ZoomLarge = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_ZoomSmall = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.蜡烛线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_CandleKLine = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Renko = new System.Windows.Forms.ToolStripMenuItem();
-            this.宝塔线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_StockKline = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.黑色背景ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.白色背景ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_BlackGround = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_WhiteGround = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripMenuItem_Log = new System.Windows.Forms.ToolStripButton();
@@ -79,12 +78,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
-            this.timer_GetRealKLineEvent = new System.Windows.Forms.Timer(this.components);
-            this.textBox_marketdata = new System.Windows.Forms.TextBox();
-            this.button_GiveData = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox_Size = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button_GiveData = new System.Windows.Forms.Button();
+            this.textBox_marketdata = new System.Windows.Forms.TextBox();
+            this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -124,27 +122,29 @@
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.自动交易执行ToolStripMenuItem,
-            this.策略属性设置ToolStripMenuItem});
+            this.ToolStripMenuItem_StrategyAutoAction,
+            this.ToolStripMenuItem_StrategySettings});
             this.toolStripButton1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_radar_48;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(37, 28);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // 自动交易执行ToolStripMenuItem
+            // ToolStripMenuItem_StrategyAutoAction
             // 
-            this.自动交易执行ToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources._6b41346d30a6d19b7fdfc283add2871;
-            this.自动交易执行ToolStripMenuItem.Name = "自动交易执行ToolStripMenuItem";
-            this.自动交易执行ToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
-            this.自动交易执行ToolStripMenuItem.Text = "自动交易执行";
+            this.ToolStripMenuItem_StrategyAutoAction.Image = global::WindowsFormsApp1.Properties.Resources._6b41346d30a6d19b7fdfc283add2871;
+            this.ToolStripMenuItem_StrategyAutoAction.Name = "ToolStripMenuItem_StrategyAutoAction";
+            this.ToolStripMenuItem_StrategyAutoAction.Size = new System.Drawing.Size(148, 22);
+            this.ToolStripMenuItem_StrategyAutoAction.Text = "自动交易执行";
+            this.ToolStripMenuItem_StrategyAutoAction.Click += new System.EventHandler(this.ToolStripMenuItem_StrategyAutoActionClick);
             // 
-            // 策略属性设置ToolStripMenuItem
+            // ToolStripMenuItem_StrategySettings
             // 
-            this.策略属性设置ToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a;
-            this.策略属性设置ToolStripMenuItem.Name = "策略属性设置ToolStripMenuItem";
-            this.策略属性设置ToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
-            this.策略属性设置ToolStripMenuItem.Text = "策略属性设置";
+            this.ToolStripMenuItem_StrategySettings.Image = global::WindowsFormsApp1.Properties.Resources.a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a;
+            this.ToolStripMenuItem_StrategySettings.Name = "ToolStripMenuItem_StrategySettings";
+            this.ToolStripMenuItem_StrategySettings.Size = new System.Drawing.Size(148, 22);
+            this.ToolStripMenuItem_StrategySettings.Text = "策略属性设置";
+            this.ToolStripMenuItem_StrategySettings.Click += new System.EventHandler(this.ToolStripMenuItem_StrategySettingsClick);
             // 
             // toolStripDropDownButton1
             // 
@@ -268,39 +268,41 @@
             // toolStripDropDownButton2
             // 
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.蜡烛线ToolStripMenuItem,
+            this.ToolStripMenuItem_CandleKLine,
             this.ToolStripMenuItem_Renko,
-            this.宝塔线ToolStripMenuItem});
+            this.ToolStripMenuItem_StockKline});
             this.toolStripDropDownButton2.Image = global::WindowsFormsApp1.Properties.Resources.icons8_automatic_48;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
             this.toolStripDropDownButton2.Size = new System.Drawing.Size(93, 28);
             this.toolStripDropDownButton2.Text = "图表类型";
             // 
-            // 蜡烛线ToolStripMenuItem
+            // ToolStripMenuItem_CandleKLine
             // 
-            this.蜡烛线ToolStripMenuItem.Name = "蜡烛线ToolStripMenuItem";
-            this.蜡烛线ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.蜡烛线ToolStripMenuItem.Text = "蜡烛线";
+            this.ToolStripMenuItem_CandleKLine.Name = "ToolStripMenuItem_CandleKLine";
+            this.ToolStripMenuItem_CandleKLine.Size = new System.Drawing.Size(112, 22);
+            this.ToolStripMenuItem_CandleKLine.Text = "蜡烛线";
+            this.ToolStripMenuItem_CandleKLine.Click += new System.EventHandler(this.ToolStripMenuItem_CandleKLineClick);
             // 
             // ToolStripMenuItem_Renko
             // 
             this.ToolStripMenuItem_Renko.Name = "ToolStripMenuItem_Renko";
-            this.ToolStripMenuItem_Renko.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_Renko.Size = new System.Drawing.Size(112, 22);
             this.ToolStripMenuItem_Renko.Text = "转型图";
             this.ToolStripMenuItem_Renko.Click += new System.EventHandler(this.ToolStripMenuItem_RenkoClick);
             // 
-            // 宝塔线ToolStripMenuItem
+            // ToolStripMenuItem_StockKline
             // 
-            this.宝塔线ToolStripMenuItem.Name = "宝塔线ToolStripMenuItem";
-            this.宝塔线ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.宝塔线ToolStripMenuItem.Text = "宝塔线";
+            this.ToolStripMenuItem_StockKline.Name = "ToolStripMenuItem_StockKline";
+            this.ToolStripMenuItem_StockKline.Size = new System.Drawing.Size(112, 22);
+            this.ToolStripMenuItem_StockKline.Text = "宝塔线";
+            this.ToolStripMenuItem_StockKline.Click += new System.EventHandler(this.ToolStripMenuItem_StockKlineClick);
             // 
             // toolStripDropDownButton3
             // 
             this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.黑色背景ToolStripMenuItem,
-            this.白色背景ToolStripMenuItem,
+            this.ToolStripMenuItem_BlackGround,
+            this.ToolStripMenuItem_WhiteGround,
             this.toolStripSeparator4});
             this.toolStripDropDownButton3.Image = global::WindowsFormsApp1.Properties.Resources.icons8_css_48;
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -308,17 +310,19 @@
             this.toolStripDropDownButton3.Size = new System.Drawing.Size(93, 28);
             this.toolStripDropDownButton3.Text = "窗口设置";
             // 
-            // 黑色背景ToolStripMenuItem
+            // ToolStripMenuItem_BlackGround
             // 
-            this.黑色背景ToolStripMenuItem.Name = "黑色背景ToolStripMenuItem";
-            this.黑色背景ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.黑色背景ToolStripMenuItem.Text = "黑色背景";
+            this.ToolStripMenuItem_BlackGround.Name = "ToolStripMenuItem_BlackGround";
+            this.ToolStripMenuItem_BlackGround.Size = new System.Drawing.Size(124, 22);
+            this.ToolStripMenuItem_BlackGround.Text = "黑色背景";
+            this.ToolStripMenuItem_BlackGround.Click += new System.EventHandler(this.ToolStripMenuItem_BlackGroundClick);
             // 
-            // 白色背景ToolStripMenuItem
+            // ToolStripMenuItem_WhiteGround
             // 
-            this.白色背景ToolStripMenuItem.Name = "白色背景ToolStripMenuItem";
-            this.白色背景ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.白色背景ToolStripMenuItem.Text = "白色背景";
+            this.ToolStripMenuItem_WhiteGround.Name = "ToolStripMenuItem_WhiteGround";
+            this.ToolStripMenuItem_WhiteGround.Size = new System.Drawing.Size(124, 22);
+            this.ToolStripMenuItem_WhiteGround.Text = "白色背景";
+            this.ToolStripMenuItem_WhiteGround.Click += new System.EventHandler(this.ToolStripMenuItem_WhiteGroundClick);
             // 
             // toolStripSeparator4
             // 
@@ -392,7 +396,6 @@
             lineAnnotation1.Y = 70D;
             this.chart1.Annotations.Add(arrowAnnotation1);
             this.chart1.Annotations.Add(lineAnnotation1);
-            this.chart1.BackColor = System.Drawing.Color.Transparent;
             chartArea1.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
             chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
             chartArea1.AxisX.IsStartedFromZero = false;
@@ -551,20 +554,21 @@
             this.panel2.TabIndex = 5;
             this.panel2.Visible = false;
             // 
-            // richTextBox_StrategyLog
+            // textBox_Size
             // 
-            this.richTextBox_StrategyLog.Location = new System.Drawing.Point(0, 159);
-            this.richTextBox_StrategyLog.Name = "richTextBox_StrategyLog";
-            this.richTextBox_StrategyLog.Size = new System.Drawing.Size(177, 260);
-            this.richTextBox_StrategyLog.TabIndex = 0;
-            this.richTextBox_StrategyLog.Text = "";
+            this.textBox_Size.Location = new System.Drawing.Point(59, 112);
+            this.textBox_Size.Name = "textBox_Size";
+            this.textBox_Size.Size = new System.Drawing.Size(100, 21);
+            this.textBox_Size.TabIndex = 5;
             // 
-            // textBox_marketdata
+            // label1
             // 
-            this.textBox_marketdata.Location = new System.Drawing.Point(59, 38);
-            this.textBox_marketdata.Name = "textBox_marketdata";
-            this.textBox_marketdata.Size = new System.Drawing.Size(100, 21);
-            this.textBox_marketdata.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 12);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "BoxSize";
             // 
             // button_GiveData
             // 
@@ -576,21 +580,20 @@
             this.button_GiveData.UseVisualStyleBackColor = true;
             this.button_GiveData.Click += new System.EventHandler(this.Button_GiveData_Click);
             // 
-            // label1
+            // textBox_marketdata
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 12);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "BoxSize";
+            this.textBox_marketdata.Location = new System.Drawing.Point(59, 38);
+            this.textBox_marketdata.Name = "textBox_marketdata";
+            this.textBox_marketdata.Size = new System.Drawing.Size(100, 21);
+            this.textBox_marketdata.TabIndex = 1;
             // 
-            // textBox_Size
+            // richTextBox_StrategyLog
             // 
-            this.textBox_Size.Location = new System.Drawing.Point(59, 112);
-            this.textBox_Size.Name = "textBox_Size";
-            this.textBox_Size.Size = new System.Drawing.Size(100, 21);
-            this.textBox_Size.TabIndex = 5;
+            this.richTextBox_StrategyLog.Location = new System.Drawing.Point(0, 159);
+            this.richTextBox_StrategyLog.Name = "richTextBox_StrategyLog";
+            this.richTextBox_StrategyLog.Size = new System.Drawing.Size(177, 260);
+            this.richTextBox_StrategyLog.TabIndex = 0;
+            this.richTextBox_StrategyLog.Text = "";
             // 
             // KLineFormTest
             // 
@@ -623,8 +626,8 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
-        private System.Windows.Forms.ToolStripMenuItem 自动交易执行ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 策略属性设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_StrategyAutoAction;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_StrategySettings;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem 趋势指标ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 震荡指标ToolStripMenuItem;
@@ -640,12 +643,12 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_ZoomLarge;
         private System.Windows.Forms.ToolStripButton toolStripButton_ZoomSmall;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
-        private System.Windows.Forms.ToolStripMenuItem 蜡烛线ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_CandleKLine;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Renko;
-        private System.Windows.Forms.ToolStripMenuItem 宝塔线ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_StockKline;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
-        private System.Windows.Forms.ToolStripMenuItem 黑色背景ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 白色背景ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_BlackGround;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_WhiteGround;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.DateTimePicker dateTimePicker_Begin;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
@@ -656,7 +659,6 @@
         private System.Windows.Forms.ToolStripButton ToolStripMenuItem_Log;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
-        private System.Windows.Forms.Timer timer_GetRealKLineEvent;
         private System.Windows.Forms.Button button_GiveData;
         private System.Windows.Forms.TextBox textBox_marketdata;
         private System.Windows.Forms.TextBox textBox_Size;

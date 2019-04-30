@@ -47,35 +47,106 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="APIConnect">
+      <HintPath>..\Commonlib\APIConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Common">
+      <HintPath>..\Commonlib\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\DevExpress.Data.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\DevExpress.Pdf.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\DevExpress.Printing.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\DevExpress.Utils.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="EQATEC.Analytics.Monitor, Version=3.2.1.0, Culture=neutral, PublicKeyToken=213c7c68adb58a17, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\EQATEC.Analytics.Monitor.dll</HintPath>
+    </Reference>
     <Reference Include="LuaInterface, Version=1.5.3.0, Culture=neutral, PublicKeyToken=1e1fb15b02227b8a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\LuaInterface.dll</HintPath>
+      <HintPath>..\Commonlib\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Commonlib\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.MSXML, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Commonlib\Microsoft.MSXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\Commonlib\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\Commonlib\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\Commonlib\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\Commonlib\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="OKExSDKLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\OKExSDKLibrary.dll</HintPath>
+      <HintPath>..\Commonlib\OKExSDKLibrary.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="QuickStart, Version=2017.2.502.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\QuickStart.dll</HintPath>
+      <HintPath>..\Commonlib\QuickStart.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\Commonlib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\Commonlib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -84,104 +155,103 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.ChartView, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.ChartView.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.ChartView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.GridView.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.GridView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.PdfViewer, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.PdfViewer.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.PdfViewer.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.PivotGrid, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.PivotGrid.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.PivotGrid.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.RadChart, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.RadChart.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadChart.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.RadDiagram, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.RadDiagram.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadDiagram.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.RadDock, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.RadDock.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadDock.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.RadMap, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.RadMap.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadMap.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.RichTextEditor, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.RichTextEditor.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.RichTextEditor.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Scheduler, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.Scheduler.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.Scheduler.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Aqua.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Breeze.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.UI.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.UI.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.UI.Design, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Telerik.WinControls.UI.Design.dll</HintPath>
+      <HintPath>..\Commonlib\Telerik.WinControls.UI.Design.dll</HintPath>
     </Reference>
     <Reference Include="TelerikCommon, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\TelerikCommon.dll</HintPath>
+      <HintPath>..\Commonlib\TelerikCommon.dll</HintPath>
     </Reference>
     <Reference Include="TelerikData, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\TelerikData.dll</HintPath>
+      <HintPath>..\Commonlib\TelerikData.dll</HintPath>
     </Reference>
-    <Reference Include="UIAutomationClient" />
     <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.9.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <HintPath>..\Commonlib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -232,11 +302,23 @@
     <Compile Include="SpeForm\AccountStrategyUserForm.Designer.cs">
       <DependentUpon>AccountStrategyUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpeForm\LawNotifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpeForm\LawNotifyForm.Designer.cs">
+      <DependentUpon>LawNotifyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpeForm\MarketDataUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SpeForm\MarketDataUserForm.Designer.cs">
       <DependentUpon>MarketDataUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpeForm\PositionCompareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpeForm\PositionCompareForm.Designer.cs">
+      <DependentUpon>PositionCompareForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SpeForm\RenkoSettingsForm.cs">
       <SubType>Form</SubType>
@@ -244,15 +326,18 @@
     <Compile Include="SpeForm\RenkoSettingsForm.Designer.cs">
       <DependentUpon>RenkoSettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpeForm\StrategySettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpeForm\StrategySettingsForm.Designer.cs">
+      <DependentUpon>StrategySettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpeForm\TradeUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SpeForm\TradeUserForm.Designer.cs">
       <DependentUpon>TradeUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StrategyHandle\IStrategy.cs" />
-    <Compile Include="StrategyHandle\StrategyManager.cs" />
-    <Compile Include="StrategyHandle\VolatityStrategy.cs" />
     <Compile Include="StrategyLogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,11 +442,20 @@
     <EmbeddedResource Include="SpeForm\AccountStrategyUserForm.resx">
       <DependentUpon>AccountStrategyUserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SpeForm\LawNotifyForm.resx">
+      <DependentUpon>LawNotifyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpeForm\MarketDataUserForm.resx">
       <DependentUpon>MarketDataUserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SpeForm\PositionCompareForm.resx">
+      <DependentUpon>PositionCompareForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpeForm\RenkoSettingsForm.resx">
       <DependentUpon>RenkoSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpeForm\StrategySettingsForm.resx">
+      <DependentUpon>StrategySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpeForm\TradeUserForm.resx">
       <DependentUpon>TradeUserForm.cs</DependentUpon>
@@ -522,6 +616,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\icons8-layout-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\292afea02bb78f1677bda6bde30203e.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

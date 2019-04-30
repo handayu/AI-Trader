@@ -52,6 +52,18 @@ namespace WindowsFormsApp1
         protected SwapApi m_swapApi = null;
         protected SwapLoginAccountInfo m_swapLoginAccountInfo = new SwapLoginAccountInfo();
 
+        private System.Threading.Timer m_timer = null;
+
+        public virtual void StartThreadTicker()
+        {
+            m_timer = new System.Threading.Timer(QueryRealDepthMarketData, null, 0, 1000);
+        }
+
+        public virtual void QueryRealDepthMarketData(object state)
+        {
+
+        }
+
         public SwapLoginAccountInfo SwapLoginAccountInfo
         {
             get

@@ -19,6 +19,8 @@ namespace WindowsFormsApp1
         private string m_formName = string.Empty;
         private swap.Ticker m_InitInsTicker = null;
 
+        //private IStrategy m_Strategy = null;
+
         private List<decimal> m_o = new List<decimal>();
         private List<decimal> m_h = new List<decimal>();
         private List<decimal> m_l = new List<decimal>();
@@ -55,6 +57,19 @@ namespace WindowsFormsApp1
                 return this.m_formName;
             }
         }
+
+        //public IStrategy FORMSTRATEGY
+        //{
+        //    get
+        //    {
+        //        return m_Strategy;
+        //    }
+        //}
+
+        //private void SetStrategy(IStrategy s)
+        //{
+        //    m_Strategy = s;
+        //}
 
         /// <summary>
         /// 返回历史查询的K线
@@ -115,11 +130,17 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// 返回实时的行情数据
+        /// 返回实时的行情数据--Kxian是合成，砖图自动，但在这里处理方式是一致的
         /// </summary>
         /// <param name="args"></param>
         private void AnsyTickerSubEvent(AIEventArgs args)
         {
+            if(this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<AIEventArgs>(AnsyTickerSubEvent), args);
+                return;
+            }
+
             if (args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_FAILED) return;
             //合成目前图表上的周期K线，或者每隔一段时间查一次直接装载K线
             List<swap.Ticker> ticLiet = (List<swap.Ticker>)args.EventData;
@@ -139,16 +160,7 @@ namespace WindowsFormsApp1
                     c = t.last
                 };
 
-                double kLast = this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].XValue;
-
-                //
-                if (this.chart1.Series[0].ChartType == SeriesChartType.Renko)
-                {
-                    this.chart1.Series[0].Points.AddXY(kLast + 1, k.o, k.h, k.l, k.c);
-                    return;
-                }
-
-                this.chart1.Series[0].Points.AddXY(kLast + 1, k.o, k.h, k.l, k.c);
+                this.chart1.Series[0].Points.AddXY(k.d, k.o, k.h, k.l, k.c);
 
                 AppendText(k.ToString());
             }
@@ -425,18 +437,18 @@ namespace WindowsFormsApp1
             }
         }
 
-        private bool m_isLog = false;
+        private bool m_isLog = true;
         private void ToolStripMenuItem_LogClick(object sender, EventArgs e)
         {
-            if (!m_isLog)
-            {
-                this.panel2.Visible = false;
-                m_isLog = true;
-            }
-            else
+            if (m_isLog)
             {
                 this.panel2.Visible = true;
                 m_isLog = false;
+            }
+            else
+            {
+                this.panel2.Visible = false;
+                m_isLog = true;
             }
         }
 
@@ -468,12 +480,25 @@ namespace WindowsFormsApp1
                 return;
             }
             {
+                //清空
+                this.chart1.Series[0].Points.Clear();
+                m_d.Clear();
+                m_o.Clear();
+                m_h.Clear();
+                m_l.Clear();
+                m_c.Clear();
+
                 double boxsize = renkoForm.BoxSize;
                 this.chart1.Series[0].ChartType = SeriesChartType.Renko;
                 this.chart1.Series[0]["BoxSize"] = boxsize.ToString();
             }
         }
 
+        /// <summary>
+        /// 测试
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_GiveData_Click(object sender, EventArgs e)
         {
             decimal price = 00m;
@@ -498,6 +523,68 @@ namespace WindowsFormsApp1
             };
 
             AnsyTickerSubEvent(args);
+        }
+
+        private void ToolStripMenuItem_CandleKLineClick(object sender, EventArgs e)
+        {
+            this.chart1.Series[0].ChartType = SeriesChartType.Candlestick;
+        }
+
+        private void ToolStripMenuItem_StockKlineClick(object sender, EventArgs e)
+        {
+            this.chart1.Series[0].ChartType = SeriesChartType.Stock;
+        }
+
+        private void ToolStripMenuItem_BlackGroundClick(object sender, EventArgs e)
+        {
+            this.chart1.ChartAreas[0].BackColor = Color.Black;
+        }
+
+        private void ToolStripMenuItem_WhiteGroundClick(object sender, EventArgs e)
+        {
+            this.chart1.ChartAreas[0].BackColor = Color.White;
+        }
+
+        /// <summary>
+        /// 策略属性设置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripMenuItem_StrategySettingsClick(object sender, EventArgs e)
+        {
+            StrategySettingsForm s = new StrategySettingsForm();
+            s.ShowDialog();
+
+            ///这里应该封装-由策略工厂去生成策略
+            //VolatityStrategy vStr = new VolatityStrategy(m_InitInsTicker.instrument_id, 0);
+            //m_Strategy = vStr;
+
+        }
+
+        /// <summary>
+        /// 自动交易执行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripMenuItem_StrategyAutoActionClick(object sender, EventArgs e)
+        {
+            //if(m_Strategy == null)
+            //{
+            //    MessageBox.Show("请通过策略属性先指定策略再开启...");
+            //    return;
+            //}
+
+            LawNotifyForm n = new LawNotifyForm();
+            n.ShowDialog();
+
+            PositionCompareForm f = new PositionCompareForm();
+            f.ShowDialog();
+
+            //m_Strategy.Start();
+            //if(m_Strategy.ISSTRATEGYGOING)
+            //{
+
+            //}
         }
     }
 }

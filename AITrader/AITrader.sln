@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{272F6A1E-2325-4BB4-8132-0F9FC425B227}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKExSDK", "..\OKExSDK\OKExSDK.csproj", "{5D870B8A-26E8-4C36-927E-592FB79C3D13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyManager", "StrategyManager\StrategyManager.csproj", "{DEEDED71-E553-4651-AF65-8F0843518B16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OKExSDKLibrary", "..\OKExSDKLibrary\OKExSDKLibrary.csproj", "{B850F1E4-7037-4429-A0BD-36E1BDC2E4E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKExSDK", "OKExSDK\OKExSDK.csproj", "{3F628ECF-6B6A-444F-A8D3-AED50411D008}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OKExSDKLibrary", "OKExSDKLibrary\OKExSDKLibrary.csproj", "{B850F1E4-7037-4429-A0BD-36E1BDC2E4E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIConnect", "APIConnect\APIConnect.csproj", "{AAAD92D8-F00F-411D-9497-D07218E90574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{A819554E-18A1-4520-BB5E-211C08395E9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +25,26 @@ Global
 		{272F6A1E-2325-4BB4-8132-0F9FC425B227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{272F6A1E-2325-4BB4-8132-0F9FC425B227}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{272F6A1E-2325-4BB4-8132-0F9FC425B227}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D870B8A-26E8-4C36-927E-592FB79C3D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D870B8A-26E8-4C36-927E-592FB79C3D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D870B8A-26E8-4C36-927E-592FB79C3D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D870B8A-26E8-4C36-927E-592FB79C3D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEEDED71-E553-4651-AF65-8F0843518B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEEDED71-E553-4651-AF65-8F0843518B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEEDED71-E553-4651-AF65-8F0843518B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEEDED71-E553-4651-AF65-8F0843518B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F628ECF-6B6A-444F-A8D3-AED50411D008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F628ECF-6B6A-444F-A8D3-AED50411D008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F628ECF-6B6A-444F-A8D3-AED50411D008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F628ECF-6B6A-444F-A8D3-AED50411D008}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B850F1E4-7037-4429-A0BD-36E1BDC2E4E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B850F1E4-7037-4429-A0BD-36E1BDC2E4E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B850F1E4-7037-4429-A0BD-36E1BDC2E4E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B850F1E4-7037-4429-A0BD-36E1BDC2E4E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAAD92D8-F00F-411D-9497-D07218E90574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAD92D8-F00F-411D-9497-D07218E90574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAD92D8-F00F-411D-9497-D07218E90574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAD92D8-F00F-411D-9497-D07218E90574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A819554E-18A1-4520-BB5E-211C08395E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A819554E-18A1-4520-BB5E-211C08395E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A819554E-18A1-4520-BB5E-211C08395E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A819554E-18A1-4520-BB5E-211C08395E9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

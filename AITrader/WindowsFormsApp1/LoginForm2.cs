@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
 
             //在这里可以切换实盘和模拟盘
             ConnectManager.Start();
-            IConnectManagerSinlethon manager = new ConnectManagerSinlethonReal();
+            IConnectManagerSinlethon manager = new ConnectManagerSinlethonTest();
             ConnectManager.CreateInstance().AddIConnect(manager);
 
             ConnectManager.CreateInstance().CONNECTION.AnsyLoginEvent += AnsyLoginSubEvent;
@@ -44,6 +44,9 @@ namespace WindowsFormsApp1
 
             //主FormLiad的时候已经初始化生成了对象现在给值---登陆
             ConnectManager.CreateInstance().CONNECTION.InitApiLogin(api, ser, pas);
+
+            //开始开启线程推送实时行情
+            ConnectManager.CreateInstance().CONNECTION.StartThreadTicker();
 
         }
 

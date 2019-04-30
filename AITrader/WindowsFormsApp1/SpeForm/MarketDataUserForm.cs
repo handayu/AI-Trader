@@ -31,7 +31,6 @@ namespace WindowsFormsApp1
         private void Form_Load(object sender, EventArgs e)
         {
             this.marketDataUserControl1.SubScribe();
-            this.marketDataUserControl1.StartClock();
 
         }
     }

@@ -33,6 +33,10 @@ namespace WindowsFormsApp1
             return m_SingletonSecond;
         }
 
+        public override void QueryRealDepthMarketData(object state)
+        {
+            AnsyGetMarketDepthDataSwap();
+        }
 
         /// <summary>
         /// Init-Login-模拟直接返回

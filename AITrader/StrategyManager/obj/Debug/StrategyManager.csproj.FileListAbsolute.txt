@@ -1,0 +1,2 @@
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\StrategyManager.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\StrategyManager.csproj.CoreCompileInputs.cache

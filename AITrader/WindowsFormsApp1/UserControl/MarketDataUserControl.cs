@@ -33,16 +33,15 @@ namespace WindowsFormsApp1
             ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
         }
 
-        public void StartClock()
-        {
-            this.timer_ReqMarketData.Enabled = true;
-        }
-
         private void AnsyTickerSubEvent(AIEventArgs args)
         {
-            this.timer_ReqMarketData.Stop();
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<AIEventArgs>(AnsyTickerSubEvent), args);
+                return;
+            }
 
-            if(args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_SUCCESS)
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_SUCCESS)
             {
                 List<swap.Ticker> tikList = (List<swap.Ticker>)args.EventData;
 
@@ -62,37 +61,30 @@ namespace WindowsFormsApp1
                     {
                         m_marketDataList.Add(t);
                     }
+                    else
+                    {
+                        m_marketDataList.Remove(removeTic);
+                        m_marketDataList.Add(t);
+                    }
 
                     //比较两个新来最新价的大小，如果现在比之前小，显示绿色/大显示红色
                     foreach (DataGridViewRow r in this.dataGridView1.Rows)
                     {
                         swap.Ticker tickRow = r.DataBoundItem as swap.Ticker;
                         if (tickRow == null) continue;
-                        if (tickRow.instrument_id == removeTic.instrument_id && t.last >= removeTic.last)
+                        if (tickRow.instrument_id == t.instrument_id && t.last >= tickRow.last)
                         {
                             r.DataGridView.ForeColor = Color.Red;
                         }
 
-                        if (tickRow.instrument_id == removeTic.instrument_id && t.last < removeTic.last)
+                        if (tickRow.instrument_id == t.instrument_id && t.last < t.last)
                         {
                             r.DataGridView.ForeColor = Color.Green;
                         }
-
                     }
-
-                    m_marketDataList.Remove(removeTic);
-                    m_marketDataList.Add(t);
-
                 }
 
             }
-
-            this.timer_ReqMarketData.Start();
-        }
-
-        private void Timer_ReqMarketDataEvent(object sender, EventArgs e)
-        {
-            ConnectManager.CreateInstance().CONNECTION.AnsyGetMarketDepthDataSwap();
         }
 
         private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
