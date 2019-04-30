@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DataType\DataType.cs" />
     <Compile Include="DataType\RealMarketDepthData.cs" />
+    <Compile Include="DataType\SwapOrderReturn.cs" />
     <Compile Include="EventHandle\EventHandle.cs" />
     <Compile Include="IniOperater\IniOperationClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

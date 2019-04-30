@@ -62,11 +62,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView_Hold = new System.Windows.Forms.DataGridView();
-            this.tabControl_HasTradedOrder = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView_NoTradedOrder = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView_hasTraded = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,11 +73,9 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl_HasTradedOrder = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView_NoTradedOrder = new System.Windows.Forms.DataGridView();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +87,13 @@
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView_hasTraded = new System.Windows.Forms.DataGridView();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -129,7 +129,7 @@
             this.button_Action.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Action.Location = new System.Drawing.Point(3, 214);
             this.button_Action.Name = "button_Action";
-            this.button_Action.Size = new System.Drawing.Size(380, 24);
+            this.button_Action.Size = new System.Drawing.Size(295, 24);
             this.button_Action.TabIndex = 45;
             this.button_Action.Text = "下单";
             this.button_Action.UseVisualStyleBackColor = false;
@@ -310,7 +310,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
             this.splitContainer1.Size = new System.Drawing.Size(788, 241);
-            this.splitContainer1.SplitterDistance = 386;
+            this.splitContainer1.SplitterDistance = 301;
             this.splitContainer1.TabIndex = 51;
             // 
             // groupBox1
@@ -346,7 +346,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(386, 241);
+            this.groupBox1.Size = new System.Drawing.Size(301, 241);
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "下单板";
@@ -443,8 +443,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.tabControl_HasTradedOrder);
-            this.splitContainer3.Size = new System.Drawing.Size(398, 241);
-            this.splitContainer3.SplitterDistance = 123;
+            this.splitContainer3.Size = new System.Drawing.Size(483, 241);
+            this.splitContainer3.SplitterDistance = 86;
             this.splitContainer3.TabIndex = 0;
             // 
             // tabControl1
@@ -454,7 +454,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(398, 123);
+            this.tabControl1.Size = new System.Drawing.Size(483, 86);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -462,8 +462,8 @@
             this.tabPage1.Controls.Add(this.dataGridView_Hold);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(390, 97);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(475, 60);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "当前持仓";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -488,81 +488,8 @@
             this.dataGridView_Hold.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_Hold.Name = "dataGridView_Hold";
             this.dataGridView_Hold.RowTemplate.Height = 23;
-            this.dataGridView_Hold.Size = new System.Drawing.Size(384, 91);
+            this.dataGridView_Hold.Size = new System.Drawing.Size(469, 54);
             this.dataGridView_Hold.TabIndex = 0;
-            // 
-            // tabControl_HasTradedOrder
-            // 
-            this.tabControl_HasTradedOrder.Controls.Add(this.tabPage3);
-            this.tabControl_HasTradedOrder.Controls.Add(this.tabPage4);
-            this.tabControl_HasTradedOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl_HasTradedOrder.Location = new System.Drawing.Point(0, 0);
-            this.tabControl_HasTradedOrder.Name = "tabControl_HasTradedOrder";
-            this.tabControl_HasTradedOrder.SelectedIndex = 0;
-            this.tabControl_HasTradedOrder.Size = new System.Drawing.Size(398, 114);
-            this.tabControl_HasTradedOrder.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dataGridView_NoTradedOrder);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(390, 88);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "未成交委托";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView_NoTradedOrder
-            // 
-            this.dataGridView_NoTradedOrder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView_NoTradedOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_NoTradedOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column24,
-            this.Column25});
-            this.dataGridView_NoTradedOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_NoTradedOrder.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView_NoTradedOrder.Name = "dataGridView_NoTradedOrder";
-            this.dataGridView_NoTradedOrder.RowTemplate.Height = 23;
-            this.dataGridView_NoTradedOrder.Size = new System.Drawing.Size(384, 82);
-            this.dataGridView_NoTradedOrder.TabIndex = 1;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.dataGridView_hasTraded);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage4.Size = new System.Drawing.Size(390, 88);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "已成交历史";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView_hasTraded
-            // 
-            this.dataGridView_hasTraded.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView_hasTraded.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_hasTraded.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
-            this.Column23});
-            this.dataGridView_hasTraded.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_hasTraded.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView_hasTraded.Name = "dataGridView_hasTraded";
-            this.dataGridView_hasTraded.RowTemplate.Height = 23;
-            this.dataGridView_hasTraded.Size = new System.Drawing.Size(384, 82);
-            this.dataGridView_hasTraded.TabIndex = 1;
             // 
             // Column1
             // 
@@ -630,35 +557,50 @@
             this.Column31.HeaderText = "时间";
             this.Column31.Name = "Column31";
             // 
-            // Column19
+            // tabControl_HasTradedOrder
             // 
-            this.Column19.DataPropertyName = "trade_id";
-            this.Column19.HeaderText = "交易编号";
-            this.Column19.Name = "Column19";
+            this.tabControl_HasTradedOrder.Controls.Add(this.tabPage3);
+            this.tabControl_HasTradedOrder.Controls.Add(this.tabPage4);
+            this.tabControl_HasTradedOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl_HasTradedOrder.Location = new System.Drawing.Point(0, 0);
+            this.tabControl_HasTradedOrder.Name = "tabControl_HasTradedOrder";
+            this.tabControl_HasTradedOrder.SelectedIndex = 0;
+            this.tabControl_HasTradedOrder.Size = new System.Drawing.Size(483, 151);
+            this.tabControl_HasTradedOrder.TabIndex = 0;
             // 
-            // Column20
+            // tabPage3
             // 
-            this.Column20.DataPropertyName = "price";
-            this.Column20.HeaderText = "成交价格";
-            this.Column20.Name = "Column20";
+            this.tabPage3.Controls.Add(this.dataGridView_NoTradedOrder);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(475, 125);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "未成交委托";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // Column21
+            // dataGridView_NoTradedOrder
             // 
-            this.Column21.DataPropertyName = "size";
-            this.Column21.HeaderText = "交易单位";
-            this.Column21.Name = "Column21";
-            // 
-            // Column22
-            // 
-            this.Column22.DataPropertyName = "timestamp";
-            this.Column22.HeaderText = "时间";
-            this.Column22.Name = "Column22";
-            // 
-            // Column23
-            // 
-            this.Column23.DataPropertyName = "side";
-            this.Column23.HeaderText = "方向";
-            this.Column23.Name = "Column23";
+            this.dataGridView_NoTradedOrder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView_NoTradedOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_NoTradedOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column24,
+            this.Column25});
+            this.dataGridView_NoTradedOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_NoTradedOrder.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_NoTradedOrder.Name = "dataGridView_NoTradedOrder";
+            this.dataGridView_NoTradedOrder.RowTemplate.Height = 23;
+            this.dataGridView_NoTradedOrder.Size = new System.Drawing.Size(469, 119);
+            this.dataGridView_NoTradedOrder.TabIndex = 1;
             // 
             // Column10
             // 
@@ -725,6 +667,64 @@
             this.Column25.DataPropertyName = "contract_val";
             this.Column25.HeaderText = "委托量";
             this.Column25.Name = "Column25";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dataGridView_hasTraded);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(390, 88);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "已成交历史";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView_hasTraded
+            // 
+            this.dataGridView_hasTraded.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView_hasTraded.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_hasTraded.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22,
+            this.Column23});
+            this.dataGridView_hasTraded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_hasTraded.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_hasTraded.Name = "dataGridView_hasTraded";
+            this.dataGridView_hasTraded.RowTemplate.Height = 23;
+            this.dataGridView_hasTraded.Size = new System.Drawing.Size(384, 82);
+            this.dataGridView_hasTraded.TabIndex = 1;
+            // 
+            // Column19
+            // 
+            this.Column19.DataPropertyName = "trade_id";
+            this.Column19.HeaderText = "交易编号";
+            this.Column19.Name = "Column19";
+            // 
+            // Column20
+            // 
+            this.Column20.DataPropertyName = "price";
+            this.Column20.HeaderText = "成交价格";
+            this.Column20.Name = "Column20";
+            // 
+            // Column21
+            // 
+            this.Column21.DataPropertyName = "size";
+            this.Column21.HeaderText = "交易单位";
+            this.Column21.Name = "Column21";
+            // 
+            // Column22
+            // 
+            this.Column22.DataPropertyName = "timestamp";
+            this.Column22.HeaderText = "时间";
+            this.Column22.Name = "Column22";
+            // 
+            // Column23
+            // 
+            this.Column23.DataPropertyName = "side";
+            this.Column23.HeaderText = "方向";
+            this.Column23.Name = "Column23";
             // 
             // QuickOrderUserControl
             // 

@@ -54,7 +54,6 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\OKE
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\OKExSDKLibrary.dll.config
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\System.Net.Http.Primitives.xml
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AboutForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LoginForm2.resources
@@ -87,3 +86,7 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\API
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\Common.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\APIConnect.pdb
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\Common.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\Strategy.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\Strategy.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TestLoadDllForm.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csprojAssemblyReference.cache

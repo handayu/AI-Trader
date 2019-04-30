@@ -4,3 +4,4 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\Strategy.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\Strategy.pdb
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\Strategy.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\Strategy.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\StrategyManager\obj\Debug\Strategy.csprojAssemblyReference.cache

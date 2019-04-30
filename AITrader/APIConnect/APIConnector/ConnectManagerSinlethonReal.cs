@@ -583,10 +583,21 @@ namespace APIConnect
                 }
                 else
                 {
-                    var orderResult = resResult.ToObject<swap.OrderResultSingle>();
+                    swap.OrderResultSingle orderResult = resResult.ToObject<swap.OrderResultSingle>();
+
+                    Common.SwapOrderReturn orderInsResult = new SwapOrderReturn()
+                    {
+                        instrument = order.instrument_id,
+                        order_id = orderResult.order_id,
+                        client_oid = orderResult.client_oid,
+                        error_code = orderResult.error_code,
+                        error_message = orderResult.error_message,
+                        result = orderResult.result
+                    };
+
                     AIEventArgs args = new AIEventArgs()
                     {
-                        EventData = orderResult,
+                        EventData = orderInsResult,
                         ReponseMessage = RESONSEMESSAGE.HOLDMAKEORDERACTION_SUCCESS
                     };
 

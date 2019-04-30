@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Converters;
 using Common;
+using System.Threading;
 
 namespace APIConnect
 {
@@ -336,7 +337,7 @@ namespace APIConnect
             }
         }
 
-
+        private static Mutex m_mut = new Mutex();
         /// <summary>
         /// 下单动作
         /// </summary>
@@ -353,16 +354,32 @@ namespace APIConnect
         /// <returns></returns>
         public override async void AnsyOrderSwap(OKExSDK.Models.Swap.OrderSingle order)
         {
+
             try
             {
+                m_mut.WaitOne();
+
                 var orderResult = TestData.GetResultMarkeOrderSingle();
+
+                Common.SwapOrderReturn orderInsResult = new SwapOrderReturn()
+                {
+                    instrument = order.instrument_id,
+                    order_id = orderResult.order_id,
+                    client_oid = orderResult.client_oid,
+                    error_code = orderResult.error_code,
+                    error_message = orderResult.error_message,
+                    result = orderResult.result
+                };
+
                 AIEventArgs args = new AIEventArgs()
                 {
-                    EventData = orderResult,
+                    EventData = orderInsResult,
                     ReponseMessage = RESONSEMESSAGE.HOLDMAKEORDERACTION_SUCCESS
                 };
 
                 SafeRiseAnsyMakeOrderEvent(args);
+
+                m_mut.ReleaseMutex();
 
             }
             catch (Exception ex)

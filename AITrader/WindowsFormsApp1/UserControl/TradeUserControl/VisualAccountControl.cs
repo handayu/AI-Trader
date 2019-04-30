@@ -28,6 +28,7 @@ namespace WindowsFormsApp1
 
         public void SubScribe()
         {
+            if(ConnectManager.CreateInstance().CONNECTION != null) 
             ConnectManager.CreateInstance().CONNECTION.AnsyAccountDataEvent += AnsyAccountDataSubEvent;
         }
 

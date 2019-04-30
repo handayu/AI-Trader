@@ -1,5 +1,6 @@
 ﻿using APIConnect;
 using Common;
+using Strategy;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -18,9 +20,13 @@ namespace WindowsFormsApp1
 {
     public partial class KLineFormTest : DockContent
     {
+        private object m_Strategy = null;
+
+        private string m_Frame = string.Empty;
         private string m_formName = string.Empty;
         private swap.Ticker m_InitInsTicker = null;
 
+        //在这里Load-strategy.dll然后遍历里面所有策略
         //private IStrategy m_Strategy = null;
 
         private List<decimal> m_o = new List<decimal>();
@@ -28,6 +34,7 @@ namespace WindowsFormsApp1
         private List<decimal> m_l = new List<decimal>();
         private List<decimal> m_c = new List<decimal>();
         private List<DateTime> m_d = new List<DateTime>();
+        private static Mutex m_mut = new Mutex();
 
         public delegate void DeleteKLineFormHandle(swap.Ticker t);
         public event DeleteKLineFormHandle DeleteKLineFormEvent;
@@ -79,6 +86,8 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyKLineSubEvent(AIEventArgs args)
         {
+            m_mut.WaitOne();
+
             if (args.ReponseMessage == RESONSEMESSAGE.HOLDKLINE_FAILED) return;
             List<TestData.KlineOkex> klineLiet = (List<TestData.KlineOkex>)args.EventData;
             if (klineLiet == null) return;
@@ -122,6 +131,8 @@ namespace WindowsFormsApp1
                     this.chart1.Series[0].Points.AddXY(m_d[i], m_h[i], m_l[i], m_o[i], m_c[i]);
                 }
 
+                m_mut.ReleaseMutex();
+
             }
             catch (Exception ex)
             {
@@ -137,7 +148,9 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyTickerSubEvent(AIEventArgs args)
         {
-            if(this.InvokeRequired)
+            m_mut.WaitOne();
+
+            if (this.InvokeRequired)
             {
                 this.BeginInvoke(new Action<AIEventArgs>(AnsyTickerSubEvent), args);
                 return;
@@ -166,6 +179,8 @@ namespace WindowsFormsApp1
 
                 AppendText(k.ToString());
             }
+            m_mut.ReleaseMutex();
+
         }
 
         #region
@@ -363,6 +378,9 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void toolStripButton_DayClick(object sender, EventArgs e)
         {
+            m_Frame = "日";
+            this.Text = string.Format("{0}永续合约 -K线图1.0 日线Bar -AutoTrader", m_InitInsTicker.instrument_id);
+
             //120根
             DateTime startTime = DateTime.UtcNow.AddDays(-120);
             DateTime endTime = DateTime.UtcNow;
@@ -374,6 +392,9 @@ namespace WindowsFormsApp1
 
         private void toolStripButton_60MinClick(object sender, EventArgs e)
         {
+            m_Frame = "60";
+            this.Text = string.Format("{0}永续合约 -K线图1.0 60MinBar -AutoTrader", m_InitInsTicker.instrument_id);
+
             //120根
             DateTime startTime = DateTime.UtcNow.AddHours(-120);
             DateTime endTime = DateTime.UtcNow;
@@ -385,6 +406,9 @@ namespace WindowsFormsApp1
 
         private void toolStripButton_30MinClick(object sender, EventArgs e)
         {
+            m_Frame = "30";
+            this.Text = string.Format("{0}永续合约 -K线图1.0 30MinBar -AutoTrader", m_InitInsTicker.instrument_id);
+
             //120根
             DateTime startTime = DateTime.UtcNow.AddHours(-60);
             DateTime endTime = DateTime.UtcNow;
@@ -396,6 +420,9 @@ namespace WindowsFormsApp1
 
         private void toolStripButton_15MinClick(object sender, EventArgs e)
         {
+            m_Frame = "15";
+            this.Text = string.Format("{0}永续合约 -K线图1.0 15MinBar -AutoTrader", m_InitInsTicker.instrument_id);
+
             //120根
             DateTime startTime = DateTime.UtcNow.AddHours(-30);
             DateTime endTime = DateTime.UtcNow;
@@ -408,6 +435,9 @@ namespace WindowsFormsApp1
 
         private void toolStripButton_5MinClick(object sender, EventArgs e)
         {
+            m_Frame = "5";
+            this.Text = string.Format("{0}永续合约 -K线图1.0 5MinBar -AutoTrader", m_InitInsTicker.instrument_id);
+
             //120根
             DateTime startTime = DateTime.UtcNow.AddHours(-10);
             DateTime endTime = DateTime.UtcNow;
@@ -420,6 +450,9 @@ namespace WindowsFormsApp1
 
         private void toolStripLabel_1Min_Click(object sender, EventArgs e)
         {
+            m_Frame = "1";
+            this.Text = string.Format("{0}永续合约 -K线图1.0 1MinBar -AutoTrader", m_InitInsTicker.instrument_id);
+
             //120根
             DateTime startTime = DateTime.UtcNow.AddHours(-2);
             DateTime endTime = DateTime.UtcNow;
@@ -493,38 +526,11 @@ namespace WindowsFormsApp1
                 double boxsize = renkoForm.BoxSize;
                 this.chart1.Series[0].ChartType = SeriesChartType.Renko;
                 this.chart1.Series[0]["BoxSize"] = boxsize.ToString();
+
+                m_Frame = "Tick";
+                this.Text = string.Format("{0}永续合约 -K线图1.0 砖型图Bar -AutoTrader", m_InitInsTicker.instrument_id);
+
             }
-        }
-
-        /// <summary>
-        /// 测试
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_GiveData_Click(object sender, EventArgs e)
-        {
-            decimal price = 00m;
-            decimal.TryParse(this.textBox_marketdata.Text, out price);
-
-            List<swap.Ticker> tList = new List<swap.Ticker>();
-            swap.Ticker t = new swap.Ticker()
-            {
-                instrument_id = "BTC-USD-SWAP",
-                last = price,
-                high_24h = 10,
-                low_24h = 10,
-                volume_24h = 10,
-                timestamp = DateTime.Now
-            };
-            tList.Add(t);
-
-            AIEventArgs args = new AIEventArgs()
-            {
-                EventData = tList,
-                ReponseMessage = RESONSEMESSAGE.HOLDMARKETDATA_SUCCESS
-            };
-
-            AnsyTickerSubEvent(args);
         }
 
         private void ToolStripMenuItem_CandleKLineClick(object sender, EventArgs e)
@@ -554,14 +560,27 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void ToolStripMenuItem_StrategySettingsClick(object sender, EventArgs e)
         {
-            StrategySettingsForm s = new StrategySettingsForm();
+            StrategySettingsForm s = new StrategySettingsForm(m_InitInsTicker,m_Frame);
             s.ShowDialog();
 
-            ///这里应该封装-由策略工厂去生成策略
-            //VolatityStrategy vStr = new VolatityStrategy(m_InitInsTicker.instrument_id, 0);
-            //m_Strategy = vStr;
-
+            if(s.STRATEGY != null)
+            {
+                object strategy = s.STRATEGY;
+                m_Strategy = strategy;
+            }
         }
+
+        #region 策略事件通知
+        private void OnStrategyTickSubEvent(swap.Ticker t,string strategyName)
+        {
+            AppendText(string.Format("我是策略:{0},正在执行/策略当前最新价:{1}/策略当前合约:{2}",strategyName,t.last,t.instrument_id));
+        }
+
+        private void OnStrategyOrderSubEvent(SwapOrderReturn orderReturn, string StrategyName)
+        {
+            AppendText(string.Format("我是策略:{0},策略正在下单并收到订单返回/策略当前合约:{1}", StrategyName, orderReturn.instrument));
+        }
+        #endregion
 
         /// <summary>
         /// 自动交易执行
@@ -582,11 +601,22 @@ namespace WindowsFormsApp1
             PositionCompareForm f = new PositionCompareForm();
             f.ShowDialog();
 
-            //m_Strategy.Start();
-            //if(m_Strategy.ISSTRATEGYGOING)
-            //{
+            //订阅策略事件-在这里Form类完成触发和订阅-启动
+            if(m_Strategy != null)
+            {
+                ((IStrategy)m_Strategy).OnTickEvent += OnStrategyTickSubEvent;
+                ((IStrategy)m_Strategy).OnOrderEvent += OnStrategyOrderSubEvent;
 
-            //}
+                ((IStrategy)m_Strategy).Start();
+
+                this.toolStripButton_StartStrategy.Image = global::WindowsFormsApp1.Properties.Resources._6b41346d30a6d19b7fdfc283add2871;
+            }
+            else
+            {
+                MessageBox.Show("请先设置策略属性..");
+            }
+  
         }
+
     }
 }

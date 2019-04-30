@@ -45,7 +45,7 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.381944444445D, "80,50,70,65");
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.375D, "80,70,60,65");
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripButton_StartStrategy = new System.Windows.Forms.ToolStripDropDownButton();
             this.ToolStripMenuItem_StrategyAutoAction = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_StrategySettings = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -78,10 +78,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox_Size = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button_GiveData = new System.Windows.Forms.Button();
-            this.textBox_marketdata = new System.Windows.Forms.TextBox();
             this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,7 +90,7 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.toolStripButton_StartStrategy,
             this.toolStripDropDownButton1,
             this.toolStripSeparator1,
             this.toolStripLabel_1Min,
@@ -118,17 +114,17 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripButton_StartStrategy
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton_StartStrategy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_StartStrategy.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_StrategyAutoAction,
             this.ToolStripMenuItem_StrategySettings});
-            this.toolStripButton1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_radar_48;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(37, 28);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton_StartStrategy.Image = global::WindowsFormsApp1.Properties.Resources.icons8_radar_48;
+            this.toolStripButton_StartStrategy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_StartStrategy.Name = "toolStripButton_StartStrategy";
+            this.toolStripButton_StartStrategy.Size = new System.Drawing.Size(37, 28);
+            this.toolStripButton_StartStrategy.Text = "toolStripButton1";
             // 
             // ToolStripMenuItem_StrategyAutoAction
             // 
@@ -542,10 +538,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox_Size);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button_GiveData);
-            this.panel2.Controls.Add(this.textBox_marketdata);
             this.panel2.Controls.Add(this.richTextBox_StrategyLog);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -554,44 +546,12 @@
             this.panel2.TabIndex = 5;
             this.panel2.Visible = false;
             // 
-            // textBox_Size
-            // 
-            this.textBox_Size.Location = new System.Drawing.Point(59, 112);
-            this.textBox_Size.Name = "textBox_Size";
-            this.textBox_Size.Size = new System.Drawing.Size(100, 21);
-            this.textBox_Size.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 12);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "BoxSize";
-            // 
-            // button_GiveData
-            // 
-            this.button_GiveData.Location = new System.Drawing.Point(59, 76);
-            this.button_GiveData.Name = "button_GiveData";
-            this.button_GiveData.Size = new System.Drawing.Size(100, 24);
-            this.button_GiveData.TabIndex = 2;
-            this.button_GiveData.Text = "推送行情";
-            this.button_GiveData.UseVisualStyleBackColor = true;
-            this.button_GiveData.Click += new System.EventHandler(this.Button_GiveData_Click);
-            // 
-            // textBox_marketdata
-            // 
-            this.textBox_marketdata.Location = new System.Drawing.Point(59, 38);
-            this.textBox_marketdata.Name = "textBox_marketdata";
-            this.textBox_marketdata.Size = new System.Drawing.Size(100, 21);
-            this.textBox_marketdata.TabIndex = 1;
-            // 
             // richTextBox_StrategyLog
             // 
-            this.richTextBox_StrategyLog.Location = new System.Drawing.Point(0, 159);
+            this.richTextBox_StrategyLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox_StrategyLog.Location = new System.Drawing.Point(0, 0);
             this.richTextBox_StrategyLog.Name = "richTextBox_StrategyLog";
-            this.richTextBox_StrategyLog.Size = new System.Drawing.Size(177, 260);
+            this.richTextBox_StrategyLog.Size = new System.Drawing.Size(176, 419);
             this.richTextBox_StrategyLog.TabIndex = 0;
             this.richTextBox_StrategyLog.Text = "";
             // 
@@ -616,7 +576,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,7 +584,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton_StartStrategy;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_StrategyAutoAction;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_StrategySettings;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
@@ -659,9 +618,5 @@
         private System.Windows.Forms.ToolStripButton ToolStripMenuItem_Log;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
-        private System.Windows.Forms.Button button_GiveData;
-        private System.Windows.Forms.TextBox textBox_marketdata;
-        private System.Windows.Forms.TextBox textBox_Size;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -10,7 +10,7 @@ using swap = OKExSDK.Models.Swap;
 namespace Strategy
 {
     public class IStrategy
-    { 
+    {
         /// <summary>
         /// 策略基础信息
         /// </summary>
@@ -22,8 +22,15 @@ namespace Strategy
         /// <summary>
         /// 对外广播Ontick触发
         /// </summary>
-        public delegate void OnTickHandle(swap.Ticker t);
+        public delegate void OnTickHandle(swap.Ticker t, string StrategyName);
         public event OnTickHandle OnTickEvent;
+
+
+        /// <summary>
+        /// 对外广播OnOrder触发
+        /// </summary>
+        public delegate void OnOrderHandle(Common.SwapOrderReturn orderReturn, string StrategyName);
+        public event OnOrderHandle OnOrderEvent;
 
         public bool ISSTRATEGYGOING
         {
@@ -48,22 +55,77 @@ namespace Strategy
         {
             //订阅行情-成家委托-bar等
 
-            ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
+            if (ConnectManager.CreateInstance().CONNECTION != null)
+            {
+                ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
+                ConnectManager.CreateInstance().CONNECTION.AnsyMakeOrderEvent += AnsyMakeOrderSubEvent;
+                ConnectManager.CreateInstance().CONNECTION.AnsyOrderEvent += AnsyOrderSubEvent;
+                ConnectManager.CreateInstance().CONNECTION.AnsyTradeEvent += AnsyTradeSubEvent;
+                ConnectManager.CreateInstance().CONNECTION.AnsyPositionEvent += AnsyPositionSubEvent;
+            }
+        }
+
+        #region 部位-成交-委托-下单回报回调
+        /// <summary>
+        /// 部位查询？不知道是否有CTP一样的回调订阅
+        /// </summary>
+        /// <param name="args"></param>
+        private void AnsyPositionSubEvent(AIEventArgs args)
+        {
 
         }
+
+        /// <summary>
+        /// 交易查询?不知道是否有CTP一样的回调订阅
+        /// </summary>
+        /// <param name="args"></param>
+        private void AnsyTradeSubEvent(AIEventArgs args)
+        {
+
+        }
+
+        /// <summary>
+        /// 委托查询?不知道是否有CTP一样的回调订阅
+        /// </summary>
+        /// <param name="args"></param>
+        private void AnsyOrderSubEvent(AIEventArgs args)
+        {
+
+        }
+
+        /// <summary>
+        /// 下单回调，任何地方下单这里会有返回
+        /// </summary>
+        /// <param name="args"></param>
+        private void AnsyMakeOrderSubEvent(AIEventArgs args)
+        {
+            if (args == null) return;
+
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMAKEORDERACTION_SUCCESS)
+            {
+                Common.SwapOrderReturn orderReturn = (Common.SwapOrderReturn)args.EventData;
+
+                if (orderReturn.instrument.CompareTo(m_tradeInstrument) == 0)
+                {
+                    OnOrder(orderReturn,"");
+                }
+            }
+        }
+
+        #endregion
 
         private void AnsyTickerSubEvent(AIEventArgs args)
         {
             if (m_isStart == false) return;
 
-            if(args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_SUCCESS)
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_SUCCESS)
             {
                 List<swap.Ticker> ticList = (List<swap.Ticker>)args.EventData;
-                foreach(swap.Ticker t in ticList)
+                foreach (swap.Ticker t in ticList)
                 {
-                    if(t.instrument_id.CompareTo(m_tradeInstrument) == 0)
+                    if (t.instrument_id.CompareTo(m_tradeInstrument) == 0)
                     {
-                        OnTick(t);
+                        OnTick(t, "");
                     }
                     else
                     {
@@ -78,11 +140,11 @@ namespace Strategy
         /// tic触发
         /// </summary>
         /// <param name="t"></param>
-        public virtual void OnTick(swap.Ticker t)
+        public virtual void OnTick(swap.Ticker t, string strategyName)
         {
-            if(OnTickEvent != null)
+            if (OnTickEvent != null)
             {
-                OnTickEvent(t);
+                OnTickEvent(t, strategyName);
             }
         }
 
@@ -108,18 +170,13 @@ namespace Strategy
         /// 订单触发
         /// </summary>
         /// <param name="t"></param>
-        public virtual void OnOrder(swap.Ticker t)
+        public virtual void OnOrder(Common.SwapOrderReturn orderReturn,string strategyName)
         {
-
+            if (OnOrderEvent != null)
+            {
+                OnOrderEvent(orderReturn, strategyName);
+            }
         }
 
-        /// <summary>
-        /// 时间触发
-        /// </summary>
-        /// <param name="t"></param>
-        public virtual void OnTimer(swap.Ticker t)
-        {
-
-        }
     }
 }
