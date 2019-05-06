@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
             if(this.InvokeRequired)
             {
                 this.BeginInvoke(new Action<string>(AppendLog),text);
+                return;
             }
 
             this.richTextBox1.AppendText("\n" + DateTime.Now.ToString() + ":" + "\n" + text);

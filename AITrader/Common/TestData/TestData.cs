@@ -164,61 +164,132 @@ namespace Common
             return insLIst;
         }
 
+
+        public static swap.Ticker m_BTClastTicker = null;
+        public static swap.Ticker m_TRXlastTicker = null;
+        public static swap.Ticker m_BCHlastTicker = null;
+        public static swap.Ticker m_EOSlastTicker = null;
+
         public static List<swap.Ticker> GetTicker()
         {
-            Random rd = new Random();
-            int radom1 = rd.Next(-20, 20);
-            int radom2 = rd.Next(1, 10);
-            int radom3 = rd.Next(-1, 90);
-            int radom4 = rd.Next(-8, 9);
-
-            List<Ticker> tic1ist = new List<Ticker>();
-
-            Ticker ticker1 = new Ticker()
+            if(m_BTClastTicker == null)
             {
-                instrument_id = "BTC-USD-SWAP",
-                last = 5308.340m - radom1,
-                high_24h = 5401.350m + radom1,
-                low_24h = 4209.020m + radom1,
-                volume_24h = 4233390 + radom1,
-                timestamp = DateTime.Now
-            };
+                Random rd = new Random();
+                int radom1 = rd.Next(-20, 20);
+                int radom2 = rd.Next(1, 10);
+                int radom3 = rd.Next(-1, 90);
+                int radom4 = rd.Next(-8, 9);
 
-            Ticker ticker2 = new Ticker()
+                List<Ticker> tic1ist = new List<Ticker>();
+
+                Ticker ticker1 = new Ticker()
+                {
+                    instrument_id = "BTC-USD-SWAP",
+                    last = 5308.340m - radom1,
+                    high_24h = 5401.350m + radom1,
+                    low_24h = 4209.020m + radom1,
+                    volume_24h = 4233390 + radom1,
+                    timestamp = DateTime.Now
+                };
+
+                Ticker ticker2 = new Ticker()
+                {
+                    instrument_id = "TRX-USD-SWAP",
+                    last = 8.340m + radom2,
+                    high_24h = 0.350m + radom2,
+                    low_24h = 5.020m + radom2,
+                    volume_24h = 4420 + radom2,
+                    timestamp = DateTime.Now
+                };
+
+                Ticker ticker3 = new Ticker()
+                {
+                    instrument_id = "BCH-USD-SWAP",
+                    last = 308.340m - radom3,
+                    high_24h = 401.350m + radom3,
+                    low_24h = 209.020m + radom3,
+                    volume_24h = 45210 + radom3,
+                    timestamp = DateTime.Now
+                };
+
+                Ticker ticker4 = new Ticker()
+                {
+                    instrument_id = "EOS-USD-SWAP",
+                    last = 50.000340m + radom4,
+                    high_24h = 54.000350m + radom4,
+                    low_24h = 42.000020m + radom4,
+                    volume_24h = 421 + radom4,
+                    timestamp = DateTime.Now
+                };
+
+                m_BTClastTicker = ticker1;
+                m_TRXlastTicker = ticker2;
+                m_BCHlastTicker = ticker3;
+                m_EOSlastTicker = ticker4;
+
+                tic1ist.Add(ticker1);
+                tic1ist.Add(ticker2);
+                tic1ist.Add(ticker3);
+                tic1ist.Add(ticker4);
+                return tic1ist;
+            }
+            else
             {
-                instrument_id = "TRX-USD-SWAP",
-                last = 8.340m + radom2,
-                high_24h = 0.350m + radom2,
-                low_24h = 5.020m + radom2,
-                volume_24h = 4420 + radom2,
-                timestamp = DateTime.Now
-            };
+                List<Ticker> tic1ist = new List<Ticker>();
 
-            Ticker ticker3 = new Ticker()
-            {
-                instrument_id = "BCH-USD-SWAP",
-                last = 308.340m - radom3,
-                high_24h = 401.350m + radom3,
-                low_24h = 209.020m + radom3,
-                volume_24h = 45210 + radom3,
-                timestamp = DateTime.Now
-            };
+                Ticker ticker1 = new Ticker()
+                {
+                    instrument_id = "BTC-USD-SWAP",
+                    last = m_BTClastTicker.last + 1,
+                    high_24h = m_BTClastTicker.last + 1,
+                    low_24h = m_BTClastTicker.last + 1,
+                    volume_24h = 4420,
+                    timestamp = DateTime.Now
+                };
 
-            Ticker ticker4 = new Ticker()
-            {
-                instrument_id = "EOS-USD-SWAP",
-                last = 50.000340m + radom4,
-                high_24h = 54.000350m + radom4,
-                low_24h = 42.000020m + radom4,
-                volume_24h = 421 + radom4,
-                timestamp = DateTime.Now
-            };
+                Ticker ticker2 = new Ticker()
+                {
+                    instrument_id = "TRX-USD-SWAP",
+                    last = m_TRXlastTicker.last +1,
+                    high_24h = m_TRXlastTicker.last +1,
+                    low_24h = m_TRXlastTicker.last + 1,
+                    volume_24h = 4421,
+                    timestamp = DateTime.Now
+                };
 
-            tic1ist.Add(ticker1);
-            tic1ist.Add(ticker2);
-            tic1ist.Add(ticker3);
-            tic1ist.Add(ticker4);
-            return tic1ist;
+                Ticker ticker3 = new Ticker()
+                {
+                    instrument_id = "BCH-USD-SWAP",
+                    last = m_BCHlastTicker.last + 1,
+                    high_24h = m_BCHlastTicker.last + 1,
+                    low_24h = m_BCHlastTicker.last + 1,
+                    volume_24h = 4450,
+                    timestamp = DateTime.Now
+                };
+
+                Ticker ticker4 = new Ticker()
+                {
+                    instrument_id = "EOS-USD-SWAP",
+                    last = m_EOSlastTicker.last + 1,
+                    high_24h = m_EOSlastTicker.last + 1,
+                    low_24h = m_EOSlastTicker.last + 1,
+                    volume_24h = 4490,
+                    timestamp = DateTime.Now
+                };
+
+                m_BTClastTicker = ticker1;
+                m_TRXlastTicker = ticker2;
+                m_BCHlastTicker = ticker3;
+                m_EOSlastTicker = ticker4;
+
+                tic1ist.Add(ticker1);
+                tic1ist.Add(ticker2);
+                tic1ist.Add(ticker3);
+                tic1ist.Add(ticker4);
+                return tic1ist;
+
+            }
+
         }
 
         public static swap.AccountsResult GetAccountResult()

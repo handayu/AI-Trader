@@ -17,5 +17,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void Form_Load(object sender, EventArgs e)
+        {
+            this.accountStrategyUserControl1.LoadStrategy();
+        }
     }
 }

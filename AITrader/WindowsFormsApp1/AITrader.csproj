@@ -273,6 +273,12 @@
     <Compile Include="MainForm\LoginForm2.Designer.cs">
       <DependentUpon>LoginForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="RenkoCreateTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenkoCreateTestForm.Designer.cs">
+      <DependentUpon>RenkoCreateTestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StrategyLoader.cs" />
     <Compile Include="TestLoadDllForm.cs">
       <SubType>Form</SubType>
@@ -405,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\LoginForm2.resx">
       <DependentUpon>LoginForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenkoCreateTestForm.resx">
+      <DependentUpon>RenkoCreateTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestLoadDllForm.resx">
       <DependentUpon>TestLoadDllForm.cs</DependentUpon>

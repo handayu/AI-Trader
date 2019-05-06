@@ -20,7 +20,6 @@ namespace WindowsFormsApp1
         private AccountStrategyUserForm m_accountStrategyForm = null;
         private TradeUserForm m_tradeUserForm = null;
 
-
         public Form1()
         {
             InitializeComponent();

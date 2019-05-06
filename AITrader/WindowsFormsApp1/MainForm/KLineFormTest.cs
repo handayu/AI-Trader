@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -148,38 +149,49 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyTickerSubEvent(AIEventArgs args)
         {
-            m_mut.WaitOne();
-
-            if (this.InvokeRequired)
+            try
             {
-                this.BeginInvoke(new Action<AIEventArgs>(AnsyTickerSubEvent), args);
-                return;
-            }
-
-            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_FAILED) return;
-            //合成目前图表上的周期K线，或者每隔一段时间查一次直接装载K线
-            List<swap.Ticker> ticLiet = (List<swap.Ticker>)args.EventData;
-            if (ticLiet == null) return;
-            if (ticLiet.Count <= 0 || ticLiet[0].instrument_id == "") return;
-
-            foreach (swap.Ticker t in ticLiet)
-            {
-                if (t.instrument_id != m_InitInsTicker.instrument_id) continue;
-
-                TestData.Kline k = new TestData.Kline()
+                //m_mut.WaitOne();
+                if (this.InvokeRequired)
                 {
-                    d = t.timestamp,
-                    o = t.last,
-                    h = t.last,
-                    l = t.last,
-                    c = t.last
-                };
+                    this.BeginInvoke(new Action<AIEventArgs>(AnsyTickerSubEvent), args);
+                    return;
+                }
 
-                this.chart1.Series[0].Points.AddXY(k.d, k.o, k.h, k.l, k.c);
+                if (args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_FAILED) return;
+                //合成目前图表上的周期K线，或者每隔一段时间查一次直接装载K线
+                List<swap.Ticker> ticLiet = (List<swap.Ticker>)args.EventData;
+                if (ticLiet == null) return;
+                if (ticLiet.Count <= 0 || ticLiet[0].instrument_id == "") return;
 
-                AppendText(k.ToString());
+                Debug.WriteLine(string.Format("我是实时Tick:{0}:{0}", ticLiet[0].instrument_id, ticLiet[0].last));
+
+
+                foreach (swap.Ticker t in ticLiet)
+                {
+                    if (t.instrument_id != m_InitInsTicker.instrument_id) continue;
+
+                    TestData.Kline k = new TestData.Kline()
+                    {
+                        d = t.timestamp,
+                        o = t.last,
+                        h = t.last,
+                        l = t.last,
+                        c = t.last
+                    };
+
+                    this.chart1.Series[0].Points.AddXY(k.d, k.o, k.h, k.l, k.c);
+                    object o = this.chart1.Series[0]["BoxPlotSeries"];
+                    chart1.Series[0]["BoxPlotShowAverage"] = "true";
+
+                    AppendText(k.ToString());
+                }
+                //m_mut.ReleaseMutex();
             }
-            m_mut.ReleaseMutex();
+            catch(Exception ex)
+            {
+                MessageBox.Show("RealMarket:", ex.Message);
+            }
 
         }
 
@@ -466,6 +478,21 @@ namespace WindowsFormsApp1
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
+            //取消订阅实时行情RealMarketData
+            if(ConnectManager.CreateInstance().CONNECTION != null)
+            {
+                ConnectManager.CreateInstance().CONNECTION.AnsyKLineEvent -= AnsyKLineSubEvent;
+                ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent -= AnsyTickerSubEvent;
+            }
+
+            if (m_Strategy != null)
+            {
+                ((IStrategy)m_Strategy).OnTickEvent -= OnStrategyTickSubEvent;
+                ((IStrategy)m_Strategy).OnOrderEvent -= OnStrategyOrderSubEvent;
+
+                ((IStrategy)m_Strategy).Stop();
+            }
+
             if (DeleteKLineFormEvent != null && DeleteKLineFormEvent.Method != null)
             {
                 DeleteKLineFormEvent(m_InitInsTicker);
@@ -496,6 +523,7 @@ namespace WindowsFormsApp1
             if (this.InvokeRequired)
             {
                 this.BeginInvoke(new Action<string>(AppendText), str);
+                return;
             }
 
             this.richTextBox_StrategyLog.AppendText("\n" + DateTime.Now.ToString() + ":" + "\n" + str);
@@ -573,6 +601,7 @@ namespace WindowsFormsApp1
         #region 策略事件通知
         private void OnStrategyTickSubEvent(swap.Ticker t,string strategyName)
         {
+            Debug.WriteLine(string.Format("我是策略:{0},正在执行/策略当前最新价:{1}/策略当前合约:{2}", strategyName, t.last, t.instrument_id));
             AppendText(string.Format("我是策略:{0},正在执行/策略当前最新价:{1}/策略当前合约:{2}",strategyName,t.last,t.instrument_id));
         }
 

@@ -90,3 +90,4 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\Str
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\Strategy.pdb
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TestLoadDllForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RenkoCreateTestForm.resources

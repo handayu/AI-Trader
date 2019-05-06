@@ -39,6 +39,7 @@
             this.accountStrategyUserControl1.Name = "accountStrategyUserControl1";
             this.accountStrategyUserControl1.Size = new System.Drawing.Size(800, 450);
             this.accountStrategyUserControl1.TabIndex = 0;
+            this.accountStrategyUserControl1.Load += new System.EventHandler(this.Form_Load);
             // 
             // AccountStrategyUserForm
             // 
