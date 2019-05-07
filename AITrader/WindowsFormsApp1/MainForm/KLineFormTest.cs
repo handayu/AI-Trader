@@ -186,6 +186,7 @@ namespace WindowsFormsApp1
 
                     AppendText(k.ToString());
                 }
+
                 //m_mut.ReleaseMutex();
             }
             catch(Exception ex)
