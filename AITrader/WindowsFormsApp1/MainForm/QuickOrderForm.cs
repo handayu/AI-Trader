@@ -21,5 +21,10 @@ namespace WindowsFormsApp1
         {
             this.quickOrderUserControl1.SubScribe();
         }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            this.quickOrderUserControl1.Destroy();
+        }
     }
 }

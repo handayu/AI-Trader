@@ -153,5 +153,10 @@ namespace WindowsFormsApp1
             //KLineLogForm f = new KLineLogForm(new Ticker());
             //f.Show();
         }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }

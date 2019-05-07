@@ -182,7 +182,6 @@ namespace WindowsFormsApp1
 
                     this.chart1.Series[0].Points.AddXY(k.d, k.o, k.h, k.l, k.c);
                     object o = this.chart1.Series[0]["BoxPlotSeries"];
-                    chart1.Series[0]["BoxPlotShowAverage"] = "true";
 
                     AppendText(k.ToString());
                 }
@@ -545,12 +544,12 @@ namespace WindowsFormsApp1
             }
             {
                 //清空
-                this.chart1.Series[0].Points.Clear();
-                m_d.Clear();
-                m_o.Clear();
-                m_h.Clear();
-                m_l.Clear();
-                m_c.Clear();
+                //this.chart1.Series[0].Points.Clear();
+                //m_d.Clear();
+                //m_o.Clear();
+                //m_h.Clear();
+                //m_l.Clear();
+                //m_c.Clear();
 
                 double boxsize = renkoForm.BoxSize;
                 this.chart1.Series[0].ChartType = SeriesChartType.Renko;

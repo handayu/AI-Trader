@@ -34,25 +34,24 @@
             // quickOrderUserControl1
             // 
             this.quickOrderUserControl1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.quickOrderUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.quickOrderUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.quickOrderUserControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.quickOrderUserControl1.MinimumSize = new System.Drawing.Size(1773, 543);
             this.quickOrderUserControl1.Name = "quickOrderUserControl1";
-            this.quickOrderUserControl1.Size = new System.Drawing.Size(1773, 543);
+            this.quickOrderUserControl1.Size = new System.Drawing.Size(965, 214);
             this.quickOrderUserControl1.TabIndex = 0;
             // 
             // QuickOrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1190, 411);
+            this.ClientSize = new System.Drawing.Size(965, 214);
             this.Controls.Add(this.quickOrderUserControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1202, 440);
+            this.MinimumSize = new System.Drawing.Size(981, 252);
             this.Name = "QuickOrderForm";
             this.Text = "快捷下单面板";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Closed);
             this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);
 

@@ -31,6 +31,9 @@ namespace WindowsFormsApp1
             this.dataGridView_Hold.DataSource = m_positionList;
             this.dataGridView_hasTraded.DataSource = m_tradeList;
             this.dataGridView_NoTradedOrder.DataSource = m_orderList;
+
+            //
+            this.label_newMarketData.Text = "----";
         }
 
         /// <summary>
@@ -73,15 +76,26 @@ namespace WindowsFormsApp1
                 }
             }
 
+            foreach (swap.Instrument ins in ConnectManager.CreateInstance().InstrumentList)
+            {
+                if (ins != null)
+                {
+                    this.comboBox_Ins.Items.Add(ins.instrument_id);
+                }
+            }
+
 
             //SubEvent
             //查成交-委托-持仓
-            if(ConnectManager.CreateInstance().CONNECTION != null)
+            if (ConnectManager.CreateInstance().CONNECTION != null)
             {
                 ConnectManager.CreateInstance().CONNECTION.AnsyOrderEvent += AnsyOrderSubEvent;
                 ConnectManager.CreateInstance().CONNECTION.AnsyPositionEvent += AnsyPositionSubEvent;
                 ConnectManager.CreateInstance().CONNECTION.AnsyTradeEvent += AnsyTradeSubEvent;
                 ConnectManager.CreateInstance().CONNECTION.AnsyMakeOrderEvent += AnsyMakeOrderSubEvent;
+
+                ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyRealDataSubEvent;
+
             }
 
         }
@@ -92,7 +106,7 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyMakeOrderSubEvent(AIEventArgs args)
         {
-            if(args.ReponseMessage == RESONSEMESSAGE.HOLDMAKEORDERACTION_FAILED)
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMAKEORDERACTION_FAILED)
             {
                 OKExSDK.Models.ErrorResult result = (OKExSDK.Models.ErrorResult)args.EventData;
                 this.label_log.Text = result.code + ":" + result.message;
@@ -100,8 +114,8 @@ namespace WindowsFormsApp1
 
             if (args.ReponseMessage == RESONSEMESSAGE.HOLDMAKEORDERACTION_SUCCESS)
             {
-                swap.OrderResultSingle result = (swap.OrderResultSingle)args.EventData;
-                this.label_log.Text = result.order_id + ":" + result.result;
+                Common.SwapOrderReturn result = (Common.SwapOrderReturn)args.EventData;
+                this.label_log.Text = result.order_id + ":" + result.error_message;
             }
             if (args.ReponseMessage == RESONSEMESSAGE.HOLDMAKEORDERACTION_EXCEPTION)
             {
@@ -116,6 +130,14 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyTradeSubEvent(AIEventArgs args)
         {
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDTRADE_SUCCESS)
+            {
+                List<swap.Trade> result = (List<swap.Trade>)args.EventData;
+                foreach (swap.Trade t in result)
+                {
+                    m_tradeList.Add(t);
+                }
+            }
         }
 
         /// <summary>
@@ -124,6 +146,18 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyPositionSubEvent(AIEventArgs args)
         {
+            //只显示持仓数量>0的有持仓的数字货币
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDPOSITION_SUCCESS)
+            {
+                swap.PositionResult<swap.Position> result = (swap.PositionResult<swap.Position>)args.EventData;
+                List<swap.Position> pList = result.holding;
+                foreach (swap.Position p in pList)
+                {
+                    double holdNum = 0.00;
+                    double.TryParse(p.position, out holdNum);
+                    if (holdNum >= 1) m_positionList.Add(p);
+                }
+            }
         }
 
         /// <summary>
@@ -132,6 +166,15 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyOrderSubEvent(AIEventArgs args)
         {
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDORDER_SUCCESS)
+            {
+                swap.OrderListResult result = (swap.OrderListResult)args.EventData;
+                List<swap.Order> oList = result.order_info;
+                foreach (swap.Order o in oList)
+                {
+                    m_orderList.Add(o);
+                }
+            }
         }
 
         private void AppendText(string str)
@@ -162,10 +205,10 @@ namespace WindowsFormsApp1
 
         private void MakeOrderAction()
         {
-            string order_strIns = this.comboBox_Ins.SelectedText;
+            string order_strIns = this.comboBox_Ins.SelectedItem.ToString().Trim();
             string order_type = string.Empty;
 
-            if(radioButton_Buy.Checked && radioButton_Open.Checked)
+            if (radioButton_Buy.Checked && radioButton_Open.Checked)
             {
                 order_type = "1";
             }
@@ -190,10 +233,10 @@ namespace WindowsFormsApp1
             int order_Num = 0;
             int.TryParse(num, out order_Num);
 
-            string order_clientId = "1111";
+            string order_clientId = "hanyu1";
 
             string order_Mathprice = string.Empty;
-            if(radioButton_oppPrice.Checked)
+            if (radioButton_oppPrice.Checked)
             {
                 order_Mathprice = "1";
             }
@@ -213,6 +256,154 @@ namespace WindowsFormsApp1
             };
 
             ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(order);
+        }
+
+        private void Button_TestQuery_Click(object sender, EventArgs e)
+        {
+            m_positionList.Clear();
+            m_orderList.Clear();
+            m_positionList.Clear();
+
+            foreach (swap.Instrument ins in ConnectManager.CreateInstance().InstrumentList)
+            {
+                if (ins != null)
+                {
+                    ConnectManager.CreateInstance().CONNECTION.AnsyOrdersByInstrumentSwap(ins.instrument_id, "2", 1, null, 10);
+                    ConnectManager.CreateInstance().CONNECTION.AnsyPositionByInstrumentSwap(ins.instrument_id);
+                    ConnectManager.CreateInstance().CONNECTION.AnsyTradeByInstrumentSwap(ins.instrument_id, 1, null, 10);
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// 每隔一分钟查询一次持仓-委托-成交
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer_queryPOTEvent(object sender, EventArgs e)
+        {
+            //Button_TestQuery_Click(null, null);
+        }
+
+        private void Button_queryPosition_Click(object sender, EventArgs e)
+        {
+            m_positionList.Clear();
+
+            foreach (swap.Instrument ins in ConnectManager.CreateInstance().InstrumentList)
+            {
+                if (ins != null)
+                {
+                    ConnectManager.CreateInstance().CONNECTION.AnsyPositionByInstrumentSwap(ins.instrument_id);
+                }
+
+            }
+        }
+
+        private void Button_CoverPosition_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_QueryOrder_Click(object sender, EventArgs e)
+        {
+            m_orderList.Clear();
+
+            foreach (swap.Instrument ins in ConnectManager.CreateInstance().InstrumentList)
+            {
+                if (ins != null)
+                {
+                    ConnectManager.CreateInstance().CONNECTION.AnsyOrdersByInstrumentSwap(ins.instrument_id, "2", 1, null, 10);
+                }
+            }
+        }
+
+        private void Button_CancelOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #region 控制radiobutton
+        private void RadioButton_Buy_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton_Buy.Checked)
+            {
+                this.radioButton_Sellshort.Checked = false;
+            }
+        }
+
+        private void RadioButton_Sellshort_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton_Sellshort.Checked)
+            {
+                this.radioButton_Buy.Checked = false;
+            }
+        }
+
+        private void RadioButton_Open_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton_Open.Checked)
+            {
+                this.radioButton_Cover.Checked = false;
+            }
+        }
+
+        private void RadioButton_Cover_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton_Cover.Checked)
+            {
+                this.radioButton_Open.Checked = false;
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// 实时行情回调
+        /// </summary>
+        /// <param name="args"></param>
+        private void AnsyRealDataSubEvent(AIEventArgs args)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<AIEventArgs>(AnsyRealDataSubEvent), args);
+                return;
+            }
+
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_SUCCESS)
+            {
+                List<swap.Ticker> tikList = (List<swap.Ticker>)args.EventData;
+
+                foreach (swap.Ticker t in tikList)
+                {
+                    if(t.instrument_id.CompareTo(this.comboBox_Ins.SelectedText) != 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        this.label_newMarketData.Text = t.last.ToString();
+                        this.textBox_Price.Text = t.last.ToString();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 释放回收
+        /// </summary>
+        public void Destroy()
+        {
+            //SubEvent
+            //查成交-委托-持仓
+            if (ConnectManager.CreateInstance().CONNECTION != null)
+            {
+                ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent -= AnsyRealDataSubEvent;
+
+                ConnectManager.CreateInstance().CONNECTION.AnsyOrderEvent -= AnsyOrderSubEvent;
+                ConnectManager.CreateInstance().CONNECTION.AnsyPositionEvent -= AnsyPositionSubEvent;
+                ConnectManager.CreateInstance().CONNECTION.AnsyTradeEvent -= AnsyTradeSubEvent;
+                ConnectManager.CreateInstance().CONNECTION.AnsyMakeOrderEvent -= AnsyMakeOrderSubEvent;
+            }
         }
     }
 }

@@ -32,7 +32,10 @@ namespace APIConnect
         {
             return m_SingletonSecond;
         }
-
+        public override void QueryRealDepthMarketData(object state)
+        {
+            AnsyGetMarketDepthDataSwap();
+        }
 
         /// <summary>
         /// Init-Login
@@ -463,7 +466,7 @@ namespace APIConnect
                         ReponseMessage = RESONSEMESSAGE.HOLDORDER_FAILED
                     };
 
-                    SafeRiseAnsyPositionEvent(args);
+                    SafeRiseAnsyOrderEvent(args);
                 }
                 else
                 {
@@ -474,7 +477,7 @@ namespace APIConnect
                         ReponseMessage = RESONSEMESSAGE.HOLDORDER_SUCCESS
                     };
 
-                    SafeRiseAnsyPositionEvent(args);
+                    SafeRiseAnsyOrderEvent(args);
                 }
             }
             catch (Exception ex)
@@ -485,7 +488,7 @@ namespace APIConnect
                     ReponseMessage = RESONSEMESSAGE.HOLDORDER_FAILED
                 };
 
-                SafeRiseAnsyPositionEvent(args);
+                SafeRiseAnsyOrderEvent(args);
             }
         }
 
