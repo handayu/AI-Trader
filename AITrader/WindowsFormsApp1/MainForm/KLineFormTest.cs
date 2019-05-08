@@ -43,14 +43,6 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            //订阅实时行情RealMarketData
-            ConnectManager.CreateInstance().CONNECTION.AnsyKLineEvent += AnsyKLineSubEvent;
-            ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
-
-            //按照指定的时间订阅拉取历史K线数据，展示
-            //默认设置为前一个月
-            this.dateTimePicker_Begin.Value = DateTime.Now.AddDays(-30);
-
             m_InitInsTicker = t;
             m_formName = t.instrument_id;
 
@@ -67,19 +59,6 @@ namespace WindowsFormsApp1
                 return this.m_formName;
             }
         }
-
-        //public IStrategy FORMSTRATEGY
-        //{
-        //    get
-        //    {
-        //        return m_Strategy;
-        //    }
-        //}
-
-        //private void SetStrategy(IStrategy s)
-        //{
-        //    m_Strategy = s;
-        //}
 
         /// <summary>
         /// 返回历史查询的K线
@@ -188,10 +167,19 @@ namespace WindowsFormsApp1
 
                 //m_mut.ReleaseMutex();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("RealMarket:", ex.Message);
             }
+
+        }
+
+        /// <summary>
+        /// 返回实时部位
+        /// </summary>
+        /// <param name="args"></param>
+        private void AnsyPositionSubEvent(AIEventArgs args)
+        {
 
         }
 
@@ -367,7 +355,18 @@ namespace WindowsFormsApp1
 
         private void Form_Load(object sender, EventArgs e)
         {
-            //拉取历史行情，订阅实时行情
+            //订阅实时行情RealMarketData
+            ConnectManager.CreateInstance().CONNECTION.AnsyKLineEvent += AnsyKLineSubEvent;
+            ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyTickerSubEvent;
+            ConnectManager.CreateInstance().CONNECTION.AnsyPositionEvent += AnsyPositionSubEvent;
+
+            //查询部位
+            //ConnectManager.CreateInstance().CONNECTION.AnsyPositionByInstrumentSwap(m_InitInsTicker.instrument_id);
+
+            //按照指定的时间订阅拉取历史K线数据，展示
+            //默认设置为前一个月
+            this.dateTimePicker_Begin.Value = DateTime.Now.AddDays(-30);
+
         }
 
         private void Form_Closed(object sender, FormClosedEventArgs e)
@@ -479,7 +478,7 @@ namespace WindowsFormsApp1
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
             //取消订阅实时行情RealMarketData
-            if(ConnectManager.CreateInstance().CONNECTION != null)
+            if (ConnectManager.CreateInstance().CONNECTION != null)
             {
                 ConnectManager.CreateInstance().CONNECTION.AnsyKLineEvent -= AnsyKLineSubEvent;
                 ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent -= AnsyTickerSubEvent;
@@ -538,7 +537,7 @@ namespace WindowsFormsApp1
         {
             RenkoSettingsForm renkoForm = new RenkoSettingsForm();
             renkoForm.ShowDialog();
-            if(renkoForm.RenkoDialogResult == false)
+            if (renkoForm.RenkoDialogResult == false)
             {
                 return;
             }
@@ -556,7 +555,7 @@ namespace WindowsFormsApp1
                 this.chart1.Series[0]["BoxSize"] = boxsize.ToString();
 
                 m_Frame = "Tick";
-                this.Text = string.Format("{0}永续合约 -K线图1.0 砖型图Bar -AutoTrader", m_InitInsTicker.instrument_id);
+                this.Text = string.Format("{0}永续合约 -K线图1.0 砖型图砖高{1} -AutoTrader", m_InitInsTicker.instrument_id, boxsize.ToString());
 
             }
         }
@@ -588,10 +587,10 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void ToolStripMenuItem_StrategySettingsClick(object sender, EventArgs e)
         {
-            StrategySettingsForm s = new StrategySettingsForm(m_InitInsTicker,m_Frame);
+            StrategySettingsForm s = new StrategySettingsForm(m_InitInsTicker, m_Frame);
             s.ShowDialog();
 
-            if(s.STRATEGY != null)
+            if (s.STRATEGY != null)
             {
                 object strategy = s.STRATEGY;
                 m_Strategy = strategy;
@@ -599,10 +598,10 @@ namespace WindowsFormsApp1
         }
 
         #region 策略事件通知
-        private void OnStrategyTickSubEvent(swap.Ticker t,string strategyName)
+        private void OnStrategyTickSubEvent(swap.Ticker t, string strategyName)
         {
             Debug.WriteLine(string.Format("我是策略:{0},正在执行/策略当前最新价:{1}/策略当前合约:{2}", strategyName, t.last, t.instrument_id));
-            AppendText(string.Format("我是策略:{0},正在执行/策略当前最新价:{1}/策略当前合约:{2}",strategyName,t.last,t.instrument_id));
+            AppendText(string.Format("我是策略:{0},正在执行/策略当前最新价:{1}/策略当前合约:{2}", strategyName, t.last, t.instrument_id));
         }
 
         private void OnStrategyOrderSubEvent(SwapOrderReturn orderReturn, string StrategyName)
@@ -631,7 +630,7 @@ namespace WindowsFormsApp1
             f.ShowDialog();
 
             //订阅策略事件-在这里Form类完成触发和订阅-启动
-            if(m_Strategy != null)
+            if (m_Strategy != null)
             {
                 ((IStrategy)m_Strategy).OnTickEvent += OnStrategyTickSubEvent;
                 ((IStrategy)m_Strategy).OnOrderEvent += OnStrategyOrderSubEvent;
@@ -644,8 +643,120 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("请先设置策略属性..");
             }
-  
+
         }
 
+        /// <summary>
+        /// 每隔几秒查询持仓-实时的，然后根据持仓，决定是否画线和取消画线在图表上
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer_NotifyPositionEvent(object sender, EventArgs e)
+        {
+            this.timer_NotifyPosition.Stop();
+
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<object, EventArgs>(timer_NotifyPositionEvent), sender, e);
+                return;
+            }
+
+            List<swap.Position> pList = ConnectManager.CreateInstance().PositionList.holding;
+            foreach (swap.Position p in pList)
+            {
+                double holdNum = 0.00;
+                double.TryParse(p.position, out holdNum);
+
+                double avgEntryPrice = 0.00;
+                double.TryParse(p.avg_cost, out avgEntryPrice);
+
+
+                //和目前开启的K线图表一样有仓位的合约，且仓位要大于0
+                if (p.instrument_id.CompareTo(m_InitInsTicker.instrument_id) != 0) continue;
+                if (holdNum <= 0)
+                {
+                    //有线条，则删除,无线条不需要处理
+                    if(this.chart1.ChartAreas[0].AxisY.StripLines.Count >= 1)
+                    {
+                        this.chart1.ChartAreas[0].AxisY.StripLines.Clear();
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else//有该合约的仓位
+                {
+                    if(this.chart1.ChartAreas[0].AxisY.StripLines.Count <= 0)//没有线则添加一条
+                    {
+                        StripLine m_stripLine = new StripLine();
+                        m_stripLine.BackColor = System.Drawing.Color.Red;
+                        m_stripLine.IntervalOffset = avgEntryPrice;
+                        m_stripLine.StripWidth = 2;
+                        m_stripLine.BorderDashStyle = ChartDashStyle.Dash;
+                        m_stripLine.Text = p.side + ": " + p.position + ": " + p.avg_cost;
+                        m_stripLine.ForeColor = Color.Blue;
+                        m_stripLine.Font = new Font("宋体", 10.5F);
+                        m_stripLine.ToolTip = "持仓线";
+                        m_stripLine.TextAlignment = StringAlignment.Near;
+                        
+                        this.chart1.ChartAreas[0].AxisY.StripLines.Add(m_stripLine);
+                    }
+                    else//已经有线条了
+                    {
+                        //如果是加仓，新查询回来的平均进厂价格就变化了，在这里要判断并删除，重新画线
+                        if(p.avg_cost.CompareTo(this.chart1.ChartAreas[0].AxisY.StripLines[0].IntervalOffset.ToString().Trim()) == 0)
+                        {
+                            //如果查回来的仓位和图表上现在已经有的进场平均价是一致的，不作任何处理
+                        }
+                        else
+                        {
+                            //如果查回来的仓位和图表上现在已经有的进场平均价是不一致的，删除之前的，并重新画
+                            this.chart1.ChartAreas[0].AxisY.StripLines.Clear();
+                            StripLine m_stripLine = new StripLine();
+                            m_stripLine.BorderDashStyle = ChartDashStyle.DashDotDot;
+                            m_stripLine.BackColor = System.Drawing.Color.Red;
+                            m_stripLine.IntervalOffset = avgEntryPrice;
+                            m_stripLine.StripWidth = 2;
+                            m_stripLine.BorderDashStyle = ChartDashStyle.Dash;
+                            m_stripLine.Text = p.side + ": " + p.position + ": " + p.avg_cost;
+                            m_stripLine.ForeColor = Color.Blue;
+                            m_stripLine.Font = new Font("宋体", 10.5F);
+                            m_stripLine.ToolTip = "持仓线";
+                            m_stripLine.TextAlignment = StringAlignment.Near;
+
+                            this.chart1.ChartAreas[0].AxisY.StripLines.Add(m_stripLine);
+                        }
+                    }
+                }
+            }
+
+            this.timer_NotifyPosition.Start();
+        }
+
+        private void Chart_paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 画持仓线
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="side"></param>
+        /// <param name="price"></param>
+        private void DrawLine(PaintEventArgs e, string side, double price)
+        {
+            Pen pen = new Pen(Color.Red, 2);
+            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+
+            PointF point1 = new PointF(this.chart1.Location.X, 100.0F);
+            PointF point2 = new PointF(this.chart1.Location.X + this.chart1.Width, 100.0F);
+
+            SolidBrush b1 = new SolidBrush(Color.Blue);
+            e.Graphics.DrawString(side, new Font("宋体", 9F), b1, new PointF(this.chart1.Location.X, 95F));
+
+            e.Graphics.DrawLine(pen, point1, point2);
+        }
     }
 }

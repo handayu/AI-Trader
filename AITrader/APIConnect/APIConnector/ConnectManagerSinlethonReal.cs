@@ -418,7 +418,16 @@ namespace APIConnect
                 }
                 else
                 {
-                    var obj = resResult.ToObject<swap.PositionResult<swap.Position>>();
+                    swap.PositionResult<swap.Position> obj = resResult.ToObject<swap.PositionResult<swap.Position>>();
+
+                    string maginMode = obj.margin_mode;
+                    List<swap.Position> positionList = obj.holding;
+
+                    foreach(swap.Position p in positionList)
+                    {
+                        ConnectManager.CreateInstance().PositionList.holding.Add(p);
+                        ConnectManager.CreateInstance().PositionList.margin_mode = maginMode;
+                    }
 
                     AIEventArgs args = new AIEventArgs()
                     {

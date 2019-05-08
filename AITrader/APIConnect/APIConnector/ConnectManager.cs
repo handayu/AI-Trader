@@ -57,7 +57,7 @@ namespace APIConnect
         }
 
 
-        private swap.PositionResult<Position> m_positionList = new swap.PositionResult<Position>();
+        private swap.PositionResult<Position> m_positionList = new swap.PositionResult<Position>() { holding = new List<Position>(),margin_mode = "crossed" };
         public swap.PositionResult<Position> PositionList
         {
             set

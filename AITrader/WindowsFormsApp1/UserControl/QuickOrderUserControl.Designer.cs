@@ -47,8 +47,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_TestQuery = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.radioButton_oppPrice = new System.Windows.Forms.RadioButton();
+            this.button_TestQuery = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.radioButton_Buy = new System.Windows.Forms.RadioButton();
             this.radioButton_Sellshort = new System.Windows.Forms.RadioButton();
@@ -99,12 +100,14 @@
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer_queryPOT = new System.Windows.Forms.Timer(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_OppositePriceOrder = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -116,7 +119,6 @@
             this.panel3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_hasTraded)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label14
@@ -182,6 +184,8 @@
             this.textBox_OrderNum.Name = "textBox_OrderNum";
             this.textBox_OrderNum.Size = new System.Drawing.Size(89, 21);
             this.textBox_OrderNum.TabIndex = 39;
+            this.textBox_OrderNum.Text = "1";
+            this.textBox_OrderNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -198,6 +202,7 @@
             this.textBox_Price.Name = "textBox_Price";
             this.textBox_Price.Size = new System.Drawing.Size(89, 21);
             this.textBox_Price.TabIndex = 36;
+            this.textBox_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -224,12 +229,14 @@
             // radioButton_Open
             // 
             this.radioButton_Open.AutoSize = true;
+            this.radioButton_Open.Checked = true;
             this.radioButton_Open.Dock = System.Windows.Forms.DockStyle.Left;
             this.radioButton_Open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton_Open.Location = new System.Drawing.Point(46, 0);
             this.radioButton_Open.Name = "radioButton_Open";
             this.radioButton_Open.Size = new System.Drawing.Size(46, 27);
             this.radioButton_Open.TabIndex = 31;
+            this.radioButton_Open.TabStop = true;
             this.radioButton_Open.Text = "开仓";
             this.radioButton_Open.UseVisualStyleBackColor = true;
             this.radioButton_Open.CheckedChanged += new System.EventHandler(this.RadioButton_Open_CheckedChanged);
@@ -288,6 +295,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox_OppositePriceOrder);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.button_TestQuery);
             this.groupBox1.Controls.Add(this.label4);
@@ -320,6 +329,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "下单板";
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.radioButton_oppPrice);
+            this.panel4.Location = new System.Drawing.Point(171, 97);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(60, 18);
+            this.panel4.TabIndex = 58;
+            // 
+            // radioButton_oppPrice
+            // 
+            this.radioButton_oppPrice.AutoSize = true;
+            this.radioButton_oppPrice.Checked = true;
+            this.radioButton_oppPrice.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radioButton_oppPrice.Location = new System.Drawing.Point(0, 0);
+            this.radioButton_oppPrice.Name = "radioButton_oppPrice";
+            this.radioButton_oppPrice.Size = new System.Drawing.Size(59, 18);
+            this.radioButton_oppPrice.TabIndex = 54;
+            this.radioButton_oppPrice.TabStop = true;
+            this.radioButton_oppPrice.Text = "对手价";
+            this.radioButton_oppPrice.UseVisualStyleBackColor = true;
+            // 
             // button_TestQuery
             // 
             this.button_TestQuery.Location = new System.Drawing.Point(267, 142);
@@ -330,17 +360,6 @@
             this.button_TestQuery.UseVisualStyleBackColor = true;
             this.button_TestQuery.Visible = false;
             this.button_TestQuery.Click += new System.EventHandler(this.Button_TestQuery_Click);
-            // 
-            // radioButton_oppPrice
-            // 
-            this.radioButton_oppPrice.AutoSize = true;
-            this.radioButton_oppPrice.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton_oppPrice.Location = new System.Drawing.Point(0, 0);
-            this.radioButton_oppPrice.Name = "radioButton_oppPrice";
-            this.radioButton_oppPrice.Size = new System.Drawing.Size(59, 18);
-            this.radioButton_oppPrice.TabIndex = 54;
-            this.radioButton_oppPrice.Text = "对手价";
-            this.radioButton_oppPrice.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -356,7 +375,7 @@
             this.radioButton_Buy.AutoSize = true;
             this.radioButton_Buy.Checked = true;
             this.radioButton_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton_Buy.Location = new System.Drawing.Point(85, 50);
+            this.radioButton_Buy.Location = new System.Drawing.Point(88, 50);
             this.radioButton_Buy.Name = "radioButton_Buy";
             this.radioButton_Buy.Size = new System.Drawing.Size(46, 16);
             this.radioButton_Buy.TabIndex = 51;
@@ -369,7 +388,7 @@
             // 
             this.radioButton_Sellshort.AutoSize = true;
             this.radioButton_Sellshort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton_Sellshort.Location = new System.Drawing.Point(133, 50);
+            this.radioButton_Sellshort.Location = new System.Drawing.Point(134, 50);
             this.radioButton_Sellshort.Name = "radioButton_Sellshort";
             this.radioButton_Sellshort.Size = new System.Drawing.Size(46, 16);
             this.radioButton_Sellshort.TabIndex = 52;
@@ -773,18 +792,29 @@
             this.timer_queryPOT.Interval = 5000;
             this.timer_queryPOT.Tick += new System.EventHandler(this.timer_queryPOTEvent);
             // 
-            // panel4
+            // label5
             // 
-            this.panel4.Controls.Add(this.radioButton_oppPrice);
-            this.panel4.Location = new System.Drawing.Point(171, 97);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(60, 18);
-            this.panel4.TabIndex = 58;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(185, 39);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 12);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "+-点发限价:";
+            // 
+            // textBox_OppositePriceOrder
+            // 
+            this.textBox_OppositePriceOrder.Location = new System.Drawing.Point(253, 33);
+            this.textBox_OppositePriceOrder.Name = "textBox_OppositePriceOrder";
+            this.textBox_OppositePriceOrder.Size = new System.Drawing.Size(31, 21);
+            this.textBox_OppositePriceOrder.TabIndex = 60;
+            this.textBox_OppositePriceOrder.Text = "5";
+            this.textBox_OppositePriceOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // QuickOrderUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.splitContainer1);
             this.Name = "QuickOrderUserControl";
@@ -795,6 +825,8 @@
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -807,8 +839,6 @@
             this.panel3.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_hasTraded)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -885,5 +915,7 @@
         private System.Windows.Forms.Button button_QueryOrder;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox_OppositePriceOrder;
+        private System.Windows.Forms.Label label5;
     }
 }

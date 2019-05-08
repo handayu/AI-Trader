@@ -63,10 +63,7 @@ namespace WindowsFormsApp1
 
         private void AnsyPositionSubEvent(AIEventArgs args)
         {
-            if (args.ReponseMessage == RESONSEMESSAGE.HOLDPOSITION_SUCCESS)
-            {
-                ConnectManager.CreateInstance().PositionList = (swap.PositionResult<swap.Position>)args.EventData;
-            }
+            
         }
 
         private void AnsyOrderSubEvent(AIEventArgs args)
@@ -101,9 +98,6 @@ namespace WindowsFormsApp1
                         ConnectManager.CreateInstance().CONNECTION.AnsyTradeByInstrumentSwap(ins.instrument_id, 1, null, 10);
                     }
                 }
-
-
-
             }
         }
 

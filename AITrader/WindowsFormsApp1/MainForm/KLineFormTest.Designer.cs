@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KLineFormTest));
             System.Windows.Forms.DataVisualization.Charting.ArrowAnnotation arrowAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.ArrowAnnotation();
             System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
@@ -79,6 +80,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
+            this.timer_NotifyPosition = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -444,10 +446,10 @@
             chartArea2.IsSameFontSizeForAllAxes = true;
             chartArea2.Name = "ChartArea2";
             chartArea2.Position.Auto = false;
-            chartArea2.Position.Height = 25F;
+            chartArea2.Position.Height = 99F;
             chartArea2.Position.Width = 99F;
             chartArea2.Position.X = 1F;
-            chartArea2.Position.Y = 75F;
+            chartArea2.Position.Y = 1F;
             chartArea2.ShadowColor = System.Drawing.Color.White;
             chartArea2.Visible = false;
             chartArea3.AlignWithChartArea = "ChartArea1";
@@ -535,6 +537,7 @@
             this.chart1.Size = new System.Drawing.Size(624, 419);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
+            this.chart1.Paint += new System.Windows.Forms.PaintEventHandler(this.Chart_paint);
             // 
             // panel2
             // 
@@ -554,6 +557,12 @@
             this.richTextBox_StrategyLog.Size = new System.Drawing.Size(176, 419);
             this.richTextBox_StrategyLog.TabIndex = 0;
             this.richTextBox_StrategyLog.Text = "";
+            // 
+            // timer_NotifyPosition
+            // 
+            this.timer_NotifyPosition.Enabled = true;
+            this.timer_NotifyPosition.Interval = 3000;
+            this.timer_NotifyPosition.Tick += new System.EventHandler(this.timer_NotifyPositionEvent);
             // 
             // KLineFormTest
             // 
@@ -618,5 +627,6 @@
         private System.Windows.Forms.ToolStripButton ToolStripMenuItem_Log;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
+        private System.Windows.Forms.Timer timer_NotifyPosition;
     }
 }

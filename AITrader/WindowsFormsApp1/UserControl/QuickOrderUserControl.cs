@@ -49,7 +49,9 @@ namespace WindowsFormsApp1
             {
                 foreach (swap.Position p in position.holding)
                 {
-                    m_positionList.Add(p);
+                    double holdNum = 0.00;
+                    double.TryParse(p.position, out holdNum);
+                    if (holdNum >= 1) m_positionList.Add(p);
                 }
             }
 
@@ -146,10 +148,12 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyPositionSubEvent(AIEventArgs args)
         {
+            m_positionList.Clear();
+
             //只显示持仓数量>0的有持仓的数字货币
             if (args.ReponseMessage == RESONSEMESSAGE.HOLDPOSITION_SUCCESS)
             {
-                swap.PositionResult<swap.Position> result = (swap.PositionResult<swap.Position>)args.EventData;
+                swap.PositionResult<swap.Position> result = ConnectManager.CreateInstance().PositionList;
                 List<swap.Position> pList = result.holding;
                 foreach (swap.Position p in pList)
                 {
@@ -201,6 +205,20 @@ namespace WindowsFormsApp1
         {
             //OrderSingle-下单
             MakeOrderAction();
+
+
+            //在这里新开一个线程用于延时查询，不要阻塞主界面线程
+            Task task = new Task(new Action(QueryPositionAndOrder));
+            task.Start();
+
+        }
+
+        private void QueryPositionAndOrder()
+        {
+            System.Threading.Thread.Sleep(2000);
+            Button_queryPosition_Click(null, null);
+            System.Threading.Thread.Sleep(2000);
+            Button_QueryOrder_Click(null, null);
         }
 
         private void MakeOrderAction()
@@ -288,7 +306,14 @@ namespace WindowsFormsApp1
 
         private void Button_queryPosition_Click(object sender, EventArgs e)
         {
-            m_positionList.Clear();
+            if(this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<object, EventArgs>(Button_queryPosition_Click),sender,e);
+                return;
+            }
+
+            ConnectManager.CreateInstance().PositionList.holding.Clear();
+            ConnectManager.CreateInstance().PositionList.margin_mode = "";
 
             foreach (swap.Instrument ins in ConnectManager.CreateInstance().InstrumentList)
             {
@@ -307,6 +332,12 @@ namespace WindowsFormsApp1
 
         private void Button_QueryOrder_Click(object sender, EventArgs e)
         {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<object, EventArgs>(Button_queryPosition_Click), sender, e);
+                return;
+            }
+
             m_orderList.Clear();
 
             foreach (swap.Instrument ins in ConnectManager.CreateInstance().InstrumentList)
@@ -375,14 +406,34 @@ namespace WindowsFormsApp1
 
                 foreach (swap.Ticker t in tikList)
                 {
-                    if(t.instrument_id.CompareTo(this.comboBox_Ins.SelectedText) != 0)
+                    if(t.instrument_id.CompareTo(this.comboBox_Ins.Text) != 0)
                     {
                         continue;
                     }
                     else
                     {
-                        this.label_newMarketData.Text = t.last.ToString();
-                        this.textBox_Price.Text = t.last.ToString();
+                        decimal AddDiffPrice = 0m;
+                        decimal.TryParse(this.textBox_OppositePriceOrder.Text, out AddDiffPrice);
+
+                        //如果是买入开仓和买入平仓[特殊]，价格要+ ；卖出开仓和卖出平仓[特殊]，价格要-
+                        if ( (radioButton_Buy.Checked && radioButton_Open.Checked )||
+                            (radioButton_Sellshort.Checked && radioButton_Cover.Checked))
+                        {
+
+
+                            this.label_newMarketData.Text = t.last.ToString();
+                            this.textBox_Price.Text = (t.last + AddDiffPrice).ToString();
+                        }
+
+                        if ((radioButton_Sellshort.Checked && radioButton_Open.Checked) ||
+                             (radioButton_Buy.Checked && radioButton_Cover.Checked))
+                        {
+
+
+                            this.label_newMarketData.Text = t.last.ToString();
+                            this.textBox_Price.Text = (t.last - AddDiffPrice).ToString();
+                        }
+
                     }
                 }
             }

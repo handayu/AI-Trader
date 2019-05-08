@@ -33,6 +33,7 @@
             // 
             // quickOrderUserControl1
             // 
+            this.quickOrderUserControl1.AutoScroll = true;
             this.quickOrderUserControl1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.quickOrderUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.quickOrderUserControl1.Location = new System.Drawing.Point(0, 0);
@@ -44,6 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(965, 214);
             this.Controls.Add(this.quickOrderUserControl1);
