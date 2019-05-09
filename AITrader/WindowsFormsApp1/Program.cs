@@ -19,7 +19,10 @@ namespace WindowsFormsApp1
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm2());
+            //Application.Run(new LoginForm2());
+
+            Application.Run(new TestSarForm());
+
         }
 
         static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)

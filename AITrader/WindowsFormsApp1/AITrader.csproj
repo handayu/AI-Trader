@@ -354,6 +354,12 @@
     <Compile Include="MainForm\StrategyLogForm.Designer.cs">
       <DependentUpon>StrategyLogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestForm\TestSarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm\TestSarForm.Designer.cs">
+      <DependentUpon>TestSarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\AccountStrategyUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
