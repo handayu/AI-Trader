@@ -1,0 +1,6 @@
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\BarMarker.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\BarMarker.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\BarMarker\obj\Debug\BarMarker.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\BarMarker\obj\Debug\BarMarker.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\BarMarker\obj\Debug\BarMarker.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\BarMarker\obj\Debug\BarMarker.pdb

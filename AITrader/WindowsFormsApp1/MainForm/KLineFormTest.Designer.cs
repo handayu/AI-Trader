@@ -81,6 +81,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
             this.timer_NotifyPosition = new System.Windows.Forms.Timer(this.components);
+            this.ToolStripMenuItem_IndicatorsCommonIn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -159,20 +160,22 @@
             // 
             // 趋势指标ToolStripMenuItem
             // 
+            this.趋势指标ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_IndicatorsCommonIn});
             this.趋势指标ToolStripMenuItem.Name = "趋势指标ToolStripMenuItem";
-            this.趋势指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.趋势指标ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.趋势指标ToolStripMenuItem.Text = "趋势指标";
             // 
             // 震荡指标ToolStripMenuItem
             // 
             this.震荡指标ToolStripMenuItem.Name = "震荡指标ToolStripMenuItem";
-            this.震荡指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.震荡指标ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.震荡指标ToolStripMenuItem.Text = "震荡指标";
             // 
             // 量价指标ToolStripMenuItem
             // 
             this.量价指标ToolStripMenuItem.Name = "量价指标ToolStripMenuItem";
-            this.量价指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.量价指标ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.量价指标ToolStripMenuItem.Text = "量价指标";
             // 
             // toolStripSeparator1
@@ -538,6 +541,7 @@
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
             this.chart1.Paint += new System.Windows.Forms.PaintEventHandler(this.Chart_paint);
+            this.chart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Chart_MouseMove);
             // 
             // panel2
             // 
@@ -563,6 +567,13 @@
             this.timer_NotifyPosition.Enabled = true;
             this.timer_NotifyPosition.Interval = 3000;
             this.timer_NotifyPosition.Tick += new System.EventHandler(this.timer_NotifyPositionEvent);
+            // 
+            // ToolStripMenuItem_IndicatorsCommonIn
+            // 
+            this.ToolStripMenuItem_IndicatorsCommonIn.Name = "ToolStripMenuItem_IndicatorsCommonIn";
+            this.ToolStripMenuItem_IndicatorsCommonIn.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_IndicatorsCommonIn.Text = "SAR";
+            this.ToolStripMenuItem_IndicatorsCommonIn.Click += new System.EventHandler(this.ToolStripMenuItem_IndicatorsCommonInClick);
             // 
             // KLineFormTest
             // 
@@ -628,5 +639,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.Timer timer_NotifyPosition;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_IndicatorsCommonIn;
     }
 }

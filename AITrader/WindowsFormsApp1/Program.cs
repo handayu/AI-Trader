@@ -19,9 +19,9 @@ namespace WindowsFormsApp1
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm2());
+            Application.Run(new LoginForm2());
 
-            Application.Run(new TestSarForm());
+            //Application.Run(new TestSarForm());
 
         }
 

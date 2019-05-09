@@ -27,9 +27,6 @@ namespace WindowsFormsApp1
         private string m_formName = string.Empty;
         private swap.Ticker m_InitInsTicker = null;
 
-        //在这里Load-strategy.dll然后遍历里面所有策略
-        //private IStrategy m_Strategy = null;
-
         private List<decimal> m_o = new List<decimal>();
         private List<decimal> m_h = new List<decimal>();
         private List<decimal> m_l = new List<decimal>();
@@ -52,6 +49,9 @@ namespace WindowsFormsApp1
             AppendText("交易合约为:" + m_InitInsTicker);
         }
 
+        /// <summary>
+        /// 窗口的别名-用于区别不同窗口
+        /// </summary>
         public String FORMNAME
         {
             get
@@ -295,6 +295,10 @@ namespace WindowsFormsApp1
             ResetAxisY(chart);
         }
 
+        /// <summary>
+        /// 调整纵坐标
+        /// </summary>
+        /// <param name="chart"></param>
         public void ResetAxisY(Chart chart)
         {
             if (chart.ChartAreas[0].AxisX.ScaleView.IsZoomed)
@@ -352,6 +356,17 @@ namespace WindowsFormsApp1
                     }
                 }
             }
+        }
+
+        private void Chart_MouseMove(object sender, MouseEventArgs e)
+        {
+            //MsChart.Refresh();没啥效果
+            this.chart1.ChartAreas[0].CursorX.LineColor = Color.White;
+            this.chart1.ChartAreas[0].CursorY.LineColor = Color.White;
+
+            this.chart1.ChartAreas[0].CursorX.SetCursorPixelPosition(new PointF(e.X, e.Y), true);
+            this.chart1.ChartAreas[0].CursorY.SetCursorPixelPosition(new PointF(e.X, e.Y), true);
+            //Application.DoEvents(); 使用此方法当有线程操作时会引发异常
         }
 
         #endregion
@@ -747,6 +762,11 @@ namespace WindowsFormsApp1
             this.timer_NotifyPosition.Start();
         }
 
+        /// <summary>
+        /// Chart-重绘
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Chart_paint(object sender, PaintEventArgs e)
         {
 
@@ -770,6 +790,35 @@ namespace WindowsFormsApp1
             e.Graphics.DrawString(side, new Font("宋体", 9F), b1, new PointF(this.chart1.Location.X, 95F));
 
             e.Graphics.DrawLine(pen, point1, point2);
+        }
+
+        /// <summary>
+        /// 所有指标的计算全部依赖于目前图表的Point数据
+        /// </summary>
+        private void HoldChartDta()
+        {
+            //this.chart1.binddata?
+            //this.chart1.Series[0].
+
+
+
+        }
+
+        /// <summary>
+        /// 所有指标点击Item的入口-在这里可以通过指标
+        /// 工厂，进行抽象生成添加启动计算;当前只实现了
+        /// 几个指标,具体指标可以借助ta-lib公共库，里面
+        /// 已经实现了几百种指标的算法，可以直接数据调用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripMenuItem_IndicatorsCommonInClick(object sender, EventArgs e)
+        {
+            //如果选中了SAR指标-计算启动并加入图表
+            if( ((ToolStripMenuItem)sender).Text.CompareTo("SAR") == 0)
+            {
+
+            }
         }
     }
 }
