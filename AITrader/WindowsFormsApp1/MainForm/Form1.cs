@@ -59,23 +59,23 @@ namespace WindowsFormsApp1
             m_marketDataForm.MarketDataUserControlSelf.RealMarketDataClikEvent += RealMarketDataClikSubEvent;
         }
 
-
+        private int m_formNum = 0;
         private List<Form> m_OpenKLineFormList = new List<Form>();
         private void RealMarketDataClikSubEvent(swap.Ticker t)
         {
             if (t == null || t.instrument_id == "") return;
 
-            foreach (Form f in m_OpenKLineFormList)
-            {
-                KLineFormTest fT = f as KLineFormTest;
-                if (fT != null && fT.FORMNAME == t.instrument_id)
-                {
-                    MessageBox.Show("不能重复添加相同的品种图表...");
-                    return;
-                }
-            }
+            //foreach (Form f in m_OpenKLineFormList)
+            //{
+            //    KLineFormTest fT = f as KLineFormTest;
+            //    if (fT != null && fT.FORMNAME == t.instrument_id)
+            //    {
+            //        MessageBox.Show("不能重复添加相同的品种图表...");
+            //        return;
+            //    }
+            //}
 
-            KLineFormTest form = new KLineFormTest(t);
+            KLineFormTest form = new KLineFormTest(t, m_formNum++);
             form.TopLevel = false;//设置为非顶级控件
             form.MdiParent = this;
             form.DeleteKLineFormEvent += DeleteKLineFormSubEvent;
@@ -90,14 +90,14 @@ namespace WindowsFormsApp1
         /// K线窗口关闭删除事件--清除List的存在的KLine
         /// </summary>
         /// <param name="t"></param>
-        private void DeleteKLineFormSubEvent(Ticker t)
+        private void DeleteKLineFormSubEvent(string formName)
         {
-            if (t == null || t.instrument_id == "") return;
+            if (formName == null || formName == "") return;
 
             Form reForm = null;
             foreach (Form f in m_OpenKLineFormList)
             {
-                if ((f as KLineFormTest) != null && (f as KLineFormTest).FORMNAME.CompareTo(t.instrument_id) == 0)
+                if ((f as KLineFormTest) != null && (f as KLineFormTest).FORMNAME.CompareTo(formName) == 0)
                 {
                     reForm = f;
                     break;

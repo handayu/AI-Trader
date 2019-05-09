@@ -37,14 +37,14 @@ namespace WindowsFormsApp1
         private List<DateTime> m_d = new List<DateTime>();
         private static Mutex m_mut = new Mutex();
 
-        public delegate void DeleteKLineFormHandle(swap.Ticker t);
+        public delegate void DeleteKLineFormHandle(string formName);
         public event DeleteKLineFormHandle DeleteKLineFormEvent;
-        public KLineFormTest(swap.Ticker t)
+        public KLineFormTest(swap.Ticker t, int formName)
         {
             InitializeComponent();
 
             m_InitInsTicker = t;
-            m_formName = t.instrument_id;
+            m_formName = t.instrument_id + formName;
 
             this.Text = string.Format("{0}永续合约 -K线图1.0 Bar -AutoTrader", t.instrument_id);
 
@@ -66,11 +66,27 @@ namespace WindowsFormsApp1
         /// <param name="args"></param>
         private void AnsyKLineSubEvent(AIEventArgs args)
         {
-            m_mut.WaitOne();
-
             if (args.ReponseMessage == RESONSEMESSAGE.HOLDKLINE_FAILED) return;
-            List<TestData.KlineOkex> klineLiet = (List<TestData.KlineOkex>)args.EventData;
-            if (klineLiet == null) return;
+            List<TestData.KlineOkex> klineLiet = new List<TestData.KlineOkex>();
+
+            List<TestData.KlineOkex> klinetemp = (List<TestData.KlineOkex>)(args.Clone()).EventData;
+            foreach (TestData.KlineOkex data in klinetemp)
+            {
+                TestData.KlineOkex d = new TestData.KlineOkex()
+                {
+                    insment = data.insment,
+                    d = data.d,
+                    o = data.o,
+                    h = data.h,
+                    l = data.l,
+                    c = data.c,
+                    unkonwn1 = data.unkonwn1,
+                    unkonwn2 = data.unkonwn2
+                };
+
+                klineLiet.Add(data);
+            }
+
             if (klineLiet.Count <= 0) return;
             if (klineLiet[0].insment != m_InitInsTicker.instrument_id) return;
 
@@ -110,9 +126,6 @@ namespace WindowsFormsApp1
                 {
                     this.chart1.Series[0].Points.AddXY(m_d[i], m_h[i], m_l[i], m_o[i], m_c[i]);
                 }
-
-                m_mut.ReleaseMutex();
-
             }
             catch (Exception ex)
             {
@@ -494,7 +507,7 @@ namespace WindowsFormsApp1
 
             if (DeleteKLineFormEvent != null && DeleteKLineFormEvent.Method != null)
             {
-                DeleteKLineFormEvent(m_InitInsTicker);
+                DeleteKLineFormEvent(m_formName);
             }
         }
 
@@ -676,7 +689,7 @@ namespace WindowsFormsApp1
                 if (holdNum <= 0)
                 {
                     //有线条，则删除,无线条不需要处理
-                    if(this.chart1.ChartAreas[0].AxisY.StripLines.Count >= 1)
+                    if (this.chart1.ChartAreas[0].AxisY.StripLines.Count >= 1)
                     {
                         this.chart1.ChartAreas[0].AxisY.StripLines.Clear();
                     }
@@ -687,25 +700,25 @@ namespace WindowsFormsApp1
                 }
                 else//有该合约的仓位
                 {
-                    if(this.chart1.ChartAreas[0].AxisY.StripLines.Count <= 0)//没有线则添加一条
+                    if (this.chart1.ChartAreas[0].AxisY.StripLines.Count <= 0)//没有线则添加一条
                     {
                         StripLine m_stripLine = new StripLine();
                         m_stripLine.BackColor = System.Drawing.Color.Red;
                         m_stripLine.IntervalOffset = avgEntryPrice;
-                        m_stripLine.StripWidth = 2;
+                        m_stripLine.StripWidth = 1.5;
                         m_stripLine.BorderDashStyle = ChartDashStyle.Dash;
                         m_stripLine.Text = p.side + ": " + p.position + ": " + p.avg_cost;
                         m_stripLine.ForeColor = Color.Blue;
                         m_stripLine.Font = new Font("宋体", 10.5F);
                         m_stripLine.ToolTip = "持仓线";
                         m_stripLine.TextAlignment = StringAlignment.Near;
-                        
+
                         this.chart1.ChartAreas[0].AxisY.StripLines.Add(m_stripLine);
                     }
                     else//已经有线条了
                     {
                         //如果是加仓，新查询回来的平均进厂价格就变化了，在这里要判断并删除，重新画线
-                        if(p.avg_cost.CompareTo(this.chart1.ChartAreas[0].AxisY.StripLines[0].IntervalOffset.ToString().Trim()) == 0)
+                        if (p.avg_cost.CompareTo(this.chart1.ChartAreas[0].AxisY.StripLines[0].IntervalOffset.ToString().Trim()) == 0)
                         {
                             //如果查回来的仓位和图表上现在已经有的进场平均价是一致的，不作任何处理
                         }
@@ -717,7 +730,7 @@ namespace WindowsFormsApp1
                             m_stripLine.BorderDashStyle = ChartDashStyle.DashDotDot;
                             m_stripLine.BackColor = System.Drawing.Color.Red;
                             m_stripLine.IntervalOffset = avgEntryPrice;
-                            m_stripLine.StripWidth = 2;
+                            m_stripLine.StripWidth = 1.5;
                             m_stripLine.BorderDashStyle = ChartDashStyle.Dash;
                             m_stripLine.Text = p.side + ": " + p.position + ": " + p.avg_cost;
                             m_stripLine.ForeColor = Color.Blue;

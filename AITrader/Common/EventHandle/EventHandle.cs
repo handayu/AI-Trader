@@ -19,6 +19,11 @@ namespace Common
             get;
             set;
         }
+
+        public AIEventArgs Clone()
+        {
+            return (AIEventArgs)this.MemberwiseClone();
+        }
     }
 
     public enum RESONSEMESSAGE
