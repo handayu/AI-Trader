@@ -73,5 +73,21 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        /// <summary>
+        /// 双击节点
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Mouse_DoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            //条件单控制面板
+            if(true)//MenuStrategyForm Menu = new MenuStrategyForm();          
+            {
+                MenuStrategyForm Menu = new MenuStrategyForm();
+                Menu.Show();
+            }
+
+        }
     }
 }

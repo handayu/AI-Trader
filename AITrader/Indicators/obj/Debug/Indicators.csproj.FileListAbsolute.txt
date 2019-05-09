@@ -1,0 +1,6 @@
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\Indicators.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\Indicators.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Indicators\obj\Debug\Indicators.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Indicators\obj\Debug\Indicators.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Indicators\obj\Debug\Indicators.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Indicators\obj\Debug\Indicators.pdb

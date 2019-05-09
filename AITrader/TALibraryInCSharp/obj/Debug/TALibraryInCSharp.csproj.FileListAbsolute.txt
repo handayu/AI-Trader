@@ -1,0 +1,12 @@
+C:\Users\Administrator\Desktop\TALibraryInCSharp-master\TALibraryInCSharp-master\TALibraryInCSharp\bin\Debug\TALibraryInCSharp.dll
+C:\Users\Administrator\Desktop\TALibraryInCSharp-master\TALibraryInCSharp-master\TALibraryInCSharp\bin\Debug\TALibraryInCSharp.pdb
+C:\Users\Administrator\Desktop\TALibraryInCSharp-master\TALibraryInCSharp-master\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\TALibraryInCSharp-master\TALibraryInCSharp-master\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\TALibraryInCSharp-master\TALibraryInCSharp-master\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.dll
+C:\Users\Administrator\Desktop\TALibraryInCSharp-master\TALibraryInCSharp-master\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\TALibraryInCSharp.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\TALibraryInCSharp.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.pdb

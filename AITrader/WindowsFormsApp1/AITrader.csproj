@@ -73,6 +73,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Commonlib\EQATEC.Analytics.Monitor.dll</HintPath>
     </Reference>
+    <Reference Include="Indicators">
+      <HintPath>..\Commonlib\Indicators.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Commonlib\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
@@ -273,17 +276,23 @@
     <Compile Include="MainForm\LoginForm2.Designer.cs">
       <DependentUpon>LoginForm2.cs</DependentUpon>
     </Compile>
-    <Compile Include="RenkoCreateTestForm.cs">
+    <Compile Include="MenuStrategyForm\MenuStrategyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RenkoCreateTestForm.Designer.cs">
+    <Compile Include="MenuStrategyForm\MenuStrategyForm.Designer.cs">
+      <DependentUpon>MenuStrategyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm\RenkoCreateTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm\RenkoCreateTestForm.Designer.cs">
       <DependentUpon>RenkoCreateTestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StrategyLoader.cs" />
-    <Compile Include="TestLoadDllForm.cs">
+    <Compile Include="DllLoader\StrategyLoader.cs" />
+    <Compile Include="TestForm\TestLoadDllForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestLoadDllForm.Designer.cs">
+    <Compile Include="TestForm\TestLoadDllForm.Designer.cs">
       <DependentUpon>TestLoadDllForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -412,10 +421,13 @@
     <EmbeddedResource Include="MainForm\LoginForm2.resx">
       <DependentUpon>LoginForm2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RenkoCreateTestForm.resx">
+    <EmbeddedResource Include="MenuStrategyForm\MenuStrategyForm.resx">
+      <DependentUpon>MenuStrategyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm\RenkoCreateTestForm.resx">
       <DependentUpon>RenkoCreateTestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestLoadDllForm.resx">
+    <EmbeddedResource Include="TestForm\TestLoadDllForm.resx">
       <DependentUpon>TestLoadDllForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
