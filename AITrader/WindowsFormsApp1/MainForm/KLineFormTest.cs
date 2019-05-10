@@ -21,6 +21,8 @@ namespace WindowsFormsApp1
 {
     public partial class KLineFormTest : DockContent
     {
+        private BarMarker m_barMaker = null;
+
         private object m_Strategy = null;
 
         private string m_Frame = string.Empty;
@@ -32,7 +34,6 @@ namespace WindowsFormsApp1
         private List<decimal> m_l = new List<decimal>();
         private List<decimal> m_c = new List<decimal>();
         private List<DateTime> m_d = new List<DateTime>();
-        private static Mutex m_mut = new Mutex();
 
         public delegate void DeleteKLineFormHandle(string formName);
         public event DeleteKLineFormHandle DeleteKLineFormEvent;
@@ -40,13 +41,46 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
+            this.chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.IsPositionedInside = false;//设置滚动条是在外部显示
+            chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.Size = 20;//设置滚动条的宽度
+            chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;//滚动条只显示向前的按钮，主要是为了不显示取消显示的按钮
+            chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.Size = 10;//设置图表可视区域数据点数，说白了一次可以看到多少个X轴区域
+            chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.MinSize = 1;//设置滚动一次，移动几格区域
+            chart1.ChartAreas["ChartArea1"].AxisX.Interval = 1;//设置X轴的间隔，设置它是为了看起来方便点，也就是要每个X轴的记录都显示出来
+
             m_InitInsTicker = t;
             m_formName = t.instrument_id + formName;
 
             this.Text = string.Format("{0}永续合约 -K线图1.0 Bar -AutoTrader", t.instrument_id);
 
+            ChartInfo chartInfo = new ChartInfo()
+            {
+                Instrument = m_InitInsTicker.instrument_id,
+                RenkoBarBoxSize = 0,
+                DataFrame = DATAFRAME.MIN5,
+                CandleType = CANDLETYPE.KLINEBAR
+            };
+
+            m_barMaker = new BarMarker(chartInfo);
+            m_barMaker.BarComingEvent += M_barMaker_BarComingEvent;
+
             AppendText("图表启动成功...");
             AppendText("交易合约为:" + m_InitInsTicker);
+        }
+
+        /// <summary>
+        ///5,15,...KLine和RenkoBar实时合成K线的所有回调接口 
+        /// </summary>
+        /// <param name="Bar"></param>
+        private void M_barMaker_BarComingEvent(TestData.KlineOkex Bar, DATAFRAME frame)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<TestData.KlineOkex, DATAFRAME>(M_barMaker_BarComingEvent), Bar, frame);
+                return;
+            }
+
+            this.chart1.Series[0].Points.AddXY(Bar.d, Bar.h, Bar.l, Bar.o, Bar.c);
         }
 
         /// <summary>
@@ -136,14 +170,13 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// 返回实时的行情数据--Kxian是合成，砖图自动，但在这里处理方式是一致的
+        /// 返回实时的行情数据--只更新最后一笔tick最新的-闪烁
         /// </summary>
         /// <param name="args"></param>
         private void AnsyTickerSubEvent(AIEventArgs args)
         {
             try
             {
-                //m_mut.WaitOne();
                 if (this.InvokeRequired)
                 {
                     this.BeginInvoke(new Action<AIEventArgs>(AnsyTickerSubEvent), args);
@@ -172,9 +205,23 @@ namespace WindowsFormsApp1
                         c = t.last
                     };
 
-                    this.chart1.Series[0].Points.AddXY(k.d, k.o, k.h, k.l, k.c);
-                    object o = this.chart1.Series[0]["BoxPlotSeries"];
+                    //永远是更新最后一笔，只更新最后一笔闪烁的，其余的分钟K和其他图形，通过专有的BarMaker接口推送过来添加；
+                    if (this.chart1.Series[0].Points.Count >= 1)
+                    {
+                        //[Hanyu]这里多删除了一个Bar----需要修正---如果前一笔是tick线(在这里怎么判断？目前暂时用ohlc都一样)
+                        if (this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[0] ==
+                            this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[1] &&
+                            this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[1] ==
+                            this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[2] &&
+                            this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[2] ==
+                            this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[3])
+                        {
+                            //this.chart1.Series[0].Points.RemoveAt(this.chart1.Series[0].Points.Count - 1);
+                            //this.chart1.Series[0].Points.AddXY(k.d, k.o, k.h, k.l, k.c);
 
+                        }
+
+                    }
                     AppendText(k.ToString());
                 }
 
@@ -370,7 +417,6 @@ namespace WindowsFormsApp1
         }
 
         #endregion
-
         private void toolStripButton_ZoomLargeClick(object sender, EventArgs e)
         {
             ZoomOut(this.chart1);
@@ -417,6 +463,10 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void toolStripButton_DayClick(object sender, EventArgs e)
         {
+            //直接在这里修改发布器的状态，发布器自动switch到MinBar的生成
+            m_barMaker.CHARTINFO.CandleType = CANDLETYPE.KLINEBAR;
+            m_barMaker.CHARTINFO.DataFrame = DATAFRAME.DAY1;
+
             m_Frame = "日";
             this.Text = string.Format("{0}永续合约 -K线图1.0 日线Bar -AutoTrader", m_InitInsTicker.instrument_id);
 
@@ -431,6 +481,10 @@ namespace WindowsFormsApp1
 
         private void toolStripButton_60MinClick(object sender, EventArgs e)
         {
+            //直接在这里修改发布器的状态，发布器自动switch到MinBar的生成
+            m_barMaker.CHARTINFO.CandleType = CANDLETYPE.KLINEBAR;
+            m_barMaker.CHARTINFO.DataFrame = DATAFRAME.HOUR1;
+
             m_Frame = "60";
             this.Text = string.Format("{0}永续合约 -K线图1.0 60MinBar -AutoTrader", m_InitInsTicker.instrument_id);
 
@@ -445,6 +499,10 @@ namespace WindowsFormsApp1
 
         private void toolStripButton_30MinClick(object sender, EventArgs e)
         {
+            //直接在这里修改发布器的状态，发布器自动switch到MinBar的生成
+            m_barMaker.CHARTINFO.CandleType = CANDLETYPE.KLINEBAR;
+            m_barMaker.CHARTINFO.DataFrame = DATAFRAME.MIN30;
+
             m_Frame = "30";
             this.Text = string.Format("{0}永续合约 -K线图1.0 30MinBar -AutoTrader", m_InitInsTicker.instrument_id);
 
@@ -459,6 +517,10 @@ namespace WindowsFormsApp1
 
         private void toolStripButton_15MinClick(object sender, EventArgs e)
         {
+            //直接在这里修改发布器的状态，发布器自动switch到MinBar的生成
+            m_barMaker.CHARTINFO.CandleType = CANDLETYPE.KLINEBAR;
+            m_barMaker.CHARTINFO.DataFrame = DATAFRAME.MIN15;
+
             m_Frame = "15";
             this.Text = string.Format("{0}永续合约 -K线图1.0 15MinBar -AutoTrader", m_InitInsTicker.instrument_id);
 
@@ -474,6 +536,10 @@ namespace WindowsFormsApp1
 
         private void toolStripButton_5MinClick(object sender, EventArgs e)
         {
+            //直接在这里修改发布器的状态，发布器自动switch到MinBar的生成
+            m_barMaker.CHARTINFO.CandleType = CANDLETYPE.KLINEBAR;
+            m_barMaker.CHARTINFO.DataFrame = DATAFRAME.MIN5;
+
             m_Frame = "5";
             this.Text = string.Format("{0}永续合约 -K线图1.0 5MinBar -AutoTrader", m_InitInsTicker.instrument_id);
 
@@ -489,6 +555,10 @@ namespace WindowsFormsApp1
 
         private void toolStripLabel_1Min_Click(object sender, EventArgs e)
         {
+            //直接在这里修改发布器的状态，发布器自动switch到MinBar的生成
+            m_barMaker.CHARTINFO.CandleType = CANDLETYPE.KLINEBAR;
+            m_barMaker.CHARTINFO.DataFrame = DATAFRAME.MIN1;
+
             m_Frame = "1";
             this.Text = string.Format("{0}永续合约 -K线图1.0 1MinBar -AutoTrader", m_InitInsTicker.instrument_id);
 
@@ -570,17 +640,13 @@ namespace WindowsFormsApp1
                 return;
             }
             {
-                //清空
-                //this.chart1.Series[0].Points.Clear();
-                //m_d.Clear();
-                //m_o.Clear();
-                //m_h.Clear();
-                //m_l.Clear();
-                //m_c.Clear();
 
-                double boxsize = renkoForm.BoxSize;
-                this.chart1.Series[0].ChartType = SeriesChartType.Renko;
-                this.chart1.Series[0]["BoxSize"] = boxsize.ToString();
+                decimal boxsize = renkoForm.BoxSize;
+
+                //直接在这里修改发布器的状态，发布器自动switch到renkoBar的生成
+                m_barMaker.ResetRenkoStartPrice();
+                m_barMaker.CHARTINFO.CandleType = CANDLETYPE.RENKOBAR;
+                m_barMaker.CHARTINFO.RenkoBarBoxSize = boxsize;
 
                 m_Frame = "Tick";
                 this.Text = string.Format("{0}永续合约 -K线图1.0 砖型图砖高{1} -AutoTrader", m_InitInsTicker.instrument_id, boxsize.ToString());
@@ -792,33 +858,5 @@ namespace WindowsFormsApp1
             e.Graphics.DrawLine(pen, point1, point2);
         }
 
-        /// <summary>
-        /// 所有指标的计算全部依赖于目前图表的Point数据
-        /// </summary>
-        private void HoldChartDta()
-        {
-            //this.chart1.binddata?
-            //this.chart1.Series[0].
-
-
-
-        }
-
-        /// <summary>
-        /// 所有指标点击Item的入口-在这里可以通过指标
-        /// 工厂，进行抽象生成添加启动计算;当前只实现了
-        /// 几个指标,具体指标可以借助ta-lib公共库，里面
-        /// 已经实现了几百种指标的算法，可以直接数据调用
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ToolStripMenuItem_IndicatorsCommonInClick(object sender, EventArgs e)
-        {
-            //如果选中了SAR指标-计算启动并加入图表
-            if( ((ToolStripMenuItem)sender).Text.CompareTo("SAR") == 0)
-            {
-
-            }
-        }
     }
 }

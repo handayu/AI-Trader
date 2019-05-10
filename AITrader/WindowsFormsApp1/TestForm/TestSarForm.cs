@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common;
 using TALibraryInCSharp;
+using swap = OKExSDK.Models.Swap;
 
 namespace WindowsFormsApp1
 {
     public partial class TestSarForm : Form
     {
+        private BarMarker m_barMarker = null;
+
         public TestSarForm()
         {
             InitializeComponent();
@@ -43,7 +47,7 @@ namespace WindowsFormsApp1
                 2145 - 5, 2150 - 5, 2155-5, 2160-5, 2155-5, 2150-5, 2145-5 ,2140-5,2135-5};
 
             //outReal是即将输出的一组计算结果数列
-            double[] outRealSAR = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0};
+            double[] outRealSAR = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             //输出数列的起始计算的Index
             int outBegIndexSAR = 0;
@@ -99,6 +103,60 @@ namespace WindowsFormsApp1
             //}
             #endregion
 
+            ChartInfo chartinfo = new ChartInfo()
+            {
+                Instrument = "BTC-USD-SWAP",
+                RenkoBarBoxSize = 2,
+                DataFrame = DATAFRAME.MIN1,
+                CandleType = CANDLETYPE.RENKOBAR
+            };
+
+            m_barMarker = new BarMarker(chartinfo);
+
+            m_barMarker.BarComingEvent += M_barMarker_NewRenkoBarComingEvent;
+            APIConnect.ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent += AnsyRealDataSubEvent;
+        }
+
+        private void AnsyRealDataSubEvent(AIEventArgs args)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<AIEventArgs>(AnsyRealDataSubEvent), args);
+                return;
+            }
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDMARKETDATA_FAILED) return;
+            List<swap.Ticker> ticLiet = (List<swap.Ticker>)args.EventData;
+            if (ticLiet == null) return;
+            if (ticLiet.Count <= 0 || ticLiet[0].instrument_id != "BTC-USD-SWAP") return;
+
+            foreach (swap.Ticker t in ticLiet)
+            {
+                if (t.instrument_id != "BTC-USD-SWAP") continue;
+
+                this.richTextBox_nowTick.AppendText("\n" + t.last.ToString());
+            }
+        }
+
+        private void M_barMarker_NewRenkoBarComingEvent(Common.TestData.KlineOkex renkoBar,DATAFRAME frame)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<Common.TestData.KlineOkex, DATAFRAME>(M_barMarker_NewRenkoBarComingEvent), renkoBar, frame);
+                return;
+            }
+
+            this.richTextBox_renko.AppendText("\n" + renkoBar.o.ToString() + ":" + renkoBar.h.ToString() + ":" +
+                renkoBar.l.ToString() + ":" + renkoBar.c.ToString());
+
+        }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            if (m_barMarker != null)
+                m_barMarker.BarComingEvent -= M_barMarker_NewRenkoBarComingEvent;
+
+            if (APIConnect.ConnectManager.CreateInstance().CONNECTION != null)
+                APIConnect.ConnectManager.CreateInstance().CONNECTION.AnsyRealDataEvent -= AnsyRealDataSubEvent;
         }
     }
 }

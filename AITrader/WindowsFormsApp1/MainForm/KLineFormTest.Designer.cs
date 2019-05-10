@@ -573,7 +573,6 @@
             this.ToolStripMenuItem_IndicatorsCommonIn.Name = "ToolStripMenuItem_IndicatorsCommonIn";
             this.ToolStripMenuItem_IndicatorsCommonIn.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItem_IndicatorsCommonIn.Text = "SAR";
-            this.ToolStripMenuItem_IndicatorsCommonIn.Click += new System.EventHandler(this.ToolStripMenuItem_IndicatorsCommonInClick);
             // 
             // KLineFormTest
             // 

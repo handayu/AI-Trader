@@ -83,6 +83,7 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ToolStripMenuItem_BarMaker = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -406,7 +407,8 @@
             // ToolStripMenuItem_test
             // 
             this.ToolStripMenuItem_test.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.组合LogK线测试ToolStripMenuItem});
+            this.组合LogK线测试ToolStripMenuItem,
+            this.ToolStripMenuItem_BarMaker});
             this.ToolStripMenuItem_test.Name = "ToolStripMenuItem_test";
             this.ToolStripMenuItem_test.Size = new System.Drawing.Size(80, 21);
             this.ToolStripMenuItem_test.Text = "外部测试区";
@@ -415,7 +417,7 @@
             // 组合LogK线测试ToolStripMenuItem
             // 
             this.组合LogK线测试ToolStripMenuItem.Name = "组合LogK线测试ToolStripMenuItem";
-            this.组合LogK线测试ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.组合LogK线测试ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.组合LogK线测试ToolStripMenuItem.Text = "组合LogK线测试";
             this.组合LogK线测试ToolStripMenuItem.Click += new System.EventHandler(this.组合LogK线测试ToolStripMenuItem_Click);
             // 
@@ -479,10 +481,17 @@
             this.panel2.Controls.Add(this.statusStrip1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 567);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1125, 26);
             this.panel2.TabIndex = 9;
+            // 
+            // ToolStripMenuItem_BarMaker
+            // 
+            this.ToolStripMenuItem_BarMaker.Name = "ToolStripMenuItem_BarMaker";
+            this.ToolStripMenuItem_BarMaker.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_BarMaker.Text = "测试barmarket";
+            this.ToolStripMenuItem_BarMaker.Click += new System.EventHandler(this.ToolStripMenuItem_BarMakerClick);
             // 
             // Form1
             // 
@@ -563,6 +572,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_HLayout;
         private System.Windows.Forms.ToolStripMenuItem 组合LogK线测试ToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_BarMaker;
     }
 }
 

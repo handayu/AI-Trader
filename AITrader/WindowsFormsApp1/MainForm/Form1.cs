@@ -120,8 +120,16 @@ namespace WindowsFormsApp1
 
         private void Edit_Click(object sender, EventArgs e)
         {
-            //打开Edit进程--独立的进程
-            System.Diagnostics.Process.Start(@"C:\Users\Administrator\Desktop\AI-Trader\Edi-master\Debug\Edi.exe");
+            try
+            {
+                //打开Edit进程--独立的进程
+                System.Diagnostics.Process.Start(@"C:\Users\Administrator\Desktop\AI-Trader\Edi-master\Debug\Edi.exe");
+            }
+            catch(Exception ex)
+            {
+
+            }
+
         }
 
         private void toolStripButton_QuaickOrderClick(object sender, EventArgs e)
@@ -157,6 +165,12 @@ namespace WindowsFormsApp1
         private void Form_Closed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void ToolStripMenuItem_BarMakerClick(object sender, EventArgs e)
+        {
+            TestSarForm f = new TestSarForm();
+            f.Show();
         }
     }
 }

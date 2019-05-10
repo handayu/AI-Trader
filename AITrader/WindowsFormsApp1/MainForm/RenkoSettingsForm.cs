@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class RenkoSettingsForm : Form
     {
-        private double m_boxSize = 0.00;
+        private decimal m_boxSize = 0m;
         private bool m_dialogresult = false;
 
         public RenkoSettingsForm()
@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        public double BoxSize
+        public decimal BoxSize
         {
             get
             {
@@ -38,9 +38,9 @@ namespace WindowsFormsApp1
 
         private void Button_OK_Click(object sender, EventArgs e)
         {
-            double boxSizeDouble = 0.00;
+            decimal boxSizeDouble = 0m;
             string boxsizeStr = this.textBox_RenkoBoxSize.Text;
-            double.TryParse(boxsizeStr, out boxSizeDouble);
+            decimal.TryParse(boxsizeStr, out boxSizeDouble);
             m_boxSize = boxSizeDouble;
             m_dialogresult = true;
 
