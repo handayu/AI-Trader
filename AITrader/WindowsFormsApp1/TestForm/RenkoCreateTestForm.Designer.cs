@@ -46,7 +46,6 @@
             this.button_MarketMarket.TabIndex = 0;
             this.button_MarketMarket.Text = "加入行情";
             this.button_MarketMarket.UseVisualStyleBackColor = true;
-            this.button_MarketMarket.Click += new System.EventHandler(this.button_MarketClick);
             // 
             // textBox_AddPrice
             // 

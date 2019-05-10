@@ -68,12 +68,12 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\bin\Debug\Newto
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\OKExSDKLibrary.dll.config
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\OKExSDKLibrary.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\OKExSDKLibrary.pdb
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\obj\Debug\OKExSDKLibrary.csproj.App.config
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\obj\Debug\OKExSDKLibrary.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\obj\Debug\OKExSDKLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\obj\Debug\OKExSDKLibrary.csproj.CopyComplete
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\obj\Debug\OKExSDKLibrary.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\OKExSDKLibrary\obj\Debug\OKExSDKLibrary.pdb
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\OKExSDKLibrary.dll.config
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\OKExSDKLibrary.dll
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\OKExSDKLibrary.pdb

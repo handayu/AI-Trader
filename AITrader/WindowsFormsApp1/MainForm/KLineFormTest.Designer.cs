@@ -30,12 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KLineFormTest));
-            System.Windows.Forms.DataVisualization.Charting.ArrowAnnotation arrowAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.ArrowAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.430555555555D, "80,70,60,65");
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.416666666664D, "80,70,60,65");
@@ -45,12 +40,23 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.388888888891D, "80,70,60,65");
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.381944444445D, "80,50,70,65");
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.375D, "80,70,60,65");
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.430555555555D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.416666666664D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.409722222219D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.402777777781D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.395833333336D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.388888888891D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint15 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.381944444445D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint16 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.375D, 80D);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_StartStrategy = new System.Windows.Forms.ToolStripDropDownButton();
             this.ToolStripMenuItem_StrategyAutoAction = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_StrategySettings = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.趋势指标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_IndicatorsCommonIn = new System.Windows.Forms.ToolStripMenuItem();
             this.震荡指标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.量价指标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -77,15 +83,21 @@
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.dateTimePicker_Begin = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
             this.timer_NotifyPosition = new System.Windows.Forms.Timer(this.components);
-            this.ToolStripMenuItem_IndicatorsCommonIn = new System.Windows.Forms.ToolStripMenuItem();
+            this.chart_Indiactors = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Indiactors)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -163,19 +175,25 @@
             this.趋势指标ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_IndicatorsCommonIn});
             this.趋势指标ToolStripMenuItem.Name = "趋势指标ToolStripMenuItem";
-            this.趋势指标ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.趋势指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.趋势指标ToolStripMenuItem.Text = "趋势指标";
+            // 
+            // ToolStripMenuItem_IndicatorsCommonIn
+            // 
+            this.ToolStripMenuItem_IndicatorsCommonIn.Name = "ToolStripMenuItem_IndicatorsCommonIn";
+            this.ToolStripMenuItem_IndicatorsCommonIn.Size = new System.Drawing.Size(99, 22);
+            this.ToolStripMenuItem_IndicatorsCommonIn.Text = "SAR";
             // 
             // 震荡指标ToolStripMenuItem
             // 
             this.震荡指标ToolStripMenuItem.Name = "震荡指标ToolStripMenuItem";
-            this.震荡指标ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.震荡指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.震荡指标ToolStripMenuItem.Text = "震荡指标";
             // 
             // 量价指标ToolStripMenuItem
             // 
             this.量价指标ToolStripMenuItem.Name = "量价指标ToolStripMenuItem";
-            this.量价指标ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.量价指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.量价指标ToolStripMenuItem.Text = "量价指标";
             // 
             // toolStripSeparator1
@@ -368,7 +386,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.chart1);
+            this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 31);
@@ -376,27 +394,26 @@
             this.panel1.Size = new System.Drawing.Size(800, 419);
             this.panel1.TabIndex = 6;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(176, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.chart1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.chart_Indiactors);
+            this.splitContainer1.Size = new System.Drawing.Size(624, 419);
+            this.splitContainer1.SplitterDistance = 247;
+            this.splitContainer1.TabIndex = 7;
+            // 
             // chart1
             // 
-            arrowAnnotation1.AllowTextEditing = true;
-            arrowAnnotation1.AnchorDataPointName = "Series1\\r2";
-            arrowAnnotation1.AxisXName = "ChartArea1\\rX";
-            arrowAnnotation1.ClipToChartArea = "ChartArea1";
-            arrowAnnotation1.Height = -5D;
-            arrowAnnotation1.Name = "ArrowAnnotation1";
-            arrowAnnotation1.Width = 0D;
-            arrowAnnotation1.Y = 70D;
-            arrowAnnotation1.YAxisName = "ChartArea1\\rY";
-            lineAnnotation1.AnchorDataPointName = "Series1\\r4";
-            lineAnnotation1.ClipToChartArea = "ChartArea1";
-            lineAnnotation1.Height = 10D;
-            lineAnnotation1.IsSizeAlwaysRelative = false;
-            lineAnnotation1.LineColor = System.Drawing.Color.White;
-            lineAnnotation1.Name = "LineAnnotation1";
-            lineAnnotation1.Width = 2D;
-            lineAnnotation1.Y = 70D;
-            this.chart1.Annotations.Add(arrowAnnotation1);
-            this.chart1.Annotations.Add(lineAnnotation1);
             chartArea1.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
             chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
             chartArea1.AxisX.IsStartedFromZero = false;
@@ -416,7 +433,6 @@
             chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
             chartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             chartArea1.AxisY.MajorTickMark.Enabled = false;
-            chartArea1.AxisY.ScaleView.Zoomable = false;
             chartArea1.AxisY.ScrollBar.Enabled = false;
             chartArea1.BackColor = System.Drawing.Color.White;
             chartArea1.BorderColor = System.Drawing.Color.Maroon;
@@ -429,92 +445,9 @@
             chartArea1.Position.X = 1F;
             chartArea1.Position.Y = 1F;
             chartArea1.ShadowColor = System.Drawing.Color.White;
-            chartArea2.AlignWithChartArea = "ChartArea1";
-            chartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea2.AxisX.IsStartedFromZero = false;
-            chartArea2.AxisX.LabelStyle.Enabled = false;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisX.MajorTickMark.Enabled = false;
-            chartArea2.AxisX.ScrollBar.Enabled = false;
-            chartArea2.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea2.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea2.AxisY.IsStartedFromZero = false;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY.MajorTickMark.Enabled = false;
-            chartArea2.AxisY.ScrollBar.Enabled = false;
-            chartArea2.BackColor = System.Drawing.Color.White;
-            chartArea2.BorderColor = System.Drawing.Color.Maroon;
-            chartArea2.IsSameFontSizeForAllAxes = true;
-            chartArea2.Name = "ChartArea2";
-            chartArea2.Position.Auto = false;
-            chartArea2.Position.Height = 99F;
-            chartArea2.Position.Width = 99F;
-            chartArea2.Position.X = 1F;
-            chartArea2.Position.Y = 1F;
-            chartArea2.ShadowColor = System.Drawing.Color.White;
-            chartArea2.Visible = false;
-            chartArea3.AlignWithChartArea = "ChartArea1";
-            chartArea3.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea3.AxisX.IsStartedFromZero = false;
-            chartArea3.AxisX.LabelStyle.Enabled = false;
-            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea3.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea3.AxisX.MajorTickMark.Enabled = false;
-            chartArea3.AxisX.ScrollBar.Enabled = false;
-            chartArea3.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea3.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea3.AxisY.IsStartedFromZero = false;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea3.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea3.AxisY.MajorTickMark.Enabled = false;
-            chartArea3.AxisY.ScrollBar.Enabled = false;
-            chartArea3.BackColor = System.Drawing.Color.White;
-            chartArea3.BorderColor = System.Drawing.Color.Maroon;
-            chartArea3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea3.IsSameFontSizeForAllAxes = true;
-            chartArea3.Name = "ChartArea3";
-            chartArea3.Position.Auto = false;
-            chartArea3.Position.Height = 25F;
-            chartArea3.Position.Width = 99F;
-            chartArea3.Position.X = 1F;
-            chartArea3.Position.Y = 50F;
-            chartArea3.ShadowColor = System.Drawing.Color.White;
-            chartArea3.Visible = false;
-            chartArea4.AlignWithChartArea = "ChartArea1";
-            chartArea4.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea4.AxisX.IsStartedFromZero = false;
-            chartArea4.AxisX.LabelStyle.Enabled = false;
-            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea4.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea4.AxisX.MajorTickMark.Enabled = false;
-            chartArea4.AxisX.ScrollBar.Enabled = false;
-            chartArea4.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea4.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea4.AxisY.IsStartedFromZero = false;
-            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea4.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea4.AxisY.MajorTickMark.Enabled = false;
-            chartArea4.AxisY.ScrollBar.Enabled = false;
-            chartArea4.BackColor = System.Drawing.Color.White;
-            chartArea4.BorderColor = System.Drawing.Color.Maroon;
-            chartArea4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea4.IsSameFontSizeForAllAxes = true;
-            chartArea4.Name = "ChartArea4";
-            chartArea4.Position.Auto = false;
-            chartArea4.Position.Height = 25F;
-            chartArea4.Position.Width = 99F;
-            chartArea4.Position.X = 1F;
-            chartArea4.Position.Y = 75F;
-            chartArea4.ShadowColor = System.Drawing.Color.White;
-            chartArea4.Visible = false;
             this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.ChartAreas.Add(chartArea2);
-            this.chart1.ChartAreas.Add(chartArea3);
-            this.chart1.ChartAreas.Add(chartArea4);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart1.Location = new System.Drawing.Point(176, 0);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -537,7 +470,7 @@
             series1.YValuesPerPoint = 4;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(624, 419);
+            this.chart1.Size = new System.Drawing.Size(624, 247);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
             this.chart1.Paint += new System.Windows.Forms.PaintEventHandler(this.Chart_paint);
@@ -561,6 +494,7 @@
             this.richTextBox_StrategyLog.Size = new System.Drawing.Size(176, 419);
             this.richTextBox_StrategyLog.TabIndex = 0;
             this.richTextBox_StrategyLog.Text = "";
+            this.richTextBox_StrategyLog.TextChanged += new System.EventHandler(this.RichBox_TextChanged);
             // 
             // timer_NotifyPosition
             // 
@@ -568,11 +502,67 @@
             this.timer_NotifyPosition.Interval = 3000;
             this.timer_NotifyPosition.Tick += new System.EventHandler(this.timer_NotifyPositionEvent);
             // 
-            // ToolStripMenuItem_IndicatorsCommonIn
+            // chart_Indiactors
             // 
-            this.ToolStripMenuItem_IndicatorsCommonIn.Name = "ToolStripMenuItem_IndicatorsCommonIn";
-            this.ToolStripMenuItem_IndicatorsCommonIn.Size = new System.Drawing.Size(180, 22);
-            this.ToolStripMenuItem_IndicatorsCommonIn.Text = "SAR";
+            chartArea2.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea2.AxisX.IsStartedFromZero = false;
+            chartArea2.AxisX.LabelStyle.Format = "HH:mm";
+            chartArea2.AxisX.LabelStyle.Interval = 0D;
+            chartArea2.AxisX.LabelStyle.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisX.MajorTickMark.Enabled = false;
+            chartArea2.AxisX.MajorTickMark.Interval = 0D;
+            chartArea2.AxisX.MajorTickMark.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea2.AxisX.ScrollBar.ButtonStyle = System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonStyles.SmallScroll;
+            chartArea2.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea2.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea2.AxisY.IsInterlaced = true;
+            chartArea2.AxisY.IsStartedFromZero = false;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.AxisY.MajorTickMark.Enabled = false;
+            chartArea2.AxisY.ScrollBar.Enabled = false;
+            chartArea2.BackColor = System.Drawing.Color.White;
+            chartArea2.BorderColor = System.Drawing.Color.Maroon;
+            chartArea2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea2.IsSameFontSizeForAllAxes = true;
+            chartArea2.Name = "ChartArea1";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 99F;
+            chartArea2.Position.Width = 99F;
+            chartArea2.Position.X = 1F;
+            chartArea2.Position.Y = 1F;
+            chartArea2.ShadowColor = System.Drawing.Color.White;
+            this.chart_Indiactors.ChartAreas.Add(chartArea2);
+            this.chart_Indiactors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart_Indiactors.Location = new System.Drawing.Point(0, 0);
+            this.chart_Indiactors.Margin = new System.Windows.Forms.Padding(0);
+            this.chart_Indiactors.Name = "chart_Indiactors";
+            this.chart_Indiactors.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series2.BorderColor = System.Drawing.Color.DimGray;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Color = System.Drawing.Color.SeaGreen;
+            series2.CustomProperties = "PriceDownColor=SeaGreen, PriceUpColor=Maroon";
+            series2.IsXValueIndexed = true;
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series2.Name = "Series1";
+            series2.Points.Add(dataPoint9);
+            series2.Points.Add(dataPoint10);
+            series2.Points.Add(dataPoint11);
+            series2.Points.Add(dataPoint12);
+            series2.Points.Add(dataPoint13);
+            series2.Points.Add(dataPoint14);
+            series2.Points.Add(dataPoint15);
+            series2.Points.Add(dataPoint16);
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart_Indiactors.Series.Add(series2);
+            this.chart_Indiactors.Size = new System.Drawing.Size(624, 168);
+            this.chart_Indiactors.TabIndex = 5;
+            this.chart_Indiactors.Text = "chart2";
             // 
             // KLineFormTest
             // 
@@ -593,8 +583,13 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Indiactors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,5 +634,7 @@
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.Timer timer_NotifyPosition;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_IndicatorsCommonIn;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_Indiactors;
     }
 }

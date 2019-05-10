@@ -127,7 +127,7 @@ namespace WindowsFormsApp1
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show("无法找到Edi:" + ex.Message);
             }
 
         }

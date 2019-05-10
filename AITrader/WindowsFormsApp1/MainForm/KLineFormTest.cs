@@ -2,6 +2,7 @@
 using Common;
 using Strategy;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using TALibraryInCSharp;
 using WeifenLuo.WinFormsUI.Docking;
 using swap = OKExSDK.Models.Swap;
 
@@ -41,12 +43,18 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            this.chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.IsPositionedInside = false;//设置滚动条是在外部显示
-            chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.Size = 20;//设置滚动条的宽度
-            chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;//滚动条只显示向前的按钮，主要是为了不显示取消显示的按钮
-            chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.Size = 10;//设置图表可视区域数据点数，说白了一次可以看到多少个X轴区域
-            chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.MinSize = 1;//设置滚动一次，移动几格区域
-            chart1.ChartAreas["ChartArea1"].AxisX.Interval = 1;//设置X轴的间隔，设置它是为了看起来方便点，也就是要每个X轴的记录都显示出来
+            //chart的滚动条始终在最右边
+            this.chart1.ChartAreas[0].AxisX.ScaleView.Scroll(ScrollType.Last);
+            this.chart_Indiactors.ChartAreas[0].AxisX.ScaleView.Scroll(ScrollType.Last);
+
+            //this.chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.IsPositionedInside = false;//设置滚动条是在外部显示
+            //chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.Size = 20;//设置滚动条的宽度
+            //chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;//滚动条只显示向前的按钮，主要是为了不显示取消显示的按钮
+            //chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.Size = 10;//设置图表可视区域数据点数，说白了一次可以看到多少个X轴区域
+            //chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.MinSize = 1;//设置滚动一次，移动几格区域
+            //chart1.ChartAreas["ChartArea1"].AxisX.Interval = 1;//设置X轴的间隔，设置它是为了看起来方便点，也就是要每个X轴的记录都显示出来
+            //this.chart_Indiactors.ChartAreas[0].AxisY.IsStartedFromZero = false;
+            //this.chart_Indiactors.ChartAreas[0].AxisX.IsStartedFromZero = false;
 
             m_InitInsTicker = t;
             m_formName = t.instrument_id + formName;
@@ -80,7 +88,45 @@ namespace WindowsFormsApp1
                 return;
             }
 
+            m_d.Add(Bar.d);
+            m_h.Add(Bar.h);
+            m_l.Add(Bar.l);
+            m_c.Add(Bar.c);
+
+            //添加Bar(无论是tick，分钟还是renko都是在这里加入)
             this.chart1.Series[0].Points.AddXY(Bar.d, Bar.h, Bar.l, Bar.o, Bar.c);
+
+            //添加计算Sar指标的值到日志用于监控(统一计算renko)
+            double[] highAyyay = new double[m_h.Count];
+            double[] lowArray = new double[m_l.Count];
+            for (int i = 0; i < m_h.Count; i++)
+            {
+                highAyyay[i] = Convert.ToDouble(m_h[i]);
+                lowArray[i] = Convert.ToDouble(m_l[i]);
+            }
+            double[] intHigh = highAyyay;
+            double[] intLow = lowArray;
+            //outReal是即将输出的一组计算结果数列
+            double[] outRealSAR = new double[highAyyay.Length];
+            //输出数列的起始计算的Index
+            int outBegIndexSAR = 0;
+            //输出数列的目前计算的index
+            int outNBElementSAR = 0;
+            Core.RetCode resultCode = Core.Sar(0, intHigh.Length - 1, intHigh, intLow, 0.02, 0.2, ref outBegIndexSAR, ref outNBElementSAR, outRealSAR);
+
+            this.chart_Indiactors.Series[0].Points.Clear();
+
+            for (int i = 0; i < m_d.Count; i++)
+            {
+                if (i >= 2)
+                {
+                    this.chart_Indiactors.Series[0].Points.AddXY(m_d[i], outRealSAR[i - 2]);
+                }
+            }
+
+            if (outRealSAR.Length >= 2)
+                AppendText(string.Format("当前时间:{0},当前RenkoBar最新价:{1},当前最新的SAR值:{2}", Bar.d, Bar.c, outRealSAR[outRealSAR.Length - 2]));
+
         }
 
         /// <summary>
@@ -128,6 +174,8 @@ namespace WindowsFormsApp1
             {
                 //清空
                 this.chart1.Series[0].Points.Clear();
+                this.chart1.Annotations.Clear();
+
                 m_d.Clear();
                 m_o.Clear();
                 m_h.Clear();
@@ -152,21 +200,26 @@ namespace WindowsFormsApp1
                 this.chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset();
                 Zoom(this.chart1);
 
-                //图表K线和Anotion-Clear()--数据回来的根据接口猜测，应该是d,o,h,l,c四个量足以
-                this.chart1.Series[0].Points.Clear();
-                this.chart1.Annotations.Clear();
+                AddHistoryBar(klineLiet);
 
-                for (int i = 0; i < kCout; i++)
-                {
-                    this.chart1.Series[0].Points.AddXY(m_d[i], m_h[i], m_l[i], m_o[i], m_c[i]);
-                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("查询K线返回异常:" + ex.Message);
                 return;
             }
+        }
 
+        /// <summary>
+        /// 添加历史K线
+        /// </summary>
+        /// <param name="klineLiet"></param>
+        private void AddHistoryBar(List<TestData.KlineOkex> klineLiet)
+        {
+            for (int i = 0; i < klineLiet.Count; i++)
+            {
+                this.chart1.Series[0].Points.AddXY(m_d[i], m_h[i], m_l[i], m_o[i], m_c[i]);
+            }
         }
 
         /// <summary>
@@ -222,10 +275,8 @@ namespace WindowsFormsApp1
                         }
 
                     }
-                    AppendText(k.ToString());
+                    //AppendText(k.ToString());
                 }
-
-                //m_mut.ReleaseMutex();
             }
             catch (Exception ex)
             {
@@ -420,11 +471,14 @@ namespace WindowsFormsApp1
         private void toolStripButton_ZoomLargeClick(object sender, EventArgs e)
         {
             ZoomOut(this.chart1);
+            ZoomOut(this.chart_Indiactors);
         }
 
         private void toolStripButton_ZoomSmallClick(object sender, EventArgs e)
         {
             ZoomIn(this.chart1);
+            ZoomIn(this.chart_Indiactors);
+
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -445,7 +499,11 @@ namespace WindowsFormsApp1
 
         private void Form_Closed(object sender, FormClosedEventArgs e)
         {
-
+            if (m_barMaker != null)
+            {
+                m_barMaker.BarComingEvent -= M_barMaker_BarComingEvent;
+                m_barMaker = null;
+            }
         }
 
 
@@ -640,7 +698,6 @@ namespace WindowsFormsApp1
                 return;
             }
             {
-
                 decimal boxsize = renkoForm.BoxSize;
 
                 //直接在这里修改发布器的状态，发布器自动switch到renkoBar的生成
@@ -667,11 +724,15 @@ namespace WindowsFormsApp1
         private void ToolStripMenuItem_BlackGroundClick(object sender, EventArgs e)
         {
             this.chart1.ChartAreas[0].BackColor = Color.Black;
+            this.chart_Indiactors.ChartAreas[0].BackColor = Color.Black;
+
         }
 
         private void ToolStripMenuItem_WhiteGroundClick(object sender, EventArgs e)
         {
             this.chart1.ChartAreas[0].BackColor = Color.White;
+            this.chart_Indiactors.ChartAreas[0].BackColor = Color.White;
+
         }
 
         /// <summary>
@@ -858,5 +919,21 @@ namespace WindowsFormsApp1
             e.Graphics.DrawLine(pen, point1, point2);
         }
 
+        /// <summary>
+        /// 日志自动滚动到末尾
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RichBox_TextChanged(object sender, EventArgs e)
+        {
+            this.richTextBox_StrategyLog.SelectionStart = this.richTextBox_StrategyLog.Text.Length;
+            this.richTextBox_StrategyLog.SelectionLength = 0;
+            this.richTextBox_StrategyLog.Focus();
+        }
+
+        private void ChartIndicators_paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
