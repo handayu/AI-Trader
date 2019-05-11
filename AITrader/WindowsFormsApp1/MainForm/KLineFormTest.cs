@@ -127,6 +127,15 @@ namespace WindowsFormsApp1
             if (outRealSAR.Length >= 2)
                 AppendText(string.Format("当前时间:{0},当前RenkoBar最新价:{1},当前最新的SAR值:{2}", Bar.d, Bar.c, outRealSAR[outRealSAR.Length - 2]));
 
+
+            //this.chart1.ChartAreas[0].AxisX.ScaleView.Position = this.chart1.Series[0].Points.Count - 5;
+            //this.chart1.ChartAreas[0].AxisX.ScaleView.Size = 200; //设置可见数据为5 
+
+            //this.chart1.ChartAreas[0].AxisX.ScaleView.Position = this.chart1.Series[0].Points.Count;
+            //this.chart_Indiactors.ChartAreas[0].AxisX.ScaleView.Position = this.chart_Indiactors.Series[0].Points.Count;
+            this.chart1.ChartAreas[0].AxisX.ScaleView.Scroll(ScrollType.Last);
+            this.chart_Indiactors.ChartAreas[0].AxisX.ScaleView.Scroll(ScrollType.Last);
+
         }
 
         /// <summary>

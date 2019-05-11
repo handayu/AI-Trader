@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KLineFormTest));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.430555555555D, "80,70,60,65");
@@ -80,15 +79,16 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripMenuItem_Log = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.dateTimePicker_Begin = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart_Indiactors = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
             this.timer_NotifyPosition = new System.Windows.Forms.Timer(this.components);
-            this.chart_Indiactors = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -96,8 +96,10 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_Indiactors)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -121,8 +123,7 @@
             this.toolStripDropDownButton3,
             this.toolStripSeparator3,
             this.ToolStripMenuItem_Log,
-            this.toolStripSeparator5,
-            this.toolStripSplitButton1});
+            this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 31);
@@ -145,7 +146,7 @@
             // 
             this.ToolStripMenuItem_StrategyAutoAction.Image = global::WindowsFormsApp1.Properties.Resources._6b41346d30a6d19b7fdfc283add2871;
             this.ToolStripMenuItem_StrategyAutoAction.Name = "ToolStripMenuItem_StrategyAutoAction";
-            this.ToolStripMenuItem_StrategyAutoAction.Size = new System.Drawing.Size(148, 22);
+            this.ToolStripMenuItem_StrategyAutoAction.Size = new System.Drawing.Size(188, 30);
             this.ToolStripMenuItem_StrategyAutoAction.Text = "自动交易执行";
             this.ToolStripMenuItem_StrategyAutoAction.Click += new System.EventHandler(this.ToolStripMenuItem_StrategyAutoActionClick);
             // 
@@ -153,7 +154,7 @@
             // 
             this.ToolStripMenuItem_StrategySettings.Image = global::WindowsFormsApp1.Properties.Resources.a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a;
             this.ToolStripMenuItem_StrategySettings.Name = "ToolStripMenuItem_StrategySettings";
-            this.ToolStripMenuItem_StrategySettings.Size = new System.Drawing.Size(148, 22);
+            this.ToolStripMenuItem_StrategySettings.Size = new System.Drawing.Size(188, 30);
             this.ToolStripMenuItem_StrategySettings.Text = "策略属性设置";
             this.ToolStripMenuItem_StrategySettings.Click += new System.EventHandler(this.ToolStripMenuItem_StrategySettingsClick);
             // 
@@ -367,21 +368,12 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
             // 
-            // toolStripSplitButton1
-            // 
-            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
-            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(40, 28);
-            this.toolStripSplitButton1.Text = "toolStripSplitButton1";
-            // 
             // dateTimePicker_Begin
             // 
-            this.dateTimePicker_Begin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dateTimePicker_Begin.Location = new System.Drawing.Point(0, 31);
+            this.dateTimePicker_Begin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePicker_Begin.Location = new System.Drawing.Point(3, 3);
             this.dateTimePicker_Begin.Name = "dateTimePicker_Begin";
-            this.dateTimePicker_Begin.Size = new System.Drawing.Size(800, 21);
+            this.dateTimePicker_Begin.Size = new System.Drawing.Size(794, 21);
             this.dateTimePicker_Begin.TabIndex = 5;
             // 
             // panel1
@@ -389,9 +381,9 @@
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 31);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 419);
+            this.panel1.Size = new System.Drawing.Size(794, 387);
             this.panel1.TabIndex = 6;
             // 
             // splitContainer1
@@ -408,8 +400,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.chart_Indiactors);
-            this.splitContainer1.Size = new System.Drawing.Size(624, 419);
-            this.splitContainer1.SplitterDistance = 247;
+            this.splitContainer1.Size = new System.Drawing.Size(618, 387);
+            this.splitContainer1.SplitterDistance = 228;
             this.splitContainer1.TabIndex = 7;
             // 
             // chart1
@@ -470,37 +462,11 @@
             series1.YValuesPerPoint = 4;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(624, 247);
+            this.chart1.Size = new System.Drawing.Size(618, 228);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
             this.chart1.Paint += new System.Windows.Forms.PaintEventHandler(this.Chart_paint);
             this.chart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Chart_MouseMove);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.richTextBox_StrategyLog);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(176, 419);
-            this.panel2.TabIndex = 5;
-            this.panel2.Visible = false;
-            // 
-            // richTextBox_StrategyLog
-            // 
-            this.richTextBox_StrategyLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox_StrategyLog.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox_StrategyLog.Name = "richTextBox_StrategyLog";
-            this.richTextBox_StrategyLog.Size = new System.Drawing.Size(176, 419);
-            this.richTextBox_StrategyLog.TabIndex = 0;
-            this.richTextBox_StrategyLog.Text = "";
-            this.richTextBox_StrategyLog.TextChanged += new System.EventHandler(this.RichBox_TextChanged);
-            // 
-            // timer_NotifyPosition
-            // 
-            this.timer_NotifyPosition.Enabled = true;
-            this.timer_NotifyPosition.Interval = 3000;
-            this.timer_NotifyPosition.Tick += new System.EventHandler(this.timer_NotifyPositionEvent);
             // 
             // chart_Indiactors
             // 
@@ -560,9 +526,59 @@
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
             series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart_Indiactors.Series.Add(series2);
-            this.chart_Indiactors.Size = new System.Drawing.Size(624, 168);
+            this.chart_Indiactors.Size = new System.Drawing.Size(618, 155);
             this.chart_Indiactors.TabIndex = 5;
             this.chart_Indiactors.Text = "chart2";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.richTextBox_StrategyLog);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(176, 387);
+            this.panel2.TabIndex = 5;
+            this.panel2.Visible = false;
+            // 
+            // richTextBox_StrategyLog
+            // 
+            this.richTextBox_StrategyLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox_StrategyLog.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox_StrategyLog.Name = "richTextBox_StrategyLog";
+            this.richTextBox_StrategyLog.Size = new System.Drawing.Size(176, 387);
+            this.richTextBox_StrategyLog.TabIndex = 0;
+            this.richTextBox_StrategyLog.Text = "";
+            this.richTextBox_StrategyLog.TextChanged += new System.EventHandler(this.RichBox_TextChanged);
+            // 
+            // timer_NotifyPosition
+            // 
+            this.timer_NotifyPosition.Enabled = true;
+            this.timer_NotifyPosition.Interval = 3000;
+            this.timer_NotifyPosition.Tick += new System.EventHandler(this.timer_NotifyPositionEvent);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 29);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(794, 387);
+            this.panel4.TabIndex = 8;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker_Begin, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 31);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 419);
+            this.tableLayoutPanel1.TabIndex = 9;
             // 
             // KLineFormTest
             // 
@@ -570,8 +586,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker_Begin);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "KLineFormTest";
@@ -588,8 +603,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart_Indiactors)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,10 +648,11 @@
         private System.Windows.Forms.RichTextBox richTextBox_StrategyLog;
         private System.Windows.Forms.ToolStripButton ToolStripMenuItem_Log;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.Timer timer_NotifyPosition;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_IndicatorsCommonIn;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_Indiactors;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
