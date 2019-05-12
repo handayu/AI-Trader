@@ -118,24 +118,108 @@ namespace WindowsFormsApp1
 
             for (int i = 0; i < m_d.Count; i++)
             {
-                if (i >= 2)
+                if (i >= 1)
                 {
-                    this.chart_Indiactors.Series[0].Points.AddXY(m_d[i], outRealSAR[i - 2]);
+                    this.chart_Indiactors.Series[0].Points.AddXY(m_d[i], outRealSAR[i - 1]);
                 }
             }
 
             if (outRealSAR.Length >= 2)
+            {
                 AppendText(string.Format("当前时间:{0},当前RenkoBar最新价:{1},当前最新的SAR值:{2}", Bar.d, Bar.c, outRealSAR[outRealSAR.Length - 2]));
 
+                //[hanyu]目前策略暂时放在这里试运行
+                CalStrategyTest(m_c, outRealSAR);
 
-            //this.chart1.ChartAreas[0].AxisX.ScaleView.Position = this.chart1.Series[0].Points.Count - 5;
-            //this.chart1.ChartAreas[0].AxisX.ScaleView.Size = 200; //设置可见数据为5 
+            }
 
-            //this.chart1.ChartAreas[0].AxisX.ScaleView.Position = this.chart1.Series[0].Points.Count;
-            //this.chart_Indiactors.ChartAreas[0].AxisX.ScaleView.Position = this.chart_Indiactors.Series[0].Points.Count;
             this.chart1.ChartAreas[0].AxisX.ScaleView.Scroll(ScrollType.Last);
             this.chart_Indiactors.ChartAreas[0].AxisX.ScaleView.Scroll(ScrollType.Last);
 
+
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void CalStrategyTest(List<decimal> closeArray, double[] SarArray)
+        {
+            AppendStrategyText("策略运行检测中");
+            if (closeArray == null || SarArray == null || closeArray.Count <= 2
+                || SarArray.Length <= 2) return;
+
+            double prePrice = Convert.ToDouble((closeArray[closeArray.Count - 2]));
+            double nowPrice = Convert.ToDouble((closeArray[closeArray.Count - 1]));
+
+
+            double preSar = Convert.ToDouble((SarArray[SarArray.Length - 3]));
+            double nowSar = Convert.ToDouble((SarArray[SarArray.Length - 2]));
+
+            //上一个renko价格小于上一个sar值，当前最新的renko大于当前的Sar
+            if(prePrice < preSar && nowPrice >= nowSar)
+            {
+                //平空单，买入多单
+                AppendStrategyText("平空单，买入多单");
+
+
+                swap.OrderSingle orderSP = new swap.OrderSingle()
+                {
+                    instrument_id = m_InitInsTicker.instrument_id,
+                    type = "4",//平空
+                    price = Convert.ToDecimal(nowPrice) - 5,
+                    size = 1,
+                    client_oid = "hanyu1",
+                    match_price = "0"
+                };
+
+                ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(orderSP);
+
+                swap.OrderSingle orderBK = new swap.OrderSingle()
+                {
+                    instrument_id = m_InitInsTicker.instrument_id,
+                    type = "1",//平空
+                    price = Convert.ToDecimal(nowPrice) + 5,
+                    size = 1,
+                    client_oid = "hanyu1",
+                    match_price = "0"
+                };
+
+                ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(orderBK);
+            }
+
+            if (prePrice > preSar && nowPrice <= nowSar)
+            {
+                //平多单，进入空单
+                AppendStrategyText("平多单，进入空单");
+
+                swap.OrderSingle orderBP = new swap.OrderSingle()
+                {
+                    instrument_id = m_InitInsTicker.instrument_id,
+                    type = "3",//平多
+                    price = Convert.ToDecimal(nowPrice) - 5,
+                    size = 1,
+                    client_oid = "hanyu1",
+                    match_price = "0"
+                };
+
+                ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(orderBP);
+
+                swap.OrderSingle orderSK = new swap.OrderSingle()
+                {
+                    instrument_id = m_InitInsTicker.instrument_id,
+                    type = "2",//空单
+                    price = Convert.ToDecimal(nowPrice) - 5,
+                    size = 1,
+                    client_oid = "hanyu1",
+                    match_price = "0"
+                };
+
+                ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(orderSK);
+
+
+
+            }
         }
 
         /// <summary>
@@ -809,7 +893,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            if(m_ISSwitch == false)
+            if (m_ISSwitch == false)
             {
                 //如果不为空，但是策略目前并没有执行则--订阅策略事件-在这里Form类完成触发和订阅-启动
                 if (m_Strategy != null && ((IStrategy)m_Strategy).ISSTRATEGYGOING == false)

@@ -31,9 +31,6 @@ namespace Strategy
             //APIConnect.ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(o);
 
             SafeRiseLogEvent("在这里收到策略的OnTick");
-
-            //调用一下基类，对外广播出去
-            //base.OnTick(t, this.GetType().FullName);
         }
 
         /// <summary>
@@ -42,9 +39,6 @@ namespace Strategy
         /// <param name="t"></param>
         public override void OnOrder(Common.SwapOrderReturn orderReturn, string strategyName)
         {
-            //调用一下基类，对外广播出去
-            base.OnOrder(orderReturn, this.GetType().FullName);
-
             //策略订单如何处理在这里继续处理
             SafeRiseLogEvent("在这里收到订单回报OnOrder");
         }

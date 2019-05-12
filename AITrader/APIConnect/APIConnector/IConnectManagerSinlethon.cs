@@ -60,6 +60,11 @@ namespace APIConnect
             m_timer = new System.Threading.Timer(QueryRealDepthMarketData, null, 0, 1000);
         }
 
+        public virtual void StopThreadTicker()
+        {
+            m_timer.Dispose();
+        }
+
         public virtual void QueryRealDepthMarketData(object state)
         {
 
@@ -346,6 +351,15 @@ namespace APIConnect
         /// </summary>
         /// <param name="order"></param>
         public virtual async void AnsyOrderSwap(OKExSDK.Models.Swap.OrderSingle order)
+        {
+
+        }
+
+        /// <summary>
+        /// 下单动作-只按照开平封装，填写合约就可以了，自动生成OrderSingle
+        /// </summary>
+        /// <param name="order"></param>
+        public virtual async void AnsyOrderSwap(OrderActionDataType orderActionType)
         {
 
         }

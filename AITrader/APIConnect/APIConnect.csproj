@@ -57,6 +57,7 @@
     <Compile Include="APIConnector\ConnectManager.cs" />
     <Compile Include="APIConnector\ConnectManagerSinlethonReal.cs" />
     <Compile Include="APIConnector\ConnectManagerSinlethonTest.cs" />
+    <Compile Include="APIConnector\DataType.cs" />
     <Compile Include="APIConnector\IConnectManagerSinlethon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

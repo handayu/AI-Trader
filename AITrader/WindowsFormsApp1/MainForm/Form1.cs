@@ -164,7 +164,21 @@ namespace WindowsFormsApp1
 
         private void Form_Closed(object sender, FormClosedEventArgs e)
         {
+            if(m_marketDataForm != null && m_marketDataForm.MarketDataUserControlSelf != null)
+            {
+                m_marketDataForm.MarketDataUserControlSelf.RealMarketDataClikEvent -= RealMarketDataClikSubEvent;
+            }
 
+            m_marketDataForm = null;
+            m_accountStrategyForm = null;
+            m_tradeUserForm = null;
+            m_marketDataForm = null;
+            m_accountStrategyForm = null;
+            m_tradeUserForm = null;
+
+            APIConnect.ConnectManager.CreateInstance().CONNECTION.StopThreadTicker();
+
+            //this.Close();
         }
 
         private void ToolStripMenuItem_BarMakerClick(object sender, EventArgs e)
