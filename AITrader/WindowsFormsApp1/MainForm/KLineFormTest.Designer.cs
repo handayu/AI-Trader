@@ -41,15 +41,30 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.375D, "80,70,60,65");
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.430555555555D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.430555555555D, 90D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.416666666664D, 80D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.409722222219D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.409722222219D, 100D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.402777777781D, 80D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.395833333336D, 80D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.388888888891D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.395833333336D, 120D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.388888888891D, 150D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint15 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.381944444445D, 80D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint16 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.375D, 80D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint16 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(41032.375D, 180D);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.dateTimePicker_Begin = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart_Indiactors = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_ChartAndIndicatorsLog = new System.Windows.Forms.RichTextBox();
+            this.timer_NotifyPosition = new System.Windows.Forms.Timer(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStripButton_StartStrategy = new System.Windows.Forms.ToolStripDropDownButton();
             this.ToolStripMenuItem_StrategyAutoAction = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_StrategySettings = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,14 +73,12 @@
             this.ToolStripMenuItem_IndicatorsCommonIn = new System.Windows.Forms.ToolStripMenuItem();
             this.震荡指标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.量价指标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_1Min = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_5Min = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_15Min = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_30Min = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_60Min = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_Day = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_ZoomLarge = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_ZoomSmall = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -76,19 +89,7 @@
             this.ToolStripMenuItem_BlackGround = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_WhiteGround = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripMenuItem_Log = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.dateTimePicker_Begin = new System.Windows.Forms.DateTimePicker();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart_Indiactors = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.richTextBox_StrategyLog = new System.Windows.Forms.RichTextBox();
-            this.timer_NotifyPosition = new System.Windows.Forms.Timer(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -130,238 +131,20 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton_StartStrategy
-            // 
-            this.toolStripButton_StartStrategy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_StartStrategy.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_StrategyAutoAction,
-            this.ToolStripMenuItem_StrategySettings});
-            this.toolStripButton_StartStrategy.Image = global::WindowsFormsApp1.Properties.Resources.icons8_radar_48;
-            this.toolStripButton_StartStrategy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_StartStrategy.Name = "toolStripButton_StartStrategy";
-            this.toolStripButton_StartStrategy.Size = new System.Drawing.Size(37, 28);
-            this.toolStripButton_StartStrategy.Text = "toolStripButton1";
-            // 
-            // ToolStripMenuItem_StrategyAutoAction
-            // 
-            this.ToolStripMenuItem_StrategyAutoAction.Image = global::WindowsFormsApp1.Properties.Resources._6b41346d30a6d19b7fdfc283add2871;
-            this.ToolStripMenuItem_StrategyAutoAction.Name = "ToolStripMenuItem_StrategyAutoAction";
-            this.ToolStripMenuItem_StrategyAutoAction.Size = new System.Drawing.Size(188, 30);
-            this.ToolStripMenuItem_StrategyAutoAction.Text = "自动交易执行";
-            this.ToolStripMenuItem_StrategyAutoAction.Click += new System.EventHandler(this.ToolStripMenuItem_StrategyAutoActionClick);
-            // 
-            // ToolStripMenuItem_StrategySettings
-            // 
-            this.ToolStripMenuItem_StrategySettings.Image = global::WindowsFormsApp1.Properties.Resources.a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a;
-            this.ToolStripMenuItem_StrategySettings.Name = "ToolStripMenuItem_StrategySettings";
-            this.ToolStripMenuItem_StrategySettings.Size = new System.Drawing.Size(188, 30);
-            this.ToolStripMenuItem_StrategySettings.Text = "策略属性设置";
-            this.ToolStripMenuItem_StrategySettings.Click += new System.EventHandler(this.ToolStripMenuItem_StrategySettingsClick);
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.趋势指标ToolStripMenuItem,
-            this.震荡指标ToolStripMenuItem,
-            this.量价指标ToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_heart_monitor_48;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(37, 28);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // 趋势指标ToolStripMenuItem
-            // 
-            this.趋势指标ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_IndicatorsCommonIn});
-            this.趋势指标ToolStripMenuItem.Name = "趋势指标ToolStripMenuItem";
-            this.趋势指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.趋势指标ToolStripMenuItem.Text = "趋势指标";
-            // 
-            // ToolStripMenuItem_IndicatorsCommonIn
-            // 
-            this.ToolStripMenuItem_IndicatorsCommonIn.Name = "ToolStripMenuItem_IndicatorsCommonIn";
-            this.ToolStripMenuItem_IndicatorsCommonIn.Size = new System.Drawing.Size(99, 22);
-            this.ToolStripMenuItem_IndicatorsCommonIn.Text = "SAR";
-            // 
-            // 震荡指标ToolStripMenuItem
-            // 
-            this.震荡指标ToolStripMenuItem.Name = "震荡指标ToolStripMenuItem";
-            this.震荡指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.震荡指标ToolStripMenuItem.Text = "震荡指标";
-            // 
-            // 量价指标ToolStripMenuItem
-            // 
-            this.量价指标ToolStripMenuItem.Name = "量价指标ToolStripMenuItem";
-            this.量价指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.量价指标ToolStripMenuItem.Text = "量价指标";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripLabel_1Min
-            // 
-            this.toolStripLabel_1Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripLabel_1Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_1_48;
-            this.toolStripLabel_1Min.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripLabel_1Min.Name = "toolStripLabel_1Min";
-            this.toolStripLabel_1Min.Size = new System.Drawing.Size(28, 28);
-            this.toolStripLabel_1Min.Text = "toolStripLabel1";
-            this.toolStripLabel_1Min.Click += new System.EventHandler(this.toolStripLabel_1Min_Click);
-            // 
-            // toolStripButton_5Min
-            // 
-            this.toolStripButton_5Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_5Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_5_48;
-            this.toolStripButton_5Min.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_5Min.Name = "toolStripButton_5Min";
-            this.toolStripButton_5Min.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton_5Min.Text = "toolStripButton2";
-            this.toolStripButton_5Min.Click += new System.EventHandler(this.toolStripButton_5MinClick);
-            // 
-            // toolStripButton_15Min
-            // 
-            this.toolStripButton_15Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_15Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_15_48;
-            this.toolStripButton_15Min.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_15Min.Name = "toolStripButton_15Min";
-            this.toolStripButton_15Min.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton_15Min.Text = "toolStripButton3";
-            this.toolStripButton_15Min.Click += new System.EventHandler(this.toolStripButton_15MinClick);
-            // 
-            // toolStripButton_30Min
-            // 
-            this.toolStripButton_30Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_30Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_15_481;
-            this.toolStripButton_30Min.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_30Min.Name = "toolStripButton_30Min";
-            this.toolStripButton_30Min.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton_30Min.Text = "toolStripButton4";
-            this.toolStripButton_30Min.Click += new System.EventHandler(this.toolStripButton_30MinClick);
-            // 
-            // toolStripButton_60Min
-            // 
-            this.toolStripButton_60Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_60Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_60_48;
-            this.toolStripButton_60Min.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_60Min.Name = "toolStripButton_60Min";
-            this.toolStripButton_60Min.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton_60Min.Text = "toolStripButton5";
-            this.toolStripButton_60Min.Click += new System.EventHandler(this.toolStripButton_60MinClick);
-            // 
-            // toolStripButton_Day
-            // 
-            this.toolStripButton_Day.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_Day.Image = global::WindowsFormsApp1.Properties.Resources.icons8_plus_1_day_481;
-            this.toolStripButton_Day.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Day.Name = "toolStripButton_Day";
-            this.toolStripButton_Day.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton_Day.Text = "toolStripButton6";
-            this.toolStripButton_Day.Click += new System.EventHandler(this.toolStripButton_DayClick);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
-            // toolStripButton_ZoomLarge
-            // 
-            this.toolStripButton_ZoomLarge.Image = global::WindowsFormsApp1.Properties.Resources.icons8_expand_48;
-            this.toolStripButton_ZoomLarge.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_ZoomLarge.Name = "toolStripButton_ZoomLarge";
-            this.toolStripButton_ZoomLarge.Size = new System.Drawing.Size(60, 28);
-            this.toolStripButton_ZoomLarge.Text = "放大";
-            this.toolStripButton_ZoomLarge.Click += new System.EventHandler(this.toolStripButton_ZoomLargeClick);
-            // 
-            // toolStripButton_ZoomSmall
-            // 
-            this.toolStripButton_ZoomSmall.Image = global::WindowsFormsApp1.Properties.Resources.icons8_collapse_48;
-            this.toolStripButton_ZoomSmall.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_ZoomSmall.Name = "toolStripButton_ZoomSmall";
-            this.toolStripButton_ZoomSmall.Size = new System.Drawing.Size(60, 28);
-            this.toolStripButton_ZoomSmall.Text = "缩小";
-            this.toolStripButton_ZoomSmall.Click += new System.EventHandler(this.toolStripButton_ZoomSmallClick);
-            // 
-            // toolStripDropDownButton2
-            // 
-            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_CandleKLine,
-            this.ToolStripMenuItem_Renko,
-            this.ToolStripMenuItem_StockKline});
-            this.toolStripDropDownButton2.Image = global::WindowsFormsApp1.Properties.Resources.icons8_automatic_48;
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(93, 28);
-            this.toolStripDropDownButton2.Text = "图表类型";
-            // 
-            // ToolStripMenuItem_CandleKLine
-            // 
-            this.ToolStripMenuItem_CandleKLine.Name = "ToolStripMenuItem_CandleKLine";
-            this.ToolStripMenuItem_CandleKLine.Size = new System.Drawing.Size(112, 22);
-            this.ToolStripMenuItem_CandleKLine.Text = "蜡烛线";
-            this.ToolStripMenuItem_CandleKLine.Click += new System.EventHandler(this.ToolStripMenuItem_CandleKLineClick);
-            // 
-            // ToolStripMenuItem_Renko
-            // 
-            this.ToolStripMenuItem_Renko.Name = "ToolStripMenuItem_Renko";
-            this.ToolStripMenuItem_Renko.Size = new System.Drawing.Size(112, 22);
-            this.ToolStripMenuItem_Renko.Text = "转型图";
-            this.ToolStripMenuItem_Renko.Click += new System.EventHandler(this.ToolStripMenuItem_RenkoClick);
-            // 
-            // ToolStripMenuItem_StockKline
-            // 
-            this.ToolStripMenuItem_StockKline.Name = "ToolStripMenuItem_StockKline";
-            this.ToolStripMenuItem_StockKline.Size = new System.Drawing.Size(112, 22);
-            this.ToolStripMenuItem_StockKline.Text = "宝塔线";
-            this.ToolStripMenuItem_StockKline.Click += new System.EventHandler(this.ToolStripMenuItem_StockKlineClick);
-            // 
-            // toolStripDropDownButton3
-            // 
-            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_BlackGround,
-            this.ToolStripMenuItem_WhiteGround,
-            this.toolStripSeparator4});
-            this.toolStripDropDownButton3.Image = global::WindowsFormsApp1.Properties.Resources.icons8_css_48;
-            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(93, 28);
-            this.toolStripDropDownButton3.Text = "窗口设置";
-            // 
-            // ToolStripMenuItem_BlackGround
-            // 
-            this.ToolStripMenuItem_BlackGround.Name = "ToolStripMenuItem_BlackGround";
-            this.ToolStripMenuItem_BlackGround.Size = new System.Drawing.Size(124, 22);
-            this.ToolStripMenuItem_BlackGround.Text = "黑色背景";
-            this.ToolStripMenuItem_BlackGround.Click += new System.EventHandler(this.ToolStripMenuItem_BlackGroundClick);
-            // 
-            // ToolStripMenuItem_WhiteGround
-            // 
-            this.ToolStripMenuItem_WhiteGround.Name = "ToolStripMenuItem_WhiteGround";
-            this.ToolStripMenuItem_WhiteGround.Size = new System.Drawing.Size(124, 22);
-            this.ToolStripMenuItem_WhiteGround.Text = "白色背景";
-            this.ToolStripMenuItem_WhiteGround.Click += new System.EventHandler(this.ToolStripMenuItem_WhiteGroundClick);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(121, 6);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
-            // 
-            // ToolStripMenuItem_Log
-            // 
-            this.ToolStripMenuItem_Log.Image = global::WindowsFormsApp1.Properties.Resources.icons8_google_forms_48;
-            this.ToolStripMenuItem_Log.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripMenuItem_Log.Name = "ToolStripMenuItem_Log";
-            this.ToolStripMenuItem_Log.Size = new System.Drawing.Size(108, 28);
-            this.ToolStripMenuItem_Log.Text = "策略实时日志";
-            this.ToolStripMenuItem_Log.Click += new System.EventHandler(this.ToolStripMenuItem_LogClick);
             // 
             // toolStripSeparator5
             // 
@@ -533,6 +316,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.richTextBox_StrategyLog);
+            this.panel2.Controls.Add(this.richTextBox_ChartAndIndicatorsLog);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -543,12 +327,22 @@
             // richTextBox_StrategyLog
             // 
             this.richTextBox_StrategyLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox_StrategyLog.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox_StrategyLog.Location = new System.Drawing.Point(0, 199);
             this.richTextBox_StrategyLog.Name = "richTextBox_StrategyLog";
-            this.richTextBox_StrategyLog.Size = new System.Drawing.Size(176, 387);
-            this.richTextBox_StrategyLog.TabIndex = 0;
-            this.richTextBox_StrategyLog.Text = "";
-            this.richTextBox_StrategyLog.TextChanged += new System.EventHandler(this.RichBox_TextChanged);
+            this.richTextBox_StrategyLog.Size = new System.Drawing.Size(176, 188);
+            this.richTextBox_StrategyLog.TabIndex = 1;
+            this.richTextBox_StrategyLog.Text = ">>策略日志开启:";
+            this.richTextBox_StrategyLog.TextChanged += new System.EventHandler(this.RichBoxStrategy_TextChanged);
+            // 
+            // richTextBox_ChartAndIndicatorsLog
+            // 
+            this.richTextBox_ChartAndIndicatorsLog.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richTextBox_ChartAndIndicatorsLog.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox_ChartAndIndicatorsLog.Name = "richTextBox_ChartAndIndicatorsLog";
+            this.richTextBox_ChartAndIndicatorsLog.Size = new System.Drawing.Size(176, 199);
+            this.richTextBox_ChartAndIndicatorsLog.TabIndex = 0;
+            this.richTextBox_ChartAndIndicatorsLog.Text = "";
+            this.richTextBox_ChartAndIndicatorsLog.TextChanged += new System.EventHandler(this.RichBox_TextChanged);
             // 
             // timer_NotifyPosition
             // 
@@ -568,7 +362,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 800F));
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker_Begin, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -579,6 +373,223 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 419);
             this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // toolStripButton_StartStrategy
+            // 
+            this.toolStripButton_StartStrategy.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_StrategyAutoAction,
+            this.ToolStripMenuItem_StrategySettings});
+            this.toolStripButton_StartStrategy.Image = global::WindowsFormsApp1.Properties.Resources.stop;
+            this.toolStripButton_StartStrategy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_StartStrategy.Name = "toolStripButton_StartStrategy";
+            this.toolStripButton_StartStrategy.Size = new System.Drawing.Size(93, 28);
+            this.toolStripButton_StartStrategy.Text = "策略交易";
+            this.toolStripButton_StartStrategy.Click += new System.EventHandler(this.ToolStripButton_StrategyTitleClick);
+            // 
+            // ToolStripMenuItem_StrategyAutoAction
+            // 
+            this.ToolStripMenuItem_StrategyAutoAction.Image = global::WindowsFormsApp1.Properties.Resources.power_button_48px_1229373_easyicon1;
+            this.ToolStripMenuItem_StrategyAutoAction.Name = "ToolStripMenuItem_StrategyAutoAction";
+            this.ToolStripMenuItem_StrategyAutoAction.Size = new System.Drawing.Size(188, 30);
+            this.ToolStripMenuItem_StrategyAutoAction.Text = "自动交易执行";
+            this.ToolStripMenuItem_StrategyAutoAction.Click += new System.EventHandler(this.ToolStripMenuItem_StrategyAutoActionClick);
+            // 
+            // ToolStripMenuItem_StrategySettings
+            // 
+            this.ToolStripMenuItem_StrategySettings.Image = global::WindowsFormsApp1.Properties.Resources.a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a;
+            this.ToolStripMenuItem_StrategySettings.Name = "ToolStripMenuItem_StrategySettings";
+            this.ToolStripMenuItem_StrategySettings.Size = new System.Drawing.Size(188, 30);
+            this.ToolStripMenuItem_StrategySettings.Text = "策略属性设置";
+            this.ToolStripMenuItem_StrategySettings.Click += new System.EventHandler(this.ToolStripMenuItem_StrategySettingsClick);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.趋势指标ToolStripMenuItem,
+            this.震荡指标ToolStripMenuItem,
+            this.量价指标ToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_heart_monitor_481;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(69, 28);
+            this.toolStripDropDownButton1.Text = "指标";
+            // 
+            // 趋势指标ToolStripMenuItem
+            // 
+            this.趋势指标ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_IndicatorsCommonIn});
+            this.趋势指标ToolStripMenuItem.Name = "趋势指标ToolStripMenuItem";
+            this.趋势指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.趋势指标ToolStripMenuItem.Text = "趋势指标";
+            // 
+            // ToolStripMenuItem_IndicatorsCommonIn
+            // 
+            this.ToolStripMenuItem_IndicatorsCommonIn.Name = "ToolStripMenuItem_IndicatorsCommonIn";
+            this.ToolStripMenuItem_IndicatorsCommonIn.Size = new System.Drawing.Size(99, 22);
+            this.ToolStripMenuItem_IndicatorsCommonIn.Text = "SAR";
+            // 
+            // 震荡指标ToolStripMenuItem
+            // 
+            this.震荡指标ToolStripMenuItem.Name = "震荡指标ToolStripMenuItem";
+            this.震荡指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.震荡指标ToolStripMenuItem.Text = "震荡指标";
+            // 
+            // 量价指标ToolStripMenuItem
+            // 
+            this.量价指标ToolStripMenuItem.Name = "量价指标ToolStripMenuItem";
+            this.量价指标ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.量价指标ToolStripMenuItem.Text = "量价指标";
+            // 
+            // toolStripLabel_1Min
+            // 
+            this.toolStripLabel_1Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripLabel_1Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_1_482;
+            this.toolStripLabel_1Min.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripLabel_1Min.Name = "toolStripLabel_1Min";
+            this.toolStripLabel_1Min.Size = new System.Drawing.Size(28, 28);
+            this.toolStripLabel_1Min.Text = "toolStripLabel1";
+            this.toolStripLabel_1Min.Click += new System.EventHandler(this.toolStripLabel_1Min_Click);
+            // 
+            // toolStripButton_5Min
+            // 
+            this.toolStripButton_5Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_5Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_5_482;
+            this.toolStripButton_5Min.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_5Min.Name = "toolStripButton_5Min";
+            this.toolStripButton_5Min.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton_5Min.Text = "toolStripButton2";
+            this.toolStripButton_5Min.Click += new System.EventHandler(this.toolStripButton_5MinClick);
+            // 
+            // toolStripButton_15Min
+            // 
+            this.toolStripButton_15Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_15Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_15_483;
+            this.toolStripButton_15Min.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_15Min.Name = "toolStripButton_15Min";
+            this.toolStripButton_15Min.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton_15Min.Text = "toolStripButton3";
+            this.toolStripButton_15Min.Click += new System.EventHandler(this.toolStripButton_15MinClick);
+            // 
+            // toolStripButton_30Min
+            // 
+            this.toolStripButton_30Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_30Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_30_482;
+            this.toolStripButton_30Min.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_30Min.Name = "toolStripButton_30Min";
+            this.toolStripButton_30Min.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton_30Min.Text = "toolStripButton4";
+            this.toolStripButton_30Min.Click += new System.EventHandler(this.toolStripButton_30MinClick);
+            // 
+            // toolStripButton_60Min
+            // 
+            this.toolStripButton_60Min.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_60Min.Image = global::WindowsFormsApp1.Properties.Resources.icons8_60_481;
+            this.toolStripButton_60Min.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_60Min.Name = "toolStripButton_60Min";
+            this.toolStripButton_60Min.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton_60Min.Text = "toolStripButton5";
+            this.toolStripButton_60Min.Click += new System.EventHandler(this.toolStripButton_60MinClick);
+            // 
+            // toolStripButton_Day
+            // 
+            this.toolStripButton_Day.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_Day.Image = global::WindowsFormsApp1.Properties.Resources.icons8_plus_1_day_482;
+            this.toolStripButton_Day.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Day.Name = "toolStripButton_Day";
+            this.toolStripButton_Day.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton_Day.Text = "toolStripButton6";
+            this.toolStripButton_Day.Click += new System.EventHandler(this.toolStripButton_DayClick);
+            // 
+            // toolStripButton_ZoomLarge
+            // 
+            this.toolStripButton_ZoomLarge.Image = global::WindowsFormsApp1.Properties.Resources.icons8_expand_481;
+            this.toolStripButton_ZoomLarge.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_ZoomLarge.Name = "toolStripButton_ZoomLarge";
+            this.toolStripButton_ZoomLarge.Size = new System.Drawing.Size(60, 28);
+            this.toolStripButton_ZoomLarge.Text = "放大";
+            this.toolStripButton_ZoomLarge.Click += new System.EventHandler(this.toolStripButton_ZoomLargeClick);
+            // 
+            // toolStripButton_ZoomSmall
+            // 
+            this.toolStripButton_ZoomSmall.Image = global::WindowsFormsApp1.Properties.Resources.icons8_collapse_481;
+            this.toolStripButton_ZoomSmall.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_ZoomSmall.Name = "toolStripButton_ZoomSmall";
+            this.toolStripButton_ZoomSmall.Size = new System.Drawing.Size(60, 28);
+            this.toolStripButton_ZoomSmall.Text = "缩小";
+            this.toolStripButton_ZoomSmall.Click += new System.EventHandler(this.toolStripButton_ZoomSmallClick);
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_CandleKLine,
+            this.ToolStripMenuItem_Renko,
+            this.ToolStripMenuItem_StockKline});
+            this.toolStripDropDownButton2.Image = global::WindowsFormsApp1.Properties.Resources.icons8_google_forms_481;
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(93, 28);
+            this.toolStripDropDownButton2.Text = "图表类型";
+            // 
+            // ToolStripMenuItem_CandleKLine
+            // 
+            this.ToolStripMenuItem_CandleKLine.Name = "ToolStripMenuItem_CandleKLine";
+            this.ToolStripMenuItem_CandleKLine.Size = new System.Drawing.Size(112, 22);
+            this.ToolStripMenuItem_CandleKLine.Text = "蜡烛线";
+            this.ToolStripMenuItem_CandleKLine.Click += new System.EventHandler(this.ToolStripMenuItem_CandleKLineClick);
+            // 
+            // ToolStripMenuItem_Renko
+            // 
+            this.ToolStripMenuItem_Renko.Name = "ToolStripMenuItem_Renko";
+            this.ToolStripMenuItem_Renko.Size = new System.Drawing.Size(112, 22);
+            this.ToolStripMenuItem_Renko.Text = "转型图";
+            this.ToolStripMenuItem_Renko.Click += new System.EventHandler(this.ToolStripMenuItem_RenkoClick);
+            // 
+            // ToolStripMenuItem_StockKline
+            // 
+            this.ToolStripMenuItem_StockKline.Name = "ToolStripMenuItem_StockKline";
+            this.ToolStripMenuItem_StockKline.Size = new System.Drawing.Size(112, 22);
+            this.ToolStripMenuItem_StockKline.Text = "宝塔线";
+            this.ToolStripMenuItem_StockKline.Click += new System.EventHandler(this.ToolStripMenuItem_StockKlineClick);
+            // 
+            // toolStripDropDownButton3
+            // 
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_BlackGround,
+            this.ToolStripMenuItem_WhiteGround,
+            this.toolStripSeparator4});
+            this.toolStripDropDownButton3.Image = global::WindowsFormsApp1.Properties.Resources.icons8_automatic_481;
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(93, 28);
+            this.toolStripDropDownButton3.Text = "窗口设置";
+            // 
+            // ToolStripMenuItem_BlackGround
+            // 
+            this.ToolStripMenuItem_BlackGround.Name = "ToolStripMenuItem_BlackGround";
+            this.ToolStripMenuItem_BlackGround.Size = new System.Drawing.Size(124, 22);
+            this.ToolStripMenuItem_BlackGround.Text = "黑色背景";
+            this.ToolStripMenuItem_BlackGround.Click += new System.EventHandler(this.ToolStripMenuItem_BlackGroundClick);
+            // 
+            // ToolStripMenuItem_WhiteGround
+            // 
+            this.ToolStripMenuItem_WhiteGround.Name = "ToolStripMenuItem_WhiteGround";
+            this.ToolStripMenuItem_WhiteGround.Size = new System.Drawing.Size(124, 22);
+            this.ToolStripMenuItem_WhiteGround.Text = "白色背景";
+            this.ToolStripMenuItem_WhiteGround.Click += new System.EventHandler(this.ToolStripMenuItem_WhiteGroundClick);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(121, 6);
+            // 
+            // ToolStripMenuItem_Log
+            // 
+            this.ToolStripMenuItem_Log.Image = global::WindowsFormsApp1.Properties.Resources.icons8_purchase_order_481;
+            this.ToolStripMenuItem_Log.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripMenuItem_Log.Name = "ToolStripMenuItem_Log";
+            this.ToolStripMenuItem_Log.Size = new System.Drawing.Size(108, 28);
+            this.ToolStripMenuItem_Log.Text = "策略实时日志";
+            this.ToolStripMenuItem_Log.Click += new System.EventHandler(this.ToolStripMenuItem_LogClick);
             // 
             // KLineFormTest
             // 
@@ -645,7 +656,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RichTextBox richTextBox_StrategyLog;
+        private System.Windows.Forms.RichTextBox richTextBox_ChartAndIndicatorsLog;
         private System.Windows.Forms.ToolStripButton ToolStripMenuItem_Log;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.Timer timer_NotifyPosition;
@@ -654,5 +665,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_Indiactors;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.RichTextBox richTextBox_StrategyLog;
     }
 }

@@ -173,6 +173,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_1_482 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-1-482", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_15_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-15-48", resourceCulture);
@@ -203,6 +213,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_15_483 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-15-483", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_30_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-30-48", resourceCulture);
@@ -216,6 +236,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap icons8_30_481 {
             get {
                 object obj = ResourceManager.GetObject("icons8-30-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_30_482 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-30-482", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +273,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_5_482 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-5-482", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_60_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-60-48", resourceCulture);
@@ -253,9 +293,29 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_60_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-60-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_automatic_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-automatic-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_automatic_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-automatic-481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +346,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap icons8_collapse_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-collapse-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_collapse_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-collapse-481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,6 +413,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_expand_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-expand-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_google_forms_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-google-forms-48", resourceCulture);
@@ -353,9 +433,29 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_google_forms_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-google-forms-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_heart_monitor_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-heart-monitor-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_heart_monitor_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-heart-monitor-481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +513,29 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_1_day_482 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plus-1-day-482", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_purchase_order_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-purchase-order-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_purchase_order_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-purchase-order-481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +553,59 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_radar_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-radar-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_select_column_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-select-column-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap power_button_48px_1229373_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("power_button_48px_1229373_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap power_button_48px_1229373_easyicon1 {
+            get {
+                object obj = ResourceManager.GetObject("power_button_48px_1229373_easyicon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap start {
+            get {
+                object obj = ResourceManager.GetObject("start", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap stop {
+            get {
+                object obj = ResourceManager.GetObject("stop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

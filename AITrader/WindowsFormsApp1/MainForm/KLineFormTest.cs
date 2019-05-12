@@ -679,7 +679,7 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// 策略日志
+        /// 图表和指标日常日志
         /// </summary>
         /// <param name="str"></param>
         private void AppendText(string str)
@@ -687,6 +687,21 @@ namespace WindowsFormsApp1
             if (this.InvokeRequired)
             {
                 this.BeginInvoke(new Action<string>(AppendText), str);
+                return;
+            }
+
+            this.richTextBox_ChartAndIndicatorsLog.AppendText("\n" + DateTime.Now.ToString() + ":" + "\n" + str);
+        }
+
+        /// <summary>
+        /// 策略订阅的策略日志
+        /// </summary>
+        /// <param name="str"></param>
+        private void AppendStrategyText(string str)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<string>(AppendStrategyText), str);
                 return;
             }
 
@@ -768,6 +783,11 @@ namespace WindowsFormsApp1
             AppendText(string.Format("我是策略:{0},正在执行/策略当前最新价:{1}/策略当前合约:{2}", strategyName, t.last, t.instrument_id));
         }
 
+        private void OnStrategyLogSubEvent(string strategyTextLog)
+        {
+            AppendStrategyText(strategyTextLog);
+        }
+
         private void OnStrategyOrderSubEvent(SwapOrderReturn orderReturn, string StrategyName)
         {
             AppendText(string.Format("我是策略:{0},策略正在下单并收到订单返回/策略当前合约:{1}", StrategyName, orderReturn.instrument));
@@ -775,39 +795,59 @@ namespace WindowsFormsApp1
         #endregion
 
         /// <summary>
-        /// 自动交易执行
+        /// 自动交易执行()
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        private bool m_ISSwitch = false;
         private void ToolStripMenuItem_StrategyAutoActionClick(object sender, EventArgs e)
         {
-            //if(m_Strategy == null)
-            //{
-            //    MessageBox.Show("请通过策略属性先指定策略再开启...");
-            //    return;
-            //}
-
-            LawNotifyForm n = new LawNotifyForm();
-            n.ShowDialog();
-
-            PositionCompareForm f = new PositionCompareForm();
-            f.ShowDialog();
-
-            //订阅策略事件-在这里Form类完成触发和订阅-启动
-            if (m_Strategy != null)
+            //如果是空，直接返回
+            if (m_Strategy == null)
             {
-                ((IStrategy)m_Strategy).OnTickEvent += OnStrategyTickSubEvent;
-                ((IStrategy)m_Strategy).OnOrderEvent += OnStrategyOrderSubEvent;
+                MessageBox.Show("请通过策略属性先指定策略再开启...");
+                return;
+            }
 
-                ((IStrategy)m_Strategy).Start();
+            if(m_ISSwitch == false)
+            {
+                //如果不为空，但是策略目前并没有执行则--订阅策略事件-在这里Form类完成触发和订阅-启动
+                if (m_Strategy != null && ((IStrategy)m_Strategy).ISSTRATEGYGOING == false)
+                {
+                    LawNotifyForm n = new LawNotifyForm();
+                    n.ShowDialog();
 
-                this.toolStripButton_StartStrategy.Image = global::WindowsFormsApp1.Properties.Resources._6b41346d30a6d19b7fdfc283add2871;
+                    PositionCompareForm f = new PositionCompareForm();
+                    f.ShowDialog();
+
+                    ((IStrategy)m_Strategy).OnTickEvent += OnStrategyTickSubEvent;
+                    ((IStrategy)m_Strategy).OnOrderEvent += OnStrategyOrderSubEvent;
+                    ((IStrategy)m_Strategy).OnLogEvent += OnStrategyLogSubEvent;
+
+                    ((IStrategy)m_Strategy).Start();
+
+                    this.toolStripButton_StartStrategy.Image = global::WindowsFormsApp1.Properties.Resources.start;
+
+                    m_ISSwitch = true;
+                }
             }
             else
             {
-                MessageBox.Show("请先设置策略属性..");
-            }
 
+                //策略正在运行执行，被点击
+                if (m_Strategy != null && ((IStrategy)m_Strategy).ISSTRATEGYGOING == true)
+                {
+                    ((IStrategy)m_Strategy).Stop();
+
+                    ((IStrategy)m_Strategy).OnTickEvent -= OnStrategyTickSubEvent;
+                    ((IStrategy)m_Strategy).OnOrderEvent -= OnStrategyOrderSubEvent;
+                    ((IStrategy)m_Strategy).OnLogEvent -= OnStrategyLogSubEvent;
+                    m_Strategy = null;
+                    this.toolStripButton_StartStrategy.Image = global::WindowsFormsApp1.Properties.Resources.stop;
+                    m_ISSwitch = false;
+
+                }
+            }
         }
 
         /// <summary>
@@ -935,12 +975,29 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void RichBox_TextChanged(object sender, EventArgs e)
         {
+            this.richTextBox_ChartAndIndicatorsLog.SelectionStart = this.richTextBox_ChartAndIndicatorsLog.Text.Length;
+            this.richTextBox_ChartAndIndicatorsLog.SelectionLength = 0;
+            this.richTextBox_ChartAndIndicatorsLog.Focus();
+        }
+
+        private void ChartIndicators_paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RichBoxStrategy_TextChanged(object sender, EventArgs e)
+        {
             this.richTextBox_StrategyLog.SelectionStart = this.richTextBox_StrategyLog.Text.Length;
             this.richTextBox_StrategyLog.SelectionLength = 0;
             this.richTextBox_StrategyLog.Focus();
         }
 
-        private void ChartIndicators_paint(object sender, PaintEventArgs e)
+        /// <summary>
+        /// 在有策略交易的情况下-点击-停止交易
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripButton_StrategyTitleClick(object sender, EventArgs e)
         {
 
         }

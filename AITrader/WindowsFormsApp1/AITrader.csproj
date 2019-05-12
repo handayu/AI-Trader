@@ -521,7 +521,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="image\power_button_48px_1229009_easyicon.net.png" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
@@ -626,6 +628,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\292afea02bb78f1677bda6bde30203e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\power_button_48px_1229373_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

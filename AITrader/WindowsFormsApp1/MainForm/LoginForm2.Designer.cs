@@ -108,7 +108,7 @@
             this.lblh4_2.AutoSize = true;
             this.lblh4_2.Font = new System.Drawing.Font("宋体", 13F);
             this.lblh4_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblh4_2.Location = new System.Drawing.Point(792, 144);
+            this.lblh4_2.Location = new System.Drawing.Point(797, 145);
             this.lblh4_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblh4_2.Name = "lblh4_2";
             this.lblh4_2.Size = new System.Drawing.Size(80, 18);
@@ -216,9 +216,9 @@
             this.lbl3_2.Location = new System.Drawing.Point(581, 239);
             this.lbl3_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl3_2.Name = "lbl3_2";
-            this.lbl3_2.Size = new System.Drawing.Size(77, 12);
+            this.lbl3_2.Size = new System.Drawing.Size(71, 12);
             this.lbl3_2.TabIndex = 70;
-            this.lbl3_2.Text = "021-67860535";
+            this.lbl3_2.Text = "021-0000000";
             // 
             // lbl3_1
             // 
@@ -235,7 +235,7 @@
             // 
             this.txtY.ForeColor = System.Drawing.Color.White;
             this.txtY.Location = new System.Drawing.Point(387, 408);
-            this.txtY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtY.Margin = new System.Windows.Forms.Padding(2);
             this.txtY.Name = "txtY";
             this.txtY.Size = new System.Drawing.Size(138, 21);
             this.txtY.TabIndex = 68;
@@ -255,7 +255,7 @@
             // 
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.Location = new System.Drawing.Point(387, 378);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(138, 21);
             this.txtPassword.TabIndex = 66;
@@ -275,7 +275,7 @@
             // 
             this.txtUser.ForeColor = System.Drawing.Color.White;
             this.txtUser.Location = new System.Drawing.Point(387, 351);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(138, 21);
             this.txtUser.TabIndex = 64;
@@ -306,7 +306,7 @@
             // 
             this.txtPort.ForeColor = System.Drawing.Color.White;
             this.txtPort.Location = new System.Drawing.Point(387, 285);
-            this.txtPort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPort.Margin = new System.Windows.Forms.Padding(2);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(138, 21);
             this.txtPort.TabIndex = 61;
@@ -326,7 +326,7 @@
             // 
             this.txtAddress.ForeColor = System.Drawing.Color.White;
             this.txtAddress.Location = new System.Drawing.Point(387, 241);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(138, 21);
             this.txtAddress.TabIndex = 59;
@@ -347,7 +347,7 @@
             this.cb2.AutoSize = true;
             this.cb2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cb2.Location = new System.Drawing.Point(343, 214);
-            this.cb2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb2.Margin = new System.Windows.Forms.Padding(2);
             this.cb2.Name = "cb2";
             this.cb2.Size = new System.Drawing.Size(108, 16);
             this.cb2.TabIndex = 57;
@@ -371,7 +371,7 @@
             this.cb1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cb1.Location = new System.Drawing.Point(96, 415);
-            this.cb1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb1.Margin = new System.Windows.Forms.Padding(2);
             this.cb1.Name = "cb1";
             this.cb1.Size = new System.Drawing.Size(69, 16);
             this.cb1.TabIndex = 55;
@@ -391,7 +391,7 @@
             "新加坡服务器",
             "美国服务器"});
             this.comb1.Location = new System.Drawing.Point(111, 235);
-            this.comb1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comb1.Margin = new System.Windows.Forms.Padding(2);
             this.comb1.Name = "comb1";
             this.comb1.Size = new System.Drawing.Size(166, 20);
             this.comb1.TabIndex = 54;
@@ -413,7 +413,7 @@
             this.lblh4_1.AutoSize = true;
             this.lblh4_1.Font = new System.Drawing.Font("Calibri", 16F);
             this.lblh4_1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblh4_1.Location = new System.Drawing.Point(792, 118);
+            this.lblh4_1.Location = new System.Drawing.Point(781, 118);
             this.lblh4_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblh4_1.Name = "lblh4_1";
             this.lblh4_1.Size = new System.Drawing.Size(119, 27);
@@ -437,7 +437,7 @@
             this.lblh2_1.AutoSize = true;
             this.lblh2_1.Font = new System.Drawing.Font("Calibri", 16F);
             this.lblh2_1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblh2_1.Location = new System.Drawing.Point(353, 118);
+            this.lblh2_1.Location = new System.Drawing.Point(348, 118);
             this.lblh2_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblh2_1.Name = "lblh2_1";
             this.lblh2_1.Size = new System.Drawing.Size(139, 27);
@@ -449,12 +449,12 @@
             this.lblh1_1.AutoSize = true;
             this.lblh1_1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblh1_1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblh1_1.Location = new System.Drawing.Point(56, 121);
+            this.lblh1_1.Location = new System.Drawing.Point(37, 120);
             this.lblh1_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblh1_1.Name = "lblh1_1";
-            this.lblh1_1.Size = new System.Drawing.Size(221, 27);
+            this.lblh1_1.Size = new System.Drawing.Size(271, 27);
             this.lblh1_1.TabIndex = 49;
-            this.lblh1_1.Text = "Trading BackTest Login ";
+            this.lblh1_1.Text = "Auto Strayegy-Trading Login ";
             // 
             // btn_Login
             // 
@@ -465,7 +465,7 @@
             this.btn_Login.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_Login.ForeColor = System.Drawing.Color.White;
             this.btn_Login.Location = new System.Drawing.Point(42, 450);
-            this.btn_Login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(105, 36);
             this.btn_Login.TabIndex = 43;
@@ -533,7 +533,7 @@
             this.button_Cancel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_Cancel.ForeColor = System.Drawing.Color.White;
             this.button_Cancel.Location = new System.Drawing.Point(181, 450);
-            this.button_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(96, 36);
             this.button_Cancel.TabIndex = 92;
@@ -614,7 +614,7 @@
             this.pb_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb_4.Image = global::WindowsFormsApp1.Properties.Resources._1_04;
             this.pb_4.Location = new System.Drawing.Point(805, 27);
-            this.pb_4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_4.Margin = new System.Windows.Forms.Padding(2);
             this.pb_4.Name = "pb_4";
             this.pb_4.Size = new System.Drawing.Size(60, 60);
             this.pb_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -626,7 +626,7 @@
             // 
             this.pb_3.Image = global::WindowsFormsApp1.Properties.Resources._1_03;
             this.pb_3.Location = new System.Drawing.Point(589, 27);
-            this.pb_3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_3.Margin = new System.Windows.Forms.Padding(2);
             this.pb_3.Name = "pb_3";
             this.pb_3.Size = new System.Drawing.Size(60, 60);
             this.pb_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -637,7 +637,7 @@
             // 
             this.pb_2.Image = global::WindowsFormsApp1.Properties.Resources._1_02;
             this.pb_2.Location = new System.Drawing.Point(387, 27);
-            this.pb_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_2.Margin = new System.Windows.Forms.Padding(2);
             this.pb_2.Name = "pb_2";
             this.pb_2.Size = new System.Drawing.Size(60, 60);
             this.pb_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -649,7 +649,7 @@
             this.pb_1.Image = global::WindowsFormsApp1.Properties.Resources._1_01;
             this.pb_1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pb_1.InitialImage")));
             this.pb_1.Location = new System.Drawing.Point(111, 29);
-            this.pb_1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_1.Margin = new System.Windows.Forms.Padding(2);
             this.pb_1.Name = "pb_1";
             this.pb_1.Size = new System.Drawing.Size(60, 60);
             this.pb_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -661,7 +661,7 @@
             this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbClose.Image = global::WindowsFormsApp1.Properties.Resources.icons8_Delete_32;
             this.pbClose.Location = new System.Drawing.Point(923, 1);
-            this.pbClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbClose.Margin = new System.Windows.Forms.Padding(2);
             this.pbClose.Name = "pbClose";
             this.pbClose.Size = new System.Drawing.Size(19, 20);
             this.pbClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

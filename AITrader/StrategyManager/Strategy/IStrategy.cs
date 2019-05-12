@@ -25,6 +25,11 @@ namespace Strategy
         public delegate void OnTickHandle(swap.Ticker t, string StrategyName);
         public event OnTickHandle OnTickEvent;
 
+        /// <summary>
+        /// 对外广播日志-交易日志
+        /// </summary>
+        public delegate void OnLogHandle(string strategyLogText);
+        public event OnLogHandle OnLogEvent;
 
         /// <summary>
         /// 对外广播OnOrder触发
@@ -43,11 +48,13 @@ namespace Strategy
 
         public void Start()
         {
+            SafeRiseLogEvent("策略开始...");
             m_isStart = true;
         }
 
         public void Stop()
         {
+            SafeRiseLogEvent("停止策略...");
             m_isStart = false;
         }
 
@@ -178,5 +185,13 @@ namespace Strategy
             }
         }
 
+
+        public void SafeRiseLogEvent(string strategyLogText)
+        {
+            if(OnLogEvent != null)
+            {
+                OnLogEvent(strategyLogText);
+            }
+        }
     }
 }
