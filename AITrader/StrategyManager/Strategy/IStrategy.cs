@@ -16,6 +16,7 @@ namespace Strategy
         /// </summary>
         protected string m_tradeInstrument = string.Empty;
         protected int m_frame = int.MinValue;
+        protected int m_openShares = int.MinValue;
 
         protected bool m_isStart = false;
 
@@ -37,6 +38,9 @@ namespace Strategy
         public delegate void OnOrderHandle(Common.SwapOrderReturn orderReturn, string StrategyName);
         public event OnOrderHandle OnOrderEvent;
 
+        /// <summary>
+        /// 策略是否正在运行属性
+        /// </summary>
         public bool ISSTRATEGYGOING
         {
             get
@@ -44,7 +48,6 @@ namespace Strategy
                 return m_isStart;
             }
         }
-
 
         public void Start()
         {
@@ -185,13 +188,21 @@ namespace Strategy
             }
         }
 
-
         public void SafeRiseLogEvent(string strategyLogText)
         {
             if(OnLogEvent != null)
             {
                 OnLogEvent(strategyLogText);
             }
+        }
+
+        /// <summary>
+        /// 外部调用-OHLC
+        /// </summary>
+        /// <param name="closeList"></param>
+        public virtual void OnBarRising(List<decimal> openList, List<decimal> highList, List<decimal> lowList, List<decimal> closeList)
+        {
+
         }
     }
 }

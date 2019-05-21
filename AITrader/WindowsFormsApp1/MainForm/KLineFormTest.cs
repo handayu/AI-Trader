@@ -1,5 +1,6 @@
 ﻿using APIConnect;
 using Common;
+using Indicators;
 using Strategy;
 using System;
 using System.Collections;
@@ -23,22 +24,57 @@ namespace WindowsFormsApp1
 {
     public partial class KLineFormTest : DockContent
     {
+        /// <summary>
+        /// 包含一个实时K线生成器(每个图表都有自己的生成器，各自独立-实时)
+        /// </summary>
         private BarMarker m_barMaker = null;
 
+        /// <summary>
+        /// 包含一个策略
+        /// </summary>
         private object m_Strategy = null;
 
+        /// <summary>
+        /// 包含一个或者一组指标
+        /// </summary>
+        private object m_indicator = null;
+
+        /// <summary>
+        /// 当前图表的周期
+        /// </summary>
         private string m_Frame = string.Empty;
+
+        /// <summary>
+        /// 当前图表唯一的别名
+        /// </summary>
         private string m_formName = string.Empty;
+
+        /// <summary>
+        /// 当前图表初始化信息
+        /// </summary>
         private swap.Ticker m_InitInsTicker = null;
 
+        /// <summary>
+        /// 当前图表上包含的所有K线数据缓存
+        /// </summary>
         private List<decimal> m_o = new List<decimal>();
         private List<decimal> m_h = new List<decimal>();
         private List<decimal> m_l = new List<decimal>();
         private List<decimal> m_c = new List<decimal>();
         private List<DateTime> m_d = new List<DateTime>();
 
+        /// <summary>
+        /// 删除图表事件
+        /// </summary>
+        /// <param name="formName"></param>
         public delegate void DeleteKLineFormHandle(string formName);
         public event DeleteKLineFormHandle DeleteKLineFormEvent;
+
+        /// <summary>
+        /// 用Tick带的ins和别名唯一初始化图表
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="formName"></param>
         public KLineFormTest(swap.Ticker t, int formName)
         {
             InitializeComponent();
@@ -82,6 +118,7 @@ namespace WindowsFormsApp1
         /// <param name="Bar"></param>
         private void M_barMaker_BarComingEvent(TestData.KlineOkex Bar, DATAFRAME frame)
         {
+            #region 在这里加入Bar--合成的实时的
             if (this.InvokeRequired)
             {
                 this.BeginInvoke(new Action<TestData.KlineOkex, DATAFRAME>(M_barMaker_BarComingEvent), Bar, frame);
@@ -92,134 +129,34 @@ namespace WindowsFormsApp1
             m_h.Add(Bar.h);
             m_l.Add(Bar.l);
             m_c.Add(Bar.c);
-
-            //添加Bar(无论是tick，分钟还是renko都是在这里加入)
             this.chart1.Series[0].Points.AddXY(Bar.d, Bar.h, Bar.l, Bar.o, Bar.c);
+            #endregion
 
-            //添加计算Sar指标的值到日志用于监控(统一计算renko)
-            double[] highAyyay = new double[m_h.Count];
-            double[] lowArray = new double[m_l.Count];
-            for (int i = 0; i < m_h.Count; i++)
+            #region 在这里加入选择的指标Indicator参与计算-开辟新的线程
+            if (m_indicator != null)
             {
-                highAyyay[i] = Convert.ToDouble(m_h[i]);
-                lowArray[i] = Convert.ToDouble(m_l[i]);
-            }
-            double[] intHigh = highAyyay;
-            double[] intLow = lowArray;
-            //outReal是即将输出的一组计算结果数列
-            double[] outRealSAR = new double[highAyyay.Length];
-            //输出数列的起始计算的Index
-            int outBegIndexSAR = 0;
-            //输出数列的目前计算的index
-            int outNBElementSAR = 0;
-            Core.RetCode resultCode = Core.Sar(0, intHigh.Length - 1, intHigh, intLow, 0.02, 0.2, ref outBegIndexSAR, ref outNBElementSAR, outRealSAR);
-
-            this.chart_Indiactors.Series[0].Points.Clear();
-
-            for (int i = 0; i < m_d.Count; i++)
-            {
-                if (i >= 1)
+                double[] indicatorResult = ((IIndicators)m_indicator).OnBarRising(m_o, m_h, m_l, m_c);
+                this.chart_Indiactors.Series[0].Points.Clear();
+                for (int i = 0; i < m_d.Count; i++)
                 {
-                    this.chart_Indiactors.Series[0].Points.AddXY(m_d[i], outRealSAR[i - 1]);
+                    if (i >= 2)
+                    {
+                        this.chart_Indiactors.Series[0].Points.AddXY(m_d[i], indicatorResult[i - 2]);
+                    }
                 }
-            }
-
-            if (outRealSAR.Length >= 2)
-            {
-                AppendText(string.Format("当前时间:{0},当前RenkoBar最新价:{1},当前最新的SAR值:{2}", Bar.d, Bar.c, outRealSAR[outRealSAR.Length - 2]));
-
-                //[hanyu]目前策略暂时放在这里试运行
-                CalStrategyTest(m_c, outRealSAR);
-
             }
 
             this.chart1.ChartAreas[0].AxisX.ScaleView.Scroll(ScrollType.Last);
             this.chart_Indiactors.ChartAreas[0].AxisX.ScaleView.Scroll(ScrollType.Last);
+            #endregion
 
-
-
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void CalStrategyTest(List<decimal> closeArray, double[] SarArray)
-        {
-            AppendStrategyText("策略运行检测中");
-            if (closeArray == null || SarArray == null || closeArray.Count <= 2
-                || SarArray.Length <= 2) return;
-
-            double prePrice = Convert.ToDouble((closeArray[closeArray.Count - 2]));
-            double nowPrice = Convert.ToDouble((closeArray[closeArray.Count - 1]));
-
-
-            double preSar = Convert.ToDouble((SarArray[SarArray.Length - 3]));
-            double nowSar = Convert.ToDouble((SarArray[SarArray.Length - 2]));
-
-            //上一个renko价格小于上一个sar值，当前最新的renko大于当前的Sar
-            if(prePrice < preSar && nowPrice >= nowSar)
+            #region 在这里加入策略-在新的线程运行
+            //在这里运行-策略不为null.且已经开始获准运行
+            if (m_Strategy != null && ((IStrategy)m_Strategy).ISSTRATEGYGOING == true)
             {
-                //平空单，买入多单
-                AppendStrategyText("平空单，买入多单");
-
-
-                swap.OrderSingle orderSP = new swap.OrderSingle()
-                {
-                    instrument_id = m_InitInsTicker.instrument_id,
-                    type = "4",//平空
-                    price = Convert.ToDecimal(nowPrice) - 5,
-                    size = 1,
-                    client_oid = "hanyu1",
-                    match_price = "0"
-                };
-
-                ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(orderSP);
-
-                swap.OrderSingle orderBK = new swap.OrderSingle()
-                {
-                    instrument_id = m_InitInsTicker.instrument_id,
-                    type = "1",//平空
-                    price = Convert.ToDecimal(nowPrice) + 5,
-                    size = 1,
-                    client_oid = "hanyu1",
-                    match_price = "0"
-                };
-
-                ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(orderBK);
+                ((IStrategy)m_Strategy).OnBarRising(m_o,m_h,m_l,m_c);
             }
-
-            if (prePrice > preSar && nowPrice <= nowSar)
-            {
-                //平多单，进入空单
-                AppendStrategyText("平多单，进入空单");
-
-                swap.OrderSingle orderBP = new swap.OrderSingle()
-                {
-                    instrument_id = m_InitInsTicker.instrument_id,
-                    type = "3",//平多
-                    price = Convert.ToDecimal(nowPrice) - 5,
-                    size = 1,
-                    client_oid = "hanyu1",
-                    match_price = "0"
-                };
-
-                ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(orderBP);
-
-                swap.OrderSingle orderSK = new swap.OrderSingle()
-                {
-                    instrument_id = m_InitInsTicker.instrument_id,
-                    type = "2",//空单
-                    price = Convert.ToDecimal(nowPrice) - 5,
-                    size = 1,
-                    client_oid = "hanyu1",
-                    match_price = "0"
-                };
-
-                ConnectManager.CreateInstance().CONNECTION.AnsyOrderSwap(orderSK);
-
-
-
-            }
+            #endregion
         }
 
         /// <summary>
@@ -853,10 +790,25 @@ namespace WindowsFormsApp1
             StrategySettingsForm s = new StrategySettingsForm(m_InitInsTicker, m_Frame);
             s.ShowDialog();
 
-            if (s.STRATEGY != null)
+            if (s.STRATEGY == null)
+            {
+                MessageBox.Show("请先选择策略...");
+                return;
+            }
+
+            if (s.STRATEGY != null && m_Strategy == null)
             {
                 object strategy = s.STRATEGY;
                 m_Strategy = strategy;
+
+                MessageBox.Show("设置策略完毕...");
+                return;
+            }
+
+            if (s.STRATEGY != null && m_Strategy != null && ((IStrategy)m_Strategy).ISSTRATEGYGOING == true)
+            {
+                MessageBox.Show("请先停止策略,重新设置...");
+                return;
             }
         }
 
@@ -1023,16 +975,6 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// Chart-重绘
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Chart_paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        /// <summary>
         /// 画持仓线
         /// </summary>
         /// <param name="e"></param>
@@ -1064,11 +1006,6 @@ namespace WindowsFormsApp1
             this.richTextBox_ChartAndIndicatorsLog.Focus();
         }
 
-        private void ChartIndicators_paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void RichBoxStrategy_TextChanged(object sender, EventArgs e)
         {
             this.richTextBox_StrategyLog.SelectionStart = this.richTextBox_StrategyLog.Text.Length;
@@ -1077,13 +1014,29 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// 在有策略交易的情况下-点击-停止交易
+        /// 所有指标点击入口
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ToolStripButton_StrategyTitleClick(object sender, EventArgs e)
+        private void ToolStripMenuItem_IndicatorsCommonIn_Click(object sender, EventArgs e)
         {
+            //和策略一样可以在这里用工厂模式搜索indicator里的所有指标抽象加载
+            if(((ToolStripMenuItem)sender).Text == "SAR")
+            {
+                IIndicators sar = new SarIndicator();
+                m_indicator = sar;
 
+                this.chart_Indiactors.Series[0].ChartType = SeriesChartType.Point;
+            }
+
+            if (((ToolStripMenuItem)sender).Text == "MA")
+            {
+                IIndicators ma = new MaIndicator();
+                m_indicator = ma;
+
+                this.chart_Indiactors.Series[0].ChartType = SeriesChartType.Spline;
+
+            }
         }
     }
 }

@@ -31,13 +31,13 @@ namespace WindowsFormsApp1
             return tList;
         }
 
-        public static object CreateInstanceStrategy(Type type, string ins, int frame)
+        public static object CreateInstanceStrategy(Type type, string ins, int frame,int openShares)
         {
             try
             {
                 object o = new object();
 
-                o = Activator.CreateInstance(type, ins, frame);//创建类实例
+                o = Activator.CreateInstance(type, ins, frame,openShares);//创建类实例
 
                 return o;
             }

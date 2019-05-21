@@ -42,6 +42,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_ins = new System.Windows.Forms.TextBox();
             this.textBox_Frame = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_Shares = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 115);
+            this.label2.Location = new System.Drawing.Point(22, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 12);
             this.label2.TabIndex = 2;
@@ -76,7 +78,7 @@
             // checkBox_IsVisualSingle
             // 
             this.checkBox_IsVisualSingle.AutoSize = true;
-            this.checkBox_IsVisualSingle.Location = new System.Drawing.Point(160, 114);
+            this.checkBox_IsVisualSingle.Location = new System.Drawing.Point(159, 130);
             this.checkBox_IsVisualSingle.Name = "checkBox_IsVisualSingle";
             this.checkBox_IsVisualSingle.Size = new System.Drawing.Size(90, 16);
             this.checkBox_IsVisualSingle.TabIndex = 5;
@@ -178,12 +180,31 @@
             this.textBox_Frame.Size = new System.Drawing.Size(256, 21);
             this.textBox_Frame.TabIndex = 14;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 12);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "开仓张数:";
+            // 
+            // textBox_Shares
+            // 
+            this.textBox_Shares.Location = new System.Drawing.Point(88, 91);
+            this.textBox_Shares.Name = "textBox_Shares";
+            this.textBox_Shares.Size = new System.Drawing.Size(256, 21);
+            this.textBox_Shares.TabIndex = 16;
+            this.textBox_Shares.Text = "2";
+            // 
             // StrategySettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(370, 367);
+            this.Controls.Add(this.textBox_Shares);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox_Frame);
             this.Controls.Add(this.textBox_ins);
             this.Controls.Add(this.label4);
@@ -223,5 +244,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox_ins;
         private System.Windows.Forms.TextBox textBox_Frame;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox_Shares;
     }
 }

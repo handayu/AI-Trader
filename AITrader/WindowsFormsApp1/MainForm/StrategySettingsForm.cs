@@ -48,7 +48,11 @@ namespace WindowsFormsApp1
 
             try
             {
-                m_strategy = StrategyLoader.CreateInstanceStrategy(strategyType, m_InitInsTicker.instrument_id, 0);//创建类实例
+                string openshares = this.textBox_Shares.Text;
+                int openSharesItr = 0;
+                int.TryParse(openshares, out openSharesItr);
+
+                m_strategy = StrategyLoader.CreateInstanceStrategy(strategyType, m_InitInsTicker.instrument_id, 0, openSharesItr);//创建类实例
             }
             catch(Exception ex)
             {

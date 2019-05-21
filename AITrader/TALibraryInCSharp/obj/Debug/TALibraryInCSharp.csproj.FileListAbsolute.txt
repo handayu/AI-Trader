@@ -9,3 +9,4 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\TALibraryInCSharp.pd
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\TALibraryInCSharp\obj\Debug\TALibraryInCSharp.csprojAssemblyReference.cache
