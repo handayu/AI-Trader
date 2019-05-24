@@ -4,6 +4,7 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\Win
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MenuStrategyForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RenkoCreateTestForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TestLoadDllForm.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.QuickOrderForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AccountStrategyUserForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LawNotifyForm.resources
@@ -24,6 +25,9 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\Win
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.VisualTradingUserControl.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.WelcomeForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.licenses
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
@@ -90,10 +94,6 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\Str
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\TALibraryInCSharp.pdb
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.licenses
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csproj.CopyComplete
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csprojAssemblyReference.cache

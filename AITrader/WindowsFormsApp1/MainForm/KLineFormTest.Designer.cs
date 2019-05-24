@@ -145,7 +145,7 @@
             // 
             // ToolStripMenuItem_StrategyAutoAction
             // 
-            this.ToolStripMenuItem_StrategyAutoAction.Image = global::WindowsFormsApp1.Properties.Resources.power_button_48px_1229373_easyicon1;
+            //this.ToolStripMenuItem_StrategyAutoAction.Image = global::WindowsFormsApp1.Properties.Resources.power_button_48px_1229373_easyicon1;
             this.ToolStripMenuItem_StrategyAutoAction.Name = "ToolStripMenuItem_StrategyAutoAction";
             this.ToolStripMenuItem_StrategyAutoAction.Size = new System.Drawing.Size(148, 22);
             this.ToolStripMenuItem_StrategyAutoAction.Text = "自动交易执行";
