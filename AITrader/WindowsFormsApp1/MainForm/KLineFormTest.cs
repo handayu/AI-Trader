@@ -525,6 +525,10 @@ namespace WindowsFormsApp1
             //默认设置为前一个月
             this.dateTimePicker_Begin.Value = DateTime.Now.AddDays(-30);
 
+            //默认不显示指标
+            this.splitContainer1.SplitterDistance =
+    this.splitContainer1.Panel1.Height + this.splitContainer1.Panel2.Height;
+            this.chart_Indiactors.Visible = false;
         }
 
         private void Form_Closed(object sender, FormClosedEventArgs e)
@@ -1037,6 +1041,32 @@ namespace WindowsFormsApp1
                 this.chart_Indiactors.Series[0].ChartType = SeriesChartType.Spline;
 
             }
+        }
+
+        /// <summary>
+        /// 隐藏显示指标面板
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private bool m_isIndocatorChartVisual = false;
+        private void ToolStripMenuItem_VisualIndocatorClick(object sender, EventArgs e)
+        {
+            if(m_isIndocatorChartVisual)
+            {
+                this.splitContainer1.SplitterDistance =
+    this.splitContainer1.Panel1.Height + this.splitContainer1.Panel2.Height;
+                this.chart_Indiactors.Visible = false;
+                m_isIndocatorChartVisual = false;
+            }
+            else
+            {
+                this.splitContainer1.SplitterDistance =
+  this.splitContainer1.Height/2;
+                this.chart_Indiactors.Visible = true;
+                m_isIndocatorChartVisual = true;
+
+            }
+
         }
     }
 }
