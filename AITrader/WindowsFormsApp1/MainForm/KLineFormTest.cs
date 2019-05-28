@@ -898,7 +898,7 @@ namespace WindowsFormsApp1
             if (this.InvokeRequired)
             {
                 this.BeginInvoke(new Action<object, EventArgs>(timer_NotifyPositionEvent), sender, e);
-                return;
+                return;  
             }
 
             List<swap.Position> pList = ConnectManager.CreateInstance().PositionList.holding;
