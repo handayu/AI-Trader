@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace WindowsFormsApp1
     public partial class LoginForm2 : Form
     {
         private Form1 m_MainForm = null;
+        private BackgroundWorker m_BackgroundWorker = new BackgroundWorker();
 
         public LoginForm2()
         {
@@ -30,7 +32,7 @@ namespace WindowsFormsApp1
 
             //在这里可以切换实盘和模拟盘
             ConnectManager.Start();
-            IConnectManagerSinlethon manager = new ConnectManagerSinlethonTest();
+            IConnectManagerSinlethon manager = new ConnectManagerSinlethonReal();
             ConnectManager.CreateInstance().AddIConnect(manager);
 
             ConnectManager.CreateInstance().CONNECTION.AnsyLoginEvent += AnsyLoginSubEvent;
@@ -50,9 +52,17 @@ namespace WindowsFormsApp1
             //开始开启线程推送实时行情
             ConnectManager.CreateInstance().CONNECTION.StartThreadTicker();
 
+
+            m_BackgroundWorker.DoWork += BGWorker_DoWork;
+            m_BackgroundWorker.RunWorkerAsync();
         }
 
-#region 持仓-成交-委托
+        private void BGWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+           
+        }
+
+        #region 持仓-成交-委托
         private void AnsyTradeSubEvent(AIEventArgs args)
         {
             if(args.ReponseMessage == RESONSEMESSAGE.HOLDTRADE_SUCCESS)

@@ -263,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarMarker\BarMaker.cs" />
+    <Compile Include="DllLoader\IndicatorsLoader.cs" />
     <Compile Include="MainForm\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>

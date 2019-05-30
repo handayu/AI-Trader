@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -183,8 +184,10 @@ namespace WindowsFormsApp1
 
         private void ToolStripMenuItem_BarMakerClick(object sender, EventArgs e)
         {
-            TestSarForm f = new TestSarForm();
-            f.Show();
+            //TestSarForm f = new TestSarForm();
+            //f.Show();
+            List<MemberInfo>  typesList = IndicatorsLoader.LoadeIndicatorsFuncAisa();
+
         }
     }
 }

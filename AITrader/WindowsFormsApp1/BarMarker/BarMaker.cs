@@ -11,6 +11,12 @@ namespace WindowsFormsApp1
 {
     public class BarMarker
     {
+        private List<TestData.KlineOkex> m_1MinBar = new List<TestData.KlineOkex>();
+        private List<TestData.KlineOkex> m_5MinBar = new List<TestData.KlineOkex>();
+        private List<TestData.KlineOkex> m_15MinBar = new List<TestData.KlineOkex>();
+        private List<TestData.KlineOkex> m_30MinBar = new List<TestData.KlineOkex>();
+        private List<TestData.KlineOkex> m_60MinBar = new List<TestData.KlineOkex>();
+
         /// <summary>
         /// 完整的图表信息元素
         /// </summary>
@@ -30,7 +36,7 @@ namespace WindowsFormsApp1
         /// Bar发布器
         /// </summary>
         /// <param name="renkoBar"></param>
-        public delegate void BarComingHandle(TestData.KlineOkex Bar,DATAFRAME dataFrame);
+        public delegate void BarComingHandle(TestData.KlineOkex Bar, DATAFRAME dataFrame);
         public event BarComingHandle BarComingEvent;
 
         /// <summary>
@@ -133,7 +139,19 @@ namespace WindowsFormsApp1
 
                         if (m_ChartInfo.DataFrame == DATAFRAME.MIN15)
                         {
-                            PublishKline15Bar(t,m_ChartInfo.DataFrame);
+                            PublishKline15Bar(t, m_ChartInfo.DataFrame);
+                        }
+
+
+                        if (m_ChartInfo.DataFrame == DATAFRAME.MIN30)
+                        {
+                            PublishKline30Bar(t, m_ChartInfo.DataFrame);
+                        }
+
+
+                        if (m_ChartInfo.DataFrame == DATAFRAME.HOUR1)
+                        {
+                            PublishKline60Bar(t, m_ChartInfo.DataFrame);
                         }
 
                         break;
@@ -153,69 +171,357 @@ namespace WindowsFormsApp1
         }
 
         #region 在这里合成K线发布
-
         /// <summary>
-        /// 发布15分K线
+        /// 发布30分K线--分钟数是否==30计算
         /// </summary>
         /// <param name="ticLiet"></param>
-        private void PublishKline15Bar(swap.Ticker t,DATAFRAME frame)
+        private void PublishKline30Bar(swap.Ticker t, DATAFRAME frame)
         {
-            TestData.KlineOkex Bar15 = new TestData.KlineOkex()
+            //记录第一笔进来的tick的时间戳，
+            if (m_30MinBar.Count <= 0)
             {
-                insment = t.instrument_id,
-                d = t.timestamp,
-                o = t.last,
-                h = t.last,
-                l = t.last,
-                c = t.last,
-                unkonwn1 = t.high_24h,
-                unkonwn2 = t.high_24h,
-            };
+                TestData.KlineOkex Bar30 = new TestData.KlineOkex()
+                {
+                    insment = t.instrument_id,
+                    d = t.timestamp,
+                    o = t.last,
+                    h = t.last,
+                    l = t.last,
+                    c = t.last,
+                    unkonwn1 = t.high_24h,
+                    unkonwn2 = t.high_24h,
+                };
 
-            SafeRiseBarComingEvent(Bar15, frame);
+                m_30MinBar.Add(Bar30);
+            }
+            else
+            {
+                //如果分钟不能被5整除，比较开高低收合成--如果不相等了，直接发布，并把这个不相等的第一笔作为最新的一个起始点
+                if (t.timestamp.Minute != 0 || t.timestamp.Minute != 30)
+                {
+                    if (t.last >= m_30MinBar[0].h)
+                    {
+                        m_30MinBar[0].h = t.last;
+                    }
+
+                    if (t.last <= m_30MinBar[0].l)
+                    {
+                        m_30MinBar[0].l = t.last;
+                    }
+                }
+                else
+                {
+                    m_30MinBar[0].c = t.last;
+
+                    //克隆一个--因为发布出去之后，List里的引用值会改变
+                    TestData.KlineOkex BarClone30Min = new TestData.KlineOkex()
+                    {
+                        insment = m_30MinBar[0].insment,
+                        d = m_30MinBar[0].d,
+                        o = m_30MinBar[0].o,
+                        h = m_30MinBar[0].h,
+                        l = m_30MinBar[0].l,
+                        c = m_30MinBar[0].c,
+                        unkonwn1 = m_30MinBar[0].unkonwn1,
+                        unkonwn2 = m_30MinBar[0].unkonwn2,
+                    };
+
+                    SafeRiseBarComingEvent(BarClone30Min, frame);
+
+                    m_30MinBar[0].insment = t.instrument_id;
+                    m_30MinBar[0].d = t.timestamp;
+                    m_30MinBar[0].o = t.last;
+                    m_30MinBar[0].h = t.last;
+                    m_30MinBar[0].l = t.last;
+                    m_30MinBar[0].c = t.last;
+                    m_30MinBar[0].unkonwn1 = t.high_24h;
+                    m_30MinBar[0].unkonwn2 = t.high_24h;
+
+                }
+            }
         }
 
         /// <summary>
-        /// 发布5MinK
+        /// 发布60分K线
+        /// </summary>
+        /// <param name="ticLiet"></param>
+        private void PublishKline60Bar(swap.Ticker t, DATAFRAME frame)
+        {
+            //记录第一笔进来的tick的时间戳，
+            if (m_60MinBar.Count <= 0)
+            {
+                TestData.KlineOkex Bar60 = new TestData.KlineOkex()
+                {
+                    insment = t.instrument_id,
+                    d = t.timestamp,
+                    o = t.last,
+                    h = t.last,
+                    l = t.last,
+                    c = t.last,
+                    unkonwn1 = t.high_24h,
+                    unkonwn2 = t.high_24h,
+                };
+
+                m_60MinBar.Add(Bar60);
+            }
+            else
+            {
+                //如果分钟不能被5整除，比较开高低收合成--如果不相等了，直接发布，并把这个不相等的第一笔作为最新的一个起始点
+                if (t.timestamp.Hour == m_60MinBar[0].d.Hour)
+                {
+                    if (t.last >= m_60MinBar[0].h)
+                    {
+                        m_60MinBar[0].h = t.last;
+                    }
+
+                    if (t.last <= m_60MinBar[0].l)
+                    {
+                        m_60MinBar[0].l = t.last;
+                    }
+                }
+                else
+                {
+                    m_60MinBar[0].c = t.last;
+
+                    //克隆一个--因为发布出去之后，List里的引用值会改变
+                    TestData.KlineOkex BarClone60Min = new TestData.KlineOkex()
+                    {
+                        insment = m_60MinBar[0].insment,
+                        d = m_60MinBar[0].d,
+                        o = m_60MinBar[0].o,
+                        h = m_60MinBar[0].h,
+                        l = m_60MinBar[0].l,
+                        c = m_60MinBar[0].c,
+                        unkonwn1 = m_60MinBar[0].unkonwn1,
+                        unkonwn2 = m_60MinBar[0].unkonwn2,
+                    };
+
+                    SafeRiseBarComingEvent(BarClone60Min, frame);
+
+                    m_60MinBar[0].insment = t.instrument_id;
+                    m_60MinBar[0].d = t.timestamp;
+                    m_60MinBar[0].o = t.last;
+                    m_60MinBar[0].h = t.last;
+                    m_60MinBar[0].l = t.last;
+                    m_60MinBar[0].c = t.last;
+                    m_60MinBar[0].unkonwn1 = t.high_24h;
+                    m_60MinBar[0].unkonwn2 = t.high_24h;
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// 发布15分K线--分钟线能被15整除
+        /// </summary>
+        /// <param name="ticLiet"></param>
+        private void PublishKline15Bar(swap.Ticker t, DATAFRAME frame)
+        {
+            //记录第一笔进来的tick的时间戳，更新分钟相同情况下的开高低收，直到分钟能被5整除发布，然后重新开始
+            if (m_15MinBar.Count <= 0)
+            {
+                TestData.KlineOkex Bar15 = new TestData.KlineOkex()
+                {
+                    insment = t.instrument_id,
+                    d = t.timestamp,
+                    o = t.last,
+                    h = t.last,
+                    l = t.last,
+                    c = t.last,
+                    unkonwn1 = t.high_24h,
+                    unkonwn2 = t.high_24h,
+                };
+
+                m_15MinBar.Add(Bar15);
+            }
+            else
+            {
+                //如果分钟不能被5整除，比较开高低收合成--如果不相等了，直接发布，并把这个不相等的第一笔作为最新的一个起始点
+                if (t.timestamp.Minute % 15 != 0)
+                {
+                    if (t.last >= m_15MinBar[0].h)
+                    {
+                        m_15MinBar[0].h = t.last;
+                    }
+
+                    if (t.last <= m_15MinBar[0].l)
+                    {
+                        m_15MinBar[0].l = t.last;
+                    }
+                }
+                else
+                {
+                    m_15MinBar[0].c = t.last;
+
+                    //克隆一个--因为发布出去之后，List里的引用值会改变
+                    TestData.KlineOkex BarClone15Min = new TestData.KlineOkex()
+                    {
+                        insment = m_15MinBar[0].insment,
+                        d = m_15MinBar[0].d,
+                        o = m_15MinBar[0].o,
+                        h = m_15MinBar[0].h,
+                        l = m_15MinBar[0].l,
+                        c = m_15MinBar[0].c,
+                        unkonwn1 = m_15MinBar[0].unkonwn1,
+                        unkonwn2 = m_15MinBar[0].unkonwn2,
+                    };
+
+                    SafeRiseBarComingEvent(BarClone15Min, frame);
+
+                    m_15MinBar[0].insment = t.instrument_id;
+                    m_15MinBar[0].d = t.timestamp;
+                    m_15MinBar[0].o = t.last;
+                    m_15MinBar[0].h = t.last;
+                    m_15MinBar[0].l = t.last;
+                    m_15MinBar[0].c = t.last;
+                    m_15MinBar[0].unkonwn1 = t.high_24h;
+                    m_15MinBar[0].unkonwn2 = t.high_24h;
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// 发布5MinK--分钟能否被5整除的原理
         /// </summary>
         /// <param name="ticLiet"></param>
         private void PublishKline5Bar(swap.Ticker t, DATAFRAME frame)
         {
-            TestData.KlineOkex Bar5 = new TestData.KlineOkex()
+            //记录第一笔进来的tick的时间戳，更新分钟相同情况下的开高低收，直到分钟能被5整除发布，然后重新开始
+            if (m_5MinBar.Count <= 0)
             {
-                insment = t.instrument_id,
-                d = t.timestamp,
-                o = t.last,
-                h = t.last,
-                l = t.last,
-                c = t.last,
-                unkonwn1 = t.high_24h,
-                unkonwn2 = t.high_24h,
-            };
+                TestData.KlineOkex Bar5 = new TestData.KlineOkex()
+                {
+                    insment = t.instrument_id,
+                    d = t.timestamp,
+                    o = t.last,
+                    h = t.last,
+                    l = t.last,
+                    c = t.last,
+                    unkonwn1 = t.high_24h,
+                    unkonwn2 = t.high_24h,
+                };
 
-            SafeRiseBarComingEvent(Bar5, frame);
+                m_5MinBar.Add(Bar5);
+            }
+            else
+            {
+                //如果分钟不能被5整除，比较开高低收合成--如果不相等了，直接发布，并把这个不相等的第一笔作为最新的一个起始点
+                if (t.timestamp.Minute % 5 != 0)
+                {
+                    if (t.last >= m_5MinBar[0].h)
+                    {
+                        m_5MinBar[0].h = t.last;
+                    }
+
+                    if (t.last <= m_5MinBar[0].l)
+                    {
+                        m_5MinBar[0].l = t.last;
+                    }
+                }
+                else
+                {
+                    m_5MinBar[0].c = t.last;
+
+                    //克隆一个--因为发布出去之后，List里的引用值会改变
+                    TestData.KlineOkex BarClone5Min = new TestData.KlineOkex()
+                    {
+                        insment = m_5MinBar[0].insment,
+                        d = m_5MinBar[0].d,
+                        o = m_5MinBar[0].o,
+                        h = m_5MinBar[0].h,
+                        l = m_5MinBar[0].l,
+                        c = m_5MinBar[0].c,
+                        unkonwn1 = m_5MinBar[0].unkonwn1,
+                        unkonwn2 = m_5MinBar[0].unkonwn2,
+                    };
+
+                    SafeRiseBarComingEvent(BarClone5Min, frame);
+
+                    m_5MinBar[0].insment = t.instrument_id;
+                    m_5MinBar[0].d = t.timestamp;
+                    m_5MinBar[0].o = t.last;
+                    m_5MinBar[0].h = t.last;
+                    m_5MinBar[0].l = t.last;
+                    m_5MinBar[0].c = t.last;
+                    m_5MinBar[0].unkonwn1 = t.high_24h;
+                    m_5MinBar[0].unkonwn2 = t.high_24h;
+
+                }
+            }
         }
 
         /// <summary>
-        /// 发布1MinK
+        /// 发布1MinK--分钟进行比较的原理
         /// </summary>
         /// <param name="ticLiet"></param>
         private void PublishKline1Bar(swap.Ticker t, DATAFRAME frame)
         {
-            TestData.KlineOkex Bar1 = new TestData.KlineOkex()
+            //记录第一笔进来的tick的时间戳，更新分钟相同情况下的开高低收，直到分钟不再一样，14:00:59  14:01:00驱动推送上一分钟的K线
+            if (m_1MinBar.Count <= 0)
             {
-                insment = t.instrument_id,
-                d = t.timestamp,
-                o = t.last,
-                h = t.last,
-                l = t.last,
-                c = t.last,
-                unkonwn1 = t.high_24h,
-                unkonwn2 = t.high_24h,
-            };
+                TestData.KlineOkex Bar1 = new TestData.KlineOkex()
+                {
+                    insment = t.instrument_id,
+                    d = t.timestamp,
+                    o = t.last,
+                    h = t.last,
+                    l = t.last,
+                    c = t.last,
+                    unkonwn1 = t.high_24h,
+                    unkonwn2 = t.high_24h,
+                };
 
-            SafeRiseBarComingEvent(Bar1,frame);
+                m_1MinBar.Add(Bar1);
+            }
+            else
+            {
+                //如果分钟数相等的话，比较开高低收合成--如果不相等了，直接发布，并把这个不相等的第一笔作为最新的一个起始点
+                if (t.timestamp.Minute == m_1MinBar[0].d.Minute)
+                {
+                    if (t.last >= m_1MinBar[0].h)
+                    {
+                        m_1MinBar[0].h = t.last;
+                    }
+
+                    if (t.last <= m_1MinBar[0].l)
+                    {
+                        m_1MinBar[0].l = t.last;
+                    }
+                }
+                else
+                {
+                    m_1MinBar[0].c = t.last;
+
+                    //克隆一个--因为发布出去之后，List里的引用值会改变
+                    TestData.KlineOkex BarClone1Min = new TestData.KlineOkex()
+                    {
+                        insment = m_1MinBar[0].insment,
+                        d = m_1MinBar[0].d,
+                        o = m_1MinBar[0].o,
+                        h = m_1MinBar[0].h,
+                        l = m_1MinBar[0].l,
+                        c = m_1MinBar[0].c,
+                        unkonwn1 = m_1MinBar[0].unkonwn1,
+                        unkonwn2 = m_1MinBar[0].unkonwn2,
+                    };
+
+                    SafeRiseBarComingEvent(BarClone1Min, frame);
+
+                    m_1MinBar[0].insment = t.instrument_id;
+                    m_1MinBar[0].d = t.timestamp;
+                    m_1MinBar[0].o = t.last;
+                    m_1MinBar[0].h = t.last;
+                    m_1MinBar[0].l = t.last;
+                    m_1MinBar[0].c = t.last;
+                    m_1MinBar[0].unkonwn1 = t.high_24h;
+                    m_1MinBar[0].unkonwn2 = t.high_24h;
+
+                }
+            }
+
         }
+
 
         /// <summary>
         /// 发布RenkoBar
@@ -255,7 +561,7 @@ namespace WindowsFormsApp1
                         m_preRenkoBar = firstRenkoBar;
 
                         //发布
-                        SafeRiseBarComingEvent(firstRenkoBar,m_ChartInfo.DataFrame);
+                        SafeRiseBarComingEvent(firstRenkoBar, m_ChartInfo.DataFrame);
                     }
 
                     if (t.last <= m_firstTickMark.c - m_ChartInfo.RenkoBarBoxSize)

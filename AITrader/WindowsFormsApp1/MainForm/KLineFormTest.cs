@@ -10,6 +10,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -154,7 +155,7 @@ namespace WindowsFormsApp1
             //在这里运行-策略不为null.且已经开始获准运行
             if (m_Strategy != null && ((IStrategy)m_Strategy).ISSTRATEGYGOING == true)
             {
-                ((IStrategy)m_Strategy).OnBarRising(m_o,m_h,m_l,m_c);
+                ((IStrategy)m_Strategy).OnBarRising(m_o, m_h, m_l, m_c);
             }
             #endregion
         }
@@ -292,15 +293,27 @@ namespace WindowsFormsApp1
                     if (this.chart1.Series[0].Points.Count >= 1)
                     {
                         //[Hanyu]这里多删除了一个Bar----需要修正---如果前一笔是tick线(在这里怎么判断？目前暂时用ohlc都一样)
-                        if (this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[0] ==
+                        if ((this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[0] ==
                             this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[1] &&
                             this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[1] ==
                             this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[2] &&
                             this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[2] ==
-                            this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[3])
+                            this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].YValues[3]))
                         {
-                            //this.chart1.Series[0].Points.RemoveAt(this.chart1.Series[0].Points.Count - 1);
-                            //this.chart1.Series[0].Points.AddXY(k.d, k.o, k.h, k.l, k.c);
+                            this.chart1.Series[0].Points.RemoveAt(this.chart1.Series[0].Points.Count - 1);
+                            this.chart1.Series[0].Points.AddXY(k.d, k.o, k.h, k.l, k.c);
+
+                        }
+
+                        if (this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 2].YValues[0] ==
+                          this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 2].YValues[1] &&
+                          this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 2].YValues[1] ==
+                          this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 2].YValues[2] &&
+                          this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 2].YValues[2] ==
+                          this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 2].YValues[3])
+                        {
+                            this.chart1.Series[0].Points.RemoveAt(this.chart1.Series[0].Points.Count - 2);
+                            this.chart1.Series[0].Points.AddXY(k.d, k.o, k.h, k.l, k.c);
 
                         }
 
@@ -529,6 +542,34 @@ namespace WindowsFormsApp1
             this.splitContainer1.SplitterDistance =
     this.splitContainer1.Panel1.Height + this.splitContainer1.Panel2.Height;
             this.chart_Indiactors.Visible = false;
+
+            //拉取所有的ta.lib的指标信息，并填充到Menu_Items
+            try
+            {
+                LoadIndicators();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("指标信息菜单信息加载失败:" + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 加载所有ta_lib的指标到菜单
+        /// </summary>
+        private void LoadIndicators()
+        {
+            //List<MemberInfo> typesList = IndicatorsLoader.LoadeIndicatorsFuncAisa();
+            //foreach (MemberInfo info in typesList)
+            //{
+            //    string IndicatorName = info.Name;
+
+            //    ToolStripMenuItem ToolStripMenuItem_Indicators = new System.Windows.Forms.ToolStripMenuItem();
+            //    ToolStripMenuItem_Indicators.Name = "ToolStripMenuItem_Indicators_" + IndicatorName;
+            //    ToolStripMenuItem_Indicators.Size = new System.Drawing.Size(180, 22);
+            //    ToolStripMenuItem_Indicators.Text = IndicatorName;
+            //    this.ToolStripMenuItem_Custems.DropDownItems.Add(ToolStripMenuItem_Indicators);
+            //}
         }
 
         private void Form_Closed(object sender, FormClosedEventArgs e)
@@ -902,7 +943,7 @@ namespace WindowsFormsApp1
             if (this.InvokeRequired)
             {
                 this.BeginInvoke(new Action<object, EventArgs>(timer_NotifyPositionEvent), sender, e);
-                return;  
+                return;
             }
 
             List<swap.Position> pList = ConnectManager.CreateInstance().PositionList.holding;
@@ -1025,19 +1066,31 @@ namespace WindowsFormsApp1
         private void ToolStripMenuItem_IndicatorsCommonIn_Click(object sender, EventArgs e)
         {
             //和策略一样可以在这里用工厂模式搜索indicator里的所有指标抽象加载
-            if(((ToolStripMenuItem)sender).Text == "SAR")
+            if (((ToolStripMenuItem)sender).Text == "SAR")
             {
                 IIndicators sar = new SarIndicator();
+
+                if (m_indicator != null)
+                {
+                    m_indicator = null;
+                }
                 m_indicator = sar;
 
+                this.chart_Indiactors.Series[0].Points.Clear();
                 this.chart_Indiactors.Series[0].ChartType = SeriesChartType.Point;
             }
 
             if (((ToolStripMenuItem)sender).Text == "MA")
             {
                 IIndicators ma = new MaIndicator();
+
+                if (m_indicator != null)
+                {
+                    m_indicator = null;
+                }
                 m_indicator = ma;
 
+                this.chart_Indiactors.Series[0].Points.Clear();
                 this.chart_Indiactors.Series[0].ChartType = SeriesChartType.Spline;
 
             }
@@ -1051,7 +1104,7 @@ namespace WindowsFormsApp1
         private bool m_isIndocatorChartVisual = false;
         private void ToolStripMenuItem_VisualIndocatorClick(object sender, EventArgs e)
         {
-            if(m_isIndocatorChartVisual)
+            if (m_isIndocatorChartVisual)
             {
                 this.splitContainer1.SplitterDistance =
     this.splitContainer1.Panel1.Height + this.splitContainer1.Panel2.Height;
@@ -1061,12 +1114,32 @@ namespace WindowsFormsApp1
             else
             {
                 this.splitContainer1.SplitterDistance =
-  this.splitContainer1.Height/2;
+  this.splitContainer1.Height / 2;
                 this.chart_Indiactors.Visible = true;
                 m_isIndocatorChartVisual = true;
 
             }
 
+        }
+
+        /// <summary>
+        /// 延迟Form_Load加载到点击常用指标菜单的时候加载指标
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripMenuItem_CustemsClick(object sender, EventArgs e)
+        {
+            List<MemberInfo> typesList = IndicatorsLoader.LoadeIndicatorsFuncAisa();
+            foreach (MemberInfo info in typesList)
+            {
+                string IndicatorName = info.Name;
+
+                ToolStripMenuItem ToolStripMenuItem_Indicators = new System.Windows.Forms.ToolStripMenuItem();
+                ToolStripMenuItem_Indicators.Name = "ToolStripMenuItem_Indicators_" + IndicatorName;
+                ToolStripMenuItem_Indicators.Size = new System.Drawing.Size(180, 22);
+                ToolStripMenuItem_Indicators.Text = IndicatorName;
+                this.ToolStripMenuItem_Custems.DropDownItems.Add(ToolStripMenuItem_Indicators);
+            }
         }
     }
 }
