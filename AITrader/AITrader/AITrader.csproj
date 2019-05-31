@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{272F6A1E-2325-4BB4-8132-0F9FC425B227}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AITrader</RootNamespace>
+    <AssemblyName>AITrader</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="APIConnect">
+      <HintPath>..\Commonlib\APIConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Common">
+      <HintPath>..\Commonlib\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\DevExpress.Data.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\DevExpress.Pdf.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\DevExpress.Printing.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\DevExpress.Utils.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="EQATEC.Analytics.Monitor, Version=3.2.1.0, Culture=neutral, PublicKeyToken=213c7c68adb58a17, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\EQATEC.Analytics.Monitor.dll</HintPath>
+    </Reference>
+    <Reference Include="Indicators">
+      <HintPath>..\Commonlib\Indicators.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Commonlib\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.MSXML, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Commonlib\Microsoft.MSXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\Commonlib\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\Commonlib\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\Commonlib\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OKExSDKLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\OKExSDKLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="QuickStart, Version=2017.2.502.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\QuickStart.dll</HintPath>
+    </Reference>
+    <Reference Include="Strategy">
+      <HintPath>..\Commonlib\Strategy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\Commonlib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\Commonlib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TALibraryInCSharp">
+      <HintPath>..\Commonlib\TALibraryInCSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.ChartView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.PivotGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadChart, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadChart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadDiagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMap, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\Telerik.WinControls.UI.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\TelerikCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikData, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\TelerikData.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.9.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Commonlib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarMarker\BarMaker.cs" />
+    <Compile Include="DllLoader\IndicatorsLoader.cs" />
+    <Compile Include="MainForm\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\ListenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\ListenceForm.Designer.cs">
+      <DependentUpon>ListenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\LoginForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\LoginForm2.Designer.cs">
+      <DependentUpon>LoginForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\RegForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\RegForm.Designer.cs">
+      <DependentUpon>RegForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuStrategyForm\MenuStrategyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuStrategyForm\MenuStrategyForm.Designer.cs">
+      <DependentUpon>MenuStrategyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm\RenkoCreateTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm\RenkoCreateTestForm.Designer.cs">
+      <DependentUpon>RenkoCreateTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DllLoader\StrategyLoader.cs" />
+    <Compile Include="TestForm\TestLoadDllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm\TestLoadDllForm.Designer.cs">
+      <DependentUpon>TestLoadDllForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainForm\QuickOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\QuickOrderForm.Designer.cs">
+      <DependentUpon>QuickOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\AccountStrategyUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\AccountStrategyUserForm.Designer.cs">
+      <DependentUpon>AccountStrategyUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\LawNotifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\LawNotifyForm.Designer.cs">
+      <DependentUpon>LawNotifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\MarketDataUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\MarketDataUserForm.Designer.cs">
+      <DependentUpon>MarketDataUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\PositionCompareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\PositionCompareForm.Designer.cs">
+      <DependentUpon>PositionCompareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\RenkoSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\RenkoSettingsForm.Designer.cs">
+      <DependentUpon>RenkoSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\StrategySettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\StrategySettingsForm.Designer.cs">
+      <DependentUpon>StrategySettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\TradeUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\TradeUserForm.Designer.cs">
+      <DependentUpon>TradeUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\StrategyLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\StrategyLogForm.Designer.cs">
+      <DependentUpon>StrategyLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm\TestSarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm\TestSarForm.Designer.cs">
+      <DependentUpon>TestSarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\AccountStrategyUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\AccountStrategyUserControl.Designer.cs">
+      <DependentUpon>AccountStrategyUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\KLineFormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\KLineFormTest.Designer.cs">
+      <DependentUpon>KLineFormTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\MarketDataUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\MarketDataUserControl.Designer.cs">
+      <DependentUpon>MarketDataUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\QuickOrderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\QuickOrderUserControl.Designer.cs">
+      <DependentUpon>QuickOrderUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl.Designer.cs">
+      <DependentUpon>TradeUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl\AutoTradeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl\AutoTradeUserControl.Designer.cs">
+      <DependentUpon>AutoTradeUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl\InstrumentsInfoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl\InstrumentsInfoUserControl.Designer.cs">
+      <DependentUpon>InstrumentsInfoUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl\VisualLogUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl\VisualLogUserControl.Designer.cs">
+      <DependentUpon>VisualLogUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl\VisualAccountControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TradeUserControl\VisualAccountControl.Designer.cs">
+      <DependentUpon>VisualAccountControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\ListenceForm.resx">
+      <DependentUpon>ListenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\LoginForm2.resx">
+      <DependentUpon>LoginForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\RegForm.resx">
+      <DependentUpon>RegForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuStrategyForm\MenuStrategyForm.resx">
+      <DependentUpon>MenuStrategyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm\RenkoCreateTestForm.resx">
+      <DependentUpon>RenkoCreateTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm\TestLoadDllForm.resx">
+      <DependentUpon>TestLoadDllForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\QuickOrderForm.resx">
+      <DependentUpon>QuickOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\AccountStrategyUserForm.resx">
+      <DependentUpon>AccountStrategyUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\LawNotifyForm.resx">
+      <DependentUpon>LawNotifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\MarketDataUserForm.resx">
+      <DependentUpon>MarketDataUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\PositionCompareForm.resx">
+      <DependentUpon>PositionCompareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\RenkoSettingsForm.resx">
+      <DependentUpon>RenkoSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\StrategySettingsForm.resx">
+      <DependentUpon>StrategySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\TradeUserForm.resx">
+      <DependentUpon>TradeUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\StrategyLogForm.resx">
+      <DependentUpon>StrategyLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm\TestSarForm.resx">
+      <DependentUpon>TestSarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\AccountStrategyUserControl.resx">
+      <DependentUpon>AccountStrategyUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\KLineFormTest.resx">
+      <DependentUpon>KLineFormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\MarketDataUserControl.resx">
+      <DependentUpon>MarketDataUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\QuickOrderUserControl.resx">
+      <DependentUpon>QuickOrderUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TradeUserControl.resx">
+      <DependentUpon>TradeUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TradeUserControl\InstrumentsInfoUserControl.resx">
+      <DependentUpon>InstrumentsInfoUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TradeUserControl\VisualLogUserControl.resx">
+      <DependentUpon>VisualLogUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TradeUserControl\VisualAccountControl.resx">
+      <DependentUpon>VisualAccountControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\power_button_48px_1229009_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\1-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\1-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\1-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\1-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8_Delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\1eb8d80033316c55cf3b4a8f46bb4853_00573d6d0329fe6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\6b41346d30a6d19b7fdfc283add2871.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-ok-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-cancel-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-customer-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-edit-file-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-purchase-order-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-expand-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-collapse-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-css-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-google-forms-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-automatic-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-heart-monitor-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-radar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-1-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-5-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-15-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-30-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-calendar-30-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-plus-1-day-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-60-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-merge-cells-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-select-column-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-layout-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\292afea02bb78f1677bda6bde30203e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\power_button_48px_1229373_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\ai.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
