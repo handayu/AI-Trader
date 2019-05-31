@@ -2539,6 +2539,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 和 x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -7148,7 +7164,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:AITrader-Setup"
         "ProductCode" = "8:{28AE4046-9A09-40CE-AC48-A5158F1811FB}"
-        "PackageCode" = "8:{229C085F-D2CF-470F-871F-29BDE52EBD7E}"
+        "PackageCode" = "8:{9FEE5C66-3309-498C-A6D9-6735440C7D41}"
         "UpgradeCode" = "8:{306A1ADA-6A11-45AF-B80F-7ECCE99FFE11}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
