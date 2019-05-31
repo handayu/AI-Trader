@@ -363,7 +363,7 @@ namespace Common
         }
 
 
-        public static swap.PositionResult<Position> GetPositionResult()
+        public static swap.PositionResult<swap.Position> GetPositionResult()
         {
             swap.PositionResult<Position> reList = new swap.PositionResult<Position>();
             List<swap.Position> aList = new List<swap.Position>();
