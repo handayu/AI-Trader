@@ -276,11 +276,23 @@
     <Compile Include="MainForm\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\ListenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\ListenceForm.Designer.cs">
+      <DependentUpon>ListenceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\LoginForm2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm\LoginForm2.Designer.cs">
       <DependentUpon>LoginForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\RegForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\RegForm.Designer.cs">
+      <DependentUpon>RegForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuStrategyForm\MenuStrategyForm.cs">
       <SubType>Form</SubType>
@@ -435,8 +447,14 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\ListenceForm.resx">
+      <DependentUpon>ListenceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm\LoginForm2.resx">
       <DependentUpon>LoginForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\RegForm.resx">
+      <DependentUpon>RegForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuStrategyForm\MenuStrategyForm.resx">
       <DependentUpon>MenuStrategyForm.cs</DependentUpon>
@@ -639,6 +657,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\ai.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

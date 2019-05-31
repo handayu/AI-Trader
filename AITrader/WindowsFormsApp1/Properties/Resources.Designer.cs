@@ -153,6 +153,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap ai {
+            get {
+                object obj = ResourceManager.GetObject("ai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_1_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-1-48", resourceCulture);

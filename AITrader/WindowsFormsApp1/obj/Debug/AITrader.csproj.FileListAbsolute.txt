@@ -97,3 +97,5 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\bin\Debug\TAL
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\AITrader.csproj.CopyComplete
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ListenceForm.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.RegForm.resources

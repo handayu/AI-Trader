@@ -477,6 +477,7 @@
             // 
             this.textBox_passphear.Location = new System.Drawing.Point(111, 367);
             this.textBox_passphear.Name = "textBox_passphear";
+            this.textBox_passphear.PasswordChar = '*';
             this.textBox_passphear.Size = new System.Drawing.Size(166, 21);
             this.textBox_passphear.TabIndex = 91;
             // 
@@ -484,6 +485,7 @@
             // 
             this.textBox_serkets.Location = new System.Drawing.Point(111, 332);
             this.textBox_serkets.Name = "textBox_serkets";
+            this.textBox_serkets.PasswordChar = '*';
             this.textBox_serkets.Size = new System.Drawing.Size(166, 21);
             this.textBox_serkets.TabIndex = 90;
             // 
