@@ -19,7 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indicators", "Indicators\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TALibraryInCSharp", "TALibraryInCSharp\TALibraryInCSharp.csproj", "{C2671CB2-5A5A-49D6-9C43-E2F1F6A13F27}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AITrader-Setup", "AITrader-Setup\AITrader-Setup.vdproj", "{84E26087-36C3-4458-B1B2-1B433DC00CD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reg", "Reg\Reg.csproj", "{B19AF320-428E-4EEC-AEE0-66F5B6F05C9F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AITrader-Setup", "AITrader-Setup\AITrader-Setup.vdproj", "{EA560DD5-8E23-4115-A627-E7CC47A3C972}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,10 +95,18 @@ Global
 		{C2671CB2-5A5A-49D6-9C43-E2F1F6A13F27}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C2671CB2-5A5A-49D6-9C43-E2F1F6A13F27}.Release|x86.ActiveCfg = Release|Any CPU
 		{C2671CB2-5A5A-49D6-9C43-E2F1F6A13F27}.Release|x86.Build.0 = Release|Any CPU
-		{84E26087-36C3-4458-B1B2-1B433DC00CD5}.Debug|Any CPU.ActiveCfg = Debug
-		{84E26087-36C3-4458-B1B2-1B433DC00CD5}.Debug|x86.ActiveCfg = Debug
-		{84E26087-36C3-4458-B1B2-1B433DC00CD5}.Release|Any CPU.ActiveCfg = Release
-		{84E26087-36C3-4458-B1B2-1B433DC00CD5}.Release|x86.ActiveCfg = Release
+		{B19AF320-428E-4EEC-AEE0-66F5B6F05C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19AF320-428E-4EEC-AEE0-66F5B6F05C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19AF320-428E-4EEC-AEE0-66F5B6F05C9F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B19AF320-428E-4EEC-AEE0-66F5B6F05C9F}.Debug|x86.Build.0 = Debug|Any CPU
+		{B19AF320-428E-4EEC-AEE0-66F5B6F05C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19AF320-428E-4EEC-AEE0-66F5B6F05C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19AF320-428E-4EEC-AEE0-66F5B6F05C9F}.Release|x86.ActiveCfg = Release|Any CPU
+		{B19AF320-428E-4EEC-AEE0-66F5B6F05C9F}.Release|x86.Build.0 = Release|Any CPU
+		{EA560DD5-8E23-4115-A627-E7CC47A3C972}.Debug|Any CPU.ActiveCfg = Debug
+		{EA560DD5-8E23-4115-A627-E7CC47A3C972}.Debug|x86.ActiveCfg = Debug
+		{EA560DD5-8E23-4115-A627-E7CC47A3C972}.Release|Any CPU.ActiveCfg = Release
+		{EA560DD5-8E23-4115-A627-E7CC47A3C972}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

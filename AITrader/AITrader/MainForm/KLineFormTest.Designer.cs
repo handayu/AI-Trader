@@ -149,7 +149,7 @@
             // 
             this.ToolStripMenuItem_StrategyAutoAction.Image = global::AITrader.Properties.Resources._6b41346d30a6d19b7fdfc283add2871;
             this.ToolStripMenuItem_StrategyAutoAction.Name = "ToolStripMenuItem_StrategyAutoAction";
-            this.ToolStripMenuItem_StrategyAutoAction.Size = new System.Drawing.Size(188, 30);
+            this.ToolStripMenuItem_StrategyAutoAction.Size = new System.Drawing.Size(148, 22);
             this.ToolStripMenuItem_StrategyAutoAction.Text = "自动交易执行";
             this.ToolStripMenuItem_StrategyAutoAction.Click += new System.EventHandler(this.ToolStripMenuItem_StrategyAutoActionClick);
             // 
@@ -157,7 +157,7 @@
             // 
             this.ToolStripMenuItem_StrategySettings.Image = global::AITrader.Properties.Resources.a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a;
             this.ToolStripMenuItem_StrategySettings.Name = "ToolStripMenuItem_StrategySettings";
-            this.ToolStripMenuItem_StrategySettings.Size = new System.Drawing.Size(188, 30);
+            this.ToolStripMenuItem_StrategySettings.Size = new System.Drawing.Size(148, 22);
             this.ToolStripMenuItem_StrategySettings.Text = "策略属性设置";
             this.ToolStripMenuItem_StrategySettings.Click += new System.EventHandler(this.ToolStripMenuItem_StrategySettingsClick);
             // 

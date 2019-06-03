@@ -135,6 +135,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Commonlib\QuickStart.dll</HintPath>
     </Reference>
+    <Reference Include="Reg">
+      <HintPath>..\Commonlib\Reg.dll</HintPath>
+    </Reference>
     <Reference Include="Strategy">
       <HintPath>..\Commonlib\Strategy.dll</HintPath>
     </Reference>
@@ -161,102 +164,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="TALibraryInCSharp">
       <HintPath>..\Commonlib\TALibraryInCSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.ChartView, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.ChartView.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.GridView, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.GridView.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.PdfViewer, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.PdfViewer.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.PivotGrid, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.PivotGrid.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.RadChart, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.RadChart.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.RadDiagram, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.RadDiagram.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.RadDock, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.RadDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.RadMap, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.RadMap.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.RichTextEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Scheduler, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.Scheduler.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Aqua.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Breeze.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.UI, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.UI.Design, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\Telerik.WinControls.UI.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="TelerikCommon, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\TelerikCommon.dll</HintPath>
-    </Reference>
-    <Reference Include="TelerikData, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Commonlib\TelerikData.dll</HintPath>
     </Reference>
     <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.9.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -308,8 +215,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reg\QQMail.cs" />
-    <Compile Include="Reg\RegUser.cs" />
     <Compile Include="TestForm\RenkoCreateTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,7 +375,6 @@
     <EmbeddedResource Include="TestForm\TestLoadDllForm.resx">
       <DependentUpon>TestLoadDllForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

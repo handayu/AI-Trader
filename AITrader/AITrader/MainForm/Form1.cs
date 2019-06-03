@@ -123,10 +123,12 @@ namespace WindowsFormsApp1
         {
             try
             {
+                string exeInfo = System.Windows.Forms.Application.StartupPath + "\\edi\\Edi.exe";
+
                 //打开Edit进程--独立的进程
-                System.Diagnostics.Process.Start(@"C:\Users\Administrator\Desktop\AI-Trader\Edi-master\Debug\Edi.exe");
+                System.Diagnostics.Process.Start(exeInfo);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("无法找到Edi:" + ex.Message);
             }
@@ -165,7 +167,7 @@ namespace WindowsFormsApp1
 
         private void Form_Closed(object sender, FormClosedEventArgs e)
         {
-            if(m_marketDataForm != null && m_marketDataForm.MarketDataUserControlSelf != null)
+            if (m_marketDataForm != null && m_marketDataForm.MarketDataUserControlSelf != null)
             {
                 m_marketDataForm.MarketDataUserControlSelf.RealMarketDataClikEvent -= RealMarketDataClikSubEvent;
             }
@@ -186,7 +188,23 @@ namespace WindowsFormsApp1
         {
             //TestSarForm f = new TestSarForm();
             //f.Show();
-            List<MemberInfo>  typesList = IndicatorsLoader.LoadeIndicatorsFuncAisa();
+            List<MemberInfo> typesList = IndicatorsLoader.LoadeIndicatorsFuncAisa();
+
+        }
+
+        private void teamViwerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string tVPath = System.Windows.Forms.Application.StartupPath + "\\TeamViewerQS.exe";
+
+                //打开
+                System.Diagnostics.Process.Start(tVPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("无法找到TeamViwer请确认安装了teamviwer:" + ex.Message);
+            }
 
         }
     }

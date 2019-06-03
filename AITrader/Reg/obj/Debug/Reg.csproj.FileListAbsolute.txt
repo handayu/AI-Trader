@@ -1,0 +1,8 @@
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Reg\bin\Debug\Reg.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Reg\bin\Debug\Reg.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Reg\obj\Debug\Reg.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Reg\obj\Debug\Reg.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Reg\obj\Debug\Reg.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Reg\obj\Debug\Reg.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\Reg.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\Reg.pdb

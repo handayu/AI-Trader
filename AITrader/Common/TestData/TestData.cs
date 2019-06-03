@@ -172,7 +172,7 @@ namespace Common
 
         public static List<swap.Ticker> GetTicker()
         {
-            if(m_BTClastTicker == null)
+            if (m_BTClastTicker == null)
             {
                 Random rd = new Random();
                 int radom1 = rd.Next(-20, 20);
@@ -250,8 +250,8 @@ namespace Common
                 Ticker ticker2 = new Ticker()
                 {
                     instrument_id = "TRX-USD-SWAP",
-                    last = m_TRXlastTicker.last +1,
-                    high_24h = m_TRXlastTicker.last +1,
+                    last = m_TRXlastTicker.last + 1,
+                    high_24h = m_TRXlastTicker.last + 1,
                     low_24h = m_TRXlastTicker.last + 1,
                     volume_24h = 4421,
                     timestamp = DateTime.Now
@@ -573,12 +573,13 @@ namespace Common
 
         public static List<TestData.KlineOkex> GetKLine(string ins)
         {
-            List<TestData.KlineOkex> klineList = new List<TestData.KlineOkex>();
+            string pathData = System.Windows.Forms.Application.StartupPath + "\\OhlcData.csv";
 
+            List<TestData.KlineOkex> klineList = new List<TestData.KlineOkex>();
 
             char[] separator = { '\r', '\n' };
 
-            FileStream fs = new FileStream(@"C:\Users\Administrator\Desktop\AI-Trader\AITrader\WindowsFormsApp1\Resource\OhlcData.csv", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            FileStream fs = new FileStream(pathData, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             StreamReader sr = new StreamReader(fs, System.Text.Encoding.Default);
             String line;
             while ((line = sr.ReadLine()) != null)

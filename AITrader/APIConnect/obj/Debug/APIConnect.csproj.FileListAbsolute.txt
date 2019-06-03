@@ -1,7 +1,7 @@
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\APIConnect.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\APIConnect\obj\Debug\APIConnect.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\APIConnect\obj\Debug\APIConnect.csproj.CopyComplete
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\APIConnect\obj\Debug\APIConnect.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\APIConnect.pdb
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\APIConnect\obj\Debug\APIConnect.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\APIConnect\obj\Debug\APIConnect.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\APIConnect\obj\Debug\APIConnect.csprojAssemblyReference.cache
