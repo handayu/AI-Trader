@@ -114,9 +114,8 @@
             this.label_Info.AutoSize = true;
             this.label_Info.Location = new System.Drawing.Point(15, 106);
             this.label_Info.Name = "label_Info";
-            this.label_Info.Size = new System.Drawing.Size(125, 12);
+            this.label_Info.Size = new System.Drawing.Size(0, 12);
             this.label_Info.TabIndex = 9;
-            this.label_Info.Text = "登陆信息:-----------";
             // 
             // RegForm
             // 

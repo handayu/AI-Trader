@@ -71,7 +71,11 @@ namespace WindowsFormsApp1.MainForm
                 string title = this.textBox_name.Text + "正在申请数字货币交易平台登陆授权...";
                 string body = DateTime.Now.ToString() + ":" + RegUser.GetRNum();
 
-                QQMail.SendQQMails(title, body);
+                //hanyu:"lhfdcuftsjjwbbhd"
+                //yinsijin:"zgwxdarbgbxebbaf"
+
+                QQMail.SendQQMails("578931169@qq.com", "lhfdcuftsjjwbbhd",title, body);
+                QQMail.SendQQMails("1050289739@qq.com", "zgwxdarbgbxebbaf", title, body);
 
                 this.label_Info.Text = "注册成功,请联系技术支持获取唯一登陆注册码完成授权...";
 
