@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
                 this.pictureBox1.Location = new Point(this.Location.X + this.Width / 2, this.Location.Y + this.Height / 2);
 
                 //停止相当于进程缓冲2秒
-                System.Threading.Thread.Sleep(2000);
+                //System.Threading.Thread.Sleep(2000);
                 this.Hide();
                 //
 

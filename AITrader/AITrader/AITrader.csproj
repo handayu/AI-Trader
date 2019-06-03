@@ -141,6 +141,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\Commonlib\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
@@ -307,6 +308,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Reg\QQMail.cs" />
+    <Compile Include="Reg\RegUser.cs" />
     <Compile Include="TestForm\RenkoCreateTestForm.cs">
       <SubType>Form</SubType>
     </Compile>

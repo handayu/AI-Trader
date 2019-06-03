@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AITrader.Reg;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,10 +38,20 @@ namespace WindowsFormsApp1.MainForm
 
         private void Button_OK_Click(object sender, EventArgs e)
         {
-            //在这里链接服务器进行验证返回成功并关闭窗口
+            if(this.textBox_Code.Text == "" || this.textBox_name.Text == "")
+            {
+                this.label_Info.Text = "请输入正确的登陆名和注册码才能完成授权,若还未注册,请填写注册名进行注册...";
+            }
 
-            m_dialogResultBack = true;
-            this.Close();
+            if (this.textBox_Code.Text.CompareTo(RegUser.GetRNum()) == 0)
+            {
+                m_dialogResultBack = true;
+                this.Close();
+            }
+            else
+            {
+                this.label_Info.Text = "用户名或授权码不匹配,请重新输入...";
+            }
         }
 
         private void Button_cancel_Click(object sender, EventArgs e)
@@ -49,6 +60,26 @@ namespace WindowsFormsApp1.MainForm
 
             m_dialogResultBack = false;
             this.Close();
+        }
+
+        private void Button_Register_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //在这里链接服务器进行验证--或者发送邮件到软件开发者邮箱进行授权，软件开发者把授权码交付客户
+                //MessageBox.Show(RegUser.GetRNum());
+                string title = this.textBox_name.Text + "正在申请数字货币交易平台登陆授权...";
+                string body = DateTime.Now.ToString() + ":" + RegUser.GetRNum();
+
+                QQMail.SendQQMails(title, body);
+
+                this.label_Info.Text = "注册成功,请联系技术支持获取唯一登陆注册码完成授权...";
+
+            }
+            catch (Exception ex)
+            {
+                this.label_Info.Text = "注册失败,请及时联系平台技术支持:" + ex.Message;
+            }
         }
     }
 }
