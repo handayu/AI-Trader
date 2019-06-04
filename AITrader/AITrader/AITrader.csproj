@@ -76,6 +76,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Commonlib\EQATEC.Analytics.Monitor.dll</HintPath>
     </Reference>
+    <Reference Include="GithubApi">
+      <HintPath>..\Commonlib\GithubApi.dll</HintPath>
+    </Reference>
     <Reference Include="Indicators">
       <HintPath>..\Commonlib\Indicators.dll</HintPath>
     </Reference>

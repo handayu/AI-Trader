@@ -1,0 +1,11 @@
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\GithubApi\bin\Debug\GithubApi.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\GithubApi\bin\Debug\GithubApi.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\GithubApi\bin\Debug\Octokit.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\GithubApi\bin\Debug\Octokit.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\GithubApi\obj\Debug\GithubApi.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\GithubApi\obj\Debug\GithubApi.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\GithubApi\obj\Debug\GithubApi.csproj.CopyComplete
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\GithubApi\obj\Debug\GithubApi.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\GithubApi\obj\Debug\GithubApi.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\GithubApi.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\GithubApi.pdb

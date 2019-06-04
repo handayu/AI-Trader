@@ -177,3 +177,7 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Strategy.pd
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Reg.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Reg.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\GithubApi.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Octokit.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\GithubApi.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Octokit.xml

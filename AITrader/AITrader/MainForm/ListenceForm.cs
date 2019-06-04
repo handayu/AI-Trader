@@ -73,7 +73,9 @@ namespace WindowsFormsApp1
             //打开链接进行联系和注册码申请
             try
             {
-                Process.Start("https://github.com/handayu/AI-Trader-DownLoad");
+                //Process.Start("https://github.com/handayu/AI-Trader-DownLoad");
+                GithubApi.GithubApiManager m = new GithubApi.GithubApiManager();
+                m.GetCountAsync();
             }
             catch (Exception ex)
             {
