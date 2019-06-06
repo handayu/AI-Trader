@@ -18,10 +18,13 @@ namespace WindowsFormsApp1
     {
         private Form1 m_MainForm = null;
         private BackgroundWorker m_BackgroundWorker = new BackgroundWorker();
-
         public LoginForm2()
         {
             InitializeComponent();
+
+            this.comb_Server.SelectedIndex = 0;
+            this.comboBox_SimReal.SelectedIndex = 0;
+
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -30,10 +33,6 @@ namespace WindowsFormsApp1
             string ser = this.textBox_serkets.Text;
             string pas = this.textBox_passphear.Text;
 
-            //在这里可以切换实盘和模拟盘
-            ConnectManager.Start();
-            IConnectManagerSinlethon manager = new ConnectManagerSinlethonTest();
-            ConnectManager.CreateInstance().AddIConnect(manager);
 
             ConnectManager.CreateInstance().CONNECTION.AnsyLoginEvent += AnsyLoginSubEvent;
 
@@ -59,21 +58,21 @@ namespace WindowsFormsApp1
 
         private void BGWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-           
+
         }
 
         #region 持仓-成交-委托
         private void AnsyTradeSubEvent(AIEventArgs args)
         {
-            if(args.ReponseMessage == RESONSEMESSAGE.HOLDTRADE_SUCCESS)
+            if (args.ReponseMessage == RESONSEMESSAGE.HOLDTRADE_SUCCESS)
             {
-                ConnectManager.CreateInstance().TradeList = (List < swap.Trade >) args.EventData;
+                ConnectManager.CreateInstance().TradeList = (List<swap.Trade>)args.EventData;
             }
         }
 
         private void AnsyPositionSubEvent(AIEventArgs args)
         {
-            
+
         }
 
         private void AnsyOrderSubEvent(AIEventArgs args)
@@ -83,7 +82,7 @@ namespace WindowsFormsApp1
                 ConnectManager.CreateInstance().OrderList = (swap.OrderListResult)args.EventData;
             }
         }
-#endregion
+        #endregion
         /// <summary>
         /// 登陆成功完成-查到所有的合约-查持仓-查成家-查委托
         /// </summary>
@@ -156,6 +155,50 @@ namespace WindowsFormsApp1
             c.IniWriteValue("account", "apikey", this.textBox_apikey.Text);
             c.IniWriteValue("account", "secrets", this.textBox_serkets.Text);
             c.IniWriteValue("account", "passphera", this.textBox_passphear.Text);
+        }
+
+        private void SiimRealTradeing_SelectChaned(object sender, EventArgs e)
+        {
+            string nowSel = this.comboBox_SimReal.SelectedItem.ToString();
+            if (nowSel.CompareTo("实盘") == 0)
+            {
+
+                this.textBox_apikey.Enabled = true;
+                this.textBox_serkets.Enabled = true;
+                this.textBox_passphear.Enabled = true;
+
+                //加载账户配置文件
+                string path = System.Windows.Forms.Application.StartupPath + "\\config.ini";
+                IniOperationClass c = new IniOperationClass(path);
+                this.textBox_apikey.Text = c.IniReadValue("account", "apikey");
+                this.textBox_serkets.Text = c.IniReadValue("account", "secrets");
+                this.textBox_passphear.Text = c.IniReadValue("account", "passphera");
+
+                //在这里
+                //在这里可以切换实盘和模拟盘
+                ConnectManager.Start();
+                IConnectManagerSinlethon manager = new ConnectManagerSinlethonReal();
+
+                ConnectManager.CreateInstance().ClearIConnection();
+                ConnectManager.CreateInstance().AddIConnect(manager);
+
+            }
+            else
+            {
+                this.textBox_apikey.Text = "";
+                this.textBox_serkets.Text = "";
+                this.textBox_passphear.Text = "";
+
+                this.textBox_apikey.Enabled = false;
+                this.textBox_serkets.Enabled = false;
+                this.textBox_passphear.Enabled = false;
+
+                ConnectManager.Start();
+                IConnectManagerSinlethon manager = new ConnectManagerSinlethonTest();
+
+                ConnectManager.CreateInstance().ClearIConnection();
+                ConnectManager.CreateInstance().AddIConnect(manager);
+            }
         }
     }
 }

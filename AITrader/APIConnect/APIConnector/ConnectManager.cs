@@ -26,8 +26,25 @@ namespace APIConnect
 
         public static void Start()
         {
-            m_SingletonManager = new ConnectManager();
+            if(m_SingletonManager == null)
+            {
+                m_SingletonManager = new ConnectManager();
+            }
+            else
+            {
+                m_SingletonManager = null;
+                m_SingletonManager = new ConnectManager();
+            }
         }
+
+        public void ClearIConnection()
+        {
+            if(m_singlethon != null)
+            {
+                m_singlethon = null;
+            }
+        }
+
 
         public void AddIConnect(IConnectManagerSinlethon s)
         {

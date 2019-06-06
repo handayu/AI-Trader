@@ -178,7 +178,7 @@
             this.ToolStripMenuItem_IndicatorsCommonIn,
             this.mAToolStripMenuItem});
             this.ToolStripMenuItem_Self.Name = "ToolStripMenuItem_Self";
-            this.ToolStripMenuItem_Self.Size = new System.Drawing.Size(148, 22);
+            this.ToolStripMenuItem_Self.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItem_Self.Text = "自定义指标";
             // 
             // ToolStripMenuItem_IndicatorsCommonIn
@@ -198,7 +198,7 @@
             // ToolStripMenuItem_Custems
             // 
             this.ToolStripMenuItem_Custems.Name = "ToolStripMenuItem_Custems";
-            this.ToolStripMenuItem_Custems.Size = new System.Drawing.Size(148, 22);
+            this.ToolStripMenuItem_Custems.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItem_Custems.Text = "交易常用指标";
             this.ToolStripMenuItem_Custems.Click += new System.EventHandler(this.ToolStripMenuItem_CustemsClick);
             // 

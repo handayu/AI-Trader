@@ -560,15 +560,16 @@ namespace WindowsFormsApp1
         private void LoadIndicators()
         {
             //List<MemberInfo> typesList = IndicatorsLoader.LoadeIndicatorsFuncAisa();
+            //for(int i = 0;i<10;i++)
             //foreach (MemberInfo info in typesList)
             //{
-            //    string IndicatorName = info.Name;
+            //    //string IndicatorName = info.Name;
 
-            //    ToolStripMenuItem ToolStripMenuItem_Indicators = new System.Windows.Forms.ToolStripMenuItem();
-            //    ToolStripMenuItem_Indicators.Name = "ToolStripMenuItem_Indicators_" + IndicatorName;
-            //    ToolStripMenuItem_Indicators.Size = new System.Drawing.Size(180, 22);
-            //    ToolStripMenuItem_Indicators.Text = IndicatorName;
-            //    this.ToolStripMenuItem_Custems.DropDownItems.Add(ToolStripMenuItem_Indicators);
+            //    //ToolStripMenuItem ToolStripMenuItem_Indicators = new System.Windows.Forms.ToolStripMenuItem();
+            //    //ToolStripMenuItem_Indicators.Name = "ToolStripMenuItem_Indicators_" + IndicatorName;
+            //    //ToolStripMenuItem_Indicators.Size = new System.Drawing.Size(180, 22);
+            //    //ToolStripMenuItem_Indicators.Text = IndicatorName;
+            //    //this.ToolStripMenuItem_Custems.DropDownItems.Add(ToolStripMenuItem_Indicators);
             //}
         }
 
@@ -1129,17 +1130,7 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void ToolStripMenuItem_CustemsClick(object sender, EventArgs e)
         {
-            List<MemberInfo> typesList = IndicatorsLoader.LoadeIndicatorsFuncAisa();
-            foreach (MemberInfo info in typesList)
-            {
-                string IndicatorName = info.Name;
-
-                ToolStripMenuItem ToolStripMenuItem_Indicators = new System.Windows.Forms.ToolStripMenuItem();
-                ToolStripMenuItem_Indicators.Name = "ToolStripMenuItem_Indicators_" + IndicatorName;
-                ToolStripMenuItem_Indicators.Size = new System.Drawing.Size(180, 22);
-                ToolStripMenuItem_Indicators.Text = IndicatorName;
-                this.ToolStripMenuItem_Custems.DropDownItems.Add(ToolStripMenuItem_Indicators);
-            }
+           
         }
     }
 }
