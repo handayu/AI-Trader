@@ -163,6 +163,16 @@ namespace AITrader.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Forward_Arrow {
+            get {
+                object obj = ResourceManager.GetObject("Forward Arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_1_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-1-48", resourceCulture);
@@ -576,6 +586,16 @@ namespace AITrader.Properties {
         internal static System.Drawing.Bitmap icons8_select_column_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-select-column-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap QQ截图20190606192527 {
+            get {
+                object obj = ResourceManager.GetObject("QQ截图20190606192527", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

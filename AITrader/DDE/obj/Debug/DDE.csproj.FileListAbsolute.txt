@@ -1,0 +1,10 @@
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\DDE\bin\Debug\DDE.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\DDE\bin\Debug\DDE.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\DDE\bin\Debug\NDde.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\DDE\obj\Debug\DDE.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\DDE\obj\Debug\DDE.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\DDE.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\DDE.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\DDE\obj\Debug\DDE.csproj.CopyComplete
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\DDE\obj\Debug\DDE.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\DDE\obj\Debug\DDE.pdb

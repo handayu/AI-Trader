@@ -56,6 +56,9 @@
     <Reference Include="Common">
       <HintPath>..\Commonlib\Common.dll</HintPath>
     </Reference>
+    <Reference Include="DDE">
+      <HintPath>..\Commonlib\DDE.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Commonlib\DevExpress.Data.v17.1.dll</HintPath>
@@ -183,6 +186,12 @@
     <Compile Include="MainForm\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\DDEService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\DDEService.Designer.cs">
+      <DependentUpon>DDEService.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +210,7 @@
     <Compile Include="MainForm\LoginForm2.Designer.cs">
       <DependentUpon>LoginForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\OderAction.cs" />
     <Compile Include="MainForm\RegForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +365,9 @@
     </Compile>
     <EmbeddedResource Include="MainForm\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\DDEService.resx">
+      <DependentUpon>DDEService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -572,6 +585,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\ai.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Forward Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\QQ截图20190606192527.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

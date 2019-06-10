@@ -59,6 +59,9 @@
     <Compile Include="IniOperater\IniOperationClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="WindowsHooks\MCDataLooper.cs" />
+    <Compile Include="WindowsHooks\McOutPutWndHooker.cs" />
+    <Compile Include="WindowsHooks\WindowsHooker.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

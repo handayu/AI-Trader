@@ -76,6 +76,7 @@
             this.策略编辑器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teamViwerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.测试RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oKex接口测试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_test = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +85,8 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.teamViwerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.扩展ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_DDE = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -312,7 +314,8 @@
             this.工具ToolStripMenuItem,
             this.帮助HToolStripMenuItem,
             this.测试RToolStripMenuItem,
-            this.ToolStripMenuItem_test});
+            this.ToolStripMenuItem_test,
+            this.扩展ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1125, 25);
@@ -392,6 +395,13 @@
             this.关于ToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.关于ToolStripMenuItem.Text = "关于(A)";
             // 
+            // teamViwerToolStripMenuItem
+            // 
+            this.teamViwerToolStripMenuItem.Name = "teamViwerToolStripMenuItem";
+            this.teamViwerToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.teamViwerToolStripMenuItem.Text = "TeamViwer远程协助";
+            this.teamViwerToolStripMenuItem.Click += new System.EventHandler(this.teamViwerToolStripMenuItem_Click);
+            // 
             // 测试RToolStripMenuItem
             // 
             this.测试RToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -399,12 +409,14 @@
             this.测试RToolStripMenuItem.Name = "测试RToolStripMenuItem";
             this.测试RToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
             this.测试RToolStripMenuItem.Text = "测试(R)";
+            this.测试RToolStripMenuItem.Visible = false;
             // 
             // oKex接口测试ToolStripMenuItem
             // 
             this.oKex接口测试ToolStripMenuItem.Name = "oKex接口测试ToolStripMenuItem";
             this.oKex接口测试ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oKex接口测试ToolStripMenuItem.Text = "OKex接口测试";
+            this.oKex接口测试ToolStripMenuItem.Visible = false;
             // 
             // ToolStripMenuItem_test
             // 
@@ -414,20 +426,23 @@
             this.ToolStripMenuItem_test.Name = "ToolStripMenuItem_test";
             this.ToolStripMenuItem_test.Size = new System.Drawing.Size(80, 21);
             this.ToolStripMenuItem_test.Text = "外部测试区";
+            this.ToolStripMenuItem_test.Visible = false;
             this.ToolStripMenuItem_test.Click += new System.EventHandler(this.ToolStripMenuItem_testClick);
             // 
             // 组合LogK线测试ToolStripMenuItem
             // 
             this.组合LogK线测试ToolStripMenuItem.Name = "组合LogK线测试ToolStripMenuItem";
-            this.组合LogK线测试ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.组合LogK线测试ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.组合LogK线测试ToolStripMenuItem.Text = "组合LogK线测试";
+            this.组合LogK线测试ToolStripMenuItem.Visible = false;
             this.组合LogK线测试ToolStripMenuItem.Click += new System.EventHandler(this.组合LogK线测试ToolStripMenuItem_Click);
             // 
             // ToolStripMenuItem_BarMaker
             // 
             this.ToolStripMenuItem_BarMaker.Name = "ToolStripMenuItem_BarMaker";
-            this.ToolStripMenuItem_BarMaker.Size = new System.Drawing.Size(166, 22);
+            this.ToolStripMenuItem_BarMaker.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItem_BarMaker.Text = "测试barmarket";
+            this.ToolStripMenuItem_BarMaker.Visible = false;
             this.ToolStripMenuItem_BarMaker.Click += new System.EventHandler(this.ToolStripMenuItem_BarMakerClick);
             // 
             // dockPanel1
@@ -495,12 +510,20 @@
             this.panel2.Size = new System.Drawing.Size(1125, 26);
             this.panel2.TabIndex = 9;
             // 
-            // teamViwerToolStripMenuItem
+            // 扩展ToolStripMenuItem
             // 
-            this.teamViwerToolStripMenuItem.Name = "teamViwerToolStripMenuItem";
-            this.teamViwerToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.teamViwerToolStripMenuItem.Text = "TeamViwer远程协助";
-            this.teamViwerToolStripMenuItem.Click += new System.EventHandler(this.teamViwerToolStripMenuItem_Click);
+            this.扩展ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_DDE});
+            this.扩展ToolStripMenuItem.Name = "扩展ToolStripMenuItem";
+            this.扩展ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.扩展ToolStripMenuItem.Text = "扩展";
+            // 
+            // ToolStripMenuItem_DDE
+            // 
+            this.ToolStripMenuItem_DDE.Name = "ToolStripMenuItem_DDE";
+            this.ToolStripMenuItem_DDE.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_DDE.Text = "启动本地DDE服务";
+            this.ToolStripMenuItem_DDE.Click += new System.EventHandler(this.ToolStripMenuItem_DDEClick);
             // 
             // Form1
             // 
@@ -583,6 +606,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_BarMaker;
         private System.Windows.Forms.ToolStripMenuItem teamViwerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 扩展ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_DDE;
     }
 }
 

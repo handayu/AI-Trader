@@ -1,4 +1,5 @@
-﻿using Reg;
+﻿using Common;
+using Reg;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,26 +14,41 @@ namespace WindowsFormsApp1.MainForm
 {
     public partial class RegForm : Form
     {
-        private bool m_dialogResultBack = false;
+        private string m_dialogResultBack = string.Empty;
 
         public RegForm(Point p, int width, int height)
         {
             InitializeComponent();
 
+            try
+            {
+                //加载账户配置文件
+                string path = System.Windows.Forms.Application.StartupPath + "\\config.ini";
+                IniOperationClass c = new IniOperationClass(path);
+                this.textBox_name.Text = c.IniReadValue("license", "name");
+                this.textBox_Code.Text = c.IniReadValue("license", "code");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载默认注册配置失败:" + ex.Message);
+            }
+
+
+
             //显示在主窗口的右下角的位置
             this.Location = new Point(p.X + width - this.Width, p.Y + height - this.Height);
         }
 
-        public bool DialogResultBack
+        public string DialogResultBack
         {
             get
             {
-                return m_dialogResultBack;
+                return "true:" + this.textBox_name.Text + ":" + this.textBox_Code.Text;
             }
 
             set
             {
-                m_dialogResultBack = value;
+                m_dialogResultBack = "false:0:0";
             }
         }
 
@@ -47,7 +63,7 @@ namespace WindowsFormsApp1.MainForm
 
             if (this.textBox_Code.Text.CompareTo(RegUser.GetRNum()) == 0)
             {
-                m_dialogResultBack = true;
+                m_dialogResultBack = "true:" + this.textBox_name.Text + ":" + this.textBox_Code.Text;
                 this.Close();
             }
             else
@@ -60,7 +76,7 @@ namespace WindowsFormsApp1.MainForm
         {
             //取消直接返回，并关闭窗口
 
-            m_dialogResultBack = false;
+            m_dialogResultBack = "false:0:0";
             this.Close();
         }
 
@@ -95,7 +111,7 @@ namespace WindowsFormsApp1.MainForm
             string body = DateTime.Now.ToString() + ":" + "\n" +
                 "发给客户的授权码:" + RegUser.GetRNum() + "\n" +
                 "客户的全球MAC地址:" + RegUser.GetMacByNetworkInterface();
-                //"客户的外网IP地址:" + RegUser.GetClientInternetIPAddress();
+            //"客户的外网IP地址:" + RegUser.GetClientInternetIPAddress();
 
             return body;
         }

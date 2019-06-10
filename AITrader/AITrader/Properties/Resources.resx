@@ -124,8 +124,8 @@
   <data name="icons8-collapse-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-collapse-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-15-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\icons8-15-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Forward Arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\Forward Arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-css-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-css-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +139,11 @@
   <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-collapse-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\icons8-collapse-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-15-483" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-15-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-plus-1-day-482" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\icons8-plus-1-day-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-layout-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-layout-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +193,11 @@
   <data name="icons8-calendar-30-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-calendar-30-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-plus-1-day-482" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\icons8-plus-1-day-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-15-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\icons8-15-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\1-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-plus-1-day-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-plus-1-day-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +214,8 @@
   <data name="6b41346d30a6d19b7fdfc283add2871" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\6b41346d30a6d19b7fdfc283add2871.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\ai.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-30-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-30-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,8 +250,8 @@
   <data name="icons8-heart-monitor-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-heart-monitor-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-google-forms-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\icons8-google-forms-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\a2102536be0be8e0e7fa63dee8061a6e_t01bcc617f0d4a93e3a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-merge-cells-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-merge-cells-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,8 +268,11 @@
   <data name="icons8-customer-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-customer-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-15-482" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\icons8-15-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-collapse-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\icons8-collapse-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-google-forms-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\icons8-google-forms-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\1-02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,10 +280,10 @@
   <data name="icons8-1-482" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-1-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\1-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-15-482" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\icons8-15-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ai" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\ai.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="QQ截图20190606192527" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\QQ截图20190606192527.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

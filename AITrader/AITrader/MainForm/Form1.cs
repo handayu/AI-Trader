@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AITrader;
 using OKExSDK.Models.Swap;
 using WeifenLuo.WinFormsUI.Docking;
 using swap = OKExSDK.Models.Swap;
@@ -206,6 +207,12 @@ namespace WindowsFormsApp1
                 MessageBox.Show("无法找到TeamViwer请确认安装了teamviwer:" + ex.Message);
             }
 
+        }
+
+        private void ToolStripMenuItem_DDEClick(object sender, EventArgs e)
+        {
+            DDEService serF = new DDEService();
+            serF.Show();
         }
     }
 }

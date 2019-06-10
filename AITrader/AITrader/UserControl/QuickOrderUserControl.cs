@@ -215,9 +215,9 @@ namespace WindowsFormsApp1
 
         private void QueryPositionAndOrder()
         {
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(1000);
             Button_queryPosition_Click(null, null);
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(1000);
             Button_QueryOrder_Click(null, null);
         }
 

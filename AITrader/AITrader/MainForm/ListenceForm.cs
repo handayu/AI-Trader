@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,9 +42,11 @@ namespace WindowsFormsApp1
         {
             RegForm f = new RegForm(this.Location,this.Width,this.Height);
             f.ShowDialog();
+            string[] ar = f.DialogResultBack.Split(':');
+            if (ar == null || ar.Length <= 0) return;
 
             //如果注册码和名称验证成功
-            if (f.DialogResultBack)
+            if (ar[0] == "true")
             {
                 m_listceDialogBack = true;
 
@@ -56,7 +59,11 @@ namespace WindowsFormsApp1
                 //停止相当于进程缓冲2秒
                 //System.Threading.Thread.Sleep(2000);
                 this.Hide();
-                //
+                //写入ini配置
+                string path = System.Windows.Forms.Application.StartupPath + "\\config.ini";
+                IniOperationClass c = new IniOperationClass(path);
+                c.IniWriteValue("license", "name", ar[1]);
+                c.IniWriteValue("license", "code", ar[2]);
 
                 m_loginForm2 = new LoginForm2();
                 m_loginForm2.ShowDialog();

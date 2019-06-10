@@ -25,6 +25,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AITrader-Setup", "AITrader-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubApi", "GithubApi\GithubApi.csproj", "{DB756388-AD5A-4CBC-81B0-A1C1B5401695}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDE", "DDE\DDE.csproj", "{4FBA82E4-4766-4593-8B33-01CCF2953F5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,14 @@ Global
 		{DB756388-AD5A-4CBC-81B0-A1C1B5401695}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DB756388-AD5A-4CBC-81B0-A1C1B5401695}.Release|x86.ActiveCfg = Release|Any CPU
 		{DB756388-AD5A-4CBC-81B0-A1C1B5401695}.Release|x86.Build.0 = Release|Any CPU
+		{4FBA82E4-4766-4593-8B33-01CCF2953F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBA82E4-4766-4593-8B33-01CCF2953F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBA82E4-4766-4593-8B33-01CCF2953F5D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4FBA82E4-4766-4593-8B33-01CCF2953F5D}.Debug|x86.Build.0 = Debug|Any CPU
+		{4FBA82E4-4766-4593-8B33-01CCF2953F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBA82E4-4766-4593-8B33-01CCF2953F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBA82E4-4766-4593-8B33-01CCF2953F5D}.Release|x86.ActiveCfg = Release|Any CPU
+		{4FBA82E4-4766-4593-8B33-01CCF2953F5D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

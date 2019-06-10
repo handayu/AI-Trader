@@ -181,3 +181,7 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\GithubApi.d
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Octokit.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\GithubApi.pdb
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Octokit.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\DDE.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\NDde.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\DDE.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.DDEService.resources
