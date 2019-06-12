@@ -27,6 +27,11 @@ namespace AITrader
             this.pictureBox_TradeDown.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
             this.pictureBox_TradeUp.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
 
+            //handle
+            //加载账户配置文件
+            string path = System.Windows.Forms.Application.StartupPath + "\\config.ini";
+            IniOperationClass c = new IniOperationClass(path);
+            this.textBox_Handle.Text = c.IniReadValue("handle", "mchandle");
         }
 
         private void Button_Start_Click(object sender, EventArgs e)
@@ -212,6 +217,7 @@ namespace AITrader
         /// <param name="e"></param>
         private void TimerEvent_MCData(object sender, EventArgs e)
         {
+            this.timer_PLMCEdit.Stop();
 
             try
             {
@@ -251,12 +257,18 @@ namespace AITrader
                     if(direc == "BUY")
                     {
                         OderAction.BuyToCover(ins, orderP, num);
+
+                        System.Threading.Thread.Sleep(1000);
+
                         OderAction.Buy(ins, orderP, num);
                     }
 
                     if (direc == "SELLSHORT")
                     {
                         OderAction.Sell(ins, orderP, num);
+
+                        System.Threading.Thread.Sleep(1000);
+
                         OderAction.SellShort(ins, orderP, num);
                     }
                 }
@@ -265,6 +277,9 @@ namespace AITrader
             {
 
             }
+
+            this.timer_PLMCEdit.Start();
+
         }
 
         /// <summary>
@@ -288,6 +303,12 @@ namespace AITrader
             decimal.TryParse(price, out orderP);
 
             OderAction.Sell("BTC-USD-SWAP", orderP, "1");
+        }
+
+        private void Button_stop_Click(object sender, EventArgs e)
+        {
+            this.timer_PLMCEdit.Enabled = false;
+            this.timer_PLMCEdit.Stop();
         }
     }
 }

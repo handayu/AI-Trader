@@ -14,14 +14,14 @@ namespace AITrader
     {
         public static void Buy(string m_ins,decimal price, string numT)
         {
-            decimal orderP = price + 10;
+            decimal orderP = price + 15;
             //以自定义价格买入
             Order(m_ins, "1", orderP.ToString(), numT);
         }
 
         public static void Sell(string m_ins, decimal price, string numT)
         {
-            decimal orderP = price - 10;
+            decimal orderP = price - 15;
 
             //以自定义价格平多
             Order(m_ins, "3", orderP.ToString(), numT);
@@ -29,7 +29,7 @@ namespace AITrader
 
         public static void SellShort(string m_ins, decimal price, string numT)
         {
-            decimal orderP = price - 10;
+            decimal orderP = price - 15;
 
             //以自定义价格空
             Order(m_ins, "2", orderP.ToString(), numT);
@@ -37,7 +37,7 @@ namespace AITrader
 
         public static void BuyToCover(string m_ins, decimal price, string numT)
         {
-            decimal orderP = price + 10;
+            decimal orderP = price + 15;
 
             //以自定义价格平空
             Order(m_ins, "4", orderP.ToString(), numT);

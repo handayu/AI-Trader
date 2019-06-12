@@ -53,6 +53,7 @@
             this.timer_PLMCEdit = new System.Windows.Forms.Timer(this.components);
             this.textBox_BuyPrice = new System.Windows.Forms.TextBox();
             this.textBox_CoverPrice = new System.Windows.Forms.TextBox();
+            this.button_stop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -152,7 +153,7 @@
             this.button_TradePiple.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_TradePiple.Location = new System.Drawing.Point(27, 146);
             this.button_TradePiple.Name = "button_TradePiple";
-            this.button_TradePiple.Size = new System.Drawing.Size(146, 29);
+            this.button_TradePiple.Size = new System.Drawing.Size(85, 29);
             this.button_TradePiple.TabIndex = 9;
             this.button_TradePiple.Text = "交易管道启动";
             this.button_TradePiple.UseVisualStyleBackColor = true;
@@ -282,12 +283,24 @@
             this.textBox_CoverPrice.Size = new System.Drawing.Size(55, 21);
             this.textBox_CoverPrice.TabIndex = 6;
             // 
+            // button_stop
+            // 
+            this.button_stop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_stop.Location = new System.Drawing.Point(118, 146);
+            this.button_stop.Name = "button_stop";
+            this.button_stop.Size = new System.Drawing.Size(95, 29);
+            this.button_stop.TabIndex = 16;
+            this.button_stop.Text = "交易管道停止";
+            this.button_stop.UseVisualStyleBackColor = true;
+            this.button_stop.Click += new System.EventHandler(this.Button_stop_Click);
+            // 
             // DDEService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(442, 315);
+            this.Controls.Add(this.button_stop);
             this.Controls.Add(this.textBox_Handle);
             this.Controls.Add(this.label);
             this.Controls.Add(this.pictureBox1);
@@ -344,5 +357,6 @@
         private System.Windows.Forms.Timer timer_PLMCEdit;
         private System.Windows.Forms.TextBox textBox_CoverPrice;
         private System.Windows.Forms.TextBox textBox_BuyPrice;
+        private System.Windows.Forms.Button button_stop;
     }
 }
