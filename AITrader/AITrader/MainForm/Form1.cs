@@ -214,5 +214,16 @@ namespace WindowsFormsApp1
             DDEService serF = new DDEService();
             serF.Show();
         }
+
+        /// <summary>
+        /// 测试K主要功能区
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripMenuItem_TestKLineFormTestButtonClick(object sender, EventArgs e)
+        {
+            KLineFormWholeTest wT = new KLineFormWholeTest();
+            wT.Show();
+        }
     }
 }
