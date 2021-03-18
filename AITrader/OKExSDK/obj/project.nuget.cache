@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Dgc03KXFgV8h1HPC9bL8LzZyNYKVQTTiJp5T+/5E3Q7Q+PYtmGu2BK3g+fqhA+nfRgGaENIuPfry3ahj/Wemow==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\OKExSDK.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

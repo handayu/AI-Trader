@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         private MarketDataUserForm m_marketDataForm = null;
         private AccountStrategyUserForm m_accountStrategyForm = null;
         private TradeUserForm m_tradeUserForm = null;
+        private BrokerProfileForm m_brokersForm = null;
 
         public Form1()
         {
@@ -33,6 +34,16 @@ namespace WindowsFormsApp1
         }
 
         private void ToolStripMenuItem_LogOutClick(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 通道管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OrderWayManagerToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -53,9 +64,13 @@ namespace WindowsFormsApp1
             m_marketDataForm = new MarketDataUserForm();
             m_accountStrategyForm = new AccountStrategyUserForm();
             m_tradeUserForm = new TradeUserForm();
+            m_brokersForm = new BrokerProfileForm();
+
+
             m_marketDataForm.Show(dockPanel1, DockState.DockLeft);
             m_accountStrategyForm.Show(dockPanel1, DockState.DockRightAutoHide);
             m_tradeUserForm.Show(dockPanel1, DockState.DockBottomAutoHide);
+            m_brokersForm.Show(dockPanel1, DockState.DockTop);
 
             //行情点击事件订阅-生成窗口展示
             m_marketDataForm.MarketDataUserControlSelf.RealMarketDataClikEvent += RealMarketDataClikSubEvent;
@@ -214,5 +229,7 @@ namespace WindowsFormsApp1
             DDEService serF = new DDEService();
             serF.Show();
         }
+
+
     }
 }

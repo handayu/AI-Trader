@@ -40,6 +40,11 @@ namespace APIConnect
             AnsyGetMarketDepthDataSwap();
         }
 
+        public override void QuerySpotRealDepthMarketData(object state)
+        {
+            AnsyGetMarketDepthDataBitCoinUSD();
+        }
+
         /// <summary>
         /// Init-Login-模拟直接返回
         /// </summary>
@@ -161,6 +166,37 @@ namespace APIConnect
                 };
 
                 AnsyRealDataEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// 获取币币交易实时行情
+        /// </summary>
+        /// <returns></returns>
+        public override async Task AnsyGetMarketDepthDataBitCoinUSD()
+        {
+            try
+            {
+
+                List<SpotTicker> tickerList = TestData.GetSpotTicker();
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = tickerList,
+                    ReponseMessage = RESONSEMESSAGE.SPOTMARKETDATA_SUCCESS
+                };
+
+                SafeRiseAnsySpotRealDataEvent(args);
+
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.SPOTHOLDMAKEORDERACTION_FAILED
+                };
+
+                SafeRiseAnsySpotRealDataEvent(args);
             }
         }
 

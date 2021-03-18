@@ -54,6 +54,8 @@ namespace APIConnect
         protected SwapLoginAccountInfo m_swapLoginAccountInfo = new SwapLoginAccountInfo();
 
         private System.Threading.Timer m_timer = null;
+        private System.Threading.Timer m_spotTimer = null;
+
 
         public virtual void StartThreadTicker()
         {
@@ -62,10 +64,26 @@ namespace APIConnect
 
         public virtual void StopThreadTicker()
         {
-            m_timer.Dispose();
+            if(m_timer != null) m_timer.Dispose();
+        }
+
+
+        public virtual void StartSpotThreadTicker()
+        {
+            m_spotTimer = new System.Threading.Timer(QuerySpotRealDepthMarketData, null, 0, 1000);
+        }
+
+        public virtual void StopSpotThreadTicker()
+        {
+            if(m_spotTimer != null) m_spotTimer.Dispose();
         }
 
         public virtual void QueryRealDepthMarketData(object state)
+        {
+
+        }
+
+        public virtual void QuerySpotRealDepthMarketData(object state)
         {
 
         }
@@ -186,6 +204,24 @@ namespace APIConnect
             }
         }
 
+        /// <summary>
+        /// SPOTEvent-RealData
+        /// </summary>
+        /// <param name="args"></param>
+        public delegate void AnsySPOTRealDataHandle(AIEventArgs args);
+        public AnsySPOTRealDataHandle AnsySPOTRealDataEvent;
+        public void SafeRiseAnsySpotRealDataEvent(AIEventArgs args)
+        {
+            if (AnsySPOTRealDataEvent == null)
+            {
+                return;
+            }
+            else
+            {
+                AnsySPOTRealDataEvent(args);
+            }
+        }
+
         #region 持仓-成交-委托
         /// <summary>
         /// Event-position
@@ -298,6 +334,14 @@ namespace APIConnect
         public virtual async Task AnsyGetMarketDepthDataSwap()
         {
         }
+
+        /// <summary>
+        /// 获取SPOT深度报价-所有合约
+        /// </summary>
+        /// <returns></returns>
+        public virtual async Task AnsyGetMarketDepthDataBitCoinUSD()
+        { }
+
 
         /// <summary>
         /// 获取K线数据

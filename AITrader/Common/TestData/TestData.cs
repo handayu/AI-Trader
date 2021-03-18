@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using swap = OKExSDK.Models.Swap;
+using spot = OKExSDK.Models.Spot;
+
 using OKExSDK.Models.Swap;
 using System.IO;
 using System.Globalization;
@@ -291,6 +293,131 @@ namespace Common
             }
 
         }
+
+        public static spot.SpotTicker m_BTCUSDTTicker = null;
+        public static spot.SpotTicker m_TRXUSDTTicker = null;
+        public static spot.SpotTicker m_BCHUSDTTicker = null;
+        public static spot.SpotTicker m_EOSUSDTTicker = null;
+
+        public static List<spot.SpotTicker> GetSpotTicker()
+        {
+            if (m_BTCUSDTTicker == null)
+            {
+                Random rd = new Random();
+                int radom1 = rd.Next(-20, 20);
+                int radom2 = rd.Next(1, 10);
+                int radom3 = rd.Next(-1, 90);
+                int radom4 = rd.Next(-8, 9);
+
+                List<spot.SpotTicker> tic1ist = new List<spot.SpotTicker>();
+
+                spot.SpotTicker ticker1 = new spot.SpotTicker()
+                {
+                    instrument_id = "BTC-USD-SWAP",
+                    last = (5308.340m - radom1).ToString(),
+                    high_24h = (5401.350m + radom1).ToString(),
+                    low_24h = (4209.020m + radom1).ToString(),
+                    timestamp = DateTime.Now
+                };
+
+                spot.SpotTicker ticker2 = new spot.SpotTicker()
+                {
+                    instrument_id = "TRX-USD-SWAP",
+                    last = (8.340m + radom2).ToString(),
+                    high_24h = (0.350m + radom2).ToString(),
+                    low_24h = (5.020m + radom2).ToString(),
+                    timestamp = DateTime.Now
+                };
+
+                spot.SpotTicker ticker3 = new spot.SpotTicker()
+                {
+                    instrument_id = "BCH-USD-SWAP",
+                    last = (308.340m - radom3).ToString(),
+                    high_24h = (401.350m + radom3).ToString(),
+                    low_24h = (209.020m + radom3).ToString(),
+                    timestamp = DateTime.Now
+                };
+
+                spot.SpotTicker ticker4 = new spot.SpotTicker()
+                {
+                    instrument_id = "EOS-USD-SWAP",
+                    last = (50.000340m + radom4).ToString(),
+                    high_24h = (54.000350m + radom4).ToString(),
+                    low_24h = (42.000020m + radom4).ToString(),
+                    timestamp = DateTime.Now
+                };
+
+                m_BTCUSDTTicker = ticker1;
+                m_TRXUSDTTicker = ticker2;
+                m_BCHUSDTTicker = ticker3;
+                m_EOSUSDTTicker = ticker4;
+
+                tic1ist.Add(ticker1);
+                tic1ist.Add(ticker2);
+                tic1ist.Add(ticker3);
+                tic1ist.Add(ticker4);
+                return tic1ist;
+            }
+            else
+            {
+                List<spot.SpotTicker> tic1ist = new List<spot.SpotTicker>();
+
+                Random rd = new Random();
+                int radom1 = rd.Next(-20, 20);
+                int radom2 = rd.Next(1, 10);
+                int radom3 = rd.Next(-1, 90);
+                int radom4 = rd.Next(-8, 9);
+
+                spot.SpotTicker ticker1 = new spot.SpotTicker()
+                {
+                    instrument_id = "BTC-USD-SWAP",
+                    last = (Convert.ToDouble(m_BTCUSDTTicker.last) + 1.00).ToString(),
+                    high_24h = (Convert.ToDouble(m_BTCUSDTTicker.last) + 1.00).ToString(),
+                    low_24h = (Convert.ToDouble(m_BTCUSDTTicker.last) + 1.00).ToString(),
+                    timestamp = DateTime.Now
+                };
+
+                spot.SpotTicker ticker2 = new spot.SpotTicker()
+                {
+                    instrument_id = "TRX-USD-SWAP",
+                    last = (Convert.ToDouble(m_TRXUSDTTicker.last) + 1.00).ToString(),
+                    high_24h = (Convert.ToDouble(m_TRXUSDTTicker.last) + 1.00).ToString(),
+                    low_24h = (Convert.ToDouble(m_TRXUSDTTicker.last) + 1.00).ToString(),
+                    timestamp = DateTime.Now
+                };
+
+                spot.SpotTicker ticker3 = new spot.SpotTicker()
+                {
+                    instrument_id = "BCH-USD-SWAP",
+                    last = (Convert.ToDouble(m_BCHUSDTTicker.last) + 1.00).ToString(),
+                    high_24h = (Convert.ToDouble(m_BCHUSDTTicker.last) + 1.00).ToString(),
+                    low_24h = (Convert.ToDouble(m_BCHUSDTTicker.last) + 1.00).ToString(),
+                    timestamp = DateTime.Now
+                };
+
+                spot.SpotTicker ticker4 = new spot.SpotTicker()
+                {
+                    instrument_id = "EOS-USD-SWAP",
+                    last = (Convert.ToDouble(m_EOSUSDTTicker.last) + 1.00).ToString(),
+                    high_24h = (Convert.ToDouble(m_EOSUSDTTicker.last) + 1.00).ToString(),
+                    low_24h = (Convert.ToDouble(m_EOSUSDTTicker.last) + 1.00).ToString(),
+                    timestamp = DateTime.Now
+                };
+
+                m_BTCUSDTTicker = ticker1;
+                m_TRXUSDTTicker = ticker2;
+                m_BCHUSDTTicker = ticker3;
+                m_EOSUSDTTicker = ticker4;
+
+                tic1ist.Add(ticker1);
+                tic1ist.Add(ticker2);
+                tic1ist.Add(ticker3);
+                tic1ist.Add(ticker4);
+                return tic1ist;
+            }
+
+        }
+
 
         public static swap.AccountsResult GetAccountResult()
         {

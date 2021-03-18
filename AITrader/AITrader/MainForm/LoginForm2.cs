@@ -48,8 +48,9 @@ namespace WindowsFormsApp1
             //主FormLiad的时候已经初始化生成了对象现在给值---登陆
             ConnectManager.CreateInstance().CONNECTION.InitApiLogin(api, ser, pas);
 
-            //开始开启线程推送实时行情
+            //开始开启永续和币币交易线程推送实时行情
             ConnectManager.CreateInstance().CONNECTION.StartThreadTicker();
+            ConnectManager.CreateInstance().CONNECTION.StartSpotThreadTicker();
 
 
             m_BackgroundWorker.DoWork += BGWorker_DoWork;

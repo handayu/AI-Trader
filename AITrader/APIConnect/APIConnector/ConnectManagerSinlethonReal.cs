@@ -37,6 +37,11 @@ namespace APIConnect
             AnsyGetMarketDepthDataSwap();
         }
 
+        public override void QuerySpotRealDepthMarketData(object state)
+        {
+            AnsyGetMarketDepthDataBitCoinUSD();
+        }
+
         /// <summary>
         /// Init-Login
         /// </summary>
@@ -201,6 +206,55 @@ namespace APIConnect
                 };
 
                 SafeRiseAnsyRealDataEvent(args);
+            }
+        }
+
+        /// <summary>
+        /// 获取币币交易实时行情
+        /// </summary>
+        /// <returns></returns>
+        public override async Task AnsyGetMarketDepthDataBitCoinUSD()
+        {
+            try
+            {
+                var resResult = await m_spotApi.getTickerAsync();
+                if (resResult.Type == JTokenType.Object)
+                {
+                    JToken codeJToken;
+                    if (((JObject)resResult).TryGetValue("code", out codeJToken))
+                    {
+                        var errorInfo = resResult.ToObject<ErrorResult>();
+
+                        AIEventArgs args = new AIEventArgs()
+                        {
+                            EventData = errorInfo,
+                            ReponseMessage = RESONSEMESSAGE.SPOTHOLDMAKEORDERACTION_FAILED
+                        };
+
+                        SafeRiseAnsySpotRealDataEvent(args);
+                    }
+                }
+                else
+                {
+                    var ticker = resResult.ToObject<List<SpotTicker>>();
+                    AIEventArgs args = new AIEventArgs()
+                    {
+                        EventData = ticker,
+                        ReponseMessage = RESONSEMESSAGE.SPOTMARKETDATA_SUCCESS
+                    };
+
+                    SafeRiseAnsySpotRealDataEvent(args);
+                }
+            }
+            catch (Exception ex)
+            {
+                AIEventArgs args = new AIEventArgs()
+                {
+                    EventData = ex,
+                    ReponseMessage = RESONSEMESSAGE.SPOTHOLDMAKEORDERACTION_FAILED
+                };
+
+                SafeRiseAnsySpotRealDataEvent(args);
             }
         }
 

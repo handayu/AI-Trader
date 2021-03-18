@@ -82,11 +82,12 @@
             this.ToolStripMenuItem_test = new System.Windows.Forms.ToolStripMenuItem();
             this.组合LogK线测试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_BarMaker = new System.Windows.Forms.ToolStripMenuItem();
+            this.扩展ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_DDE = new System.Windows.Forms.ToolStripMenuItem();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.扩展ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_DDE = new System.Windows.Forms.ToolStripMenuItem();
+            this.OrderWayManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -326,7 +327,8 @@
             // 
             this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_LogOut,
-            this.ToolStripMenuItem_Login});
+            this.ToolStripMenuItem_Login,
+            this.OrderWayManagerToolStripMenuItem});
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
             this.文件ToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.文件ToolStripMenuItem.Text = "文件(F)";
@@ -334,14 +336,14 @@
             // ToolStripMenuItem_LogOut
             // 
             this.ToolStripMenuItem_LogOut.Name = "ToolStripMenuItem_LogOut";
-            this.ToolStripMenuItem_LogOut.Size = new System.Drawing.Size(100, 22);
+            this.ToolStripMenuItem_LogOut.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItem_LogOut.Text = "退出";
             this.ToolStripMenuItem_LogOut.Click += new System.EventHandler(this.ToolStripMenuItem_LogOutClick);
             // 
             // ToolStripMenuItem_Login
             // 
             this.ToolStripMenuItem_Login.Name = "ToolStripMenuItem_Login";
-            this.ToolStripMenuItem_Login.Size = new System.Drawing.Size(100, 22);
+            this.ToolStripMenuItem_Login.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItem_Login.Text = "登陆";
             this.ToolStripMenuItem_Login.Click += new System.EventHandler(this.ToolStripMenuItem_LoginClick);
             // 
@@ -414,7 +416,7 @@
             // oKex接口测试ToolStripMenuItem
             // 
             this.oKex接口测试ToolStripMenuItem.Name = "oKex接口测试ToolStripMenuItem";
-            this.oKex接口测试ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oKex接口测试ToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.oKex接口测试ToolStripMenuItem.Text = "OKex接口测试";
             this.oKex接口测试ToolStripMenuItem.Visible = false;
             // 
@@ -432,7 +434,7 @@
             // 组合LogK线测试ToolStripMenuItem
             // 
             this.组合LogK线测试ToolStripMenuItem.Name = "组合LogK线测试ToolStripMenuItem";
-            this.组合LogK线测试ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.组合LogK线测试ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.组合LogK线测试ToolStripMenuItem.Text = "组合LogK线测试";
             this.组合LogK线测试ToolStripMenuItem.Visible = false;
             this.组合LogK线测试ToolStripMenuItem.Click += new System.EventHandler(this.组合LogK线测试ToolStripMenuItem_Click);
@@ -440,10 +442,25 @@
             // ToolStripMenuItem_BarMaker
             // 
             this.ToolStripMenuItem_BarMaker.Name = "ToolStripMenuItem_BarMaker";
-            this.ToolStripMenuItem_BarMaker.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_BarMaker.Size = new System.Drawing.Size(166, 22);
             this.ToolStripMenuItem_BarMaker.Text = "测试barmarket";
             this.ToolStripMenuItem_BarMaker.Visible = false;
             this.ToolStripMenuItem_BarMaker.Click += new System.EventHandler(this.ToolStripMenuItem_BarMakerClick);
+            // 
+            // 扩展ToolStripMenuItem
+            // 
+            this.扩展ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_DDE});
+            this.扩展ToolStripMenuItem.Name = "扩展ToolStripMenuItem";
+            this.扩展ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.扩展ToolStripMenuItem.Text = "扩展";
+            // 
+            // ToolStripMenuItem_DDE
+            // 
+            this.ToolStripMenuItem_DDE.Name = "ToolStripMenuItem_DDE";
+            this.ToolStripMenuItem_DDE.Size = new System.Drawing.Size(173, 22);
+            this.ToolStripMenuItem_DDE.Text = "启动本地DDE服务";
+            this.ToolStripMenuItem_DDE.Click += new System.EventHandler(this.ToolStripMenuItem_DDEClick);
             // 
             // dockPanel1
             // 
@@ -459,7 +476,7 @@
             tabGradient1.StartColor = System.Drawing.SystemColors.Control;
             tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
             autoHideStripSkin1.TabGradient = tabGradient1;
-            autoHideStripSkin1.TextFont = new System.Drawing.Font("微软雅黑", 9F);
+            autoHideStripSkin1.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
             dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
             tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
             tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
@@ -473,7 +490,7 @@
             tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
             dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
             dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
-            dockPaneStripSkin1.TextFont = new System.Drawing.Font("微软雅黑", 9F);
+            dockPaneStripSkin1.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
             tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
             tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -510,20 +527,12 @@
             this.panel2.Size = new System.Drawing.Size(1125, 26);
             this.panel2.TabIndex = 9;
             // 
-            // 扩展ToolStripMenuItem
+            // OrderWayManagerToolStripMenuItem
             // 
-            this.扩展ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_DDE});
-            this.扩展ToolStripMenuItem.Name = "扩展ToolStripMenuItem";
-            this.扩展ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.扩展ToolStripMenuItem.Text = "扩展";
-            // 
-            // ToolStripMenuItem_DDE
-            // 
-            this.ToolStripMenuItem_DDE.Name = "ToolStripMenuItem_DDE";
-            this.ToolStripMenuItem_DDE.Size = new System.Drawing.Size(180, 22);
-            this.ToolStripMenuItem_DDE.Text = "启动本地DDE服务";
-            this.ToolStripMenuItem_DDE.Click += new System.EventHandler(this.ToolStripMenuItem_DDEClick);
+            this.OrderWayManagerToolStripMenuItem.Name = "OrderWayManagerToolStripMenuItem";
+            this.OrderWayManagerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OrderWayManagerToolStripMenuItem.Text = "通道管理";
+            this.OrderWayManagerToolStripMenuItem.Click += new System.EventHandler(this.OrderWayManagerToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -536,7 +545,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dockPanel1);
-            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -608,6 +617,7 @@
         private System.Windows.Forms.ToolStripMenuItem teamViwerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 扩展ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_DDE;
+        private System.Windows.Forms.ToolStripMenuItem OrderWayManagerToolStripMenuItem;
     }
 }
 

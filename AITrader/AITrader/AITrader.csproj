@@ -186,6 +186,12 @@
     <Compile Include="MainForm\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\BrokerProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\BrokerProfileForm.Designer.cs">
+      <DependentUpon>BrokerProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\DDEService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,11 +217,35 @@
       <DependentUpon>LoginForm2.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm\OderAction.cs" />
+    <Compile Include="MainForm\OrderAccountListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\OrderAccountListForm.Designer.cs">
+      <DependentUpon>OrderAccountListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\QuoteManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\QuoteManager.Designer.cs">
+      <DependentUpon>QuoteManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\RegForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm\RegForm.Designer.cs">
       <DependentUpon>RegForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\StrategyPerfomace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\StrategyPerfomace.Designer.cs">
+      <DependentUpon>StrategyPerfomace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuStrategyForm\MenuStrategyForm.cs">
       <SubType>Form</SubType>
@@ -315,6 +345,12 @@
     <Compile Include="MainForm\KLineFormTest.Designer.cs">
       <DependentUpon>KLineFormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\BrokerProfileItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\BrokerProfileItems.Designer.cs">
+      <DependentUpon>BrokerProfileItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\MarketDataUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -366,6 +402,9 @@
     <EmbeddedResource Include="MainForm\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\BrokerProfileForm.resx">
+      <DependentUpon>BrokerProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm\DDEService.resx">
       <DependentUpon>DDEService.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,8 +418,20 @@
     <EmbeddedResource Include="MainForm\LoginForm2.resx">
       <DependentUpon>LoginForm2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\OrderAccountListForm.resx">
+      <DependentUpon>OrderAccountListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\QuoteManager.resx">
+      <DependentUpon>QuoteManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm\RegForm.resx">
       <DependentUpon>RegForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\StrategyPerfomace.resx">
+      <DependentUpon>StrategyPerfomace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuStrategyForm\MenuStrategyForm.resx">
       <DependentUpon>MenuStrategyForm.cs</DependentUpon>
@@ -431,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\KLineFormTest.resx">
       <DependentUpon>KLineFormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\BrokerProfileItems.resx">
+      <DependentUpon>BrokerProfileItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\MarketDataUserControl.resx">
       <DependentUpon>MarketDataUserControl.cs</DependentUpon>
