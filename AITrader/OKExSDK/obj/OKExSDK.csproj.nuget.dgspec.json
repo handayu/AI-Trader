@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\OKExSDK.csproj": {}
+    "D:\\360MoveData\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\OKExSDK.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\OKExSDK.csproj": {
+    "D:\\360MoveData\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\OKExSDK.csproj": {
       "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\OKExSDK.csproj",
+        "projectUniqueName": "D:\\360MoveData\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\OKExSDK.csproj",
         "projectName": "OKExSDKTest",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\OKExSDK.csproj",
+        "projectPath": "D:\\360MoveData\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\OKExSDK.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\obj\\",
+        "outputPath": "D:\\360MoveData\\Users\\Administrator\\Desktop\\AI-Trader\\AITrader\\OKExSDK\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
