@@ -187,3 +187,8 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.DD
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.BrokerProfileItems.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.TestForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.BrokerProfileForm.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.KLineFormWholeTest.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.OrderAccountListForm.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.QuoteManager.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.StrategyPerfomace.resources
