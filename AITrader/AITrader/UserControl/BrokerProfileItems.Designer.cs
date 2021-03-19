@@ -131,7 +131,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tableLayoutPanel3.Controls.Add(this.button1, 5, 0);
             this.tableLayoutPanel3.Controls.Add(this.button2, 6, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
@@ -151,7 +151,7 @@ namespace WindowsFormsApp1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(548, 3);
+            this.button1.Location = new System.Drawing.Point(547, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 31);
             this.button1.TabIndex = 5;
@@ -162,7 +162,7 @@ namespace WindowsFormsApp1
             // 
             this.button2.BackColor = System.Drawing.Color.Chartreuse;
             this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(662, 3);
+            this.button2.Location = new System.Drawing.Point(661, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 31);
             this.button2.TabIndex = 6;
@@ -192,7 +192,7 @@ namespace WindowsFormsApp1
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(121, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(126, 31);
+            this.panel4.Size = new System.Drawing.Size(125, 31);
             this.panel4.TabIndex = 8;
             // 
             // comboBox1
@@ -208,7 +208,7 @@ namespace WindowsFormsApp1
             // 
             this.panel5.Controls.Add(this.textBox3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(345, 3);
+            this.panel5.Location = new System.Drawing.Point(344, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(80, 31);
             this.panel5.TabIndex = 10;
@@ -225,7 +225,7 @@ namespace WindowsFormsApp1
             // 
             this.panel6.Controls.Add(this.comboBox2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(253, 3);
+            this.panel6.Location = new System.Drawing.Point(252, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(86, 31);
             this.panel6.TabIndex = 11;
@@ -243,7 +243,7 @@ namespace WindowsFormsApp1
             // 
             this.panel7.Controls.Add(this.comboBox3);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(431, 3);
+            this.panel7.Location = new System.Drawing.Point(430, 3);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(111, 31);
             this.panel7.TabIndex = 12;
@@ -263,7 +263,7 @@ namespace WindowsFormsApp1
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(855, 51);
+            this.tabPage2.Size = new System.Drawing.Size(868, 43);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "IB盈透";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@ namespace WindowsFormsApp1
             this.tabPage3.ImageKey = "stop.png";
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(855, 51);
+            this.tabPage3.Size = new System.Drawing.Size(868, 43);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "华泰证券";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -283,7 +283,7 @@ namespace WindowsFormsApp1
             this.tabPage4.ImageKey = "stop.png";
             this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(855, 51);
+            this.tabPage4.Size = new System.Drawing.Size(868, 43);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Okex数字货币";
             this.tabPage4.UseVisualStyleBackColor = true;
