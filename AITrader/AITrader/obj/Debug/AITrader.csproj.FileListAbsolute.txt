@@ -192,3 +192,5 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsForm
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.OrderAccountListForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.QuoteManager.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.StrategyPerfomace.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.AddInstruments.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.TestTabMDI.resources

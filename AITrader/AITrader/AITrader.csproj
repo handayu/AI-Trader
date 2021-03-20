@@ -186,6 +186,12 @@
     <Compile Include="MainForm\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\AddInstruments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\AddInstruments.Designer.cs">
+      <DependentUpon>AddInstruments.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\BrokerProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,12 @@
     </Compile>
     <Compile Include="MainForm\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\TestTabMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\TestTabMDI.Designer.cs">
+      <DependentUpon>TestTabMDI.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuStrategyForm\MenuStrategyForm.cs">
       <SubType>Form</SubType>
@@ -408,6 +420,9 @@
     <EmbeddedResource Include="MainForm\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\AddInstruments.resx">
+      <DependentUpon>AddInstruments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm\BrokerProfileForm.resx">
       <DependentUpon>BrokerProfileForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +456,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\TestTabMDI.resx">
+      <DependentUpon>TestTabMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuStrategyForm\MenuStrategyForm.resx">
       <DependentUpon>MenuStrategyForm.cs</DependentUpon>
