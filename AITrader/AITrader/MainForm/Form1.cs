@@ -12,6 +12,8 @@ using AITrader;
 using OKExSDK.Models.Swap;
 using WeifenLuo.WinFormsUI.Docking;
 using swap = OKExSDK.Models.Swap;
+using TestProxy;
+using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
@@ -64,13 +66,11 @@ namespace WindowsFormsApp1
             m_marketDataForm = new MarketDataUserForm();
             m_accountStrategyForm = new AccountStrategyUserForm();
             m_tradeUserForm = new TradeUserForm();
-            m_brokersForm = new BrokerProfileForm();
 
 
             m_marketDataForm.Show(dockPanel1, DockState.DockLeft);
             m_accountStrategyForm.Show(dockPanel1, DockState.DockRightAutoHide);
             m_tradeUserForm.Show(dockPanel1, DockState.DockBottomAutoHide);
-            m_brokersForm.Show(dockPanel1, DockState.DockTop);
 
             //行情点击事件订阅-生成窗口展示
             m_marketDataForm.MarketDataUserControlSelf.RealMarketDataClikEvent += RealMarketDataClikSubEvent;
@@ -230,6 +230,45 @@ namespace WindowsFormsApp1
             serF.Show();
         }
 
+        private void ToolTrip_ManagerAccountClick(object sender, EventArgs e)
+        {
+            ManagerListConnect conn = new ManagerListConnect();
+            conn.Show();
+        }
 
+        private void ToolTrip_dataCenterClick(object sender, EventArgs e)
+        {
+            QuoteManager ma = new QuoteManager();
+            ma.Show();
+        }
+
+        private void ToolStrip_AccountChoose(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Timer_NowTimeEvent(object sender, EventArgs e)
+        {
+          this.label_Timer.Text =  DateTime.Now.ToLongTimeString();
+        }
+
+        private void ToolStrip_StratgyPerfomaceClick(object sender, EventArgs e)
+        {
+            StrategyPerfomace fM = new StrategyPerfomace();
+            fM.Show();
+        }
+
+        #region 测试后台代理类
+        /// <summary>
+        /// 测试后台代理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton_testProxy_Click(object sender, EventArgs e)
+        {
+            ProxyTestForm t = new ProxyTestForm();
+            t.Show();
+        }
+        #endregion
     }
 }

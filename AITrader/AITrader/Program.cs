@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
             Application.Run(new ListenceForm());
 
             //Application.Run(new TestSarForm());
+            //Application.Run(new TestZedGraphForm());
 
         }
 

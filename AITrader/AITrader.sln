@@ -27,7 +27,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubApi", "GithubApi\Gith
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDE", "DDE\DDE.csproj", "{4FBA82E4-4766-4593-8B33-01CCF2953F5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlLiteManager", "SqlLiteManager\SqlLiteManager.csproj", "{721C0940-8D65-4235-B8C0-2AC9822576B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlLiteManager", "SqlLiteManager\SqlLiteManager.csproj", "{721C0940-8D65-4235-B8C0-2AC9822576B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProxy", "TestProxy\TestProxy.csproj", "{CCE7838F-7A30-4613-93CC-188412ADB649}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +139,14 @@ Global
 		{721C0940-8D65-4235-B8C0-2AC9822576B2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{721C0940-8D65-4235-B8C0-2AC9822576B2}.Release|x86.ActiveCfg = Release|Any CPU
 		{721C0940-8D65-4235-B8C0-2AC9822576B2}.Release|x86.Build.0 = Release|Any CPU
+		{CCE7838F-7A30-4613-93CC-188412ADB649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE7838F-7A30-4613-93CC-188412ADB649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE7838F-7A30-4613-93CC-188412ADB649}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CCE7838F-7A30-4613-93CC-188412ADB649}.Debug|x86.Build.0 = Debug|Any CPU
+		{CCE7838F-7A30-4613-93CC-188412ADB649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE7838F-7A30-4613-93CC-188412ADB649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE7838F-7A30-4613-93CC-188412ADB649}.Release|x86.ActiveCfg = Release|Any CPU
+		{CCE7838F-7A30-4613-93CC-188412ADB649}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

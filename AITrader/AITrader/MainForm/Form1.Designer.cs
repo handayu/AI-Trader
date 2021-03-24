@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
-            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient1 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient2 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient3 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient4 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient5 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient3 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient6 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
+            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin2 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient4 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient8 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient9 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient5 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient10 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient11 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient12 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient6 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient13 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient14 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -54,6 +54,7 @@
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_QuaickOrder = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_StrategyPerfomace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -63,16 +64,23 @@
             this.toolStripButton_SLayOut = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_HLayout = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel_ManagerAccount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel_datacenter = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripDropDownButton_AccountChoose = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_LogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Login = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.OrderWayManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.缓存数据到SqlLiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导出数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.显示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数字货币报价ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.策略绩效报告ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.账户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.下单面板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.策略编辑器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,16 +94,15 @@
             this.ToolStripMenuItem_BarMaker = new System.Windows.Forms.ToolStripMenuItem();
             this.扩展ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_DDE = new System.Windows.Forms.ToolStripMenuItem();
+            this.algoTradeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.篮子交易ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.境内外盘套利ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.网格交易ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.缓存数据到SqlLiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.导出数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.策略绩效报告ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.账户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.label_Timer = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -104,12 +111,38 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer_NowTime = new System.Windows.Forms.Timer(this.components);
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_TestProxy = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.toolStrip3.SuspendLayout();
+            this.toolStrip4.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -126,7 +159,7 @@
             this.toolStripComboBox1,
             this.toolStripSeparator1,
             this.toolStripButton_QuaickOrder,
-            this.toolStripButton1,
+            this.toolStripButton_StrategyPerfomace,
             this.toolStripButton11,
             this.toolStripButton12,
             this.toolStripSeparator2,
@@ -206,6 +239,15 @@
             this.toolStripButton_QuaickOrder.Size = new System.Drawing.Size(84, 28);
             this.toolStripButton_QuaickOrder.Text = "快捷下单";
             this.toolStripButton_QuaickOrder.Click += new System.EventHandler(this.toolStripButton_QuaickOrderClick);
+            // 
+            // toolStripButton_StrategyPerfomace
+            // 
+            this.toolStripButton_StrategyPerfomace.Image = global::AITrader.Properties.Resources.icons8_heart_monitor_48;
+            this.toolStripButton_StrategyPerfomace.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_StrategyPerfomace.Name = "toolStripButton_StrategyPerfomace";
+            this.toolStripButton_StrategyPerfomace.Size = new System.Drawing.Size(108, 28);
+            this.toolStripButton_StrategyPerfomace.Text = "策略绩效报告";
+            this.toolStripButton_StrategyPerfomace.Click += new System.EventHandler(this.ToolStrip_StratgyPerfomaceClick);
             // 
             // toolStripButton11
             // 
@@ -290,8 +332,9 @@
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel_ManagerAccount,
+            this.toolStripStatusLabel_datacenter,
+            this.toolStripDropDownButton_AccountChoose,
             this.toolStripStatusLabel3});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
@@ -299,29 +342,37 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // toolStripStatusLabel_ManagerAccount
             // 
-            this.toolStripStatusLabel1.Image = global::AITrader.Properties.Resources.icons8_ok_48;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(80, 21);
-            this.toolStripStatusLabel1.Text = "行情连接";
-            this.toolStripStatusLabel1.ToolTipText = "行情连接信息";
+            this.toolStripStatusLabel_ManagerAccount.Image = global::AITrader.Properties.Resources.icons8_google_forms_48;
+            this.toolStripStatusLabel_ManagerAccount.Name = "toolStripStatusLabel_ManagerAccount";
+            this.toolStripStatusLabel_ManagerAccount.Size = new System.Drawing.Size(80, 21);
+            this.toolStripStatusLabel_ManagerAccount.Text = "账户管理";
+            this.toolStripStatusLabel_ManagerAccount.ToolTipText = "行情连接信息";
+            this.toolStripStatusLabel_ManagerAccount.Click += new System.EventHandler(this.ToolTrip_ManagerAccountClick);
             // 
-            // toolStripStatusLabel2
+            // toolStripStatusLabel_datacenter
             // 
-            this.toolStripStatusLabel2.Image = global::AITrader.Properties.Resources.icons8_cancel_48;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(80, 21);
-            this.toolStripStatusLabel2.Text = "交易连接";
-            this.toolStripStatusLabel2.ToolTipText = "交易连接信息";
+            this.toolStripStatusLabel_datacenter.Image = global::AITrader.Properties.Resources.icons8_edit_file_48;
+            this.toolStripStatusLabel_datacenter.Name = "toolStripStatusLabel_datacenter";
+            this.toolStripStatusLabel_datacenter.Size = new System.Drawing.Size(80, 21);
+            this.toolStripStatusLabel_datacenter.Text = "数据中心";
+            this.toolStripStatusLabel_datacenter.ToolTipText = "交易连接信息";
+            this.toolStripStatusLabel_datacenter.Click += new System.EventHandler(this.ToolTrip_dataCenterClick);
+            // 
+            // toolStripDropDownButton_AccountChoose
+            // 
+            this.toolStripDropDownButton_AccountChoose.Name = "toolStripDropDownButton_AccountChoose";
+            this.toolStripDropDownButton_AccountChoose.Size = new System.Drawing.Size(84, 24);
+            this.toolStripDropDownButton_AccountChoose.Text = "请选择账户:";
+            this.toolStripDropDownButton_AccountChoose.Click += new System.EventHandler(this.ToolStrip_AccountChoose);
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Image = global::AITrader.Properties.Resources.icons8_customer_48;
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(711, 21);
-            this.toolStripStatusLabel3.Text = "[账户信息]- 账户权益:-----  已实现盈亏:---  未实现盈亏:---- 可用:----- 已用:----- 冻结:-----  保证金率:------" +
-    " 维持保证金率:-----";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(434, 21);
+            this.toolStripStatusLabel3.Text = "[账户信息]- 账户权益:-----  可用:----- 已用:----- 冻结:-----  保证金率:------";
             // 
             // menuStrip1
             // 
@@ -334,7 +385,8 @@
             this.帮助HToolStripMenuItem,
             this.测试RToolStripMenuItem,
             this.ToolStripMenuItem_test,
-            this.扩展ToolStripMenuItem});
+            this.扩展ToolStripMenuItem,
+            this.algoTradeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1125, 25);
@@ -358,23 +410,45 @@
             // ToolStripMenuItem_LogOut
             // 
             this.ToolStripMenuItem_LogOut.Name = "ToolStripMenuItem_LogOut";
-            this.ToolStripMenuItem_LogOut.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_LogOut.Size = new System.Drawing.Size(174, 22);
             this.ToolStripMenuItem_LogOut.Text = "退出";
             this.ToolStripMenuItem_LogOut.Click += new System.EventHandler(this.ToolStripMenuItem_LogOutClick);
             // 
             // ToolStripMenuItem_Login
             // 
             this.ToolStripMenuItem_Login.Name = "ToolStripMenuItem_Login";
-            this.ToolStripMenuItem_Login.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_Login.Size = new System.Drawing.Size(174, 22);
             this.ToolStripMenuItem_Login.Text = "登陆";
             this.ToolStripMenuItem_Login.Click += new System.EventHandler(this.ToolStripMenuItem_LoginClick);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(171, 6);
             // 
             // OrderWayManagerToolStripMenuItem
             // 
             this.OrderWayManagerToolStripMenuItem.Name = "OrderWayManagerToolStripMenuItem";
-            this.OrderWayManagerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OrderWayManagerToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.OrderWayManagerToolStripMenuItem.Text = "通道管理";
             this.OrderWayManagerToolStripMenuItem.Click += new System.EventHandler(this.OrderWayManagerToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(171, 6);
+            // 
+            // 缓存数据到SqlLiteToolStripMenuItem
+            // 
+            this.缓存数据到SqlLiteToolStripMenuItem.Name = "缓存数据到SqlLiteToolStripMenuItem";
+            this.缓存数据到SqlLiteToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.缓存数据到SqlLiteToolStripMenuItem.Text = "缓存数据到SqlLite";
+            // 
+            // 导出数据ToolStripMenuItem
+            // 
+            this.导出数据ToolStripMenuItem.Name = "导出数据ToolStripMenuItem";
+            this.导出数据ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.导出数据ToolStripMenuItem.Text = "导出数据";
             // 
             // 显示ToolStripMenuItem
             // 
@@ -389,8 +463,20 @@
             // 数字货币报价ToolStripMenuItem
             // 
             this.数字货币报价ToolStripMenuItem.Name = "数字货币报价ToolStripMenuItem";
-            this.数字货币报价ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.数字货币报价ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.数字货币报价ToolStripMenuItem.Text = "数字货币报价";
+            // 
+            // 策略绩效报告ToolStripMenuItem
+            // 
+            this.策略绩效报告ToolStripMenuItem.Name = "策略绩效报告ToolStripMenuItem";
+            this.策略绩效报告ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.策略绩效报告ToolStripMenuItem.Text = "策略绩效报告";
+            // 
+            // 账户管理ToolStripMenuItem
+            // 
+            this.账户管理ToolStripMenuItem.Name = "账户管理ToolStripMenuItem";
+            this.账户管理ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.账户管理ToolStripMenuItem.Text = "账户管理";
             // 
             // 工具ToolStripMenuItem
             // 
@@ -404,13 +490,13 @@
             // 下单面板ToolStripMenuItem
             // 
             this.下单面板ToolStripMenuItem.Name = "下单面板ToolStripMenuItem";
-            this.下单面板ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.下单面板ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.下单面板ToolStripMenuItem.Text = "下单面板";
             // 
             // 策略编辑器ToolStripMenuItem
             // 
             this.策略编辑器ToolStripMenuItem.Name = "策略编辑器ToolStripMenuItem";
-            this.策略编辑器ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.策略编辑器ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.策略编辑器ToolStripMenuItem.Text = "策略编辑器";
             // 
             // 帮助HToolStripMenuItem
@@ -447,7 +533,7 @@
             // oKex接口测试ToolStripMenuItem
             // 
             this.oKex接口测试ToolStripMenuItem.Name = "oKex接口测试ToolStripMenuItem";
-            this.oKex接口测试ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oKex接口测试ToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.oKex接口测试ToolStripMenuItem.Text = "OKex接口测试";
             this.oKex接口测试ToolStripMenuItem.Visible = false;
             // 
@@ -465,7 +551,7 @@
             // 组合LogK线测试ToolStripMenuItem
             // 
             this.组合LogK线测试ToolStripMenuItem.Name = "组合LogK线测试ToolStripMenuItem";
-            this.组合LogK线测试ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.组合LogK线测试ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.组合LogK线测试ToolStripMenuItem.Text = "组合LogK线测试";
             this.组合LogK线测试ToolStripMenuItem.Visible = false;
             this.组合LogK线测试ToolStripMenuItem.Click += new System.EventHandler(this.组合LogK线测试ToolStripMenuItem_Click);
@@ -473,7 +559,7 @@
             // ToolStripMenuItem_BarMaker
             // 
             this.ToolStripMenuItem_BarMaker.Name = "ToolStripMenuItem_BarMaker";
-            this.ToolStripMenuItem_BarMaker.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_BarMaker.Size = new System.Drawing.Size(166, 22);
             this.ToolStripMenuItem_BarMaker.Text = "测试barmarket";
             this.ToolStripMenuItem_BarMaker.Visible = false;
             this.ToolStripMenuItem_BarMaker.Click += new System.EventHandler(this.ToolStripMenuItem_BarMakerClick);
@@ -489,9 +575,37 @@
             // ToolStripMenuItem_DDE
             // 
             this.ToolStripMenuItem_DDE.Name = "ToolStripMenuItem_DDE";
-            this.ToolStripMenuItem_DDE.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_DDE.Size = new System.Drawing.Size(173, 22);
             this.ToolStripMenuItem_DDE.Text = "启动本地DDE服务";
             this.ToolStripMenuItem_DDE.Click += new System.EventHandler(this.ToolStripMenuItem_DDEClick);
+            // 
+            // algoTradeToolStripMenuItem
+            // 
+            this.algoTradeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.篮子交易ToolStripMenuItem,
+            this.境内外盘套利ToolStripMenuItem,
+            this.网格交易ToolStripMenuItem});
+            this.algoTradeToolStripMenuItem.Name = "algoTradeToolStripMenuItem";
+            this.algoTradeToolStripMenuItem.Size = new System.Drawing.Size(118, 21);
+            this.algoTradeToolStripMenuItem.Text = "AlgoTrade-Tools";
+            // 
+            // 篮子交易ToolStripMenuItem
+            // 
+            this.篮子交易ToolStripMenuItem.Name = "篮子交易ToolStripMenuItem";
+            this.篮子交易ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.篮子交易ToolStripMenuItem.Text = "篮子交易";
+            // 
+            // 境内外盘套利ToolStripMenuItem
+            // 
+            this.境内外盘套利ToolStripMenuItem.Name = "境内外盘套利ToolStripMenuItem";
+            this.境内外盘套利ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.境内外盘套利ToolStripMenuItem.Text = "境内外盘套利";
+            // 
+            // 网格交易ToolStripMenuItem
+            // 
+            this.网格交易ToolStripMenuItem.Name = "网格交易ToolStripMenuItem";
+            this.网格交易ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.网格交易ToolStripMenuItem.Text = "网格交易";
             // 
             // dockPanel1
             // 
@@ -500,56 +614,58 @@
             this.dockPanel1.Location = new System.Drawing.Point(0, 0);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.Size = new System.Drawing.Size(1125, 593);
-            dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
-            autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
-            tabGradient1.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient1.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            autoHideStripSkin1.TabGradient = tabGradient1;
-            autoHideStripSkin1.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
-            dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
-            tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient2.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient1.ActiveTabGradient = tabGradient2;
-            dockPanelGradient2.EndColor = System.Drawing.SystemColors.Control;
-            dockPanelGradient2.StartColor = System.Drawing.SystemColors.Control;
-            dockPaneStripGradient1.DockStripGradient = dockPanelGradient2;
-            tabGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
-            dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
-            dockPaneStripSkin1.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
-            tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
-            tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
-            tabGradient4.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dockPaneStripToolWindowGradient1.ActiveCaptionGradient = tabGradient4;
-            tabGradient5.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient5.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient5.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripToolWindowGradient1.ActiveTabGradient = tabGradient5;
-            dockPanelGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
-            dockPaneStripToolWindowGradient1.DockStripGradient = dockPanelGradient3;
-            tabGradient6.EndColor = System.Drawing.SystemColors.InactiveCaption;
-            tabGradient6.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient6.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            tabGradient6.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dockPaneStripToolWindowGradient1.InactiveCaptionGradient = tabGradient6;
-            tabGradient7.EndColor = System.Drawing.Color.Transparent;
-            tabGradient7.StartColor = System.Drawing.Color.Transparent;
-            tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
-            dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
-            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
-            this.dockPanel1.Skin = dockPanelSkin1;
+            dockPanelGradient4.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient4.StartColor = System.Drawing.SystemColors.ControlLight;
+            autoHideStripSkin2.DockStripGradient = dockPanelGradient4;
+            tabGradient8.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient8.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient8.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            autoHideStripSkin2.TabGradient = tabGradient8;
+            autoHideStripSkin2.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
+            dockPanelSkin2.AutoHideStripSkin = autoHideStripSkin2;
+            tabGradient9.EndColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient9.StartColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient9.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient2.ActiveTabGradient = tabGradient9;
+            dockPanelGradient5.EndColor = System.Drawing.SystemColors.Control;
+            dockPanelGradient5.StartColor = System.Drawing.SystemColors.Control;
+            dockPaneStripGradient2.DockStripGradient = dockPanelGradient5;
+            tabGradient10.EndColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient10.StartColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient10.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient2.InactiveTabGradient = tabGradient10;
+            dockPaneStripSkin2.DocumentGradient = dockPaneStripGradient2;
+            dockPaneStripSkin2.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
+            tabGradient11.EndColor = System.Drawing.SystemColors.ActiveCaption;
+            tabGradient11.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient11.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
+            tabGradient11.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dockPaneStripToolWindowGradient2.ActiveCaptionGradient = tabGradient11;
+            tabGradient12.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient12.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient12.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripToolWindowGradient2.ActiveTabGradient = tabGradient12;
+            dockPanelGradient6.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient6.StartColor = System.Drawing.SystemColors.ControlLight;
+            dockPaneStripToolWindowGradient2.DockStripGradient = dockPanelGradient6;
+            tabGradient13.EndColor = System.Drawing.SystemColors.InactiveCaption;
+            tabGradient13.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient13.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            tabGradient13.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dockPaneStripToolWindowGradient2.InactiveCaptionGradient = tabGradient13;
+            tabGradient14.EndColor = System.Drawing.Color.Transparent;
+            tabGradient14.StartColor = System.Drawing.Color.Transparent;
+            tabGradient14.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            dockPaneStripToolWindowGradient2.InactiveTabGradient = tabGradient14;
+            dockPaneStripSkin2.ToolWindowGradient = dockPaneStripToolWindowGradient2;
+            dockPanelSkin2.DockPaneStripSkin = dockPaneStripSkin2;
+            this.dockPanel1.Skin = dockPanelSkin2;
             this.dockPanel1.TabIndex = 5;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label_Timer);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.statusStrip1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 567);
@@ -558,47 +674,27 @@
             this.panel2.Size = new System.Drawing.Size(1125, 26);
             this.panel2.TabIndex = 9;
             // 
-            // toolStripSeparator3
+            // label_Timer
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.label_Timer.AutoSize = true;
+            this.label_Timer.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label_Timer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_Timer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_Timer.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Timer.Location = new System.Drawing.Point(1045, 7);
+            this.label_Timer.Name = "label_Timer";
+            this.label_Timer.Size = new System.Drawing.Size(55, 14);
+            this.label_Timer.TabIndex = 4;
+            this.label_Timer.Text = "--:--:--";
             // 
-            // 缓存数据到SqlLiteToolStripMenuItem
+            // label1
             // 
-            this.缓存数据到SqlLiteToolStripMenuItem.Name = "缓存数据到SqlLiteToolStripMenuItem";
-            this.缓存数据到SqlLiteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.缓存数据到SqlLiteToolStripMenuItem.Text = "缓存数据到SqlLite";
-            // 
-            // 导出数据ToolStripMenuItem
-            // 
-            this.导出数据ToolStripMenuItem.Name = "导出数据ToolStripMenuItem";
-            this.导出数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.导出数据ToolStripMenuItem.Text = "导出数据";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
-            // 
-            // 策略绩效报告ToolStripMenuItem
-            // 
-            this.策略绩效报告ToolStripMenuItem.Name = "策略绩效报告ToolStripMenuItem";
-            this.策略绩效报告ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.策略绩效报告ToolStripMenuItem.Text = "策略绩效报告";
-            // 
-            // 账户管理ToolStripMenuItem
-            // 
-            this.账户管理ToolStripMenuItem.Name = "账户管理ToolStripMenuItem";
-            this.账户管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.账户管理ToolStripMenuItem.Text = "账户管理";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(108, 28);
-            this.toolStripButton1.Text = "策略绩效报告";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Chartreuse;
+            this.label1.Location = new System.Drawing.Point(1052, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 12);
+            this.label1.TabIndex = 3;
             // 
             // contextMenuStrip1
             // 
@@ -653,6 +749,191 @@
             this.toolStripMenuItem5.Size = new System.Drawing.Size(206, 22);
             this.toolStripMenuItem5.Text = "策略编辑器";
             // 
+            // timer_NowTime
+            // 
+            this.timer_NowTime.Enabled = true;
+            this.timer_NowTime.Interval = 1000;
+            this.timer_NowTime.Tick += new System.EventHandler(this.Timer_NowTimeEvent);
+            // 
+            // toolStrip3
+            // 
+            this.toolStrip3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel2,
+            this.toolStripSeparator15,
+            this.toolStripButton3,
+            this.toolStripSeparator7,
+            this.toolStripButton8,
+            this.toolStripSeparator8,
+            this.toolStripButton9,
+            this.toolStripSeparator9,
+            this.toolStripButton10,
+            this.toolStripButton13,
+            this.toolStripButton14,
+            this.toolStripSeparator10,
+            this.toolStripButton15,
+            this.toolStripButton_TestProxy});
+            this.toolStrip3.Location = new System.Drawing.Point(0, 87);
+            this.toolStrip3.Name = "toolStrip3";
+            this.toolStrip3.Size = new System.Drawing.Size(1125, 25);
+            this.toolStrip3.TabIndex = 12;
+            this.toolStrip3.Text = "toolStrip3";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(59, 22);
+            this.toolStripLabel2.Text = "交易中心:";
+            // 
+            // toolStripSeparator15
+            // 
+            this.toolStripSeparator15.Name = "toolStripSeparator15";
+            this.toolStripSeparator15.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::AITrader.Properties.Resources.start;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(74, 22);
+            this.toolStripButton3.Text = "CTP期货";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(64, 22);
+            this.toolStripButton8.Text = "IB盈透";
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton9.Text = "老虎证券";
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton10.Text = "华泰证券";
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.Size = new System.Drawing.Size(106, 22);
+            this.toolStripButton14.Text = "Okex数字货币";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton15
+            // 
+            this.toolStripButton15.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton15.Name = "toolStripButton15";
+            this.toolStripButton15.Size = new System.Drawing.Size(78, 22);
+            this.toolStripButton15.Text = "MT4外汇";
+            // 
+            // toolStrip4
+            // 
+            this.toolStrip4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripSeparator12,
+            this.toolStripButton17,
+            this.toolStripSeparator13,
+            this.toolStripButton18,
+            this.toolStripSeparator14,
+            this.toolStripButton19});
+            this.toolStrip4.Location = new System.Drawing.Point(0, 112);
+            this.toolStrip4.Name = "toolStrip4";
+            this.toolStrip4.Size = new System.Drawing.Size(1125, 25);
+            this.toolStrip4.TabIndex = 13;
+            this.toolStrip4.Text = "toolStrip4";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
+            this.toolStripLabel1.Text = "行情中心:";
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton17
+            // 
+            this.toolStripButton17.Image = global::AITrader.Properties.Resources.start;
+            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton17.Name = "toolStripButton17";
+            this.toolStripButton17.Size = new System.Drawing.Size(121, 22);
+            this.toolStripButton17.Text = "toShare数据中心";
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton18
+            // 
+            this.toolStripButton18.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton18.Name = "toolStripButton18";
+            this.toolStripButton18.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton18.Text = "天勤数据";
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton19
+            // 
+            this.toolStripButton19.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton19.Name = "toolStripButton19";
+            this.toolStripButton19.Size = new System.Drawing.Size(142, 22);
+            this.toolStripButton19.Text = "IQFeed境外数据中心";
+            // 
+            // toolStripButton_TestProxy
+            // 
+            this.toolStripButton_TestProxy.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton_TestProxy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_TestProxy.Name = "toolStripButton_TestProxy";
+            this.toolStripButton_TestProxy.Size = new System.Drawing.Size(88, 22);
+            this.toolStripButton_TestProxy.Text = "测试行情源";
+            this.toolStripButton_TestProxy.Click += new System.EventHandler(this.toolStripButton_testProxy_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -660,6 +941,8 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(1125, 593);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.toolStrip4);
+            this.Controls.Add(this.toolStrip3);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -670,7 +953,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "数字货币-自动化策略交易终端";
+            this.Text = "全市场自动化策略交易终端 - One Plateform, Trade Everywhere";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Closed);
             this.Load += new System.EventHandler(this.Form_load);
             this.toolStrip1.ResumeLayout(false);
@@ -684,6 +967,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.toolStrip3.ResumeLayout(false);
+            this.toolStrip3.PerformLayout();
+            this.toolStrip4.ResumeLayout(false);
+            this.toolStrip4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -704,8 +991,8 @@
         //private TradeUserControl tradeUserControl1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         //private KLineUserControl kLineUserControl1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_ManagerAccount;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_datacenter;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_LogOut;
         private System.Windows.Forms.ToolStripMenuItem 数字货币报价ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 下单面板ToolStripMenuItem;
@@ -739,7 +1026,7 @@
         private System.Windows.Forms.ToolStripMenuItem 扩展ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_DDE;
         private System.Windows.Forms.ToolStripMenuItem OrderWayManagerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton_StrategyPerfomace;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem 缓存数据到SqlLiteToolStripMenuItem;
@@ -754,6 +1041,37 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton_AccountChoose;
+        private System.Windows.Forms.Label label_Timer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer_NowTime;
+        private System.Windows.Forms.ToolStrip toolStrip3;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripSeparator toolStripButton13;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStrip toolStrip4;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripButton toolStripButton17;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripButton toolStripButton18;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+        private System.Windows.Forms.ToolStripButton toolStripButton19;
+        private System.Windows.Forms.ToolStripMenuItem algoTradeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 篮子交易ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 境内外盘套利ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 网格交易ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripButton toolStripButton15;
+        private System.Windows.Forms.ToolStripButton toolStripButton_TestProxy;
     }
 }
 
