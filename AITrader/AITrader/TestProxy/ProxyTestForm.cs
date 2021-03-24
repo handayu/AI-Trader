@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IronPython.Hosting;
+using Microsoft.Scripting.Hosting;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,6 +74,20 @@ namespace AITrader
         {
             string[] strList = { "" };
             ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).SubscribeMarketData(strList, 1);
+        }
+
+        /// <summary>
+        /// 测试py调用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_testPy_Click(object sender, EventArgs e)
+        {
+            ScriptRuntime pyRuntime = Python.CreateRuntime();
+            dynamic py = pyRuntime.UseFile(@"C:\Users\Administrator\Desktop\test.py");
+            //string a = py;
+
+            //this.richTextBox_log.AppendText("\n" + a);
         }
     }
 }

@@ -215,3 +215,17 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsForm
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\TestProxy.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\TestProxy.pdb
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.ProxyTestForm.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\IronPython.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\IronPython.Modules.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\IronPython.SQLite.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\IronPython.Wpf.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Microsoft.Scripting.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Microsoft.Scripting.Metadata.dll
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\IronPython.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\IronPython.Modules.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\IronPython.SQLite.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\IronPython.Wpf.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Microsoft.Dynamic.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Microsoft.Scripting.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Microsoft.Scripting.Metadata.xml

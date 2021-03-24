@@ -33,6 +33,7 @@ namespace AITrader
             this.richTextBox_log = new System.Windows.Forms.RichTextBox();
             this.button_dingyue = new System.Windows.Forms.Button();
             this.button_logout = new System.Windows.Forms.Button();
+            this.button_testPy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_login
@@ -47,9 +48,9 @@ namespace AITrader
             // 
             // richTextBox_log
             // 
-            this.richTextBox_log.Location = new System.Drawing.Point(12, 66);
+            this.richTextBox_log.Location = new System.Drawing.Point(12, 238);
             this.richTextBox_log.Name = "richTextBox_log";
-            this.richTextBox_log.Size = new System.Drawing.Size(409, 355);
+            this.richTextBox_log.Size = new System.Drawing.Size(409, 183);
             this.richTextBox_log.TabIndex = 1;
             this.richTextBox_log.Text = "";
             // 
@@ -73,11 +74,22 @@ namespace AITrader
             this.button_logout.UseVisualStyleBackColor = true;
             this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
+            // button_testPy
+            // 
+            this.button_testPy.Location = new System.Drawing.Point(28, 91);
+            this.button_testPy.Name = "button_testPy";
+            this.button_testPy.Size = new System.Drawing.Size(75, 23);
+            this.button_testPy.TabIndex = 4;
+            this.button_testPy.Text = "测试py调用";
+            this.button_testPy.UseVisualStyleBackColor = true;
+            this.button_testPy.Click += new System.EventHandler(this.button_testPy_Click);
+            // 
             // ProxyTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 423);
+            this.Controls.Add(this.button_testPy);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.button_dingyue);
             this.Controls.Add(this.richTextBox_log);
@@ -95,5 +107,6 @@ namespace AITrader
         private System.Windows.Forms.RichTextBox richTextBox_log;
         private System.Windows.Forms.Button button_dingyue;
         private System.Windows.Forms.Button button_logout;
+        private System.Windows.Forms.Button button_testPy;
     }
 }
