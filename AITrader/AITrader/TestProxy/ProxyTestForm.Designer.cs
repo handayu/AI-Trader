@@ -38,7 +38,7 @@ namespace AITrader
             // 
             // button_login
             // 
-            this.button_login.Location = new System.Drawing.Point(28, 24);
+            this.button_login.Location = new System.Drawing.Point(5, 12);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(75, 23);
             this.button_login.TabIndex = 0;
@@ -48,15 +48,15 @@ namespace AITrader
             // 
             // richTextBox_log
             // 
-            this.richTextBox_log.Location = new System.Drawing.Point(12, 238);
+            this.richTextBox_log.Location = new System.Drawing.Point(5, 41);
             this.richTextBox_log.Name = "richTextBox_log";
-            this.richTextBox_log.Size = new System.Drawing.Size(409, 183);
+            this.richTextBox_log.Size = new System.Drawing.Size(361, 183);
             this.richTextBox_log.TabIndex = 1;
             this.richTextBox_log.Text = "";
             // 
             // button_dingyue
             // 
-            this.button_dingyue.Location = new System.Drawing.Point(248, 24);
+            this.button_dingyue.Location = new System.Drawing.Point(194, 12);
             this.button_dingyue.Name = "button_dingyue";
             this.button_dingyue.Size = new System.Drawing.Size(75, 23);
             this.button_dingyue.TabIndex = 2;
@@ -66,7 +66,7 @@ namespace AITrader
             // 
             // button_logout
             // 
-            this.button_logout.Location = new System.Drawing.Point(134, 24);
+            this.button_logout.Location = new System.Drawing.Point(100, 12);
             this.button_logout.Name = "button_logout";
             this.button_logout.Size = new System.Drawing.Size(75, 23);
             this.button_logout.TabIndex = 3;
@@ -76,7 +76,7 @@ namespace AITrader
             // 
             // button_testPy
             // 
-            this.button_testPy.Location = new System.Drawing.Point(28, 91);
+            this.button_testPy.Location = new System.Drawing.Point(291, 12);
             this.button_testPy.Name = "button_testPy";
             this.button_testPy.Size = new System.Drawing.Size(75, 23);
             this.button_testPy.TabIndex = 4;
@@ -88,14 +88,18 @@ namespace AITrader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 423);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(377, 237);
             this.Controls.Add(this.button_testPy);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.button_dingyue);
             this.Controls.Add(this.richTextBox_log);
             this.Controls.Add(this.button_login);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ProxyTestForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "测试数据源登陆";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);
 

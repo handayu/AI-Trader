@@ -6,3 +6,4 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\TestProxy\obj\Debug\TestProxy.
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\TestProxy\obj\Debug\TestProxy.pdb
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\TestProxy.dll
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\Commonlib\TestProxy.pdb
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\TestProxy\obj\Debug\TestProxy.csproj.CopyComplete

@@ -189,8 +189,6 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.Ma
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.BrokerProfileForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.KLineFormWholeTest.resources
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.OrderAccountListForm.resources
-C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.AddInstruments.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.MainForm.TestTabMDI.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.TestZedGraphForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\ZedGraph.dll
@@ -229,3 +227,7 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\IronPython.
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Microsoft.Dynamic.xml
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Microsoft.Scripting.xml
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\bin\Debug\Microsoft.Scripting.Metadata.xml
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.exe.config
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.TuShareLoginForm.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.AddInstruments.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.OrderAccountListForm.resources

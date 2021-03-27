@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AITrader.MainForm
+namespace WindowsFormsApp1
 {
     public partial class AddInstruments : Form
     {
@@ -16,5 +16,8 @@ namespace AITrader.MainForm
         {
             InitializeComponent();
         }
+
+
+
     }
 }

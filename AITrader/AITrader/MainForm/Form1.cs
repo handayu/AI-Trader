@@ -258,6 +258,8 @@ namespace WindowsFormsApp1
             fM.Show();
         }
 
+        private ProxyTestForm m_proxyTestForm = new ProxyTestForm();
+
         #region 测试后台代理类
         /// <summary>
         /// 测试后台代理
@@ -266,9 +268,68 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void toolStripButton_testProxy_Click(object sender, EventArgs e)
         {
-            ProxyTestForm t = new ProxyTestForm();
-            t.Show();
+            if (!m_proxyTestForm.Visible)
+            {
+                m_proxyTestForm.Show();
+            }
+            else
+            {
+                m_proxyTestForm.Hide();
+            }
         }
         #endregion
+
+        private TuShareLoginForm m_toShareForm = new TuShareLoginForm();
+
+        /// <summary>
+        /// Toshare登陆
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton_toShare_Click(object sender, EventArgs e)
+        {
+            if(!m_toShareForm.Visible)
+            {
+                m_toShareForm.Show();
+            }
+            else
+            {
+                m_toShareForm.Hide();
+            }
+        }
+
+        /// <summary>
+        /// menuStrip-新建图表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripMenuItem_AddChart_Click(object sender, EventArgs e)
+        {
+            AddInstruments addInsForm = new AddInstruments();
+            addInsForm.ShowDialog();
+        }
+
+        private void toolStripMenuItem_DataCenter_Click(object sender, EventArgs e)
+        {
+            QuoteManager Qm = new QuoteManager();
+            Qm.Show();
+        }
+
+        private void toolStripMenuItem_Perfomance_Click(object sender, EventArgs e)
+        {
+            StrategyPerfomace pFoem = new StrategyPerfomace();
+            pFoem.Show();
+        }
+
+        private void toolStripMenuItem_OrderManager_Click(object sender, EventArgs e)
+        {
+            OrderAccountListForm aL = new OrderAccountListForm();
+            aL.Show();
+        }
+
+        private void toolStripMenuItem_Coder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

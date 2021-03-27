@@ -108,7 +108,7 @@
             // lblh4_2
             // 
             this.lblh4_2.AutoSize = true;
-            this.lblh4_2.Font = new System.Drawing.Font("宋体", 13F);
+            this.lblh4_2.Font = new System.Drawing.Font("SimSun", 13F);
             this.lblh4_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblh4_2.Location = new System.Drawing.Point(797, 145);
             this.lblh4_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -120,7 +120,7 @@
             // lblh3_2
             // 
             this.lblh3_2.AutoSize = true;
-            this.lblh3_2.Font = new System.Drawing.Font("宋体", 13F);
+            this.lblh3_2.Font = new System.Drawing.Font("SimSun", 13F);
             this.lblh3_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblh3_2.Location = new System.Drawing.Point(578, 143);
             this.lblh3_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -132,7 +132,7 @@
             // lblh2_2
             // 
             this.lblh2_2.AutoSize = true;
-            this.lblh2_2.Font = new System.Drawing.Font("宋体", 13F);
+            this.lblh2_2.Font = new System.Drawing.Font("SimSun", 13F);
             this.lblh2_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblh2_2.Location = new System.Drawing.Point(353, 145);
             this.lblh2_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -144,14 +144,14 @@
             // lblh1_2
             // 
             this.lblh1_2.AutoSize = true;
-            this.lblh1_2.Font = new System.Drawing.Font("宋体", 13F);
+            this.lblh1_2.Font = new System.Drawing.Font("SimSun", 13F);
             this.lblh1_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblh1_2.Location = new System.Drawing.Point(53, 147);
+            this.lblh1_2.Location = new System.Drawing.Point(80, 148);
             this.lblh1_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblh1_2.Name = "lblh1_2";
-            this.lblh1_2.Size = new System.Drawing.Size(224, 18);
+            this.lblh1_2.Size = new System.Drawing.Size(170, 18);
             this.lblh1_2.TabIndex = 80;
-            this.lblh1_2.Text = "数字货币自动策略交易终端";
+            this.lblh1_2.Text = "全市场策略交易终端";
             // 
             // lbl4_1
             // 
@@ -167,7 +167,7 @@
             // lbl3_6
             // 
             this.lbl3_6.AutoSize = true;
-            this.lbl3_6.Font = new System.Drawing.Font("宋体", 9F);
+            this.lbl3_6.Font = new System.Drawing.Font("SimSun", 9F);
             this.lbl3_6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl3_6.Location = new System.Drawing.Point(587, 380);
             this.lbl3_6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -190,20 +190,20 @@
             // lbl_LINE
             // 
             this.lbl_LINE.AutoSize = true;
-            this.lbl_LINE.Font = new System.Drawing.Font("宋体", 9F);
+            this.lbl_LINE.Font = new System.Drawing.Font("SimSun", 9F);
             this.lbl_LINE.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_LINE.Location = new System.Drawing.Point(587, 300);
+            this.lbl_LINE.Location = new System.Drawing.Point(580, 300);
             this.lbl_LINE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_LINE.Name = "lbl_LINE";
-            this.lbl_LINE.Size = new System.Drawing.Size(77, 24);
+            this.lbl_LINE.Size = new System.Drawing.Size(161, 12);
             this.lbl_LINE.TabIndex = 72;
-            this.lbl_LINE.Text = "www.okex.me\r\nwww.okex.com\r\n";
+            this.lbl_LINE.Text = "https://handayu.github.io/";
             // 
             // lbl3_3
             // 
             this.lbl3_3.AutoSize = true;
             this.lbl3_3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl3_3.Location = new System.Drawing.Point(587, 279);
+            this.lbl3_3.Location = new System.Drawing.Point(578, 279);
             this.lbl3_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl3_3.Name = "lbl3_3";
             this.lbl3_3.Size = new System.Drawing.Size(53, 12);
@@ -213,9 +213,9 @@
             // lbl3_2
             // 
             this.lbl3_2.AutoSize = true;
-            this.lbl3_2.Font = new System.Drawing.Font("宋体", 9F);
+            this.lbl3_2.Font = new System.Drawing.Font("SimSun", 9F);
             this.lbl3_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl3_2.Location = new System.Drawing.Point(581, 239);
+            this.lbl3_2.Location = new System.Drawing.Point(578, 239);
             this.lbl3_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl3_2.Name = "lbl3_2";
             this.lbl3_2.Size = new System.Drawing.Size(71, 12);
@@ -226,7 +226,7 @@
             // 
             this.lbl3_1.AutoSize = true;
             this.lbl3_1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl3_1.Location = new System.Drawing.Point(581, 218);
+            this.lbl3_1.Location = new System.Drawing.Point(575, 218);
             this.lbl3_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl3_1.Name = "lbl3_1";
             this.lbl3_1.Size = new System.Drawing.Size(125, 12);
@@ -401,7 +401,7 @@
             // lblcb1
             // 
             this.lblcb1.AutoSize = true;
-            this.lblcb1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblcb1.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblcb1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblcb1.Location = new System.Drawing.Point(30, 214);
             this.lblcb1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -464,7 +464,7 @@
             this.btn_Login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Login.FlatAppearance.BorderSize = 0;
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Login.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Login.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_Login.ForeColor = System.Drawing.Color.White;
             this.btn_Login.Location = new System.Drawing.Point(42, 450);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(2);
@@ -534,7 +534,7 @@
             this.button_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_Cancel.FlatAppearance.BorderSize = 0;
             this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Cancel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_Cancel.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_Cancel.ForeColor = System.Drawing.Color.White;
             this.button_Cancel.Location = new System.Drawing.Point(181, 450);
             this.button_Cancel.Margin = new System.Windows.Forms.Padding(2);
@@ -676,7 +676,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(35, 256);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);

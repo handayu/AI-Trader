@@ -208,6 +208,12 @@
     <Compile Include="BarMarker\BarMaker.cs" />
     <Compile Include="DllLoader\IndicatorsLoader.cs" />
     <Compile Include="GateWay\BaseGateWay.cs" />
+    <Compile Include="LoginMudle\TuShareLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginMudle\TuShareLoginForm.Designer.cs">
+      <DependentUpon>TuShareLoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -469,6 +475,9 @@
     <Compile Include="MainForm\WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LoginMudle\TuShareLoginForm.resx">
+      <DependentUpon>TuShareLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -741,8 +750,6 @@
   <ItemGroup>
     <Content Include="License-LGPL.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="LoginMudle\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

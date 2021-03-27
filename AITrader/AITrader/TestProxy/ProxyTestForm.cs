@@ -26,21 +26,20 @@ namespace AITrader
         private void Form_Load(object sender, EventArgs e)
         {
 
-            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).OnFrontConnectedEvent += M_dP_OnFrontConnectedEvent;
-            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).OnRspUserLoginEvent += M_dP_OnRspUserLoginEvent;
-            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).OnRtnDataEvent += M_dP_OnRtnDataEvent;
+            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).OnLoginEvent += M_dP_OnFrontConnectedEvent;
+            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).OnTickEvent += M_dP_OnRtnDataEvent;
 
         }
 
-        private void M_dP_OnRtnDataEvent(string data)
+        private void M_dP_OnRtnDataEvent(RspHistoryData hD)
         {
             if (this.InvokeRequired)
             {
-                this.BeginInvoke(new Action<string>(M_dP_OnRtnDataEvent),data);
+                this.BeginInvoke(new Action<RspHistoryData>(M_dP_OnRtnDataEvent),hD);
                 return;
             }
 
-            this.richTextBox_log.AppendText("\n" + data);
+            this.richTextBox_log.AppendText("\n" + hD.Close);
         }
 
         private void M_dP_OnRspUserLoginEvent()
@@ -59,21 +58,21 @@ namespace AITrader
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).InitMDApi();
+            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).Init(null);
 
-            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).ReqMDLogin();
+            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).Login();
         }
 
         private void button_logout_Click(object sender, EventArgs e)
         {
-            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).ReqMDLogOut();
+            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).Close();
 
         }
 
         private void button_dingyue_Click(object sender, EventArgs e)
         {
             string[] strList = { "" };
-            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).SubscribeMarketData(strList, 1);
+            ProxyManager.GetInstance().GetProxy(EXCHANGETHROUGH.Demo).SubScribe();
         }
 
         /// <summary>
@@ -88,6 +87,12 @@ namespace AITrader
             //string a = py;
 
             //this.richTextBox_log.AppendText("\n" + a);
+        }
+
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }
