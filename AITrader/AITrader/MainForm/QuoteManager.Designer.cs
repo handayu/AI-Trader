@@ -34,38 +34,49 @@ namespace WindowsFormsApp1
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("CZCE");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("SHFE");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("CFFEX");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("CTP期货", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("CTP", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
             treeNode3,
             treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("股票");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("期货");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("外汇");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("IB盈透", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Stock");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Future");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Currency");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("IB", new System.Windows.Forms.TreeNode[] {
             treeNode6,
             treeNode7,
             treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("股票");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("期货");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("老虎证券", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Stock");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Future");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Tiger", new System.Windows.Forms.TreeNode[] {
             treeNode10,
             treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("股票");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("基金");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("华泰证券", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Stock");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Fund");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("HBZQ", new System.Windows.Forms.TreeNode[] {
             treeNode13,
             treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("合约");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("币币");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Okex数字货币", new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode17});
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("外汇保证金");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("股票/指数/商品CFD");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("MT4外汇", new System.Windows.Forms.TreeNode[] {
-            treeNode19,
-            treeNode20});
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("CFD");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("MT4", new System.Windows.Forms.TreeNode[] {
+            treeNode16});
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Currency");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Stock");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Demo", new System.Windows.Forms.TreeNode[] {
+            treeNode18,
+            treeNode19});
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Stock");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Future");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Fund");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("TuShare", new System.Windows.Forms.TreeNode[] {
+            treeNode21,
+            treeNode22,
+            treeNode23});
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Future");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Stock");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("TianQin", new System.Windows.Forms.TreeNode[] {
+            treeNode25,
+            treeNode26});
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("IQFeed");
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -107,12 +118,11 @@ namespace WindowsFormsApp1
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton1.Text = "刷新";
             // 
             // toolStripButton2
             // 
@@ -176,46 +186,63 @@ namespace WindowsFormsApp1
             treeNode4.Name = "Node4";
             treeNode4.Text = "CFFEX";
             treeNode5.Name = "Node0";
-            treeNode5.Text = "CTP期货";
+            treeNode5.Text = "CTP";
             treeNode6.Name = "Node6";
-            treeNode6.Text = "股票";
+            treeNode6.Text = "Stock";
             treeNode7.Name = "Node7";
-            treeNode7.Text = "期货";
+            treeNode7.Text = "Future";
             treeNode8.Name = "Node8";
-            treeNode8.Text = "外汇";
+            treeNode8.Text = "Currency";
             treeNode9.Name = "Node5";
-            treeNode9.Text = "IB盈透";
+            treeNode9.Text = "IB";
             treeNode10.Name = "Node10";
-            treeNode10.Text = "股票";
+            treeNode10.Text = "Stock";
             treeNode11.Name = "Node11";
-            treeNode11.Text = "期货";
+            treeNode11.Text = "Future";
             treeNode12.Name = "Node9";
-            treeNode12.Text = "老虎证券";
+            treeNode12.Text = "Tiger";
             treeNode13.Name = "Node13";
-            treeNode13.Text = "股票";
+            treeNode13.Text = "Stock";
             treeNode14.Name = "Node14";
-            treeNode14.Text = "基金";
+            treeNode14.Text = "Fund";
             treeNode15.Name = "Node12";
-            treeNode15.Text = "华泰证券";
+            treeNode15.Text = "HBZQ";
             treeNode16.Name = "Node16";
-            treeNode16.Text = "合约";
-            treeNode17.Name = "Node17";
-            treeNode17.Text = "币币";
-            treeNode18.Name = "Node15";
-            treeNode18.Text = "Okex数字货币";
-            treeNode19.Name = "Node19";
-            treeNode19.Text = "外汇保证金";
-            treeNode20.Name = "Node20";
-            treeNode20.Text = "股票/指数/商品CFD";
-            treeNode21.Name = "Node18";
-            treeNode21.Text = "MT4外汇";
+            treeNode16.Text = "CFD";
+            treeNode17.Name = "Node15";
+            treeNode17.Text = "MT4";
+            treeNode18.Name = "Node19";
+            treeNode18.Text = "Currency";
+            treeNode19.Name = "Node20";
+            treeNode19.Text = "Stock";
+            treeNode20.Name = "Node18";
+            treeNode20.Text = "Demo";
+            treeNode21.Name = "Node2";
+            treeNode21.Text = "Stock";
+            treeNode22.Name = "Node3";
+            treeNode22.Text = "Future";
+            treeNode23.Name = "Node4";
+            treeNode23.Text = "Fund";
+            treeNode24.Name = "Node0";
+            treeNode24.Text = "TuShare";
+            treeNode25.Name = "Node5";
+            treeNode25.Text = "Future";
+            treeNode26.Name = "Node6";
+            treeNode26.Text = "Stock";
+            treeNode27.Name = "Node1";
+            treeNode27.Text = "TianQin";
+            treeNode28.Name = "Node2";
+            treeNode28.Text = "IQFeed";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5,
             treeNode9,
             treeNode12,
             treeNode15,
-            treeNode18,
-            treeNode21});
+            treeNode17,
+            treeNode20,
+            treeNode24,
+            treeNode27,
+            treeNode28});
             this.treeView1.Size = new System.Drawing.Size(182, 441);
             this.treeView1.TabIndex = 0;
             // 

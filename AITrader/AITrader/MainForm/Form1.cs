@@ -331,5 +331,11 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void toolStripButton_TestKLineClick(object sender, EventArgs e)
+        {
+            ZedKLineForm f = new ZedKLineForm();
+            f.Show();
+        }
     }
 }

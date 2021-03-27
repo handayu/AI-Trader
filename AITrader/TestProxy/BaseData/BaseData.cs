@@ -8,7 +8,7 @@ namespace TestProxy
 {
     public enum EXCHANGETHROUGH
     {
-        CTP,
+        CTP = 1,
         IB,
         Tiger,
         HTZQ,
@@ -22,7 +22,7 @@ namespace TestProxy
 
     public enum MARKETTYPE
     {
-        Stock,
+        Stock = 1,
         Bond,
         Fund,
         Future,
@@ -34,7 +34,7 @@ namespace TestProxy
 
     public enum FRAME
     {
-        Tick,
+        Tick = 1,
         Minute,
         Minute_5,
         Minute_10,

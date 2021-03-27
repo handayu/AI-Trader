@@ -231,3 +231,4 @@ C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\AITrader.ex
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.TuShareLoginForm.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.AddInstruments.resources
 C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.OrderAccountListForm.resources
+C:\Users\Administrator\Desktop\AI-Trader\AITrader\AITrader\obj\Debug\WindowsFormsApp1.ZedKLineForm.resources

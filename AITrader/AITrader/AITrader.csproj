@@ -226,6 +226,12 @@
     <Compile Include="MainForm\AddInstruments.Designer.cs">
       <DependentUpon>AddInstruments.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\ZedKLineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\ZedKLineForm.Designer.cs">
+      <DependentUpon>ZedKLineForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerConnect\BrokerProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -483,6 +489,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\AddInstruments.resx">
       <DependentUpon>AddInstruments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\ZedKLineForm.resx">
+      <DependentUpon>ZedKLineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerConnect\BrokerProfileForm.resx">
       <DependentUpon>BrokerProfileForm.cs</DependentUpon>

@@ -29,30 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
-            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin2 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient4 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient8 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient9 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient5 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient10 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient11 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient12 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient6 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient13 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient14 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
+            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient1 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient2 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient3 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient4 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient5 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient3 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient6 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton_QuaickOrder = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_StrategyPerfomace = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton_VLayout = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_SLayOut = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_HLayout = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel_ManagerAccount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel_datacenter = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripDropDownButton_AccountChoose = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_LogOut = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,41 +115,27 @@
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_TestProxy = new System.Windows.Forms.ToolStripButton();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_toShare = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_TestProxy = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_VLayout = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_SLayOut = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_HLayout = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_QuaickOrder = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_StrategyPerfomace = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripStatusLabel_ManagerAccount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel_datacenter = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripButton_TestKLine = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -171,6 +172,52 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.BackColor = System.Drawing.Color.White;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::AITrader.Properties.Resources.icons8_1_481;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = global::AITrader.Properties.Resources.icons8_5_481;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton4.Text = "toolStripButton4";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = global::AITrader.Properties.Resources.icons8_15_482;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton5.Text = "toolStripButton5";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = global::AITrader.Properties.Resources.icons8_30_481;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton6.Text = "toolStripButton6";
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = global::AITrader.Properties.Resources.icons8_plus_1_day_48;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton7.Text = "toolStripButton7";
+            // 
             // toolStripComboBox1
             // 
             this.toolStripComboBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -183,6 +230,46 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // toolStripButton_QuaickOrder
+            // 
+            this.toolStripButton_QuaickOrder.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStripButton_QuaickOrder.Image = global::AITrader.Properties.Resources.icons8_purchase_order_48;
+            this.toolStripButton_QuaickOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_QuaickOrder.Name = "toolStripButton_QuaickOrder";
+            this.toolStripButton_QuaickOrder.Size = new System.Drawing.Size(84, 28);
+            this.toolStripButton_QuaickOrder.Text = "快捷下单";
+            this.toolStripButton_QuaickOrder.Click += new System.EventHandler(this.toolStripButton_QuaickOrderClick);
+            // 
+            // toolStripButton_StrategyPerfomace
+            // 
+            this.toolStripButton_StrategyPerfomace.Image = global::AITrader.Properties.Resources.icons8_heart_monitor_48;
+            this.toolStripButton_StrategyPerfomace.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_StrategyPerfomace.Name = "toolStripButton_StrategyPerfomace";
+            this.toolStripButton_StrategyPerfomace.Size = new System.Drawing.Size(108, 28);
+            this.toolStripButton_StrategyPerfomace.Text = "策略绩效报告";
+            this.toolStripButton_StrategyPerfomace.Click += new System.EventHandler(this.ToolStrip_StratgyPerfomaceClick);
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStripButton11.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
+            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.Size = new System.Drawing.Size(84, 28);
+            this.toolStripButton11.Text = "自动交易";
+            this.toolStripButton11.Click += new System.EventHandler(this.AutoTrading_Click);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.BackColor = System.Drawing.Color.White;
+            this.toolStripButton12.Image = global::AITrader.Properties.Resources.icons8_edit_file_48;
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(120, 28);
+            this.toolStripButton12.Text = "自动策略编辑器";
+            this.toolStripButton12.Click += new System.EventHandler(this.Edit_Click);
             // 
             // toolStripSeparator2
             // 
@@ -210,6 +297,36 @@
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
+            // toolStripButton_VLayout
+            // 
+            this.toolStripButton_VLayout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_VLayout.Image = global::AITrader.Properties.Resources.icons8_merge_cells_48;
+            this.toolStripButton_VLayout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_VLayout.Name = "toolStripButton_VLayout";
+            this.toolStripButton_VLayout.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton_VLayout.Text = "toolStripButton8";
+            this.toolStripButton_VLayout.Click += new System.EventHandler(this.toolStripButton_VLayout_Click);
+            // 
+            // toolStripButton_SLayOut
+            // 
+            this.toolStripButton_SLayOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_SLayOut.Image = global::AITrader.Properties.Resources.icons8_layout_48;
+            this.toolStripButton_SLayOut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_SLayOut.Name = "toolStripButton_SLayOut";
+            this.toolStripButton_SLayOut.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton_SLayOut.Text = "toolStripButton9";
+            this.toolStripButton_SLayOut.Click += new System.EventHandler(this.toolStripButton_SLayOut_Click);
+            // 
+            // toolStripButton_HLayout
+            // 
+            this.toolStripButton_HLayout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_HLayout.Image = global::AITrader.Properties.Resources.icons8_select_column_48;
+            this.toolStripButton_HLayout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_HLayout.Name = "toolStripButton_HLayout";
+            this.toolStripButton_HLayout.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton_HLayout.Text = "toolStripButton10";
+            this.toolStripButton_HLayout.Click += new System.EventHandler(this.toolStripButton_HLayout_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -226,12 +343,37 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel_ManagerAccount
+            // 
+            this.toolStripStatusLabel_ManagerAccount.Image = global::AITrader.Properties.Resources.icons8_google_forms_48;
+            this.toolStripStatusLabel_ManagerAccount.Name = "toolStripStatusLabel_ManagerAccount";
+            this.toolStripStatusLabel_ManagerAccount.Size = new System.Drawing.Size(80, 21);
+            this.toolStripStatusLabel_ManagerAccount.Text = "账户管理";
+            this.toolStripStatusLabel_ManagerAccount.ToolTipText = "行情连接信息";
+            this.toolStripStatusLabel_ManagerAccount.Click += new System.EventHandler(this.ToolTrip_ManagerAccountClick);
+            // 
+            // toolStripStatusLabel_datacenter
+            // 
+            this.toolStripStatusLabel_datacenter.Image = global::AITrader.Properties.Resources.icons8_edit_file_48;
+            this.toolStripStatusLabel_datacenter.Name = "toolStripStatusLabel_datacenter";
+            this.toolStripStatusLabel_datacenter.Size = new System.Drawing.Size(80, 21);
+            this.toolStripStatusLabel_datacenter.Text = "数据中心";
+            this.toolStripStatusLabel_datacenter.ToolTipText = "交易连接信息";
+            this.toolStripStatusLabel_datacenter.Click += new System.EventHandler(this.ToolTrip_dataCenterClick);
+            // 
             // toolStripDropDownButton_AccountChoose
             // 
             this.toolStripDropDownButton_AccountChoose.Name = "toolStripDropDownButton_AccountChoose";
             this.toolStripDropDownButton_AccountChoose.Size = new System.Drawing.Size(84, 24);
             this.toolStripDropDownButton_AccountChoose.Text = "请选择账户:";
             this.toolStripDropDownButton_AccountChoose.Click += new System.EventHandler(this.ToolStrip_AccountChoose);
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Image = global::AITrader.Properties.Resources.icons8_customer_48;
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(434, 21);
+            this.toolStripStatusLabel3.Text = "[账户信息]- 账户权益:-----  可用:----- 已用:----- 冻结:-----  保证金率:------";
             // 
             // menuStrip1
             // 
@@ -473,52 +615,52 @@
             this.dockPanel1.Location = new System.Drawing.Point(0, 0);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.Size = new System.Drawing.Size(1125, 593);
-            dockPanelGradient4.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient4.StartColor = System.Drawing.SystemColors.ControlLight;
-            autoHideStripSkin2.DockStripGradient = dockPanelGradient4;
-            tabGradient8.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient8.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient8.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            autoHideStripSkin2.TabGradient = tabGradient8;
-            autoHideStripSkin2.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
-            dockPanelSkin2.AutoHideStripSkin = autoHideStripSkin2;
-            tabGradient9.EndColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient9.StartColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient9.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient2.ActiveTabGradient = tabGradient9;
-            dockPanelGradient5.EndColor = System.Drawing.SystemColors.Control;
-            dockPanelGradient5.StartColor = System.Drawing.SystemColors.Control;
-            dockPaneStripGradient2.DockStripGradient = dockPanelGradient5;
-            tabGradient10.EndColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient10.StartColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient10.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient2.InactiveTabGradient = tabGradient10;
-            dockPaneStripSkin2.DocumentGradient = dockPaneStripGradient2;
-            dockPaneStripSkin2.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
-            tabGradient11.EndColor = System.Drawing.SystemColors.ActiveCaption;
-            tabGradient11.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient11.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
-            tabGradient11.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dockPaneStripToolWindowGradient2.ActiveCaptionGradient = tabGradient11;
-            tabGradient12.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient12.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient12.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripToolWindowGradient2.ActiveTabGradient = tabGradient12;
-            dockPanelGradient6.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient6.StartColor = System.Drawing.SystemColors.ControlLight;
-            dockPaneStripToolWindowGradient2.DockStripGradient = dockPanelGradient6;
-            tabGradient13.EndColor = System.Drawing.SystemColors.InactiveCaption;
-            tabGradient13.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient13.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            tabGradient13.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dockPaneStripToolWindowGradient2.InactiveCaptionGradient = tabGradient13;
-            tabGradient14.EndColor = System.Drawing.Color.Transparent;
-            tabGradient14.StartColor = System.Drawing.Color.Transparent;
-            tabGradient14.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            dockPaneStripToolWindowGradient2.InactiveTabGradient = tabGradient14;
-            dockPaneStripSkin2.ToolWindowGradient = dockPaneStripToolWindowGradient2;
-            dockPanelSkin2.DockPaneStripSkin = dockPaneStripSkin2;
-            this.dockPanel1.Skin = dockPanelSkin2;
+            dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
+            autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
+            tabGradient1.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient1.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            autoHideStripSkin1.TabGradient = tabGradient1;
+            autoHideStripSkin1.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
+            dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
+            tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient2.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient1.ActiveTabGradient = tabGradient2;
+            dockPanelGradient2.EndColor = System.Drawing.SystemColors.Control;
+            dockPanelGradient2.StartColor = System.Drawing.SystemColors.Control;
+            dockPaneStripGradient1.DockStripGradient = dockPanelGradient2;
+            tabGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
+            dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
+            dockPaneStripSkin1.TextFont = new System.Drawing.Font("Microsoft YaHei", 9F);
+            tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
+            tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
+            tabGradient4.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dockPaneStripToolWindowGradient1.ActiveCaptionGradient = tabGradient4;
+            tabGradient5.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient5.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient5.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripToolWindowGradient1.ActiveTabGradient = tabGradient5;
+            dockPanelGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
+            dockPaneStripToolWindowGradient1.DockStripGradient = dockPanelGradient3;
+            tabGradient6.EndColor = System.Drawing.SystemColors.InactiveCaption;
+            tabGradient6.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient6.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            tabGradient6.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dockPaneStripToolWindowGradient1.InactiveCaptionGradient = tabGradient6;
+            tabGradient7.EndColor = System.Drawing.Color.Transparent;
+            tabGradient7.StartColor = System.Drawing.Color.Transparent;
+            tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
+            dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
+            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
+            this.dockPanel1.Skin = dockPanelSkin1;
             this.dockPanel1.TabIndex = 5;
             // 
             // panel2
@@ -566,7 +708,7 @@
             this.toolStripSeparator6,
             this.toolStripMenuItem_Coder});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(207, 148);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(207, 126);
             // 
             // toolStripMenuItem_AddChart
             // 
@@ -636,7 +778,8 @@
             this.toolStripButton14,
             this.toolStripSeparator10,
             this.toolStripButton15,
-            this.toolStripButton_TestProxy});
+            this.toolStripButton_TestProxy,
+            this.toolStripButton_TestKLine});
             this.toolStrip3.Location = new System.Drawing.Point(0, 87);
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size(1125, 25);
@@ -654,30 +797,87 @@
             this.toolStripSeparator15.Name = "toolStripSeparator15";
             this.toolStripSeparator15.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::AITrader.Properties.Resources.start;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(74, 22);
+            this.toolStripButton3.Text = "CTP期货";
+            // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(64, 22);
+            this.toolStripButton8.Text = "IB盈透";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton9.Text = "老虎证券";
+            // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton10.Text = "华泰证券";
             // 
             // toolStripButton13
             // 
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.Size = new System.Drawing.Size(106, 22);
+            this.toolStripButton14.Text = "Okex数字货币";
+            // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton15
+            // 
+            this.toolStripButton15.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton15.Name = "toolStripButton15";
+            this.toolStripButton15.Size = new System.Drawing.Size(78, 22);
+            this.toolStripButton15.Text = "MT4外汇";
+            // 
+            // toolStripButton_TestProxy
+            // 
+            this.toolStripButton_TestProxy.Image = global::AITrader.Properties.Resources.stop;
+            this.toolStripButton_TestProxy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_TestProxy.Name = "toolStripButton_TestProxy";
+            this.toolStripButton_TestProxy.Size = new System.Drawing.Size(88, 22);
+            this.toolStripButton_TestProxy.Text = "测试行情源";
+            this.toolStripButton_TestProxy.Click += new System.EventHandler(this.toolStripButton_testProxy_Click);
             // 
             // toolStrip4
             // 
@@ -707,16 +907,6 @@
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripSeparator13
-            // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator14
-            // 
-            this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripButton_toShare
             // 
             this.toolStripButton_toShare.Image = global::AITrader.Properties.Resources._292afea02bb78f1677bda6bde30203e;
@@ -726,6 +916,11 @@
             this.toolStripButton_toShare.Text = "toShare数据中心";
             this.toolStripButton_toShare.Click += new System.EventHandler(this.toolStripButton_toShare_Click);
             // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripButton18
             // 
             this.toolStripButton18.Image = global::AITrader.Properties.Resources.stop;
@@ -733,6 +928,11 @@
             this.toolStripButton18.Name = "toolStripButton18";
             this.toolStripButton18.Size = new System.Drawing.Size(76, 22);
             this.toolStripButton18.Text = "天勤数据";
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripButton19
             // 
@@ -742,203 +942,15 @@
             this.toolStripButton19.Size = new System.Drawing.Size(142, 22);
             this.toolStripButton19.Text = "IQFeed境外数据中心";
             // 
-            // toolStripButton3
+            // toolStripButton_TestKLine
             // 
-            this.toolStripButton3.Image = global::AITrader.Properties.Resources.start;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(74, 22);
-            this.toolStripButton3.Text = "CTP期货";
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.Image = global::AITrader.Properties.Resources.stop;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(64, 22);
-            this.toolStripButton8.Text = "IB盈透";
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.Image = global::AITrader.Properties.Resources.stop;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(76, 22);
-            this.toolStripButton9.Text = "老虎证券";
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.Image = global::AITrader.Properties.Resources.stop;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(76, 22);
-            this.toolStripButton10.Text = "华泰证券";
-            // 
-            // toolStripButton14
-            // 
-            this.toolStripButton14.Image = global::AITrader.Properties.Resources.stop;
-            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(106, 22);
-            this.toolStripButton14.Text = "Okex数字货币";
-            // 
-            // toolStripButton15
-            // 
-            this.toolStripButton15.Image = global::AITrader.Properties.Resources.stop;
-            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(78, 22);
-            this.toolStripButton15.Text = "MT4外汇";
-            // 
-            // toolStripButton_TestProxy
-            // 
-            this.toolStripButton_TestProxy.Image = global::AITrader.Properties.Resources.stop;
-            this.toolStripButton_TestProxy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_TestProxy.Name = "toolStripButton_TestProxy";
-            this.toolStripButton_TestProxy.Size = new System.Drawing.Size(88, 22);
-            this.toolStripButton_TestProxy.Text = "测试行情源";
-            this.toolStripButton_TestProxy.Click += new System.EventHandler(this.toolStripButton_testProxy_Click);
-            // 
-            // toolStripButton_VLayout
-            // 
-            this.toolStripButton_VLayout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_VLayout.Image = global::AITrader.Properties.Resources.icons8_merge_cells_48;
-            this.toolStripButton_VLayout.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_VLayout.Name = "toolStripButton_VLayout";
-            this.toolStripButton_VLayout.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton_VLayout.Text = "toolStripButton8";
-            this.toolStripButton_VLayout.Click += new System.EventHandler(this.toolStripButton_VLayout_Click);
-            // 
-            // toolStripButton_SLayOut
-            // 
-            this.toolStripButton_SLayOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_SLayOut.Image = global::AITrader.Properties.Resources.icons8_layout_48;
-            this.toolStripButton_SLayOut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_SLayOut.Name = "toolStripButton_SLayOut";
-            this.toolStripButton_SLayOut.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton_SLayOut.Text = "toolStripButton9";
-            this.toolStripButton_SLayOut.Click += new System.EventHandler(this.toolStripButton_SLayOut_Click);
-            // 
-            // toolStripButton_HLayout
-            // 
-            this.toolStripButton_HLayout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_HLayout.Image = global::AITrader.Properties.Resources.icons8_select_column_48;
-            this.toolStripButton_HLayout.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_HLayout.Name = "toolStripButton_HLayout";
-            this.toolStripButton_HLayout.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton_HLayout.Text = "toolStripButton10";
-            this.toolStripButton_HLayout.Click += new System.EventHandler(this.toolStripButton_HLayout_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.BackColor = System.Drawing.Color.White;
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::AITrader.Properties.Resources.icons8_1_481;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::AITrader.Properties.Resources.icons8_5_481;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::AITrader.Properties.Resources.icons8_15_482;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton5.Text = "toolStripButton5";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = global::AITrader.Properties.Resources.icons8_30_481;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton6.Text = "toolStripButton6";
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = global::AITrader.Properties.Resources.icons8_plus_1_day_48;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton7.Text = "toolStripButton7";
-            // 
-            // toolStripButton_QuaickOrder
-            // 
-            this.toolStripButton_QuaickOrder.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStripButton_QuaickOrder.Image = global::AITrader.Properties.Resources.icons8_purchase_order_48;
-            this.toolStripButton_QuaickOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_QuaickOrder.Name = "toolStripButton_QuaickOrder";
-            this.toolStripButton_QuaickOrder.Size = new System.Drawing.Size(84, 28);
-            this.toolStripButton_QuaickOrder.Text = "快捷下单";
-            this.toolStripButton_QuaickOrder.Click += new System.EventHandler(this.toolStripButton_QuaickOrderClick);
-            // 
-            // toolStripButton_StrategyPerfomace
-            // 
-            this.toolStripButton_StrategyPerfomace.Image = global::AITrader.Properties.Resources.icons8_heart_monitor_48;
-            this.toolStripButton_StrategyPerfomace.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_StrategyPerfomace.Name = "toolStripButton_StrategyPerfomace";
-            this.toolStripButton_StrategyPerfomace.Size = new System.Drawing.Size(108, 28);
-            this.toolStripButton_StrategyPerfomace.Text = "策略绩效报告";
-            this.toolStripButton_StrategyPerfomace.Click += new System.EventHandler(this.ToolStrip_StratgyPerfomaceClick);
-            // 
-            // toolStripButton11
-            // 
-            this.toolStripButton11.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStripButton11.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
-            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(84, 28);
-            this.toolStripButton11.Text = "自动交易";
-            this.toolStripButton11.Click += new System.EventHandler(this.AutoTrading_Click);
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.BackColor = System.Drawing.Color.White;
-            this.toolStripButton12.Image = global::AITrader.Properties.Resources.icons8_edit_file_48;
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(120, 28);
-            this.toolStripButton12.Text = "自动策略编辑器";
-            this.toolStripButton12.Click += new System.EventHandler(this.Edit_Click);
-            // 
-            // toolStripStatusLabel_ManagerAccount
-            // 
-            this.toolStripStatusLabel_ManagerAccount.Image = global::AITrader.Properties.Resources.icons8_google_forms_48;
-            this.toolStripStatusLabel_ManagerAccount.Name = "toolStripStatusLabel_ManagerAccount";
-            this.toolStripStatusLabel_ManagerAccount.Size = new System.Drawing.Size(80, 21);
-            this.toolStripStatusLabel_ManagerAccount.Text = "账户管理";
-            this.toolStripStatusLabel_ManagerAccount.ToolTipText = "行情连接信息";
-            this.toolStripStatusLabel_ManagerAccount.Click += new System.EventHandler(this.ToolTrip_ManagerAccountClick);
-            // 
-            // toolStripStatusLabel_datacenter
-            // 
-            this.toolStripStatusLabel_datacenter.Image = global::AITrader.Properties.Resources.icons8_edit_file_48;
-            this.toolStripStatusLabel_datacenter.Name = "toolStripStatusLabel_datacenter";
-            this.toolStripStatusLabel_datacenter.Size = new System.Drawing.Size(80, 21);
-            this.toolStripStatusLabel_datacenter.Text = "数据中心";
-            this.toolStripStatusLabel_datacenter.ToolTipText = "交易连接信息";
-            this.toolStripStatusLabel_datacenter.Click += new System.EventHandler(this.ToolTrip_dataCenterClick);
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Image = global::AITrader.Properties.Resources.icons8_customer_48;
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(434, 21);
-            this.toolStripStatusLabel3.Text = "[账户信息]- 账户权益:-----  可用:----- 已用:----- 冻结:-----  保证金率:------";
+            this.toolStripButton_TestKLine.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_TestKLine.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_TestKLine.Image")));
+            this.toolStripButton_TestKLine.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_TestKLine.Name = "toolStripButton_TestKLine";
+            this.toolStripButton_TestKLine.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_TestKLine.Text = "toolStripButton1";
+            this.toolStripButton_TestKLine.Click += new System.EventHandler(this.toolStripButton_TestKLineClick);
             // 
             // Form1
             // 
@@ -1078,6 +1090,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripButton toolStripButton15;
         private System.Windows.Forms.ToolStripButton toolStripButton_TestProxy;
+        private System.Windows.Forms.ToolStripButton toolStripButton_TestKLine;
     }
 }
 

@@ -36,11 +36,11 @@ namespace WindowsFormsApp1
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_dataSource = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_ins = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -235,21 +235,21 @@ namespace WindowsFormsApp1
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.comboBox_dataSource);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(114, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(105, 20);
             this.panel2.TabIndex = 1;
             // 
-            // comboBox1
+            // comboBox_dataSource
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(105, 20);
-            this.comboBox1.TabIndex = 0;
+            this.comboBox_dataSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_dataSource.FormattingEnabled = true;
+            this.comboBox_dataSource.Location = new System.Drawing.Point(0, 0);
+            this.comboBox_dataSource.Name = "comboBox_dataSource";
+            this.comboBox_dataSource.Size = new System.Drawing.Size(105, 20);
+            this.comboBox_dataSource.TabIndex = 0;
             // 
             // panel3
             // 
@@ -271,21 +271,21 @@ namespace WindowsFormsApp1
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.comboBox2);
+            this.panel4.Controls.Add(this.comboBox_ins);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(114, 29);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(105, 21);
             this.panel4.TabIndex = 3;
             // 
-            // comboBox2
+            // comboBox_ins
             // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(0, 0);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(105, 20);
-            this.comboBox2.TabIndex = 0;
+            this.comboBox_ins.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_ins.FormattingEnabled = true;
+            this.comboBox_ins.Location = new System.Drawing.Point(0, 0);
+            this.comboBox_ins.Name = "comboBox_ins";
+            this.comboBox_ins.Size = new System.Drawing.Size(105, 20);
+            this.comboBox_ins.TabIndex = 0;
             // 
             // panel5
             // 
@@ -992,12 +992,14 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(368, 446);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AddInstruments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "设置商品";
+            this.Load += new System.EventHandler(this.Form_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1063,9 +1065,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_dataSource;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox_ins;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage4;
