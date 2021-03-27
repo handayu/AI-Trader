@@ -445,6 +445,12 @@
     <Compile Include="UserControl\QuickOrderUserControl.Designer.cs">
       <DependentUpon>QuickOrderUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\TradePanelUserControle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TradePanelUserControle.Designer.cs">
+      <DependentUpon>TradePanelUserControle.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\TradeUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -600,6 +606,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\QuickOrderUserControl.resx">
       <DependentUpon>QuickOrderUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TradePanelUserControle.resx">
+      <DependentUpon>TradePanelUserControle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\TradeUserControl.resx">
       <DependentUpon>TradeUserControl.cs</DependentUpon>
